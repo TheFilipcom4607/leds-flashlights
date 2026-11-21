@@ -1,0 +1,35 @@
+name: Fix something
+description: A spec, price, tint, LED option or LED figure is wrong or missing.
+title: "[Fix] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. The **Suggest a fix** link on a light or LED fills in the first two boxes for you.
+  - type: input
+    id: item
+    attributes:
+      label: Which light or LED?
+      placeholder: Convoy S21E, or Nichia 519A
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Link to it on the site
+      placeholder: https://light.thefilip.com/flashlights/?light=convoy-s21e
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong or missing?
+      placeholder: e.g. the weight is wrong, a 4000K option is missing, or the price has changed.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A maker or store page, a datasheet, or a review with measurements. Fixes without a source can't be checked.
+      placeholder: https://
+    validations:
+      required: true

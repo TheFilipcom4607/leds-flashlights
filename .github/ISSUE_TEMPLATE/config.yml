@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How to contribute
+    url: https://github.com/TheFilipcom4607/leds-flashlights/blob/main/CONTRIBUTING.md
+    about: What counts as a source, and how to edit the data yourself in a pull request.

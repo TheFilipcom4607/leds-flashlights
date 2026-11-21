@@ -330,6 +330,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .oc { display: inline-flex; gap: 6px; align-items: center; padding: 4px 9px; border-radius: 7px; background: var(--sunken); border: 1px solid var(--line); font-size: 12.5px; }
 .oc small { color: var(--accent); font-weight: 600; }
 .blurb { color: var(--muted); font-size: 12.5px; margin: 0; }
+.fixlink { margin: 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
 
 .cmpdlg { width: min(1240px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); border-radius: 14px; border: 1px solid var(--line); overflow: hidden; }
 .cmpdlg[open] { display: flex; flex-direction: column; }
@@ -497,7 +498,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </div>
       <div id="rows"><div class="empty">Loading lights…</div></div>
     </div>
-    <footer>Specs come from each maker's store page, tidied into one format; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Olight prices are its Nov 2026 sale prices; Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Always confirm options on the store page before ordering.</footer>
+    <footer>Specs come from each maker's store page, tidied into one format; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Olight prices are its Nov 2026 sale prices; Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Always confirm options on the store page before ordering. Missing a light or spotted a mistake? <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=add-light.yml" target="_blank" rel="noopener">Add a light</a> or <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=fix.yml" target="_blank" rel="noopener">suggest a fix</a> (GitHub account needed). See <a href="https://github.com/TheFilipcom4607/leds-flashlights/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>.</footer>
   </main>
 </div>
 
@@ -591,7 +592,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     for (const [k, p] of Object.entries(URLK)) params.getAll(p).forEach(v => F[k].add(v));
     URL1.forEach(k => { if (params.has(k)) F[k] = params.get(k); });
     if (params.get("sort")) { const [k, d] = params.get("sort").split(":"); sortK = k || null; sortDir = +d || 1; }
-    openLight = params.get("light") ? +params.get("light") : null;
+    openLight = params.get("light") || null; // a name ID, or an old numeric one
   }
   F.feats = new Set([...F.feats].filter(f => FEAT[f])); // drops retired switches, e.g. the old "In stock"
   function syncUrl() {
@@ -599,7 +600,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     URL1.forEach(k => { const v = String(F[k]).trim(); if (v) p.set(k, v); });
     for (const [k, n] of Object.entries(URLK)) F[k].forEach(v => p.append(n, v));
     if (sortK) p.set("sort", `${sortK}:${sortDir}`);
-    if ($("#drawer").open && $("#drawer").dataset.id !== undefined) p.set("light", $("#drawer").dataset.id);
+    if ($("#drawer").open && byId.has(+$("#drawer").dataset.id)) p.set("light", byId.get(+$("#drawer").dataset.id)._slug);
     const s = p.toString().replace(/%3A/g, ":");
     history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
   }
@@ -678,6 +679,11 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (!f.length) return `<span class="na">Emitter not listed</span>`;
     return esc(f.slice(0, n).join(" · ")) + (f.length > n ? ` <span class="more">+${f.length - n}</span>` : "");
   }
+  // A light's permanent ID is its name: "Convoy S21E" -> convoy-s21e. Links and suggested fixes use it, so it
+  // survives the list being rebuilt (the numeric id is just the row's position). tools/validate.py keeps these unique.
+  const slug = (...p) => p.filter(Boolean).join(" ").toLowerCase().replace(/&/g, " and ").replace(/\+/g, " plus ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const REPO = "https://github.com/TheFilipcom4607/leds-flashlights";
+  const fixUrl = (what, page) => `${REPO}/issues/new?template=fix.yml&title=${encodeURIComponent("[Fix] " + what)}&item=${encodeURIComponent(what)}&page=${encodeURIComponent(location.origin + location.pathname + page)}`;
   const fullName = r => `${r.brand} ${r.model}${r.variant ? " — " + r.variant : ""}`;
 
   /* ---------- facets ---------- */
@@ -995,6 +1001,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         <section class="sec"><h3>Specs</h3><dl class="spec">${specs.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl></section>
         ${opts ? `<section class="sec"><h3>Options &amp; add-ons</h3><div class="opts">${opts}</div></section>` : ""}
         <section class="sec"><h3>Store description</h3><p class="blurb">${esc(r.blurb)}${r.notes ? "<br>" + esc(r.notes) : ""}</p></section>
+        <p class="fixlink">Something wrong or missing? <a href="${esc(fixUrl(fullName(r), "?light=" + r._slug))}" target="_blank" rel="noopener">Suggest a fix ↗</a></p>
       </div>
       <div class="df">
         <button class="btn" type="button" data-pick="${r.id}" ${!picked && picks.length >= MAXPICK ? "disabled" : ""}>${picked ? "✓ In compare" : "Add to compare"}</button>
@@ -1148,7 +1155,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       }))));
       const emitTxt = r.emitters.flatMap(g => g.tiers.flatMap(t => t.leds.flatMap(l => [l.family, l.maker, ...l.tints.map(x => [x.cct && x.cct + "k", x.colour, x.dome, x.cri && x.cri + "cri"].join(" "))]))).join(" ");
       return { ...r, _tones: [...tones], _bats: bats, _pairs: pairs, _colours: [...new Set(pairs.map(p => p.c))], _batn: CELLS.indexOf(r.battery.key) >= 0 ? CELLS.indexOf(r.battery.key) : 99,
-        _name: `${r.brand} ${r.model} ${r.variant || ""}`.toLowerCase(),
+        _name: `${r.brand} ${r.model} ${r.variant || ""}`.toLowerCase(), _slug: slug(r.brand, r.model, r.variant),
         _hay: [r.brand, r.model, r.variant, r.type, r.blurb, r.battery.label, r.firmware, r.driver, r.switch, r.charging?.label, r.aux, r.ip?.label, r.body_colours.join(" "), r.styles.join(" "), emitTxt,
           r.options.flatMap(o => o.items.map(i => i.name)).join(" "), r.anduril ? "anduril" : ""].join(" ").toLowerCase() };
     });
@@ -1160,7 +1167,8 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       .map(([n, l]) => `<div class="kpi"><b>${n}</b><span>${l}</span></div>`).join("");
     $("#q").value = F.q;
     render(); syncUrl();
-    if (openLight != null && byId.has(openLight)) openDrawer(openLight);
+    const want = openLight && (/^\d+$/.test(openLight) ? byId.get(+openLight) : data.find(r => r._slug === openLight));
+    if (want) openDrawer(want.id);
   }).catch(err => {
     console.error(err);
     $("#rows").innerHTML = `<div class="empty"><b>The light list didn't load</b><span>Open this page through a local web server (run <code>python3 -m http.server</code> in this folder), then reload.</span></div>`;

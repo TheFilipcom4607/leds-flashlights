@@ -1,0 +1,46 @@
+name: Add an LED
+description: An emitter that isn't in the Emitter Index yet.
+title: "[New LED] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A datasheet or a measured test is the most useful source. Seller claims are fine too, and will be labelled as such.
+  - type: input
+    id: name
+    attributes:
+      label: Maker and LED
+      placeholder: Nichia 519A
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Datasheet, maker page or test
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: package
+    attributes:
+      label: Footprint and voltage
+      placeholder: 3535, 3V
+  - type: input
+    id: output
+    attributes:
+      label: Output per LED (lumens) and at what current
+      placeholder: ~1,000–1,250 lm at 5 A
+  - type: input
+    id: colour
+    attributes:
+      label: CRI and colour temperatures
+      placeholder: 90–95 CRI (R9080); 1800K–5700K
+  - type: input
+    id: candela
+    attributes:
+      label: Candela in a 35–40 mm reflector, if known
+  - type: textarea
+    id: notes
+    attributes:
+      label: What is it good for?
+      description: Tint, beam, which lights use it, how it compares to similar LEDs.

@@ -1,0 +1,45 @@
+name: Add a light
+description: A flashlight or headlamp that isn't in the Flashlight Index yet.
+title: "[New light] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in what you know; leave the rest blank. The store page is the one thing we need.
+  - type: input
+    id: name
+    attributes:
+      label: Brand and model
+      placeholder: Wurkkos TS11
+    validations:
+      required: true
+  - type: input
+    id: store
+    attributes:
+      label: Official store or product page
+      placeholder: https://
+    validations:
+      required: true
+  - type: input
+    id: price
+    attributes:
+      label: Price (USD) and what it includes
+      placeholder: $29.99 with a 21700 cell
+  - type: textarea
+    id: leds
+    attributes:
+      label: LED options and tints
+      description: Each LED you can choose, with its colour temperatures, CRI and any price difference.
+      placeholder: |
+        519A: 3000K, 4000K, 5000K (95 CRI), +$3
+        SST-40: 6500K
+  - type: textarea
+    id: specs
+    attributes:
+      label: Specs
+      description: Battery, max lumens, throw or candela, weight, length, firmware (Anduril?), charging, waterproofing.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Reviews with measurements are very welcome.

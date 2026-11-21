@@ -281,6 +281,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .oc { display: inline-flex; gap: 6px; align-items: center; padding: 4px 9px; border-radius: 7px; background: var(--sunken); border: 1px solid var(--line); font-size: 12.5px; }
 .oc small { color: var(--accent); font-weight: 600; }
 .blurb { color: var(--muted); font-size: 12.5px; margin: 0; }
+.fixlink { margin: 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
 
 .cmpdlg { width: min(1240px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); border-radius: 14px; border: 1px solid var(--line); overflow: hidden; }
 .cmpdlg[open] { display: flex; flex-direction: column; }
@@ -633,7 +634,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </div>
       <div id="rows"><div class="empty">Loading emitters…</div></div>
     </div>
-    <footer id="foot">Figures are approximate. They come from manufacturer datasheets where available, otherwise from vendor listings or enthusiast tests, and each emitter is labelled with where its numbers come from. Candela is a rough ranking for a typical 35–40 mm reflector (±50% with reflector, driver and bin). Which lights sell each LED, and at what price, comes from the <a href="../flashlights/">Flashlight Index</a>. Always check the maker's datasheet or store before buying.</footer>
+    <footer id="foot">Figures are approximate. They come from manufacturer datasheets where available, otherwise from vendor listings or enthusiast tests, and each emitter is labelled with where its numbers come from. Candela is a rough ranking for a typical 35–40 mm reflector (±50% with reflector, driver and bin). Which lights sell each LED, and at what price, comes from the <a href="../flashlights/">Flashlight Index</a>. Always check the maker's datasheet or store before buying. Missing an LED or spotted a mistake? <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=add-led.yml" target="_blank" rel="noopener">Add an LED</a> or <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=fix.yml" target="_blank" rel="noopener">suggest a fix</a> (GitHub account needed). See <a href="https://github.com/TheFilipcom4607/leds-flashlights/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>.</footer>
   </main>
 </div>
 
@@ -982,6 +983,11 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       hostIds.add(id); hostRank.set(id, order.indexOf(o.bucket) * 100 + i);
     });
   }
+  // A light's permanent ID is its name: "Convoy S21E" -> convoy-s21e. Links and suggested fixes use it, so it
+  // survives the list being rebuilt (the numeric id is just the row's position). tools/validate.py keeps these unique.
+  const slug = (...p) => p.filter(Boolean).join(" ").toLowerCase().replace(/&/g, " and ").replace(/\+/g, " plus ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const REPO = "https://github.com/TheFilipcom4607/leds-flashlights";
+  const fixUrl = (what, page) => `${REPO}/issues/new?template=fix.yml&title=${encodeURIComponent("[Fix] " + what)}&item=${encodeURIComponent(what)}&page=${encodeURIComponent(location.origin + location.pathname + page)}`;
   const findLight = s => {
     const q = String(s || "").trim().toLowerCase(); if (!q || !lightsData) return null;
     return lightsData.find(l => l._name === q) || lightsData.find(l => l._name.startsWith(q)) || lightsData.find(l => l._name.includes(q)) || null;
@@ -1033,7 +1039,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const est = matched.find(([, o]) => o.est);
     body.innerHTML = `<div class="host${est ? "" : " noest"}">
       <div class="hhead"><div class="hn"><b>${esc(l.brand)} ${esc(l.model)}</b><span>${meta}</span></div>
-        <div class="hacts">${matched.length >= 2 ? `<button class="btn primary" type="button" data-act="cmpall" title="${matched.length > MAXPICK ? `Compare holds ${MAXPICK}` : "Compare every option side by side"}">Compare ${Math.min(matched.length, MAXPICK)}</button>` : ""}<a class="btn" href="../flashlights/?light=${l.id}">Details</a><button class="btn" type="button" data-act="hostclear">Change light</button></div></div>
+        <div class="hacts">${matched.length >= 2 ? `<button class="btn primary" type="button" data-act="cmpall" title="${matched.length > MAXPICK ? `Compare holds ${MAXPICK}` : "Compare every option side by side"}">Compare ${Math.min(matched.length, MAXPICK)}</button>` : ""}<a class="btn" href="../flashlights/?light=${slug(l.brand, l.model, l.variant)}">Details</a><button class="btn" type="button" data-act="hostclear">Change light</button></div></div>
       ${pickHtml}${groups || `<p class="hnote">None of this light's LED options are in the index yet.</p>`}
       <p class="hnote">${matched.length} LED option${matched.length === 1 ? "" : "s"}${missing > 0 ? ` (${missing} more not in the index)` : ""}; the list below is filtered to them. ${est ? `Throw “here” scales the typical 35–40 mm figure to this light's ~${est[1].est.refl} mm reflector: a ballpark for comparing options (±50%).` : "No throw estimate: this light has several LEDs, a headlamp optic or no stated head size."}</p>
     </div>`;
@@ -1148,7 +1154,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     rows.sort((a, b) => (a.amt ?? 1e9) - (b.amt ?? 1e9));
     const usd = n => "$" + (n % 1 ? n.toFixed(2) : n);
     return `<section class="sec"><h3>Sold in ${rows.length} light${rows.length === 1 ? "" : "s"} <small>cheapest first${rows.some(r => r.est) ? " · ≈ throw in that light" : ""}</small></h3>
-      <div class="sold">${rows.slice(0, 6).map(({ l, amt, est }) => `<a href="../flashlights/?light=${l.id}"><span><b>${esc(l.brand)} ${esc(l.model)}</b><small>${[l.variant, l.type].filter(Boolean).map(esc).join(" · ")}</small></span><span class="t">${est ? `≈ ${fmt(est.m)} m` : ""}</span><span class="p">${amt != null ? usd(amt) : `<span class="na">n/a</span>`}</span></a>`).join("")}</div>
+      <div class="sold">${rows.slice(0, 6).map(({ l, amt, est }) => `<a href="../flashlights/?light=${slug(l.brand, l.model, l.variant)}"><span><b>${esc(l.brand)} ${esc(l.model)}</b><small>${[l.variant, l.type].filter(Boolean).map(esc).join(" · ")}</small></span><span class="t">${est ? `≈ ${fmt(est.m)} m` : ""}</span><span class="p">${amt != null ? usd(amt) : `<span class="na">n/a</span>`}</span></a>`).join("")}</div>
       ${rows.length > 6 ? `<a class="soldmore" href="../flashlights/?${[...fams].map(f => "led=" + encodeURIComponent(f)).join("&")}">See all ${rows.length} lights →</a>` : ""}</section>`;
   }
   function openDrawer(id) {
@@ -1188,6 +1194,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         ${soldHtml(e)}
         <section class="sec"><h3>Specs</h3><dl class="spec">${specs.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl></section>
         ${e.sources.length ? `<section class="sec"><h3>Sources</h3><div class="srcs">${e.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join("")}</div></section>` : ""}
+        <p class="fixlink">Something wrong or missing? <a href="${esc(fixUrl(name(e), "?led=" + encodeURIComponent(e.name)))}" target="_blank" rel="noopener">Suggest a fix ↗</a></p>
       </div>
       <div class="df">
         <button class="btn" type="button" data-pick="${e.id}" ${!picked && picks.length >= MAXPICK ? "disabled" : ""}>${picked ? "✓ In compare" : "Add to compare"}</button>
