@@ -16,7 +16,7 @@ const CORS = {
   "access-control-max-age": "86400",
 };
 
-function respond(data, status = 200) {
+function respond(data, status = 200, extra = {}) {
   return new Response(JSON.stringify(data, null, 2), {
     status,
     headers: {
@@ -24,6 +24,7 @@ function respond(data, status = 200) {
       "x-attribution": CREDIT,
       "cache-control": "public, max-age=300",
       ...CORS,
+      ...extra,
     },
   });
 }
@@ -39,10 +40,13 @@ const num = (v) => {
   return Number.isFinite(n) ? n : null;
 };
 const flat = (parts) => parts.filter(Boolean).join(" ");
+// q is an AND of words: every whitespace-separated word must appear in the haystack.
+const matches = (hay, q) => q.split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
 
 // ---------- data loading ----------
 
 let db = null;
+let loading = null;
 
 async function getAsset(env, path) {
   const res = await env.ASSETS.fetch(new Request(new URL(path, "https://assets.invalid")));
@@ -52,6 +56,14 @@ async function getAsset(env, path) {
 
 async function load(env) {
   if (db) return db;
+  // One build in flight per isolate: concurrent first hits share it, and a
+  // failure clears it so the next request retries instead of caching the error.
+  loading ??= buildDb(env).finally(() => (loading = null));
+  db = await loading;
+  return db;
+}
+
+async function buildDb(env) {
   const [lightsRaw, ledsRaw] = await Promise.all([
     getAsset(env, "/flashlights/lights.clean.json"),
     getAsset(env, "/leds/emitters.json"),
@@ -106,8 +118,7 @@ async function load(env) {
     }
   }
 
-  db = { lights, leds, slugOf, hayOf, ledIndex, uses };
-  return db;
+  return { lights, leds, slugOf, hayOf, ledIndex, uses };
 }
 
 // ---------- resolvers ----------
@@ -144,7 +155,7 @@ function ledOut(e) {
 }
 
 function page(items, p) {
-  const limit = Math.min(Math.max(num(p.get("limit")) ?? 50, 1), 500);
+  const limit = Math.min(Math.max(num(p.get("limit")) ?? 50, 0), 500);
   const offset = Math.max(num(p.get("offset")) ?? 0, 0);
   return { items: items.slice(offset, offset + limit), total: items.length, limit, offset };
 }
@@ -160,26 +171,28 @@ function index() {
     base: `${SITE}/api`,
     endpoints: {
       "GET /api": "this document",
-      "GET /api/flashlights": "query lights: q, brand, type, form, battery, led, max_price, min_lumens, min_throw, anduril=true, sort=price|lumens|throw, limit (default 50, max 500), offset",
+      "GET /api/flashlights": "query lights: q (every word must appear), brand, type, form, battery, led, max_price, min_lumens, min_throw, anduril=true|1, sort=price|lumens|throw, limit (default 50, max 500), offset",
       "GET /api/flashlights/{slug-or-id}": "one light, e.g. /api/flashlights/convoy-s21e",
-      "GET /api/leds": "query LEDs: q, kind, maker, footprint, voltage, use, min_cri, sort=lumens|cri|throw, limit, offset",
+      "GET /api/leds": "query LEDs: q (every word must appear), kind, maker, footprint, voltage, use, min_cri, sort=lumens|cri|throw, limit, offset",
       "GET /api/leds/{name}": "one LED by name or alternate name, e.g. /api/leds/519A",
       "GET /api/leds/{name}/lights": "lights sold with that LED; supports limit/offset",
-      "GET /api/search?q=": "substring search across both datasets",
+      "GET /api/search?q=": "word search across both datasets: every word of q must appear",
     },
     notes: [
       CREDIT,
       "Complete datasets: GET /flashlights/lights.clean.json and /leds/emitters.json (the files behind this API).",
       "Prices are USD from the official store or the dealer named in the site footer. LED lumens are per LED at turbo in a good host, not a whole multi-LED light's output.",
       "brand matches exactly (case-insensitive); type/form/battery match as substrings; led resolves by name or alternate name.",
+      "q matches word-by-word: every whitespace-separated word must appear somewhere in the item.",
+      "Numeric filters (max_price, min_lumens, min_throw, min_cri) exclude items whose value is unknown.",
     ],
   });
 }
 
 function listLights(p) {
   const ledParam = p.get("led");
-  if (ledParam && !resolveLed(ledParam)) return notFound("LED", ledParam, "names via GET /api/leds");
   const led = ledParam ? resolveLed(ledParam) : null;
+  if (ledParam && !led) return notFound("LED", ledParam, "names via GET /api/leds");
   const q = p.get("q")?.toLowerCase();
   const brand = p.get("brand")?.toLowerCase();
   const type = p.get("type")?.toLowerCase();
@@ -191,7 +204,7 @@ function listLights(p) {
   const anduril = p.get("anduril") === "true" || p.get("anduril") === "1";
 
   let out = db.lights.filter((l) => {
-    if (q && !db.hayOf.get(l).includes(q)) return false;
+    if (q && !matches(db.hayOf.get(l), q)) return false;
     if (brand && (l.brand || "").toLowerCase() !== brand) return false;
     if (type && !(l.type || "").toLowerCase().includes(type)) return false;
     if (form && !(l.form || "").toLowerCase().includes(form)) return false;
@@ -229,7 +242,7 @@ function listLeds(p) {
   const minCri = num(p.get("min_cri"));
 
   let out = db.leds.filter((e) => {
-    if (q && !db.hayOf.get(e).includes(q)) return false;
+    if (q && !matches(db.hayOf.get(e), q)) return false;
     if (kind && !(e.kind || "").toLowerCase().includes(kind)) return false;
     if (maker && !(e.maker || "").toLowerCase().includes(maker)) return false;
     if (footprint && !(e.footprints || []).some((f) => f.toLowerCase().includes(footprint))) return false;
@@ -266,8 +279,8 @@ function ledLights(t, p) {
 function search(p) {
   const q = (p.get("q") || "").trim().toLowerCase();
   if (!q) return respond({ attribution: CREDIT, error: "missing q" }, 400);
-  const fl = db.lights.filter((l) => db.hayOf.get(l).includes(q));
-  const ls = db.leds.filter((e) => db.hayOf.get(e).includes(q));
+  const fl = db.lights.filter((l) => matches(db.hayOf.get(l), q));
+  const ls = db.leds.filter((e) => matches(db.hayOf.get(e), q));
   const a = page(fl, p);
   const b = page(ls, p);
   return respond({
@@ -285,7 +298,8 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
-    if (request.method !== "GET" && request.method !== "HEAD") return respond({ attribution: CREDIT, error: "GET only" }, 405);
+    if (request.method !== "GET" && request.method !== "HEAD")
+      return respond({ attribution: CREDIT, error: "GET only" }, 405, { allow: "GET, HEAD, OPTIONS" });
     try {
       await load(env);
     } catch (err) {
