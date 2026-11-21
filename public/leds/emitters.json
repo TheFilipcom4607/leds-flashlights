@@ -196,7 +196,23 @@
    "cd_lo": 20000.0,
    "cd_hi": 30000.0,
    "throw_lo": 280.0,
-   "throw_hi": 345.0
+   "throw_hi": 345.0,
+   "beam": 2,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "Dome on",
+     "text": "Floody, neutral-to-rosy, ~1,000–1,250 lm"
+    },
+    {
+     "label": "Dome off",
+     "text": "More throw, lower CCT, rosier tint — the classic dedome"
+    }
+   ],
+   "tldr": "The all-round gold standard."
   },
   {
    "id": 1,
@@ -270,7 +286,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "legacy",
+    "note": "Largely replaced by the 519A / NTG35 — kept for its rosy tint"
+   },
+   "cct_notes": [
+    {
+     "label": "sw45k 4500K",
+     "text": "The legendary rosy bin"
+    }
+   ],
+   "tldr": "Legendary rosy tint (especially the sw45k 4500K bin)."
   },
   {
    "id": 2,
@@ -327,7 +355,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "legacy",
+    "note": "Superseded by the SST-20 and LH351D"
+   },
+   "cct_notes": [],
+   "tldr": "The brighter but less-talented successor to the 219B; itself largely superseded by the SST-20 and LH351D."
   },
   {
    "id": 3,
@@ -385,7 +420,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Picked for the 1800K version"
+   },
+   "cct_notes": [
+    {
+     "label": "1800K",
+     "text": "Sodium-lamp-like; the reason this LED exists"
+    }
+   ],
+   "tldr": "Successor to the 219C; best known for an 1800K sodium-lamp-like version."
   },
   {
    "id": 4,
@@ -462,7 +509,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": "Needs a dedicated MCPCB, which limits overdrive"
+   },
+   "cct_notes": [],
+   "tldr": "Four tiny dies with a natural, sunlight-like tint."
   },
   {
    "id": 5,
@@ -522,7 +576,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Generally considered underwhelming"
+   },
+   "cct_notes": [],
+   "tldr": "Colour like a dedomed 519A with more output but a floodier beam; generally considered underwhelming."
   },
   {
    "id": 6,
@@ -584,7 +645,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Strong tint shift without diffusion"
+   },
+   "cct_notes": [],
+   "tldr": "Nichia's answer to the XHP50 (different footprint, no thermal pad)."
   },
   {
    "id": 7,
@@ -673,7 +741,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "staple",
+    "note": "Premium high-CRI for quads and arrays"
+   },
+   "cct_notes": [],
+   "tldr": "Ultra-high CRI, usually used in quads or larger arrays."
   },
   {
    "id": 91,
@@ -722,7 +797,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "legacy",
+    "note": "Largely replaced by the 519A"
+   },
+   "cct_notes": [],
+   "tldr": "Brighter than the 219 series but with low red rendering; largely replaced by the 519A."
   },
   {
    "id": 92,
@@ -772,7 +854,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Low output; for colour-critical lights"
+   },
+   "cct_notes": [],
+   "tldr": "The closest match to sunlight / incandescent of any LED tested, but low current and a 120 °C limit keep it to low-output lights."
   },
   {
    "id": 8,
@@ -865,7 +954,23 @@
    "cd_lo": 85000.0,
    "cd_hi": 105000.0,
    "throw_lo": 580.0,
-   "throw_hi": 650.0
+   "throw_hi": 650.0,
+   "beam": 5,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "5700K 90 CRI WG",
+     "text": "The high-CRI version"
+    },
+    {
+     "label": "5000–6500K",
+     "text": "70 CRI; samples run cooler than nominal"
+    }
+   ],
+   "tldr": "Small round die = extreme throw; out-throws the SFT-40 in the same host while fitting standard 3535 boards."
   },
   {
    "id": 9,
@@ -973,7 +1078,27 @@
    "cd_lo": 60000.0,
    "cd_hi": 80000.0,
    "throw_lo": 490.0,
-   "throw_hi": 565.0
+   "throw_hi": 565.0,
+   "beam": 4,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "6500K",
+     "text": "70 CRI, leans green"
+    },
+    {
+     "label": "5000K",
+     "text": "70 CRI, decent tint"
+    },
+    {
+     "label": "3000K",
+     "text": "95 CRI, ~1,300–1,500 lm"
+    }
+   ],
+   "tldr": "Domeless all-round thrower king : punchy hotspot with usable spill."
   },
   {
    "id": 10,
@@ -1070,7 +1195,23 @@
    "cd_lo": 45000.0,
    "cd_hi": 60000.0,
    "throw_lo": 425.0,
-   "throw_hi": 490.0
+   "throw_hi": 490.0,
+   "beam": 4,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "3000K 95 CRI",
+     "text": "Users rate the tint very highly"
+    },
+    {
+     "label": "5000–6500K",
+     "text": "70 CRI"
+    }
+   ],
+   "tldr": "Domeless SST-70; efficient boost/buck-driven thrower."
   },
   {
    "id": 11,
@@ -1149,7 +1290,14 @@
    "cd_lo": 50000.0,
    "cd_hi": 75000.0,
    "throw_lo": 445.0,
-   "throw_hi": 550.0
+   "throw_hi": 550.0,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "High Vf can cap single-cell buck drivers"
+   },
+   "cct_notes": [],
+   "tldr": "Sits between SFT-40 and SFT-90; high Vf means a single-cell buck driver may not reach full current."
   },
   {
    "id": 12,
@@ -1232,7 +1380,19 @@
    "cd_lo": 50000.0,
    "cd_hi": 75000.0,
    "throw_lo": 445.0,
-   "throw_hi": 550.0
+   "throw_hi": 550.0,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "Best in large reflectors"
+   },
+   "cct_notes": [
+    {
+     "label": "Careful",
+     "text": "Phosphor is more brittle than other SFT parts — don't let a TIR press on it"
+    }
+   ],
+   "tldr": "Round-die thrower with a bigger hotspot than SFT-40; best in large reflectors, and its phosphor dislikes TIR presses."
   },
   {
    "id": 13,
@@ -1305,7 +1465,14 @@
    "cd_lo": 65000.0,
    "cd_hi": 90000.0,
    "throw_lo": 510.0,
-   "throw_hi": 600.0
+   "throw_hi": 600.0,
+   "beam": 3,
+   "rep": {
+    "t": "budget",
+    "note": "Cheaper SBT90.2 alternative; high Vf"
+   },
+   "cct_notes": [],
+   "tldr": "Much cheaper alternative to the SBT90.2 with slightly lower performance; high Vf makes FET and 1-cell buck drivers a poor match."
   },
   {
    "id": 14,
@@ -1378,7 +1545,14 @@
    "cd_lo": 65000.0,
    "cd_hi": 90000.0,
    "throw_lo": 510.0,
-   "throw_hi": 600.0
+   "throw_hi": 600.0,
+   "beam": 3,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Monster throw + lumens (~5700K)."
   },
   {
    "id": 15,
@@ -1436,7 +1610,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 5,
+   "rep": {
+    "t": "niche",
+    "note": "Outclassed by the SFT-25R at the same current"
+   },
+   "cct_notes": [],
+   "tldr": "Tight pencil beam, but the SFT-25R is much brighter and throws further at the same current."
   },
   {
    "id": 16,
@@ -1526,7 +1707,23 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "≤4000K",
+     "text": "95 CRI (R9080) — the one for colour"
+    },
+    {
+     "label": "5000–6500K",
+     "text": "Bright but notoriously green on low"
+    }
+   ],
+   "tldr": "Budget domed emitter."
   },
   {
    "id": 17,
@@ -1594,7 +1791,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "legacy",
+    "note": "Superseded by the SFT-40 / SFT-70; still ships in budget lights"
+   },
+   "cct_notes": [
+    {
+     "label": "Low modes",
+     "text": "Very green at low power on all CCTs"
+    }
+   ],
+   "tldr": "Domed, cheap, high-output flood/hybrid LEDs; very green at low power."
   },
   {
    "id": 81,
@@ -1642,7 +1851,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "oem",
+    "note": "Fenix/Olight-class OEM emitter"
+   },
+   "cct_notes": [],
+   "tldr": "Domed cool-white flood emitter."
   },
   {
    "id": 88,
@@ -1691,7 +1907,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Domed small round-die emitter in the XP footprint, a step down from the SST-20 with a tidier beam."
   },
   {
    "id": 96,
@@ -1738,7 +1961,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "legacy",
+    "note": "The SBT90.2 does more with less power"
+   },
+   "cct_notes": [],
+   "tldr": "One of the largest single LED chips ever: huge output but very low efficiency (about 45 lm/W at 28 A)."
   },
   {
    "id": 18,
@@ -1817,7 +2047,23 @@
    "cd_lo": 20000.0,
    "cd_hi": 35000.0,
    "throw_lo": 280.0,
-   "throw_hi": 375.0
+   "throw_hi": 375.0,
+   "beam": 2,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "2700–4000K EasyWhite",
+     "text": "The 90 CRI options live here"
+    },
+    {
+     "label": "HI vs HD",
+     "text": "The HI's smaller source roughly doubles intensity vs the domed HD"
+    }
+   ],
+   "tldr": "The go-to for high sustained output."
   },
   {
    "id": 19,
@@ -1905,7 +2151,19 @@
    "cd_lo": 25000.0,
    "cd_hi": 40000.0,
    "throw_lo": 315.0,
-   "throw_hi": 400.0
+   "throw_hi": 400.0,
+   "beam": 3,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "Tint",
+     "text": "Bin lottery — 90 CRI versions exist but cost output"
+    }
+   ],
+   "tldr": "Compact quad-die workhorse; very efficient with decent throw, though tint is a bin lottery."
   },
   {
    "id": 20,
@@ -1956,7 +2214,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "12V version sought for its 4000K tint"
+   },
+   "cct_notes": [],
+   "tldr": "Domeless 3535 multi-die; the older 12V XHP35 HI is still sought after for its 4000K tint."
   },
   {
    "id": 21,
@@ -2026,7 +2291,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "legacy",
+    "note": "Mostly superseded by the 519A, SFT-40 and NTG35"
+   },
+   "cct_notes": [],
+   "tldr": "2700K–6500K by order code; Convoy sells 3000K, 4000K, 5000K and 6500K."
   },
   {
    "id": 22,
@@ -2083,7 +2355,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "oem",
+    "note": "Common in Fenix/Olight-class lights; enthusiasts avoid the tint"
+   },
+   "cct_notes": [],
+   "tldr": "Efficient and very common in mainstream brands; domed, with poor colour and noticeable tint shift."
   },
   {
    "id": 23,
@@ -2155,7 +2434,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "Few enthusiast tests yet"
+   },
+   "cct_notes": [],
+   "tldr": "Cree's round-die throw parts — a direct answer to the SFT-25R / SFT-40 class."
   },
   {
    "id": 24,
@@ -2218,7 +2504,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "legacy",
+    "note": "Displaced by the XP-G3/G4; still loved in micro triples"
+   },
+   "cct_notes": [],
+   "tldr": "The tiny-die classic for micro quads and triples."
   },
   {
    "id": 25,
@@ -2285,7 +2578,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "staple",
+    "note": "2021 flip-chip redesign; same XM footprint"
+   },
+   "cct_notes": [],
+   "tldr": "The classic budget flooder — a flood LED, not a thrower; dedoming gains under 10%."
   },
   {
    "id": 26,
@@ -2346,7 +2646,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "legacy",
+    "note": "Superseded by the XHP50.3 / XHP70.3 HI"
+   },
+   "cct_notes": [],
+   "tldr": "Older domed XHP generation: very bright but floody, with visible rainbow tint shift."
   },
   {
    "id": 27,
@@ -2407,7 +2714,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": "Mega-flood hosts"
+   },
+   "cct_notes": [],
+   "tldr": "Ultra-high-lumen domed multi-die parts for mega-flooders; mediocre colour."
   },
   {
    "id": 82,
@@ -2457,7 +2771,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "oem",
+    "note": "Found in the Fenix TK17"
+   },
+   "cct_notes": [],
+   "tldr": "The high-density sibling of the XHP50.3 HI: Cree rates it for lumens rather than throw, so expect a wider, less intense hotspot."
   },
   {
    "id": 90,
@@ -2506,7 +2827,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Big die, less pleasant beam"
+   },
+   "cct_notes": [],
+   "tldr": "Higher-current XM-L2 successor, but the big die gives a less pleasant beam in optics."
   },
   {
    "id": 97,
@@ -2553,7 +2881,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "legacy",
+    "note": "Superseded; still in budget lights"
+   },
+   "cct_notes": [],
+   "tldr": "Domed high-density XP-L: floodier and slightly brighter than the domeless XP-L HI."
   },
   {
    "id": 28,
@@ -2665,7 +3000,14 @@
    "cd_lo": 90000.0,
    "cd_hi": 110000.0,
    "throw_lo": 600.0,
-   "throw_hi": 660.0
+   "throw_hi": 660.0,
+   "beam": 5,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Unmatched pencil-beam throw for its size: 1 mm² die, cool white, plus a full set of colour bins."
   },
   {
    "id": 29,
@@ -2758,7 +3100,14 @@
    "cd_lo": 75000.0,
    "cd_hi": 95000.0,
    "throw_lo": 550.0,
-   "throw_hi": 615.0
+   "throw_hi": 615.0,
+   "beam": 4,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Handles more current than W1 for a wider, brighter hotspot; white is 5700K only."
   },
   {
    "id": 30,
@@ -2844,7 +3193,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "2 mm²-class die in the bigger Oslon Boost package, which runs cooler and takes more overdrive; common in Convoy throwers."
   },
   {
    "id": 31,
@@ -2899,7 +3255,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "oem",
+    "note": "Budget/mainstream; poor colour rendering"
+   },
+   "cct_notes": [],
+   "tldr": "Domed, mainly cool white; competes with the XP-L HD in budget/mainstream lights with poor colour rendering."
   },
   {
    "id": 95,
@@ -2948,7 +3311,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 5,
+   "rep": {
+    "t": "legacy",
+    "note": "The classic pre-W1 thrower LED"
+   },
+   "cct_notes": [],
+   "tldr": "The classic pre-W1 long-range thrower LED (LUW HWQP): tiny flat die with very high luminance at modest current ( BLF test )."
   },
   {
    "id": 32,
@@ -3025,7 +3395,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "A user described it as a cross between an SFT40 and an SFT60."
   },
   {
    "id": 33,
@@ -3097,7 +3474,23 @@
    "cd_lo": 65000.0,
    "cd_hi": 90000.0,
    "throw_lo": 510.0,
-   "throw_hi": 600.0
+   "throw_hi": 600.0,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "21700 hosts such as the M21H"
+   },
+   "cct_notes": [
+    {
+     "label": "4000K",
+     "text": "Nicely negative-Duv"
+    },
+    {
+     "label": "3000K",
+     "text": "Slightly green"
+    }
+   ],
+   "tldr": "Sits on or below the Planckian locus (no green push); fits 21700 hosts."
   },
   {
    "id": 34,
@@ -3170,7 +3563,19 @@
    "cd_lo": 10000.0,
    "cd_hi": 18000.0,
    "throw_lo": 200.0,
-   "throw_hi": 270.0
+   "throw_hi": 270.0,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": "60–80 A with serious cooling"
+   },
+   "cct_notes": [
+    {
+     "label": "5000K R9080",
+     "text": "Praised for a neutral tint"
+    }
+   ],
+   "tldr": "Huge 10,000 lm flood with a wide, clean beam; 60–80 A only with excellent cooling."
   },
   {
    "id": 35,
@@ -3257,7 +3662,23 @@
    "cd_lo": 30000.0,
    "cd_hi": 45000.0,
    "throw_lo": 345.0,
-   "throw_hi": 425.0
+   "throw_hi": 425.0,
+   "beam": 2,
+   "rep": {
+    "t": "staple",
+    "note": "Emisar/Noctigon hotrod"
+   },
+   "cct_notes": [
+    {
+     "label": "6500K",
+     "text": "Decent tint"
+    },
+    {
+     "label": "5500K",
+     "text": "Slightly green"
+    }
+   ],
+   "tldr": "Common Emisar / Noctigon hotrod emitter."
   },
   {
    "id": 36,
@@ -3319,7 +3740,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "San'an's 3V XHP50.3 HI competitor; high CCT with a clean cool tint."
   },
   {
    "id": 37,
@@ -3372,7 +3800,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Competes with the XHP50 at a lower Vf; very high CCT with a clean tint."
   },
   {
    "id": 38,
@@ -3421,7 +3856,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Extremely bright 5050 that competes with the XHP50.2; very high CCT (≈6000K) ( BLF Guide )."
   },
   {
    "id": 39,
@@ -3484,7 +3926,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Nine-die 7070 that sits between the XHP70.2 and the SBT90.2; large colour variation and generally greenish."
   },
   {
    "id": 40,
@@ -3542,7 +3991,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Very bright with more throw than the SFH-55; dead neutral tint ( BLF Guide )."
   },
   {
    "id": 41,
@@ -3605,7 +4061,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Huge domeless 16-die LED, easily swapped with the SBT90.2; brighter but less throwy."
   },
   {
    "id": 42,
@@ -3667,7 +4130,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Massive 25-die surface."
   },
   {
    "id": 43,
@@ -3733,7 +4203,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": "Gigantic footprint"
+   },
+   "cct_notes": [],
+   "tldr": "64-die monster emitter; gigantic footprint makes it very niche."
   },
   {
    "id": 44,
@@ -3828,7 +4305,19 @@
    "cd_lo": 20000.0,
    "cd_hi": 30000.0,
    "throw_lo": 280.0,
-   "throw_hi": 345.0
+   "throw_hi": 345.0,
+   "beam": 3,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "Batches",
+     "text": "Newer run reportedly less rosy than early batches"
+    }
+   ],
+   "tldr": "Beam looks like a dedomed 519A with a slightly larger corona."
   },
   {
    "id": 45,
@@ -3905,7 +4394,14 @@
    "cd_lo": 45000.0,
    "cd_hi": 65000.0,
    "throw_lo": 425.0,
-   "throw_hi": 510.0
+   "throw_hi": 510.0,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "Very inefficient; tint-first throwers"
+   },
+   "cct_notes": [],
+   "tldr": "Very high luminance for a warm high-CRI LED, but very inefficient (~31 lm/W at max)."
   },
   {
    "id": 46,
@@ -3979,7 +4475,14 @@
    "cd_lo": 20000.0,
    "cd_hi": 35000.0,
    "throw_lo": 280.0,
-   "throw_hi": 375.0
+   "throw_hi": 375.0,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Needs its own board"
+   },
+   "cct_notes": [],
+   "tldr": "XHP70.3 HI footprint, wired differently, so it needs its own board; less flux and luminance than the XHP70.3 HI."
   },
   {
    "id": 47,
@@ -4045,7 +4548,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": "Flood only, no throw"
+   },
+   "cct_notes": [],
+   "tldr": "Very large emitting area (~71 mm²) means flood only, no throw."
   },
   {
    "id": 48,
@@ -4138,7 +4648,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "staple",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "Tint",
+     "text": "Rosier than a 219B — sometimes too rosy"
+    }
+   ],
+   "tldr": "Hank's house high-CRI 3535, \"free of greenish tint\"."
   },
   {
    "id": 49,
@@ -4227,7 +4749,14 @@
    "cd_lo": 25000.0,
    "cd_hi": 40000.0,
    "throw_lo": 315.0,
-   "throw_hi": 400.0
+   "throw_hi": 400.0,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Hank's XHP50.3 HI alternative"
+   },
+   "cct_notes": [],
+   "tldr": "Hank's high-CRI XHP50.3 HI alternative: similar cd/lm, slightly fewer lumens."
   },
   {
    "id": 50,
@@ -4317,7 +4846,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Domeless quad-die \"HI\" part with Ra ~95 and tight Duv bins."
   },
   {
    "id": 51,
@@ -4375,7 +4911,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Only sold in lights"
+   },
+   "cct_notes": [],
+   "tldr": "Domed version of the FFL5009R, with a wider, smoother beam and less throw (170–190 m vs 175–220 m in the same light)."
   },
   {
    "id": 52,
@@ -4429,7 +4972,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Out of stock"
+   },
+   "cct_notes": [
+    {
+     "label": "Reality check",
+     "text": "Measured 4024K, Duv +0.001 — not the listed 3500K; flux and tint drifted above 8 A"
+    }
+   ],
+   "tldr": "Advertised as a round 3500K die; the test found a masked rectangular flip chip measuring 4024K. Stay below 5–6 A."
   },
   {
    "id": 53,
@@ -4477,7 +5032,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Only sold in lights"
+   },
+   "cct_notes": [],
+   "tldr": "FireflyLite calls it \"a big upgrade\" on the FFL350RD: a round die with high CRI and better throw."
   },
   {
    "id": 54,
@@ -4525,7 +5087,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "Only sold in lights"
+   },
+   "cct_notes": [],
+   "tldr": "Claimed to throw further than the quad FFL505A in the same light (650 m vs 480 m)."
   },
   {
    "id": 55,
@@ -4583,7 +5152,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "Round-die high-CRI 7070, 4200K with a slightly rosy tint."
   },
   {
    "id": 56,
@@ -4639,7 +5215,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [],
+   "tldr": "5500K high-output thrower option, claimed at 1,080 m vs 915 m for the SBT90.2 option in the same light."
   },
   {
    "id": 57,
@@ -4721,7 +5304,23 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "budget",
+    "note": "Very cheap for a multi-die 5050"
+   },
+   "cct_notes": [
+    {
+     "label": "1800K",
+     "text": "PC-amber style"
+    },
+    {
+     "label": "3000–5000K",
+     "text": "Slightly rosy"
+    }
+   ],
+   "tldr": "Very cheap with a clean multi-die beam and a slightly rosy 3000K–5000K tint."
   },
   {
    "id": 58,
@@ -4798,7 +5397,14 @@
    "cd_lo": 12000.0,
    "cd_hi": 22000.0,
    "throw_lo": 220.0,
-   "throw_hi": 295.0
+   "throw_hi": 295.0,
+   "beam": 1,
+   "rep": {
+    "t": "budget",
+    "note": "Higher sustained output than XHP70.3 HI in Convoy lights"
+   },
+   "cct_notes": [],
+   "tldr": "High-power 3V flood/general-purpose competitor to the XHP70.3 HI, with higher sustained output in Convoy lights."
   },
   {
    "id": 59,
@@ -4862,7 +5468,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "cct_notes": [
+    {
+     "label": "Lab",
+     "text": "3208K, Duv +0.0015, turning redder as current rises"
+    }
+   ],
+   "tldr": "Lumenpioneer's round-die 3000K thrower; higher luminance than the FFL505A and XP-L HI."
   },
   {
    "id": 60,
@@ -4923,7 +5541,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "budget",
+    "note": "Convoy's round-die thrower"
+   },
+   "cct_notes": [],
+   "tldr": "Higher-current round-die thrower (4000K/5000K); tint close to the LHP531 ( Convoy )."
   },
   {
    "id": 61,
@@ -4973,7 +5598,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "budget",
+    "note": "SST-40 drop-in replacement"
+   },
+   "cct_notes": [
+    {
+     "label": "Batches",
+     "text": "Tint better than the SST-40 but varies"
+    }
+   ],
+   "tldr": "Budget 3000K/4000K drop-in replacement for the SST-40 ."
   },
   {
    "id": 62,
@@ -5053,7 +5690,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "Only cold-white high-CRI round-die glass"
+   },
+   "cct_notes": [
+    {
+     "label": "Batch lottery",
+     "text": "An earlier ~5500–6000K 70-CRI glass sample measured very green; supply unreliable"
+    }
+   ],
+   "tldr": "Round die under an AR glass cap with a near-on-BBL tint and a clean beam in reflectors and TIRs — essentially no direct competitor in cold-white high-CRI."
   },
   {
    "id": 63,
@@ -5109,7 +5758,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "legacy",
+    "note": "Outcompeted by the XHP70.3 HI and FFL707A"
+   },
+   "cct_notes": [
+    {
+     "label": "CRI top",
+     "text": "Extended-CRI tops at R9050, not R9080"
+    }
+   ],
+   "tldr": "Throws more than a domed XHP70 but has been outcompeted by the XHP70.3 HI and FFL707A."
   },
   {
    "id": 83,
@@ -5163,7 +5824,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "oem",
+    "note": "Only in Skilhunt lights"
+   },
+   "cct_notes": [],
+   "tldr": "Skilhunt's own quad-die flip-chip LED, 5000K high CRI."
   },
   {
    "id": 84,
@@ -5212,7 +5880,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "oem",
+    "note": "Only in Skilhunt lights"
+   },
+   "cct_notes": [],
+   "tldr": "Skilhunt's small-LES high-CRI LED: 5000K 95 CRI with high luminance, so it keeps more throw than a 519A."
   },
   {
    "id": 64,
@@ -5268,7 +5943,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "Convoy's premium UV option: clean 365 nm output with minimal visible purple."
   },
   {
    "id": 65,
@@ -5324,7 +6003,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "Budget 365 nm UV."
   },
   {
    "id": 66,
@@ -5378,7 +6061,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "High-power UV: ~1.3–1.4 W radiant at 1 A, pushed to ~3 A in high-power builds."
   },
   {
    "id": 67,
@@ -5424,7 +6111,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "UVC and UVB are hazardous to eyes and skin even at low power — don't look at the beam."
   },
   {
    "id": 68,
@@ -5480,7 +6171,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "Night-vision/covert IR."
   },
   {
    "id": 74,
@@ -5539,7 +6234,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "RGB emitter on a dedicated board for full-colour setups ( Convoy Getian )."
   },
   {
    "id": 75,
@@ -5601,7 +6300,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "Long-standing standard for coloured channels in multi-channel builds."
   },
   {
    "id": 86,
@@ -5654,7 +6357,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "Seoul Viosys UV Z5, 365–367 nm, about 1 W radiant at up to 500 mA."
   },
   {
    "id": 87,
@@ -5707,7 +6414,11 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "High-power UV Z5 version: about 1.8 W radiant at 365–367 nm."
   },
   {
    "id": 76,
@@ -5781,7 +6492,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "budget",
+    "note": "Still a decent budget pick"
+   },
+   "cct_notes": [
+    {
+     "label": "Tint",
+     "text": "Tends green (\"dogfarts\"); bins vary"
+    }
+   ],
+   "tldr": "Cheap and floody with a big dome; tends green (\"dogfarts\") and bins vary."
   },
   {
    "id": 77,
@@ -5850,7 +6573,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "oem",
+    "note": "Budget Sofirn/Wurkkos lights"
+   },
+   "cct_notes": [
+    {
+     "label": "Tint",
+     "text": "90 CRI sample measured green (Duv +0.0055); 70 CRI bins have R9 below −25"
+    }
+   ],
+   "tldr": "Domed single-die flip chip, similar to the LH351D."
   },
   {
    "id": 78,
@@ -5913,7 +6648,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "staple",
+    "note": "The TS10 triple LED"
+   },
+   "cct_notes": [],
+   "tldr": "Tiny CSP, brighter than the E21A with slightly worse colour; popular in small triples."
   },
   {
    "id": 79,
@@ -5979,7 +6721,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Notable 1800K 80 CRI"
+   },
+   "cct_notes": [],
+   "tldr": "Domed with decent colour; notable 1800K 80 CRI version ( BLF Guide )."
   },
   {
    "id": 80,
@@ -6033,7 +6782,19 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "oem",
+    "note": "Nitecore in-house; very low CRI"
+   },
+   "cct_notes": [
+    {
+     "label": "Tint",
+     "text": "Green (positive Duv) — output over colour"
+    }
+   ],
+   "tldr": "Nitecore's in-house emitter: very high output, very low CRI, greenish."
   },
   {
    "id": 85,
@@ -6078,7 +6839,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "oem",
+    "note": "Acebeam X20-R"
+   },
+   "cct_notes": [],
+   "tldr": "LUXEON HL4X, the bigger sibling of the HL2X."
   },
   {
    "id": 89,
@@ -6128,7 +6896,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": "Rated only to 1 A"
+   },
+   "cct_notes": [],
+   "tldr": "Daylight high-CRI part: 6000–6500K with typ."
   },
   {
    "id": 93,
@@ -6175,7 +6950,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Needs its own board footprint"
+   },
+   "cct_notes": [],
+   "tldr": "Rare high-CRI part that is also efficient and powerful (rated 4.8 A) thanks to very low thermal resistance; needs its own board footprint ( BLF test )."
   },
   {
    "id": 94,
@@ -6222,7 +7004,14 @@
    "cd_lo": null,
    "cd_hi": null,
    "throw_lo": null,
-   "throw_hi": null
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Needs its own board footprint"
+   },
+   "cct_notes": [],
+   "tldr": "CSP emitter with high flux and a clean beam; Vf varies between samples."
   }
  ]
 }

@@ -167,8 +167,6 @@ main { min-width: 0; display: grid; gap: 12px; }
 .lh button[data-dir="-1"]::after { content: "↓"; opacity: 1; color: var(--accent); }
 .lh .r, .row .r { justify-self: end; text-align: right; }
 .cols > * { min-width: 0; }
-.c-bat .v { white-space: normal; }
-
 .row { padding: 13px 16px; border-bottom: 1px solid var(--line); cursor: pointer; position: relative; }
 .row:last-child { border-bottom: 0; border-radius: 0 0 var(--r) var(--r); }
 .row:hover { background: var(--sunken); }
@@ -242,7 +240,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .iconbtn svg { width: 16px; height: 16px; }
 .db { overflow: auto; flex: 1 1 auto; padding: 18px 20px 28px; display: grid; gap: 26px; align-content: start; }
 .df { padding: 12px 20px max(12px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); display: flex; gap: 10px; justify-content: flex-end; background: var(--panel); }
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
 .stat { background: var(--sunken); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; min-width: 0; }
 .stat span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
 .stat b { display: block; font: 700 20px/1.2 var(--f-display); margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -310,10 +308,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 .cfam span { padding: 2px 7px; border-radius: 6px; background: var(--sunken); border: 1px solid var(--line); font-size: 12px; }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1180px) {
-  .cols { --cols: 34px minmax(190px, 2fr) minmax(130px, 1.3fr) 84px 80px 62px 104px; }
-  .c-bat { display: none !important; }
-}
 @media (max-width: 1000px) {
   .app { grid-template-columns: minmax(0, 1fr); }
   .fbtn { display: inline-flex; }
@@ -366,7 +360,8 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 }
 
 /* ---------- emitter-specific overrides ---------- */
-.cols { --cols: 34px minmax(190px, 2fr) minmax(140px, 1.3fr) 96px minmax(120px, 1fr) 92px 112px 70px; }
+.cols { --cols: 34px minmax(190px, 2fr) minmax(140px, 1.3fr) 96px 104px 92px 112px 70px; }
+.c-beam .sub2 { margin-top: 3px; }
 .badge.r9 { color: var(--ok); background: color-mix(in srgb, var(--ok) 13%, transparent); }
 .badge.rosy { color: #b4366b; background: color-mix(in srgb, #e93d82 13%, transparent); }
 :root[data-theme="dark"] .badge.rosy { color: #f59bc0; }
@@ -374,7 +369,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 .badge.basis { color: var(--muted); background: var(--sunken); border: 1px solid var(--line); }
 .cri { font: 600 15px/1.2 var(--f-body); }
 .cri small { font-weight: 400; color: var(--muted); font-size: 12px; }
-.pkg .v { font-size: 13.5px; }
 .cdlm { font: 600 14px/1.2 var(--f-body); }
 
 /* panels above the list: beam map + how to read */
@@ -432,8 +426,46 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 .srcs a { font-size: 12.5px; padding: 4px 9px; border-radius: 7px; background: var(--sunken); border: 1px solid var(--line); text-decoration: none; }
 .srcs a:hover { border-color: var(--accent-line); }
 
+/* ---------- decisions: verdict, reputation, beam, tint notes, host picker ---------- */
+.tldr { color: var(--muted); font-size: 12px; line-height: 1.35; margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.badge.staple { color: var(--ok); background: color-mix(in srgb, var(--ok) 13%, transparent); }
+.badge.legacy { color: var(--warn); background: var(--warn-bg); }
+.badge.budget, .badge.niche, .badge.oem { color: var(--ink-2); background: var(--sunken); border: 1px solid var(--line); }
+.badge.pr { color: var(--accent); background: var(--accent-soft); border: 1px solid var(--accent-line); }
+.beam { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.beam i { display: inline-flex; gap: 2.5px; flex: none; }
+.beam i b { width: 6px; height: 6px; border-radius: 50%; background: var(--line-2); }
+.beam i b.on { background: var(--accent); }
+.beam em { font-style: normal; font-size: 12.5px; font-weight: 500; color: var(--ink-2); }
+.ccs { display: grid; gap: 6px; }
+.cc { display: flex; gap: 9px; align-items: baseline; font-size: 13px; border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; background: var(--sunken); }
+.cc b { font-size: 11.5px; white-space: nowrap; color: var(--accent-ink); background: var(--accent); border-radius: 5px; padding: 2px 7px; }
+.cc span { color: var(--ink-2); }
+.peer { all: unset; cursor: pointer; font-weight: 700; color: var(--accent); border-bottom: 1px dashed var(--accent-line); }
+.peer:hover { border-bottom-style: solid; }
+.peer:focus-visible { outline: 2px solid var(--accent); }
+.hostpick input { width: 100%; border: 1px solid var(--line); background: var(--sunken); border-radius: 8px; padding: 9px 12px; font-size: 16px; }
+.hbanner { display: grid; gap: 10px; }
+.hl { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; }
+.hl b { font: 700 16px/1.2 var(--f-display); }
+.hl small { color: var(--muted); }
+.hbucket { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.hbucket > b { font: 600 11.5px/1.4 var(--f-body); color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; min-width: 108px; }
+.hchip { all: unset; cursor: pointer; display: inline-flex; gap: 7px; align-items: baseline; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--accent-line); background: var(--accent-soft); font-size: 13px; font-weight: 600; }
+.hchip small { font: 600 11px/1 var(--f-body); color: var(--muted); }
+.hchip:hover { border-color: var(--accent); }
+.hchip:focus-visible { outline: 2px solid var(--accent); }
+.hacts { display: flex; gap: 8px; flex-wrap: wrap; }
+.rec { border: 1px solid var(--accent-line); background: var(--accent-soft); border-radius: var(--r); padding: 13px 16px; display: grid; gap: 9px; box-shadow: var(--shadow-sm); }
+.rec[hidden] { display: none; }
+.rec .rt { font: 700 15px/1.3 var(--f-display); }
+.rec .rt small { font: 400 12.5px var(--f-body); color: var(--muted); margin-left: 6px; }
+.rec .rp { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.rec .rp .star { color: var(--accent); font-weight: 700; }
+.rec .rw { font-size: 12.5px; color: var(--ink-2); display: grid; gap: 3px; }
+
 @media (max-width: 1180px) {
-  .cols { --cols: 34px minmax(180px, 2fr) minmax(130px, 1.3fr) 90px 88px 104px 64px; }
+  .cols { --cols: 34px minmax(170px, 1.9fr) minmax(120px, 1.2fr) 72px 96px 84px 96px 56px; }
 }
 @media (max-width: 860px) {
   .row.cols { grid-template-columns: 34px repeat(3, minmax(0, 1fr)); }
@@ -443,6 +475,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   .c-lm { grid-column: 2; grid-row: 3; } .c-cd { grid-column: 3; grid-row: 3; } .c-cdlm { grid-column: 4; grid-row: 3; }
   .c-lm, .c-cd, .c-cdlm { justify-self: start !important; text-align: left !important; }
   .c-lm .meter, .c-cd .meter { margin-left: 0; }
+  .c-beam { grid-column: 2 / -1; grid-row: 4; }
   .map .pt text { display: none; }
   .calc label { grid-template-columns: minmax(0, 1fr) 60px; }
   .calc label span { grid-column: 1 / -1; }
@@ -490,6 +523,13 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </select>
     </div>
 
+    <div id="rec" class="rec" hidden></div>
+
+    <details class="panel" id="hostPanel" data-panel="host">
+      <summary>Choosing for a flashlight <small>pick a light to see only the LED options it's sold with, grouped by what they're for</small></summary>
+      <div class="pb" id="hostBody"><span class="na" style="font-size:13px">Loading the light list…</span></div>
+    </details>
+
     <details class="panel" id="mapPanel" data-panel="map" open>
       <summary>Beam map <small>Output vs. typical candela in a 35–40 mm reflector, for the emitters the reference rates</small></summary>
       <div class="pb"><div class="map" id="map"></div>
@@ -505,6 +545,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         <div><dt>Footprint &amp; voltage</dt><dd><code>3535</code> = 3.5 × 3.5 mm, and so on. 3V / 6V / 12V comes from how the dies are wired, and it must match the board (MCPCB) and driver.</dd></div>
         <div><dt>Candela &amp; throw</dt><dd>Peak beam intensity, which depends heavily on the reflector. ANSI throw = 2 × √cd. Doubling reflector diameter gives about 4× candela, which works out to about 2× throw.</dd></div>
         <div><dt>cd per lumen</dt><dd>Candela ÷ lumens for the same 35–40 mm reflector. A proxy for luminance: small, domeless, dense dies score high. Read it as a ranking.</dd></div>
+        <div><dt>Beam (dots)</dt><dd>A qualitative scale for beam shape, not a measurement: <b>Flood</b> = wall of light, <b>Floody</b>, <b>Balanced</b> = hotspot with spill, <b>Throwy</b>, <b>Pencil</b> = razor-thin hotspot. Read from luminance and die size.</dd></div>
       </dl></div>
     </details>
 
@@ -516,14 +557,14 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         <button type="button" data-sort="_name">Emitter</button>
         <span>Tints</span>
         <button type="button" data-sort="cri_max">CRI</button>
-        <span class="c-bat">Package</span>
+        <span class="c-beam">Beam</span>
         <button type="button" class="r" data-sort="lm_hi">Output</button>
         <button type="button" class="r" data-sort="cd_mid">Candela</button>
         <button type="button" class="r" data-sort="cdlm">cd/lm</button>
       </div>
       <div id="rows"><div class="empty">Loading emitters…</div></div>
     </div>
-    <footer id="foot">Figures are approximate. They come from manufacturer datasheets where available, otherwise from vendor listings or enthusiast tests, and each emitter is labelled with where its numbers come from. Candela is a rough ranking for a typical 35–40 mm reflector (±50% with reflector, driver and bin). Data: <code>emitters.json</code>, built from the emitter reference .md by <code>build_emitters.py</code>.</footer>
+    <footer id="foot">Figures are approximate. They come from manufacturer datasheets where available, otherwise from vendor listings or enthusiast tests, and each emitter is labelled with where its numbers come from. Candela is a rough ranking for a typical 35–40 mm reflector (±50% with reflector, driver and bin). Data: <code>emitters.json</code> — the emitter reference plus measured additions, verdicts and beam annotations (<code>enrich_emitters.py</code>); the "choosing for a flashlight" picker reads <code>../flashlights/lights.clean.json</code>.</footer>
   </main>
 </div>
 
@@ -551,7 +592,10 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const fmt = n => Math.round(n).toLocaleString("en-US");
   const kcd = n => n >= 1e6 ? (n / 1e6).toFixed(1) + " Mcd" : Math.round(n / 1000) + "k";
-  const MAXPICK = 4, REF_MM = 37.5;
+  const MAXPICK = 8, REF_MM = 37.5;
+  const BEAM_NAMES = ["", "Flood", "Floody", "Balanced", "Throwy", "Pencil"];
+  const BEAM_DESC = ["", "wall of light, no real hotspot", "wide, even light", "hotspot with usable spill", "punchy hotspot", "razor-thin pencil beam"];
+  const REP_LABEL = { staple: "Staple", budget: "Budget pick", niche: "Niche", legacy: "Legacy", oem: "Brand OEM" };
   const ICON = {
     prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>',
     next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>',
@@ -589,9 +633,10 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   const LAB = { uses: "Use", lights: "Light", cris: "CRI", makers: "Maker", fps: "Footprint", volts: "Voltage", basis: "Figures" };
   const NUMS = [["lmin", "Lumens ≥"], ["lmax", "Lumens ≤"], ["cdmin", "Candela ≥"], ["crimin", "CRI ≥"]];
   const SETS = Object.keys(FACETS).concat("feats");
-  const blank = () => ({ q: "", ...Object.fromEntries(SETS.map(k => [k, new Set()])), ...Object.fromEntries(NUMS.map(([k]) => [k, ""])) });
+  const blank = () => ({ q: "", host: null, ...Object.fromEntries(SETS.map(k => [k, new Set()])), ...Object.fromEntries(NUMS.map(([k]) => [k, ""])) });
   let famsOf = {}, idOf = () => null;
   let F = blank(), sortK = null, sortDir = 1, picks = [], data = [], byId = new Map(), view = [], openSecs = null, openPanels = null, showAll = {};
+  let lightsData = null, lightById = new Map(), POP = new Map(), hostIds = new Set(), hostRank = new Map(), HOST_PRICE = new Map(), USE_HINTS = {}, pendingFor = null;
   const VALS = {};
 
   try {
@@ -604,6 +649,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   function pass(e, skip) {
     for (const k of Object.keys(FACETS)) if (k !== skip && F[k].size && !FACETS[k](e).some(v => F[k].has(v))) return false;
     if (skip !== "feats") for (const f of F.feats) if (!FEAT[f][2](e)) return false;
+    if (F.host != null && !hostIds.has(e.id)) return false;
     const lmin = numF("lmin"), lmax = numF("lmax"), cdmin = numF("cdmin"), crimin = numF("crimin");
     if (lmin != null && !(e.lm_hi >= lmin)) return false;
     if (lmax != null && !(e.lm_lo != null && e.lm_lo <= lmax)) return false;
@@ -616,6 +662,8 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   function results() {
     let out = data.filter(e => pass(e));
     if (!sortK && F.uses.size) { const t = e => Math.min(...[...F.uses].map(g => e._tier[g] || 9)); out = out.slice().sort((a, b) => t(a) - t(b)); }
+    if (F.host != null) out = out.slice().sort((a, b) => ((hostIds.has(b.id) ? 0 : 1) - (hostIds.has(a.id) ? 0 : 1)) ||
+      (!sortK && F.uses.size ? (Math.min(...[...F.uses].map(g => a._tier[g] || 9), 9) - Math.min(...[...F.uses].map(g => b._tier[g] || 9), 9)) : (hostRank.get(a.id) ?? 1e9) - (hostRank.get(b.id) ?? 1e9)));
     if (sortK) out = out.slice().sort((a, b) => {
       const x = a[sortK], y = b[sortK];
       if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
@@ -643,9 +691,24 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     return e.colours.length ? e.colours.filter(c => c !== "RGB").join(", ") || "RGB" : e.kind === "White" ? "CCT not stated" : e.type_label;
   }
   const criText = e => e.cri_max == null ? "" : e.cri_max === 65 ? "<70" : e.cri_min === e.cri_max ? `${e.cri_max}` : `${e.cri_min}–${e.cri_max}`;
-  const badges = e => (e.r9080 ? `<span class="badge r9">R9080</span>` : "") + (e.rosy ? `<span class="badge rosy">Rosy</span>` : "") +
+  const badges = e => (e.rep ? `<span class="badge ${e.rep.t}"${e.rep.note ? ` title="${esc(e.rep.note)}"` : ""}>${REP_LABEL[e.rep.t]}</span>` : "") +
+    (e.r9080 ? `<span class="badge r9">R9080</span>` : "") + (e.rosy ? `<span class="badge rosy">Rosy</span>` : "") +
     (e.unavailable ? `<span class="badge oos">Unavailable</span>` : "");
-  const pkg = e => [e.footprints.join(" / "), e.voltages.join("/")].filter(Boolean).join(" · ");
+  const hostPriceBadge = e => { if (F.host == null) return ""; const fam = (famsOf[e.id] || []).find(f => HOST_PRICE.has(f)); return fam ? `<span class="badge pr" title="Price for this option on the picked light">${esc(HOST_PRICE.get(fam))}</span>` : ""; };
+  function beamPill(e) {
+    const dots = Array.from({ length: 5 }, (_, i) => `<b${i < e.beam ? ' class="on"' : ""}></b>`).join("");
+    return `<span class="beam" title="Beam: ${BEAM_NAMES[e.beam]} — ${BEAM_DESC[e.beam]}"><i>${dots}</i><em>${BEAM_NAMES[e.beam]}</em></span>`;
+  }
+  const beamCell = e => e.beam == null ? `<span class="na">—</span>` : beamPill(e) + (popOf(e) ? `<div class="sub2">in ${fmt(popOf(e))} light${popOf(e) === 1 ? "" : "s"}</div>` : "");
+  const popOf = e => POP.get(e.id) || 0;
+  function peerfy(htmlStr) {
+    if (!htmlStr) return "";
+    const cur = +$("#drawer").dataset.id;
+    return htmlStr.replace(/<b>([^<]+)<\/b>/g, (m, nm) => {
+      const id = idOf(nm);
+      return id == null || id === cur ? m : `<button type="button" class="peer" data-peer="${id}">${nm}</button>`;
+    });
+  }
 
   /* ---------- facets ---------- */
   function sec(id, title, body, on = 0) {
@@ -716,16 +779,20 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const meta = [e.code, e.kind !== "White" ? e.type_label : "", e.domeless ? "domeless" : ""].filter(Boolean).map(esc).join(" · ");
     return `<div class="row cols${picked ? " picked" : ""}" data-id="${e.id}" tabindex="0" role="button" aria-label="${esc(name(e))}, open details">
       <div class="c-pick"><label class="pick" title="${picked ? "Remove from compare" : full ? `Compare holds ${MAXPICK}` : "Add to compare"}"><input type="checkbox" data-pick="${e.id}" ${picked ? "checked" : ""} ${!picked && full ? "disabled" : ""} aria-label="Compare ${esc(name(e))}"></label></div>
-      <div class="c-light"><div class="eyebrow">${esc(e.maker)}</div><div class="name">${esc(e.name)}${badges(e)}</div>${meta ? `<div class="meta">${meta}</div>` : ""}</div>
+      <div class="c-light"><div class="eyebrow">${esc(e.maker)}</div><div class="name">${esc(e.name)}${badges(e)}${hostPriceBadge(e)}</div>${meta ? `<div class="meta">${meta}</div>` : ""}${e.tldr ? `<div class="tldr">${esc(e.tldr)}</div>` : ""}</div>
       <div class="c-emit"><div class="strip"><span class="dots">${tintDots(e)}</span><span class="range">${esc(tintText(e))}</span></div>${e._uses.length ? `<div class="fams">${e._uses.slice(0, 2).map(g => (e._tier[g] === 1 ? "★ " : "") + esc(g)).join(" · ")}${e._uses.length > 2 ? ` <span class="more">+${e._uses.length - 2}</span>` : ""}</div>` : ""}</div>
       <div class="c-cri" data-l="CRI">${e.cri_max != null ? `<div class="cri">${esc(criText(e))}</div>` : `<span class="na">—</span>`}</div>
-      <div class="c-bat pkg"><div class="v">${esc(pkg(e)) || `<span class="na">—</span>`}</div></div>
+      <div class="c-beam" data-l="Beam">${beamCell(e)}</div>
       <div class="c-lm r" data-l="Output">${e.lm_hi ? `<div class="v">${fmt(e.lm_hi)}<small> lm</small></div>${e.lm_lo !== e.lm_hi ? `<div class="sub2">from ${fmt(e.lm_lo)}</div>` : meter(e.lm_hi, 150, LM_MAX)}` : `<span class="na">—</span>`}</div>
       <div class="c-cd r" data-l="Candela">${e.cd_mid ? `<div class="v">${kcd(e.cd_mid)}<small> cd</small></div><div class="sub2">≈ ${fmt(2 * Math.sqrt(e.cd_mid))} m</div>` : `<span class="na">—</span>`}</div>
       <div class="c-cdlm r" data-l="cd/lm">${e.cdlm ? `<div class="cdlm">${e.cdlm < 10 ? e.cdlm.toFixed(1) : fmt(e.cdlm)}</div>` : `<span class="na">—</span>`}</div>
     </div>`;
   }
   function render() {
+    if (F.host != null && !lightsData) {
+      $("#rows").innerHTML = `<div class="empty"><b>Loading the light list…</b><span>Needed for the “choosing for a flashlight” filter.</span></div>`;
+      renderActive(); renderTray(); return;
+    }
     view = results();
     const hc = view.filter(e => e.cri_max >= 90).length;
     $("#count").innerHTML = `<b>${view.length}</b> of ${data.length} emitters` + (view.length ? ` · <b>${hc}</b> with a 90+ CRI option · <b>${view.filter(e => e.cd_mid).length}</b> with a candela estimate` : "");
@@ -735,9 +802,91 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     document.querySelectorAll(".lh [data-sort]").forEach(b => b.dataset.dir = b.dataset.sort === sortK ? sortDir : "");
     const v = sortK ? `${sortK}:${sortDir}` : ""; const sel = $("#sort");
     sel.value = [...sel.options].some(o => o.value === v) ? v : "";
-    renderActive(); renderFacets(); renderTray(); renderMap();
+    renderActive(); renderFacets(); renderTray(); renderMap(); renderRec(); renderHost();
   }
   function update() { save(); render(); }
+
+  /* ---------- choosing for a flashlight ---------- */
+  const BUCKETS = [[0, "Best colour"], [1, "All-round"], [2, "Throw"], [3, "Output & flood"]];
+  const bucketOf = e => (e.cri_max != null && e.cri_max >= 90) ? 0 : (e.beam != null && e.beam >= 4) ? 2 : ((e.lm_hi || 0) >= 3000 || (e.beam != null && e.beam <= 2)) ? 3 : 1;
+  function famPriceText(l) {
+    const m = new Map();
+    l.emitters.forEach(g => g.tiers.forEach(t => t.leds.forEach(x => {
+      const p = x.price || t.price; if (!p) return;
+      const rank = p.kind === "incl" ? 0 : 1, cur = m.get(x.family);
+      if (!cur || rank < cur.rank || (rank === cur.rank && p.amount != null && (cur.amount == null || p.amount < cur.amount)))
+        m.set(x.family, { rank, amount: p.amount, kind: p.kind });
+    })));
+    const out = new Map();
+    m.forEach((p, fam) => out.set(fam, p.kind === "incl" ? "Included" : p.kind === "add" ? `+$${p.amount % 1 ? p.amount.toFixed(2) : p.amount}` : `from $${p.amount}`));
+    return out;
+  }
+  function refreshHost() {
+    hostIds = new Set(); hostRank = new Map(); HOST_PRICE = new Map();
+    if (F.host == null || !lightById.has(F.host)) { if (F.host != null) F.host = null; return; }
+    const l = lightById.get(F.host);
+    HOST_PRICE = famPriceText(l);
+    const seen = new Set(), matched = [];
+    l.led_families.forEach(f => { const id = idOf(f); if (id != null && !seen.has(id)) { seen.add(id); const e = byId.get(id); if (e) matched.push(e); } });
+    matched.forEach((e, i) => { hostIds.add(e.id); hostRank.set(e.id, bucketOf(e) * 100 + i); });
+  }
+  const findLight = s => {
+    const q = String(s || "").trim().toLowerCase(); if (!q || !lightsData) return null;
+    return lightsData.find(l => l._name === q) || lightsData.find(l => l._name.startsWith(q)) || lightsData.find(l => l._name.includes(q)) || null;
+  };
+  function setHost(label) {
+    if (!lightsData) { pendingFor = label; return; }
+    const l = findLight(label);
+    if (!l) { renderHost(`No light matches “${label}”`); return; }
+    F.host = l.id; refreshHost(); update();
+    $("#hostPanel").open = true;
+  }
+  function renderHost(err) {
+    const body = $("#hostBody");
+    if (!lightsData) { body.innerHTML = `<span class="na" style="font-size:13px">Loading the light list…</span>`; return; }
+    if (F.host == null) {
+      body.innerHTML = `<div class="hostpick"><input type="search" id="hostq" list="hostlist" placeholder="Type a light — e.g. Emisar D4K, Convoy M21B, Skilhunt H300…" aria-label="Pick a flashlight"><datalist id="hostlist">${lightsData.map(l => `<option value="${esc(l._name)}">`).join("")}</datalist></div>
+        <p class="blurb">Filters the index down to the emitters that light is actually sold with, shows each option's store upcharge, and groups the choices by what they're for.${err ? ` ${esc(err)}` : ""}</p>`;
+      return;
+    }
+    const l = lightById.get(F.host);
+    const matched = [...hostIds].map(id => byId.get(id)).filter(Boolean);
+    const buckets = matched.length ? BUCKETS.map(([b, label]) => {
+      const es = matched.filter(e => bucketOf(e) === b);
+      if (!es.length) return "";
+      return `<div class="hbucket"><b>${label}</b>${es.map(e => { const fam = (famsOf[e.id] || []).find(f => HOST_PRICE.has(f)); return `<button type="button" class="hchip" data-hostopen="${e.id}">${esc(e.name)}${fam ? `<small>${esc(HOST_PRICE.get(fam))}</small>` : ""}</button>`; }).join("")}</div>`;
+    }).join("") : "";
+    const acts = `<div class="hacts">${matched.length >= 2 ? `<button class="btn primary" type="button" data-act="cmpall" title="${matched.length > MAXPICK ? `Compare holds ${MAXPICK}` : "Open the comparison with every option"}">Compare all ${Math.min(matched.length, MAXPICK)}</button>` : ""}<button class="btn" type="button" data-act="hostclear">Show all ${data.length} emitters</button></div>`;
+    body.innerHTML = `<div class="hbanner"><div class="hl"><b>${esc(l.brand)} ${esc(l.model)}</b>${l.variant ? `<small>${esc(l.variant)}</small>` : ""}<small>${matched.length ? `${matched.length} of its ${l.led_families.length} LED options are in the reference — the list below is filtered to them` : "none of its LED options matched the reference"}</small></div>${buckets}${acts}</div>`;
+  }
+  /* ---------- recommendation banner ---------- */
+  function renderRec() {
+    const el = $("#rec");
+    if (F.uses.size !== 1) { el.hidden = true; el.innerHTML = ""; return; }
+    const goal = [...F.uses][0];
+    const tops = data.filter(e => e._tier[goal] === 1);
+    if (!tops.length) { el.hidden = true; return; }
+    const seen = new Set(), whys = [];
+    tops.forEach(e => { const b = e.best_for.find(x => x.goal === goal); if (b && b.why_html && !seen.has(b.why_html)) { seen.add(b.why_html); whys.push(`<div><b>${esc(name(e))}</b> — ${b.why_html}.</div>`); } });
+    el.innerHTML = `<div class="rt">Best for ${esc(goal)}${USE_HINTS[goal] ? `<small>${esc(USE_HINTS[goal])}</small>` : ""}</div>
+      <div class="rp"><span class="star">★</span>${tops.slice(0, 8).map(e => `<button type="button" class="hchip" data-recopen="${e.id}">${esc(e.name)}</button>`).join("")}</div>
+      ${whys.length ? `<div class="rw">${whys.slice(0, 3).join("")}</div>` : ""}`;
+    el.hidden = false;
+  }
+  /* ---------- flashlight data (lazy) ---------- */
+  function buildPop() {
+    POP = new Map();
+    lightsData.forEach(l => new Set(l.led_families).forEach(f => { const id = idOf(f); if (id != null) POP.set(id, (POP.get(id) || 0) + 1); }));
+  }
+  function loadLights() {
+    if (lightsData) { if (pendingFor) { const p = pendingFor; pendingFor = null; setHost(p); } return; }
+    fetch("../flashlights/lights.clean.json").then(r => r.json()).then(rows => {
+      lightsData = rows.map(r => ({ ...r, _name: `${r.brand} ${r.model} ${r.variant || ""}`.trim().toLowerCase() }));
+      lightById = new Map(lightsData.map(l => [l.id, l]));
+      buildPop(); refreshHost(); render();
+      if (pendingFor) { const p = pendingFor; pendingFor = null; setHost(p); }
+    }).catch(() => { lightsData = []; refreshHost(); render(); });
+  }
 
   /* ---------- beam map (lumens vs candela, log-log) ---------- */
   const W = 900, H = 330, PAD = { l: 58, r: 24, t: 14, b: 40 }, XR = [400, 14000], YR = [9000, 140000];
@@ -796,6 +945,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   }
   function openDrawer(id) {
     const e = byId.get(id); if (!e) return;
+    $("#drawer").dataset.id = id;
     const i = view.findIndex(x => x.id === id);
     const picked = picks.includes(id);
     const tintChips = e.ccts.map(k => `<span class="tc"><span class="dot" style="background:${cct(k)}"></span>${k}K</span>`).concat(e.colours.map(c => `<span class="tc"><span class="dot" style="background:${COLOUR[c] || "#888"}"></span>${esc(c)}</span>`)).join("");
@@ -820,11 +970,13 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
           <div class="stat"><span>Output</span><b>${e.lm_hi ? fmt(e.lm_hi) + "<small>lm</small>" : "—"}</b><em>${e.lm_lo && e.lm_lo !== e.lm_hi ? "from " + fmt(e.lm_lo) + " lm" : e.lm_hi ? "typical max" : "not rated"}</em></div>
           <div class="stat"><span>CRI</span><b>${criText(e) || "—"}</b><em>${e.r9080 ? "R9080 available" : e.cri_max >= 90 ? "high-CRI option" : e.cri_max ? "Ra" : "n/a"}</em></div>
           <div class="stat"><span>Candela</span><b>${e.cd_mid ? kcd(e.cd_mid) + "<small>cd</small>" : "—"}</b><em>${e.cd_mid ? "35–40 mm reflector" : "no estimate"}</em></div>
+          <div class="stat"><span>Beam</span><b>${e.beam != null ? BEAM_NAMES[e.beam] : "—"}</b><em>${e.beam != null ? BEAM_DESC[e.beam] : "colour / UV / IR"}</em></div>
           <div class="stat"><span>Throw</span><b>${e.cd_mid ? fmt(2 * Math.sqrt(e.cd_mid)) + "<small>m</small>" : "—"}</b><em>${e.cdlm ? e.cdlm.toFixed(e.cdlm < 10 ? 1 : 0) + " cd/lm" : "&nbsp;"}</em></div>
         </div>
-        <section class="sec"><h3>About</h3><p class="prose">${e.notes_html}</p></section>
+        <section class="sec"><h3>About</h3><p class="prose">${peerfy(e.notes_html)}</p></section>
+        ${e.cct_notes.length ? `<section class="sec"><h3>Tint &amp; bin notes</h3><div class="ccs">${e.cct_notes.map(c => `<div class="cc"><b>${esc(c.label)}</b><span>${esc(c.text)}</span></div>`).join("")}</div></section>` : ""}
         ${calcHtml(e)}
-        ${e.best_for.length ? `<section class="sec"><h3>Recommended for</h3><div class="picks2">${e.best_for.map(b => `<div><b>${esc(b.goal)}</b> <span class="badge ${b.tier === 1 ? "r9" : "mc"}">${b.tier === 1 ? "Top pick" : "Also good"}</span>${b.hint ? `<div class="why">${esc(b.hint)}</div>` : ""}<div class="why">${b.why_html}.</div><div class="why">Top picks: ${b.pick_html}${b.also_html ? `. Also good: ${b.also_html}` : ""}.</div></div>`).join("")}</div></section>` : ""}
+        ${e.best_for.length ? `<section class="sec"><h3>Recommended for</h3><div class="picks2">${e.best_for.map(b => `<div><b>${esc(b.goal)}</b> <span class="badge ${b.tier === 1 ? "r9" : "mc"}">${b.tier === 1 ? "Top pick" : "Also good"}</span>${b.hint ? `<div class="why">${esc(b.hint)}</div>` : ""}<div class="why">${peerfy(b.why_html)}.</div><div class="why">Top picks: ${peerfy(b.pick_html)}${b.also_html ? `. Also good: ${peerfy(b.also_html)}` : ""}.</div></div>`).join("")}</div></section>` : ""}
         <section class="sec"><h3>Specs</h3><dl class="spec">${specs.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl></section>
         ${e.sources.length ? `<section class="sec"><h3>Sources</h3><div class="srcs">${e.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join("")}</div></section>` : ""}
       </div>
@@ -856,10 +1008,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     ["Candela", e => e.cd_mid ? `<span class="big">${kcd(e.cd_mid)}<small>cd</small></span><div class="sub2">${range(e.cd_lo, e.cd_hi, kcd)} · 35–40 mm</div>` : "", e => e.cd_mid, "max", "Most intense"],
     ["Throw", e => e.cd_mid ? `<span class="big">${fmt(2 * Math.sqrt(e.cd_mid))}<small>m</small></span>` : "", e => e.cd_mid, "max", "Farthest"],
     ["cd per lumen", e => e.cdlm ? `${e.cdlm.toFixed(e.cdlm < 10 ? 1 : 0)}` : "", e => e.cdlm, "max", "Throwiest"],
+    ["Beam character", e => e.beam != null ? beamPill(e) : ""],
     ["Light"],
     ["Tints", e => swatches(e).length ? `<div class="strip"><span class="dots">${tintDots(e, 12)}</span><span class="range">${esc(tintText(e))}</span></div>` : esc(tintText(e))],
     ["CRI detail", e => e.cri_html],
     ["Bins", e => [e.r9080 && "R9080", e.rosy && "Rosy option"].filter(Boolean).join(" · ")],
+    ["Tint & bin notes", e => e.cct_notes?.length ? e.cct_notes.map(c => `<b>${esc(c.label)}</b> ${esc(c.text)}`).join("<br>") : ""],
     ["Beam", e => e.candela[0]?.beam_html || ""],
     ["Recommended for", e => e.best_for.map(b => (b.tier === 1 ? "★ " : "") + esc(b.goal)).join("<br>")],
     ["Package"],
@@ -869,7 +1023,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     ["Output detail", e => e.lm_html],
     ["Data"],
     ["Figures from", e => BASIS[e.basis]],
-    ["Status", e => e.unavailable ? `<span class="badge oos">Unavailable</span>` : "Listed"],
+    ["Status", e => [e.rep ? `<b>${REP_LABEL[e.rep.t]}</b>${e.rep.note ? ` — ${esc(e.rep.note)}` : ""}` : "", e.unavailable ? `<span class="badge oos">Unavailable</span>` : ""].filter(Boolean).join(" ") || "Listed"],
   ];
   function renderCompare() {
     const rs = picks.map(id => byId.get(id)).filter(Boolean);
@@ -900,6 +1054,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const t = ev.target;
     const pk = t.closest("button[data-pick]"); if (pk) { togglePick(+pk.dataset.pick); return; }
     if (t.closest(".pick")) return; // the checkbox's change event handles it
+    const pe = t.closest("[data-peer]"); if (pe) { openDrawer(+pe.dataset.peer); return; }
+    const ro = t.closest("[data-recopen]"); if (ro) { openDrawer(+ro.dataset.recopen); return; }
+    const ho = t.closest("[data-hostopen]"); if (ho) { openDrawer(+ho.dataset.hostopen); return; }
     const cr = t.closest("[data-crow]");
     if (cr) { const box = cr.closest("[data-calc]"); box.querySelectorAll("[data-crow]").forEach(b => b.setAttribute("aria-pressed", b === cr)); updateCalc(box); return; }
     const lt = t.closest("[data-light]"); if (lt) { const v = lt.dataset.light; F.lights.has(v) ? F.lights.delete(v) : F.lights.add(v); update(); return; }
@@ -910,6 +1067,8 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (so) { const k = so.dataset.sort; if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = k === "_name" ? 1 : -1; } update(); return; }
     const act = t.closest("[data-act]")?.dataset.act;
     if (act === "clear") { F = blank(); $("#q").value = ""; update(); return; }
+    if (act === "hostclear") { F.host = null; refreshHost(); update(); return; }
+    if (act === "cmpall") { const ids = [...hostIds].filter(x => byId.has(x)); if (ids.length >= 2) { picks = ids.slice(0, MAXPICK); save(); render(); renderCompare(); $("#cmpdlg").showModal(); } return; }
     if (act === "fopen") { document.body.classList.add("fopen"); return; }
     if (act === "fclose") { document.body.classList.remove("fopen"); return; }
     if (act === "unpickall") { picks = []; save(); render(); return; }
@@ -928,12 +1087,14 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     else if (t.matches("[data-f]")) { const s = F[t.dataset.f]; t.checked ? s.add(t.value) : s.delete(t.value); update(); }
     else if (t.matches("[data-feat]")) { t.checked ? F.feats.add(t.dataset.feat) : F.feats.delete(t.dataset.feat); update(); }
     else if (t.id === "showall") $("#cmpbody table")?.classList.toggle("all", t.checked);
+    else if (t.id === "hostq") setHost(t.value);
   });
   document.addEventListener("input", ev => {
     const t = ev.target;
     if (t.id === "q") { F.q = t.value; update(); }
     else if (t.matches("[data-num]")) { F[t.dataset.num] = t.value; update(); }
     else if (t.matches("[data-mm]")) updateCalc(t.closest("[data-calc]"));
+    else if (t.id === "hostq") { const v = t.value.trim().toLowerCase(); const l = lightsData && lightsData.find(x => x._name === v); if (l) { F.host = l.id; refreshHost(); update(); $("#hostPanel").open = true; } }
   });
   document.addEventListener("toggle", ev => {
     if (ev.target.matches?.(".fsec")) { openSecs = [...document.querySelectorAll(".fsec")].filter(d => d.open).map(d => d.dataset.sec); save(); }
@@ -969,8 +1130,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
           (e.notes_html + " " + e.lm_html + " " + e.cri_html).replace(/<[^>]+>/g, " ")].join(" ").toLowerCase() };
     });
     byId = new Map(data.map(e => [e.id, e]));
+    USE_HINTS = Object.fromEntries((doc.uses || []).map(u => [u.goal, u.hint]));
     const norm = s => s.replace(/\s*\(.*?\)/g, "").trim().toLowerCase();
-    idOf = t => data.find(e => norm(e.name) === norm(t) || norm(`${e.maker} ${e.name}`) === norm(t))?.id ?? null;
+    idOf = t => { const n = norm(t); const e = data.find(e => norm(e.name) === n || e.alts.some(a => norm(a) === n) || norm(`${e.maker} ${e.name}`) === n); return e ? e.id : null; };
     Object.entries(info.leds || {}).forEach(([fam, inf]) => { const id = idOf(inf.title); if (id != null) (famsOf[id] ||= []).push(fam); });
     picks = picks.filter(id => byId.has(id));
     VALS.uses = doc.uses ? doc.uses.map(u => u.goal) : byCount(data.flatMap(e => e._uses)); VALS.makers = byCount(data.map(e => e.maker).filter(Boolean));
@@ -983,8 +1145,14 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (openPanels) document.querySelectorAll(".panel").forEach(d => d.open = openPanels.includes(d.dataset.panel));
     $("#q").value = F.q;
     render();
-    const want = new URLSearchParams(location.search).get("led");
+    const params = new URLSearchParams(location.search);
+    const wantUse = params.get("use");
+    if (wantUse) { if (VALS.uses.includes(wantUse)) { F.uses.add(wantUse); update(); } history.replaceState(null, "", location.pathname); }
+    const want = params.get("led");
     if (want) { history.replaceState(null, "", location.pathname); const id = idOf(want); if (id != null) openDrawer(id); }
+    const wantFor = params.get("for");
+    if (wantFor) { history.replaceState(null, "", location.pathname); loadLights(); setHost(wantFor); }
+    else setTimeout(loadLights, 350);
   }).catch(err => {
     console.error(err);
     $("#rows").innerHTML = `<div class="empty"><b>The emitter list didn't load</b><span>Open this page through a local web server (run <code>python3 -m http.server</code> in this folder), then reload.</span></div>`;

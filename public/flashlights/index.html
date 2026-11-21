@@ -783,6 +783,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </div>
       <div class="df">
         <button class="btn" type="button" data-pick="${r.id}" ${!picked && picks.length >= MAXPICK ? "disabled" : ""}>${picked ? "✓ In compare" : "Add to compare"}</button>
+        ${r.led_families.length ? `<a class="btn" href="../leds/?for=${encodeURIComponent([r.brand, r.model, r.variant].filter(Boolean).join(" "))}">Choose its LED →</a>` : ""}
         <a class="btn primary" href="${esc(r.url)}" target="_blank" rel="noopener">Open store page ${ICON.ext}</a>
       </div>`;
     $("#drawer").dataset.id = id;
