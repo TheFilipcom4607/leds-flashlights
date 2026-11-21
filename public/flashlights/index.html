@@ -966,7 +966,10 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     let refl = null;
     const white = l => !l.tints.length || l.tints.some(x => !x.colour);
     const opts = [], seen = new Set();
-    if (!multi) r.emitters[0].tiers.forEach(t => t.leds.forEach(l => { if (white(l) && !seen.has(l.family)) { seen.add(l.family); opts.push({ fam: l.family, e: emOf(l.family), cri: ledCri(l), price: t.price }); } }));
+    // A single unpriced tier is the light's fixed LED set (e.g. 1× SFT-70 + 12× SST-40), not a
+    // choice — only several tiers or a priced tier means the store lets you pick an emitter.
+    const tiers0 = r.emitters[0].tiers, choosable = tiers0.length > 1 || tiers0[0]?.price != null;
+    if (!multi && choosable) tiers0.forEach(t => t.leds.forEach(l => { if (white(l) && !seen.has(l.family)) { seen.add(l.family); opts.push({ fam: l.family, e: emOf(l.family), cri: ledCri(l), price: t.price }); } }));
     const tp = opts.length >= 2 ? topPick(r, opts) : null, topFam = tp?.pick.fam;
     const isTop = l => l.family === topFam && white(l);
     const makerOf = (l, e) => e?.maker && e.maker !== "Various" && l.maker && !l.maker.toLowerCase().startsWith(e.maker.toLowerCase()) ? e.maker : l.maker;
