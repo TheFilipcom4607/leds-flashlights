@@ -3328,7 +3328,7 @@
    ],
    "maker": "Convoy",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3402,7 +3402,8 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "A user described it as a cross between an SFT40 and an SFT60."
+   "tldr": "A user described it as a cross between an SFT40 and an SFT60.",
+   "manufactured_by": "San'an"
   },
   {
    "id": 33,
@@ -3412,7 +3413,7 @@
    ],
    "maker": "Convoy",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3490,7 +3491,8 @@
      "text": "Slightly green"
     }
    ],
-   "tldr": "Sits on or below the Planckian locus (no green push); fits 21700 hosts."
+   "tldr": "Sits on or below the Planckian locus (no green push); fits 21700 hosts.",
+   "manufactured_by": "San'an"
   },
   {
    "id": 34,
@@ -3500,7 +3502,7 @@
    ],
    "maker": "Convoy",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3575,7 +3577,8 @@
      "text": "Praised for a neutral tint"
     }
    ],
-   "tldr": "Huge 10,000 lm flood with a wide, clean beam; 60–80 A only with excellent cooling."
+   "tldr": "Huge 10,000 lm flood with a wide, clean beam; 60–80 A only with excellent cooling.",
+   "manufactured_by": "San'an"
   },
   {
    "id": 35,
@@ -3585,7 +3588,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3688,7 +3691,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3757,7 +3760,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3817,7 +3820,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3873,7 +3876,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -3943,7 +3946,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4008,7 +4011,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4078,7 +4081,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4147,7 +4150,7 @@
    ],
    "maker": "San'an",
    "code": "",
-   "section": "5. San'an Chips (incl. Convoy's Custom LEDs)",
+   "section": "5. San'an Chips",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4220,7 +4223,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Measured data",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Measured data",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4327,7 +4330,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Measured data",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Measured data",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4401,7 +4404,8 @@
     "note": "Very inefficient; tint-first throwers"
    },
    "cct_notes": [],
-   "tldr": "Very high luminance for a warm high-CRI LED, but very inefficient (~31 lm/W at max)."
+   "tldr": "Very high luminance for a warm high-CRI LED, but very inefficient (~31 lm/W at max).",
+   "manufactured_by": "Lumenpioneer"
   },
   {
    "id": 46,
@@ -4411,7 +4415,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Measured data",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Measured data",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4492,7 +4496,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Measured data",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Measured data",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4565,7 +4569,7 @@
    ],
    "maker": "Noctigon",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Measured data",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Measured data",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4674,7 +4678,7 @@
    ],
    "maker": "Noctigon",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Measured data",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Measured data",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4770,7 +4774,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — FireflyLite parts with seller data only",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — FireflyLite parts with seller data only",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4867,7 +4871,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — FireflyLite parts with seller data only",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — FireflyLite parts with seller data only",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4932,7 +4936,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — FireflyLite parts with seller data only",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — FireflyLite parts with seller data only",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -4998,7 +5002,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — FireflyLite parts with seller data only",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — FireflyLite parts with seller data only",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5053,7 +5057,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — FireflyLite parts with seller data only",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — FireflyLite parts with seller data only",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5108,7 +5112,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — FireflyLite parts with seller data only",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — FireflyLite parts with seller data only",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5173,7 +5177,7 @@
    ],
    "maker": "FireflyLite",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — FireflyLite parts with seller data only",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — FireflyLite parts with seller data only",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5236,7 +5240,7 @@
    ],
    "maker": "LMP",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5334,7 +5338,7 @@
    ],
    "maker": "LMP",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5418,7 +5422,7 @@
    ],
    "maker": "LMP",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5494,7 +5498,7 @@
    ],
    "maker": "LMP",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5562,7 +5566,7 @@
    ],
    "maker": "",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5624,7 +5628,7 @@
    ],
    "maker": "",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5716,7 +5720,7 @@
    ],
    "maker": "Getian",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5784,7 +5788,7 @@
    ],
    "maker": "Skilhunt",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5845,7 +5849,7 @@
    ],
    "maker": "Skilhunt",
    "code": "",
-   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian) — Other boutique / budget emitters",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
    "kind": "White",
    "type_label": "",
    "footprints": [
@@ -5948,7 +5952,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": null,
    "cct_notes": [],
    "tldr": "Convoy's premium UV option: clean 365 nm output with minimal visible purple."
@@ -6008,7 +6012,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": null,
    "cct_notes": [],
    "tldr": "Budget 365 nm UV."
@@ -6066,7 +6070,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": null,
    "cct_notes": [],
    "tldr": "High-power UV: ~1.3–1.4 W radiant at 1 A, pushed to ~3 A in high-power builds."
@@ -6116,7 +6120,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": null,
    "cct_notes": [],
    "tldr": "UVC and UVB are hazardous to eyes and skin even at low power — don't look at the beam."
@@ -6176,7 +6180,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": null,
    "cct_notes": [],
    "tldr": "Night-vision/covert IR."
@@ -6239,7 +6243,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 1,
    "rep": null,
    "cct_notes": [],
    "tldr": "RGB emitter on a dedicated board for full-colour setups ( Convoy Getian )."
@@ -6305,7 +6309,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": null,
    "cct_notes": [],
    "tldr": "Long-standing standard for coloured channels in multi-channel builds."
@@ -6362,7 +6366,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": null,
    "cct_notes": [],
    "tldr": "Seoul Viosys UV Z5, 365–367 nm, about 1 W radiant at up to 500 mA."
@@ -6419,7 +6423,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": null,
    "cct_notes": [],
    "tldr": "High-power UV Z5 version: about 1.8 W radiant at 365–367 nm."
@@ -6798,7 +6802,8 @@
      "text": "Green (positive Duv) — output over colour"
     }
    ],
-   "tldr": "Nitecore's in-house emitter: very high output, very low CRI, greenish."
+   "tldr": "Nitecore's in-house emitter: very high output, very low CRI, greenish.",
+   "manufactured_by": "Nitecore (Sysmax)"
   },
   {
    "id": 85,
@@ -8342,7 +8347,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "legacy",
     "note": "Lower-power 365 nm"
@@ -8396,7 +8401,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": {
     "t": "niche",
     "note": ""
@@ -8448,7 +8453,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "oem",
     "note": "Nitecore TINI2 SS"
@@ -8506,7 +8511,8 @@
     "note": "Nitecore in-house"
    },
    "tldr": "Nitecore thrower die, 2.26 mm², 6500K.",
-   "cct_notes": []
+   "cct_notes": [],
+   "manufactured_by": "Nitecore (Sysmax)"
   },
   {
    "id": 123,
@@ -8550,13 +8556,14 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 1,
    "rep": {
     "t": "oem",
     "note": "Nitecore in-house array"
    },
    "tldr": "NiteLab array LED in Nitecore's P-iX and MT Max lights.",
-   "cct_notes": []
+   "cct_notes": [],
+   "manufactured_by": "Nitecore (Sysmax)"
   },
   {
    "id": 124,
@@ -8606,7 +8613,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "budget",
     "note": "Convoy colour option"
@@ -8715,7 +8722,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": null,
    "tldr": "Placeholder for lights that only say '365 nm UV'.",
    "cct_notes": []

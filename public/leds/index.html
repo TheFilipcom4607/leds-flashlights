@@ -876,7 +876,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   /* ---------- rows ---------- */
   function rowHtml(e) {
     const picked = picks.includes(e.id), full = picks.length >= MAXPICK;
-    const meta = [e.code, e.kind !== "White" ? e.type_label : "", e.domeless ? "domeless" : ""].filter(Boolean).map(esc).join(" · ");
+    const meta = [e.code, e.manufactured_by ? `made by ${e.manufactured_by}` : "", e.kind !== "White" ? e.type_label : "", e.domeless ? "domeless" : ""].filter(Boolean).map(esc).join(" · ");
     return `<div class="row cols${picked ? " picked" : ""}" data-id="${e.id}" tabindex="0" role="button" aria-label="${esc(name(e))}, open details">
       <div class="c-pick"><label class="pick" title="${picked ? "Remove from compare" : full ? `Compare holds ${MAXPICK}` : "Add to compare"}"><input type="checkbox" data-pick="${e.id}" ${picked ? "checked" : ""} ${!picked && full ? "disabled" : ""} aria-label="Compare ${esc(name(e))}"></label></div>
       <div class="c-light"><div class="eyebrow">${esc(e.maker)}</div><div class="name">${esc(e.name)}${badges(e)}${hostPriceBadge(e)}</div>${meta ? `<div class="meta">${meta}</div>` : ""}${e.tldr ? `<div class="tldr">${esc(e.tldr)}</div>` : ""}</div>
@@ -1178,6 +1178,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       ["Tints mentioned", tintChips && `<div class="tchips">${tintChips}</div>`],
       ["Dome", e.domeless ? "Domeless / HI (higher luminance, more throw)" : ""],
       ["Figures from", `${BASIS[e.basis]}`],
+      ["Made by", e.manufactured_by ? esc(e.manufactured_by) : ""],
       ["Group", esc(e.section.replace(/^\d+\.\s*/, ""))],
     ].filter(([k, v]) => k && v);
     $("#drawer").innerHTML = `

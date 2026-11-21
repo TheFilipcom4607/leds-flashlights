@@ -23,6 +23,9 @@ The site is static: two pages and two data files, no build step.
 | LEDs (output, CRI, candela, beam, "best for") | `public/leds/emitters.json` |
 
 1. Edit the file. Keep the existing field names and shape; copy a similar entry if you're adding one.
+   For house-brand LEDs (Convoy, Noctigon, NiteLab, FireflyLite, …), `maker` is the brand selling it;
+   if a different fab actually produces the die, add `"manufactured_by": "…"`. Leave it out when the
+   maker manufactures the LED themselves.
 2. Run `python3 tools/validate.py` (Python 3, nothing to install). It checks for missing fields,
    impossible numbers and duplicate names, and says exactly what's wrong.
 3. Open a pull request with a source for each changed fact. The same check runs on every pull request.
