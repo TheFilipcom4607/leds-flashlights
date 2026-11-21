@@ -74,7 +74,7 @@ h1 svg { width: 0.9em; height: 0.9em; color: var(--accent); flex: none; }
 
 /* ---------- app grid ---------- */
 .app { max-width: 1440px; margin: 0 auto; padding: 20px max(20px, env(safe-area-inset-left)) 64px; display: grid; grid-template-columns: 268px minmax(0, 1fr); gap: 24px; align-items: start; }
-main { min-width: 0; display: grid; gap: 12px; }
+main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
 
 /* ---------- facets ---------- */
 .facets { position: sticky; top: 16px; max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin;
@@ -159,7 +159,9 @@ main { min-width: 0; display: grid; gap: 12px; }
 .count b { color: var(--ink); font-weight: 600; }
 
 /* ---------- result list ---------- */
-.list { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow-sm); }
+/* The row layout follows the list's own width (not the window's), so side tabs, split screen
+   and narrow windows all get the layout that fits instead of a sideways-scrolling page. */
+.list { container: list / inline-size; background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow-sm); }
 .cols { --cols: 34px minmax(210px, 2.2fr) minmax(150px, 1.5fr) minmax(96px, 0.9fr) 92px 84px 62px 112px; display: grid; grid-template-columns: var(--cols); gap: 0 14px; align-items: center; }
 .lh { position: sticky; top: 0; z-index: 3; padding: 0 16px; height: 40px; background: var(--panel); border-bottom: 1px solid var(--line); border-radius: var(--r) var(--r) 0 0;
   font: 600 11px/1 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
@@ -187,8 +189,6 @@ main { min-width: 0; display: grid; gap: 12px; }
 .meta { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
 .badge { display: inline-flex; align-items: center; gap: 4px; font: 600 10.5px/1 var(--f-body); padding: 3px 6px; border-radius: 5px; white-space: nowrap; letter-spacing: 0.01em; }
 .badge.and { color: var(--and); background: var(--and-bg); }
-.badge.oos { color: var(--warn); background: var(--warn-bg); }
-.badge.part { color: var(--accent); background: var(--accent-soft); }
 .badge.sale { color: var(--accent); background: var(--accent-soft); }
 .badge.mc { color: var(--ink-2); background: var(--sunken); border: 1px solid var(--line); }
 
@@ -274,7 +274,34 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .tc { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 4px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-size: 12.5px; white-space: nowrap; }
 .tc .dot { width: 14px; height: 14px; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent); }
 .tc small { color: var(--muted); font-size: 11px; }
-.tc .cri { font-size: 10px; font-weight: 600; color: var(--ok); }
+/* one CRI tag style everywhere: green when every option is 90+, grey otherwise */
+.crit { display: inline-flex; align-items: center; font: 600 10.5px/1 var(--f-body); padding: 3px 6px; border-radius: 5px; white-space: nowrap; color: var(--ink-2); background: var(--sunken); border: 1px solid var(--line); }
+.crit.hi { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); border-color: color-mix(in srgb, var(--ok) 28%, transparent); }
+.crit.sm { font-size: 10px; padding: 2px 5px; }
+.ltags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.lguide { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; font-size: 12px; color: var(--muted); }
+.lguide .here { color: var(--ink-2); font-weight: 500; }
+.lguide .use { color: var(--ink-2); }
+.beam { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.beam i { display: inline-flex; gap: 2px; flex: none; }
+.beam i b { width: 5px; height: 5px; border-radius: 50%; background: var(--line-2); }
+.beam i b.on { background: var(--accent); }
+.beam em { font-style: normal; font-weight: 500; color: var(--ink-2); }
+.led { transition: background 0.6s; }
+.led.flash { background: var(--accent-soft); transition: none; }
+.lpicks { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
+.lpick { all: unset; cursor: pointer; display: grid; gap: 1px; padding: 8px 11px; border-radius: 9px; border: 1px solid var(--line); background: var(--sunken); min-width: 0; }
+.lpick:hover { border-color: var(--accent-line); }
+.lpick:focus-visible { outline: 2px solid var(--accent); }
+.lpick span { font: 600 10.5px/1.3 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.lpick b { font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lpick small { font-size: 12px; color: var(--muted); }
+.estnote { color: var(--faint); font-size: 11.5px; margin: 8px 0 0; }
+.goals { display: flex; flex-wrap: wrap; gap: 6px; }
+.goal { all: unset; cursor: pointer; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--panel); font-size: 13px; font-weight: 500; color: var(--ink-2); white-space: nowrap; }
+.goal:hover { border-color: var(--faint); color: var(--ink); }
+.goal[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.goal:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .nolist { color: var(--faint); font-size: 13px; }
 .fam button { all: unset; cursor: pointer; display: inline-flex; gap: 5px; align-items: center; border-radius: 4px; }
 .fam button:hover .fn { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--faint); }
@@ -331,9 +358,21 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 .cfam span { padding: 2px 7px; border-radius: 6px; background: var(--sunken); border: 1px solid var(--line); font-size: 12px; }
 
 /* ---------- responsive ---------- */
-@media (max-width: 1180px) {
+@container list (max-width: 969px) {
   .cols { --cols: 34px minmax(190px, 2fr) minmax(130px, 1.3fr) 84px 80px 62px 104px; }
   .c-bat { display: none !important; }
+}
+@container list (max-width: 799px) {
+  .lh { display: none; }
+  .row.cols { grid-template-columns: 34px repeat(3, minmax(0, 1fr)); gap: 8px 10px; padding: 14px 14px 14px 10px; align-items: start; }
+  .c-pick { grid-row: 1 / span 3; }
+  .c-light { grid-column: 2 / 4; grid-row: 1; }
+  .c-price { grid-column: 4; grid-row: 1; }
+  .c-emit { grid-column: 2 / -1; grid-row: 2; }
+  .c-lm { grid-column: 2; grid-row: 3; } .c-throw { grid-column: 3; grid-row: 3; } .c-wt { grid-column: 4; grid-row: 3; }
+  .c-lm, .c-throw, .c-wt { justify-self: start !important; text-align: left !important; }
+  .c-lm .meter, .c-throw .meter { margin-left: 0; }
+  [data-l]::before { content: attr(data-l); display: block; font: 600 10px/1.4 var(--f-body); letter-spacing: 0.07em; text-transform: uppercase; color: var(--faint); }
 }
 @media (max-width: 1000px) {
   .app { grid-template-columns: minmax(0, 1fr); }
@@ -360,19 +399,13 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   .search { flex-basis: 100%; order: -1; }
   .search kbd { display: none; }
   .toolbar .sel { flex: 1; }
-  .lh { display: none; }
-  .row.cols { grid-template-columns: 34px repeat(3, minmax(0, 1fr)); gap: 8px 10px; padding: 14px 14px 14px 10px; align-items: start; }
-  .c-pick { grid-row: 1 / span 3; }
-  .c-light { grid-column: 2 / 4; grid-row: 1; }
-  .c-price { grid-column: 4; grid-row: 1; }
-  .c-emit { grid-column: 2 / -1; grid-row: 2; }
-  .c-lm { grid-column: 2; grid-row: 3; } .c-throw { grid-column: 3; grid-row: 3; } .c-wt { grid-column: 4; grid-row: 3; }
-  .c-lm, .c-throw, .c-wt { justify-self: start !important; text-align: left !important; }
-  .c-lm .meter, .c-throw .meter { margin-left: 0; }
-  [data-l]::before { content: attr(data-l); display: block; font: 600 10px/1.4 var(--f-body); letter-spacing: 0.07em; text-transform: uppercase; color: var(--faint); }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .led { grid-template-columns: minmax(0, 1fr) auto; }
   .led .tchips { grid-column: 1 / -1; grid-row: 2; }
+  .lguide { grid-column: 1 / -1; }
+  .ltags { display: inline-flex; margin: 0 0 0 6px; vertical-align: 1px; }
+  .goals { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -12px; padding: 0 12px; }
+  .goal { padding: 8px 13px; }
   .tray .lbl, .tray .slot { display: none; }
   .cmpdlg { width: 100vw; max-width: 100vw; height: 100vh; height: 100dvh; max-height: 100vh; max-height: 100dvh; border-radius: 0; border: 0; }
   .cb { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
@@ -422,6 +455,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         <option value="_name:1">Name A–Z</option>
       </select>
     </div>
+    <div class="goals" id="goals" role="group" aria-label="Quick start"></div>
     <div class="active" id="active"></div>
     <div class="count" id="count" aria-live="polite"></div>
     <div class="list" id="list">
@@ -437,7 +471,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </div>
       <div id="rows"><div class="empty">Loading lights…</div></div>
     </div>
-    <footer>Specs come from each maker's store text and are normalised by <code>build_clean.py</code>; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Olight prices are its Nov 2026 sale prices; Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Their stock wasn't checked. Always confirm options on the store page before ordering.</footer>
+    <footer>Specs come from each maker's store page, tidied into one format; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Olight prices are its Nov 2026 sale prices; Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Always confirm options on the store page before ordering.</footer>
   </main>
 </div>
 
@@ -493,7 +527,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 
   /* ---------- filter model ---------- */
   const FEATS = [
-    ["stock", "In stock", r => r.stock.status === "in" || r.stock.status === "partial"],
     ["sale", "On sale", r => !!r.regular],
     ["cri", "High CRI (90+)", r => r.cri_max >= 90],
     ["multi", "Multi-channel / tint ramping", r => r.multi_channel],
@@ -521,10 +554,53 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const s = JSON.parse(localStorage.getItem("fi-state-3") || "null");
     if (s) { Object.assign(F, s.F || {}); SETS.forEach(k => F[k] = new Set((s.F || {})[k] || [])); sortK = s.sortK || null; sortDir = s.sortDir || 1; picks = s.picks || []; openSecs = s.openSecs || null; F.tints.delete("colour"); }
   } catch (e) {}
-  // Arriving from the Emitter Index (?led=W1&led=W2): show just the lights with those LEDs.
-  const wantLeds = new URLSearchParams(location.search).getAll("led");
-  if (wantLeds.length) { F = blank(); wantLeds.forEach(v => F.leds.add(v)); history.replaceState(null, "", location.pathname); }
-  const save = () => { try { localStorage.setItem("fi-state-3", JSON.stringify({ F: { ...F, ...Object.fromEntries(SETS.map(k => [k, [...F[k]]])) }, sortK, sortDir, picks, openSecs })); } catch (e) {} };
+  // Filters also live in the URL, so a view can be bookmarked or shared (?style=EDC&tint=warm&sort=price:1&light=132).
+  // A link with any of these replaces the saved filters; the Emitter Index links here with ?led=W1&led=W2.
+  const URLK = { brands: "brand", styles: "style", leds: "led", colours: "colour", mats: "mat", tints: "tint", bats: "bat", feats: "feat" };
+  const URL1 = ["q", "fw", ...NUMS.map(n => n[0])];
+  const params = new URLSearchParams(location.search);
+  let openLight = null;
+  if ([...params.keys()].some(k => ["sort", "light", ...URL1, ...Object.values(URLK)].includes(k))) {
+    F = blank(); sortK = null; sortDir = 1;
+    for (const [k, p] of Object.entries(URLK)) params.getAll(p).forEach(v => F[k].add(v));
+    URL1.forEach(k => { if (params.has(k)) F[k] = params.get(k); });
+    if (params.get("sort")) { const [k, d] = params.get("sort").split(":"); sortK = k || null; sortDir = +d || 1; }
+    openLight = +params.get("light") || null;
+  }
+  F.feats = new Set([...F.feats].filter(f => FEAT[f])); // drops retired switches, e.g. the old "In stock"
+  function syncUrl() {
+    const p = new URLSearchParams();
+    URL1.forEach(k => { const v = String(F[k]).trim(); if (v) p.set(k, v); });
+    for (const [k, n] of Object.entries(URLK)) F[k].forEach(v => p.append(n, v));
+    if (sortK) p.set("sort", `${sortK}:${sortDir}`);
+    if ($("#drawer").open && $("#drawer").dataset.id) p.set("light", $("#drawer").dataset.id);
+    const s = p.toString().replace(/%3A/g, ":");
+    history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
+  }
+  const save = () => { try { localStorage.setItem("fi-state-3", JSON.stringify({ F: { ...F, ...Object.fromEntries(SETS.map(k => [k, [...F[k]]])) }, sortK, sortDir, picks, openSecs })); } catch (e) {} syncUrl(); };
+
+  /* ---------- quick-start goals: one tap sets the filters and sort ---------- */
+  const GOALS = [
+    ["Everyday carry", { styles: ["EDC"] }],
+    ["Long throw", { styles: ["Thrower"] }, "throw_m:-1"],
+    ["Headlamp", { styles: ["Headlamp"] }],
+    ["Keychain", { styles: ["Keychain"] }, "weight_g:1"],
+    ["High CRI", { feats: ["cri"] }],
+    ["Brightest", {}, "lumens:-1"],
+    ["Under $30", { pmax: "30" }, "lumens:-1"],
+    ["Anduril", { fw: "a" }],
+  ];
+  const goalF = g => { const f = blank(); for (const [k, v] of Object.entries(g[1])) f[k] = Array.isArray(v) ? new Set(v) : v; return f; };
+  const sameF = (a, b) => Object.keys(a).every(k => a[k] instanceof Set ? a[k].size === b[k].size && [...a[k]].every(v => b[k].has(v)) : String(a[k]).trim() === String(b[k]).trim());
+  const goalOn = g => sameF(goalF(g), F) && (g[2] || "") === (sortK ? `${sortK}:${sortDir}` : "");
+  function renderGoals() {
+    $("#goals").innerHTML = GOALS.map((g, i) => `<button type="button" class="goal" data-goal="${i}" aria-pressed="${goalOn(g)}">${esc(g[0])}</button>`).join("");
+  }
+  function applyGoal(g) {
+    if (goalOn(g)) { F = blank(); sortK = null; sortDir = 1; }
+    else { F = goalF(g); const [k, d] = (g[2] || "").split(":"); sortK = k || null; sortDir = +d || 1; }
+    $("#q").value = ""; update();
+  }
 
   const numF = k => { const v = parseFloat(F[k]); return isNaN(v) ? null : v; };
   function pass(r, skip) {
@@ -556,8 +632,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   let LM_MAX = 1, TH_MAX = 1;
   const meter = (v, lo, hi) => v ? `<div class="meter"><i style="width:${Math.max(5, Math.min(100, 100 * Math.log(v / lo) / Math.log(hi / lo))).toFixed(0)}%"></i></div>` : "";
   const priceHtml = r => r.price == null ? `<span class="na">n/a</span>` : `<div class="price">${r.regular ? `<span class="was">${usd(r.regular)}</span>` : ""}${usd(r.price)}</div>${r.price_max ? `<div class="sub2">up to ${usd(r.price_max)}</div>` : ""}`;
-  const badges = r => (r.anduril ? `<span class="badge and">${esc(r.firmware || "Anduril 2")}</span>` : "") +
-    (r.stock.status === "out" ? `<span class="badge oos">Out of stock</span>` : r.stock.status === "partial" ? `<span class="badge part">Partly in stock</span>` : r.stock.status === "preorder" ? `<span class="badge part">Pre-order</span>` : "");
+  const badges = r => r.anduril ? `<span class="badge and">${esc(r.firmware || "Anduril 2")}</span>` : "";
   function tintDots(r, max = 9) {
     const ds = r.ccts.map(k => cct(k)).concat(r.ccts.length ? [] : r.tones_nocct.map(t => swatch({ tone: t })), r.colours.map(c => swatch({ colour: c })));
     const shown = ds.length > max ? ds.filter((_, i) => i % Math.ceil(ds.length / max) === 0).slice(0, max) : ds;
@@ -686,7 +761,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     document.querySelectorAll(".lh [data-sort]").forEach(b => b.dataset.dir = b.dataset.sort === sortK ? sortDir : "");
     const v = sortK ? `${sortK}:${sortDir}` : ""; const sel = $("#sort");
     sel.value = [...sel.options].some(o => o.value === v) ? v : "";
-    renderActive(); renderFacets(); renderTray();
+    renderActive(); renderFacets(); renderTray(); renderGoals();
   }
   function update() { save(); render(); }
 
@@ -701,11 +776,59 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     }
     return out;
   }
-  function tintChip(t) {
+  function tintChip(t, showCri) {
     const label = t.cct ? (t.cct_max ? `${t.cct}–${t.cct_max}K` : `${t.cct}K`) : t.colour || (t.tone === "white" ? "White" : t.tone ? t.tone[0].toUpperCase() + t.tone.slice(1) + " white" : "");
     if (!label) return "";
     const bits = [t.domes.length === 2 ? "dome / dedome" : t.domes[0], t.rosy && "rosy", t.hi && "HI", t.lm && `${fmt(t.lm)} lm`, t.measured && "measured"].filter(Boolean);
-    return `<span class="tc"><span class="dot" style="background:${swatch(t)}"></span>${esc(label)}${t.cri ? ` <span class="cri">${t.cri}${t.cri >= 90 ? "+" : ""} CRI</span>` : ""}${bits.length ? ` <small>${esc(bits.join(" · "))}</small>` : ""}</span>`;
+    return `<span class="tc"><span class="dot" style="background:${swatch(t)}"></span>${esc(label)}${showCri && t.cri ? " " + criTag({ lo: t.cri, hi: t.cri, src: "the store" }, true) : ""}${bits.length ? ` <small>${esc(bits.join(" · "))}</small>` : ""}</span>`;
+  }
+
+  /* ---------- emitter reference (../leds/emitters.json): CRI, beam, uses, candela ---------- */
+  let EM = null;
+  const emCache = new Map(), normLed = s => String(s || "").replace(/\s*\(.*?\)/g, "").trim().toLowerCase();
+  function emOf(fam) { // store LED name -> reference row, the same way the Emitter Index matches them
+    if (!EM) return null;
+    if (!emCache.has(fam)) {
+      const ns = [LED_INFO.leds?.[fam]?.title, fam].filter(Boolean).map(normLed);
+      emCache.set(fam, EM.find(e => ns.some(n => normLed(e.name) === n || e.alts.some(a => normLed(a) === n) || normLed(`${e.maker} ${e.name}`) === n)) || null);
+    }
+    return emCache.get(fam);
+  }
+  const criFmt = (lo, hi) => lo === 65 && hi === 65 ? "<70" : lo === hi ? `${lo}` : `${lo}–${hi}`;
+  // One CRI tag per LED: the store's figure when it states one, otherwise the Emitter Index's.
+  // Tint chips get their own tag only when the LED is sold in more than one CRI grade.
+  function ledCri(l) {
+    const got = l.tints.map(t => t.cri).filter(v => v != null);
+    if (got.length) { const lo = Math.min(...got), hi = Math.max(...got); return { lo, hi, perChip: lo !== hi || got.length < l.tints.length, src: "the store" }; }
+    const e = emOf(l.family);
+    return e && e.cri_max != null ? { lo: e.cri_min ?? e.cri_max, hi: e.cri_max, perChip: false, src: "the Emitter Index (datasheets and tests)" } : null;
+  }
+  const criTag = (c, small) => c ? `<span class="crit${c.lo >= 90 ? " hi" : ""}${small ? " sm" : ""}" title="CRI (Ra), from ${c.src}${c.lo !== c.hi && !c.perChip ? ". Depends on the tint; check the store" : ""}">${criFmt(c.lo, c.hi)} CRI</span>` : "";
+  const BEAM_NAMES = ["", "Flood", "Floody", "Balanced", "Throwy", "Pencil"];
+  const beamPill = e => `<span class="beam" title="Beam character, from the Emitter Index"><i>${[1, 2, 3, 4, 5].map(i => `<b${i <= e.beam ? ' class="on"' : ""}></b>`).join("")}</i><em>${BEAM_NAMES[e.beam]}</em></span>`;
+  const kcd = n => n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : Math.round(n / 1000) + "k";
+  // Rough candela in THIS light: the reference's 35–40 mm reflector figure scaled by reflector area.
+  // Only for single-emitter, non-headlamp lights with a stated head size; the reflector is taken as 4 mm narrower than the head.
+  function throwHere(e, r, l) {
+    if (!e?.candela?.length || !r.size?.head || (r.led_count || 1) > 1 || r.styles.includes("Headlamp")) return null;
+    const domes = (l?.tints || []).map(t => t.dome).filter(Boolean), dedome = domes.length && domes.every(d => d === "dedomed");
+    const c = e.candela.find(x => x.label === (dedome ? "dedomed" : "domed")) || e.candela[0];
+    const refl = Math.max(10, r.size.head - 4), cd = (c.cd_lo + c.cd_hi) / 2 * (refl / 37.5) ** 2;
+    return { cd, m: 2 * Math.sqrt(cd), refl };
+  }
+  // "Which LED?" summary for lights sold with a choice of emitters.
+  function ledPicks(r) {
+    if (r.emitters.length !== 1) return "";
+    const seen = new Set(), opts = [];
+    r.emitters[0].tiers.forEach(t => t.leds.forEach(l => { const e = emOf(l.family); if (e && !seen.has(l.family)) { seen.add(l.family); opts.push({ l, e, c: ledCri(l), est: throwHere(e, r, l) }); } }));
+    if (opts.length < 2) return "";
+    const best = score => opts.reduce((b, o) => { const s = score(o); return s != null && (!b || s > b.s) ? { o, s } : b; }, null);
+    const ps = [
+      ["Best colour", best(o => o.c && o.c.lo >= 90 ? o.c.lo + o.c.hi / 1000 : null), o => `${criFmt(o.c.lo, o.c.hi)} CRI`],
+      ["Most throw here", best(o => o.est?.cd), o => `≈ ${fmt(o.est.m)} m`],
+      ["Widest beam", best(o => o.e.beam != null && o.e.beam <= 2 ? -o.e.beam : null), o => BEAM_NAMES[o.e.beam]],
+    ].filter(p => p[1]);
+    return ps.length ? `<div class="lpicks">${ps.map(([lab, b, txt]) => `<button type="button" class="lpick" data-ledjump="${esc(b.o.l.family)}"><span>${lab}</span><b>${esc(b.o.l.family)}</b><small>${esc(txt(b.o))}</small></button>`).join("")}</div>` : "";
   }
   // Card built from the emitter reference doc (led_info.json, made by build_clean.py).
   function ledCard(inf) {
@@ -713,7 +836,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       .concat((inf.candela || []).map(c => [c.note ? `Candela, ${c.note}` : "Candela", `${c.cd}${c.throw ? ` · ${c.throw}` : ""}${c.beam ? ` — ${c.beam}` : ""}`]))
       .filter(([, v]) => v);
     const long = (inf.notes || "").length > 220;
-    return `<div class="linfo"><div class="lt"><b>${esc(inf.title)}</b><small>from your emitter reference${LED_INFO.reviewed ? `, ${esc(LED_INFO.reviewed)}` : ""}</small></div>
+    return `<div class="linfo"><div class="lt"><b>${esc(inf.title)}</b><small>Emitter Index${LED_INFO.reviewed ? ` · reviewed ${esc(LED_INFO.reviewed)}` : ""}</small></div>
       <dl class="facts">${facts.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
       ${inf.notes ? `<p class="${long ? "clamp" : ""}">${esc(inf.notes)}</p>${long ? `<button type="button" class="morebtn" data-more>Read more</button>` : ""}` : ""}
       ${inf.candela?.length ? `<p class="nolist" style="font-size:11.5px">Candela is for a typical 35–40 mm reflector; the real light's reflector changes it a lot.</p>` : ""}
@@ -723,23 +846,29 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   function emittersHtml(r) {
     if (!r.emitters.length) return `<p class="nolist">The store doesn't list emitter options in text.</p>`;
     const multi = r.emitters.length > 1;
+    let refl = null;
     const grp = (g, gi) => {
       const rows = g.tiers.flatMap(t => t.leds.map(l => ({ ...l, price: t.price })));
       return `<div class="grp" data-g="${gi}" ${multi && gi ? "hidden" : ""}>${g.name && !multi ? `<h4>${esc(g.name)}</h4>` : ""}<div class="leds">${rows.map(l => {
-        const chips = mergedTints(l.tints).map(tintChip).join("");
+        const c = ledCri(l), e = emOf(l.family), est = throwHere(e, r, l);
+        if (est) refl = est.refl;
+        const chips = mergedTints(l.tints).map(t => tintChip(t, c?.perChip)).join("");
         const inf = LED_INFO.leds?.[l.family];
         const nm = `${l.qty ? `${l.qty}× ` : ""}<span class="fn">${esc(l.family)}</span>`;
         const mk = l.maker && l.maker !== l.family ? `<small>${esc(l.maker)}</small>` : "";
-        return `<div class="led">
-          <div class="fam">${inf ? `<button type="button" data-ledinfo aria-expanded="false" title="About this LED">${nm}<span class="i" aria-hidden="true">i</span></button>` : nm}${mk}</div>
-          <div class="tchips">${chips || `<span class="nolist">Tint not stated</span>`}</div>${priceTag(l.price)}${inf ? ledCard(inf) : ""}</div>`;
+        const uses = e ? e.best_for.filter(b => b.tier === 1).slice(0, 2).map(b => `<span class="use">★ ${esc(b.goal)}</span>`).join("") : "";
+        const guide = e && (e.beam != null || est || uses) ? `<div class="lguide">${e.beam != null ? beamPill(e) : ""}${est ? `<span class="here" title="Estimated for this light's ~${est.refl} mm reflector">≈ ${kcd(est.cd)} cd · ${fmt(est.m)} m here</span>` : ""}${uses}</div>` : "";
+        return `<div class="led" data-fam="${esc(l.family)}">
+          <div class="fam">${inf ? `<button type="button" data-ledinfo aria-expanded="false" title="About this LED">${nm}<span class="i" aria-hidden="true">i</span></button>` : nm}${mk}${c ? `<span class="ltags">${criTag(c)}</span>` : ""}</div>
+          <div class="tchips">${chips || `<span class="nolist">Tint not stated</span>`}</div>${priceTag(l.price)}${guide}${inf ? ledCard(inf) : ""}</div>`;
       }).join("")}</div></div>`;
     };
     // Multi-channel lights: one tab per channel instead of three near-identical lists.
     const tabs = multi ? `<div class="seg ctabs" role="tablist" style="grid-template-columns:repeat(${r.emitters.length},1fr)">${r.emitters.map((g, i) =>
       `<button type="button" role="tab" data-gtab="${i}" aria-pressed="${!i}">${esc((g.name || `Group ${i + 1}`).replace(/\s*\(.*\)/, ""))}</button>`).join("")}</div>` : "";
-    let h = tabs + r.emitters.map(grp).join("");
+    let h = ledPicks(r) + tabs + r.emitters.map(grp).join("");
     if (r.tints_offered.length) h += `<div class="grp"><h4>Tints offered for these LEDs</h4><div class="tchips">${r.tints_offered.map(k => tintChip({ cct: k, domes: [] })).join("")}</div></div>`;
+    if (refl) h += `<p class="estnote">“Here” figures scale the Emitter Index's typical 35–40 mm candela to this light's ~${refl} mm reflector (head Ø − 4 mm). A ballpark for comparing options, ±50%; the Throw figure above is the store's.</p>`;
     return h;
   }
   function openDrawer(id) {
@@ -760,7 +889,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       ["Waterproof", esc(r.ip?.label)],
       ["Material", esc(r.materials.join(", ")) + (r.material_assumed ? ' <span class="na">(not stated; assumed)</span>' : "")],
       ["Body colours", esc(r.body_colours.join(", "))],
-      ["Stock", esc(r.stock.note || r.stock.label)],
     ].filter(([, v]) => v);
     const opts = r.options.filter(o => o.items.length).map(o => `<div class="ogrp"><b>${esc(o.label)}</b><div class="ochips">${o.items.map(it => `<span class="oc">${esc(it.name)}${it.price != null ? ` <small>${it.from ? "from " : "+"}${usd(it.price)}</small>` : ""}</span>`).join("")}</div></div>`).join("");
     $("#drawer").innerHTML = `
@@ -789,6 +917,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     $("#drawer").dataset.id = id;
     if (!$("#drawer").open) $("#drawer").showModal();
     $("#drawer .db").scrollTop = 0;
+    syncUrl();
   }
 
   /* ---------- compare ---------- */
@@ -824,7 +953,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     ["Charging", r => esc(r.charging?.label)],
     ["Aux LEDs", r => esc(r.aux)],
     ["Waterproof", r => esc(r.ip?.label)],
-    ["Stock", r => esc(r.stock.label)],
   ];
   function renderCompare() {
     const rs = picks.map(id => byId.get(id)).filter(Boolean);
@@ -859,6 +987,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (li) { const row = li.closest(".led"); row.classList.toggle("open"); li.setAttribute("aria-expanded", row.classList.contains("open")); return; }
     const mo = t.closest("[data-more]");
     if (mo) { const p = mo.previousElementSibling; p.classList.toggle("clamp"); mo.textContent = p.classList.contains("clamp") ? "Read more" : "Show less"; return; }
+    const lj = t.closest("[data-ledjump]");
+    if (lj) { const row = [...document.querySelectorAll("#drawer .led[data-fam]")].find(x => x.dataset.fam === lj.dataset.ledjump); if (row) { row.scrollIntoView({ block: "center", behavior: "smooth" }); row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 900); } return; }
+    const gl = t.closest("[data-goal]"); if (gl) { applyGoal(GOALS[+gl.dataset.goal]); return; }
     const gt = t.closest("[data-gtab]");
     if (gt) { const i = gt.dataset.gtab; document.querySelectorAll("#drawer [data-gtab]").forEach(b => b.setAttribute("aria-pressed", b === gt)); document.querySelectorAll("#drawer .grp[data-g]").forEach(g => g.hidden = g.dataset.g !== i); return; }
     const fw = t.closest("[data-fw]"); if (fw) { F.fw = fw.dataset.fw; update(); return; }
@@ -898,6 +1029,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (!e.target.matches?.(".fsec")) return;
     openSecs = [...document.querySelectorAll(".fsec")].filter(d => d.open).map(d => d.dataset.sec); save();
   }, true);
+  $("#drawer").addEventListener("close", syncUrl);
   $("#sort").addEventListener("change", e => { const [k, d] = e.target.value.split(":"); sortK = k || null; sortDir = +d || 1; update(); });
   document.addEventListener("keydown", e => {
     const tag = (e.target.tagName || "").toLowerCase(), typing = ["input", "select", "textarea"].includes(tag);
@@ -908,7 +1040,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   });
 
   /* ---------- load ---------- */
-  fetch("led_info.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(i => { LED_INFO = i || {}; });
+  const infoP = fetch("led_info.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(i => { LED_INFO = i || {}; });
+  // The Emitter Index's data adds CRI, beam and "best for" to each LED option in the drawer.
+  const loadEmitters = () => infoP.then(() => fetch("../leds/emitters.json", { cache: "no-cache" })).then(r => r.json()).then(d => {
+    EM = d.emitters || []; emCache.clear();
+    if ($("#drawer").open) { const db = $("#drawer .db"), st = db.scrollTop; openDrawer(+$("#drawer").dataset.id); $("#drawer .db").scrollTop = st; }
+  }).catch(() => {});
   fetch("lights.clean.json", { cache: "no-cache" }).then(r => r.json()).then(rows => {
     data = rows.map(r => {
       const tones = new Set(r.ccts.map(tone));
@@ -931,7 +1068,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     $("#kpis").innerHTML = [[data.length, "lights"], [new Set(data.map(r => r.brand)).size, "brands"], [data.filter(r => r.anduril).length, "run Anduril"], [Object.keys(ledMaker).length, "LED types"]]
       .map(([n, l]) => `<div class="kpi"><b>${n}</b><span>${l}</span></div>`).join("");
     $("#q").value = F.q;
-    render();
+    render(); syncUrl();
+    if (openLight && byId.has(openLight)) openDrawer(openLight);
+    loadEmitters();
   }).catch(err => {
     console.error(err);
     $("#rows").innerHTML = `<div class="empty"><b>The light list didn't load</b><span>Open this page through a local web server (run <code>python3 -m http.server</code> in this folder), then reload.</span></div>`;
