@@ -50,6 +50,7 @@ html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 var(--f-body); font-variant-numeric: tabular-nums; }
 body.has-tray { padding-bottom: 88px; }
 button, input, select { font: inherit; color: inherit; }
+button, input, select, a, summary, label { touch-action: manipulation; }
 a { color: var(--accent); text-underline-offset: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -76,7 +77,7 @@ h1 svg { width: 0.9em; height: 0.9em; color: var(--accent); flex: none; }
 main { min-width: 0; display: grid; gap: 12px; }
 
 /* ---------- facets ---------- */
-.facets { position: sticky; top: 16px; max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin;
+.facets { position: sticky; top: 16px; max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; scrollbar-width: thin;
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow-sm); }
 .fhead { display: none; }
 .fsec { border-bottom: 1px solid var(--line); padding: 14px 16px; }
@@ -225,7 +226,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 100ch; margin-top: 10p
 /* ---------- drawer & compare dialogs ---------- */
 dialog { color: var(--ink); background: var(--panel); border: 0; padding: 0; box-shadow: var(--shadow); }
 dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
-.drawer { margin: 0 0 0 auto; height: 100dvh; max-height: 100dvh; width: min(640px, 100vw); max-width: 100vw; border-left: 1px solid var(--line); }
+.drawer { margin: 0 0 0 auto; height: 100vh; height: 100dvh; max-height: 100vh; max-height: 100dvh; width: min(640px, 100vw); max-width: 100vw; border-left: 1px solid var(--line); }
 .drawer[open] { display: flex; flex-direction: column; }
 @media (prefers-reduced-motion: no-preference) {
   .drawer[open] { animation: slide 0.22s cubic-bezier(.2,.8,.2,1); }
@@ -337,13 +338,16 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 @media (max-width: 1000px) {
   .app { grid-template-columns: minmax(0, 1fr); }
   .fbtn { display: inline-flex; }
-  .facets { position: fixed; z-index: 40; inset: 0 auto 0 0; top: 0; width: min(380px, 92vw); max-height: none; height: 100dvh; border-radius: 0; border: 0; border-right: 1px solid var(--line);
+  .facets { position: fixed; z-index: 40; inset: 0 auto 0 0; top: 0; width: min(380px, 92vw); max-height: none; height: 100vh; height: 100dvh; border-radius: 0; border: 0; border-right: 1px solid var(--line);
     transform: translateX(-102%); transition: transform 0.22s cubic-bezier(.2,.8,.2,1); box-shadow: var(--shadow); display: flex; flex-direction: column; visibility: hidden; }
+  body.fopen { overflow: hidden; }
   body.fopen .facets { transform: none; visibility: visible; }
   body.fopen::after { content: ""; position: fixed; inset: 0; background: rgba(8, 8, 10, 0.45); z-index: 39; }
+  /* iOS Safari zooms the page on focus for any input under 16px */
+  .search input, .sel, .fsearch, .rng input { font-size: 16px; }
   .fhead { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--panel); }
   .fhead b { font: 800 18px/1 var(--f-display); }
-  .fsecs { overflow: auto; flex: 1 1 auto; }
+  .fsecs { overflow: auto; flex: 1 1 auto; overscroll-behavior: contain; }
   .ffoot { padding: 12px 16px max(12px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--panel); display: flex; gap: 8px; }
   .ffoot .btn { flex: 1; }
 }
@@ -370,9 +374,15 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   .led { grid-template-columns: minmax(0, 1fr) auto; }
   .led .tchips { grid-column: 1 / -1; grid-row: 2; }
   .tray .lbl, .tray .slot { display: none; }
-  .cmpdlg { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; border-radius: 0; border: 0; }
+  .cmpdlg { width: 100vw; max-width: 100vw; height: 100vh; height: 100dvh; max-height: 100vh; max-height: 100dvh; border-radius: 0; border: 0; }
+  .cb { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+  .df { flex-wrap: wrap; } /* three buttons don't fit one row on a phone */
   table.cmp { min-width: calc(100px + var(--n) * 170px); }
   table.cmp col.lab { width: 100px; }
+  /* bigger tap targets */
+  .opt { padding: 9px 6px; }
+  .tint { padding: 10px; }
+  .sw-row { padding: 10px 0; }
 }
 </style>
 </head>
@@ -576,8 +586,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   const opt = (k, v, label, n) => `<label class="opt${n || F[k].has(v) ? "" : " zero"}"><input type="checkbox" data-f="${k}" value="${esc(v)}" data-fk="${k}:${esc(v)}" ${F[k].has(v) ? "checked" : ""}><span class="nm">${label}</span><span class="ct">${n}</span></label>`;
 
   function renderFacets() {
-    // keep scroll position & focus across re-renders
-    const box = $("#fsecs"), st = box.scrollTop, fk = document.activeElement?.dataset?.fk;
+    // keep scroll position, focus & caret across re-renders
+    const box = $("#fsecs"), st = box.scrollTop, fk = document.activeElement?.dataset?.fk,
+      caret = fk && typeof document.activeElement.selectionStart === "number" ? [document.activeElement.selectionStart, document.activeElement.selectionEnd] : null;
 
     const fwBase = data.filter(r => pass(r, "fw"));
     const fwN = { "": fwBase.length, a: fwBase.filter(r => r.anduril).length, n: fwBase.filter(r => !r.anduril).length };
@@ -623,12 +634,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       return `<label class="sw-row"><span>${l}</span><span class="ct">${n}</span><input type="checkbox" class="switch" data-feat="${k}" data-fk="feat${k}" ${F.feats.has(k) ? "checked" : ""}></label>`;
     }).join(""), F.feats.size);
 
-    h += sec("nums", "Limits", `<div class="rng">${NUMS.map(([k, l]) => `<label>${l}<input type="number" inputmode="numeric" min="0" data-num="${k}" data-fk="num${k}" value="${esc(F[k])}" placeholder="any"></label>`).join("")}</div>`,
+    h += sec("nums", "Limits", `<div class="rng">${NUMS.map(([k, l]) => `<label>${l}<input type="text" inputmode="decimal" min="0" data-num="${k}" data-fk="num${k}" value="${esc(F[k])}" placeholder="any"></label>`).join("")}</div>`,
       NUMS.filter(([k]) => F[k] !== "").length);
 
     box.innerHTML = h;
     box.scrollTop = st;
-    if (fk) { const el = [...box.querySelectorAll("[data-fk]")].find(e => e.dataset.fk === fk); if (el) { el.focus({ preventScroll: true }); if (el.id === "ledq") el.setSelectionRange(el.value.length, el.value.length); } }
+    if (fk) { const el = [...box.querySelectorAll("[data-fk]")].find(e => e.dataset.fk === fk); if (el) { el.focus({ preventScroll: true }); if (caret && typeof el.selectionStart === "number") el.setSelectionRange(caret[0], caret[1]); } }
   }
 
   /* ---------- active tokens & counts ---------- */
