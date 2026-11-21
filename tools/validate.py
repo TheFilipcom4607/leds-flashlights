@@ -99,6 +99,9 @@ def check_lights(rows):
 def check_emitters(doc):
     goals = {u.get("goal") for u in doc.get("uses") or []}
     seen_id, seen_name = set(), {}
+    # Names an "alternatives" entry may use, matched like idOf() in the LED page (parenthesised bits ignored).
+    norm = lambda s: re.sub(r"\s*\(.*?\)", "", s).strip().lower()
+    led_names = {norm(n) for x in doc.get("emitters") or [] for n in [x.get("name") or "", *(x.get("alts") or [])]}
     for i, e in enumerate(doc.get("emitters") or []):
         where = f"emitters[{i}] {e.get('maker')} {e.get('name')}"
         text(where, e, "name")
@@ -133,6 +136,10 @@ def check_emitters(doc):
                 err(where, f"best_for goal {b.get('goal')!r} isn't one of the listed uses")
             if b.get("tier") not in (1, 2):
                 err(where, f"best_for tier {b.get('tier')!r} should be 1 (top pick) or 2 (also good)")
+        for a in e.get("alternatives") or []:
+            if not isinstance(a.get("name"), str) or norm(a["name"]) not in led_names:
+                err(where, f"alternative {a.get('name')!r} isn't the name or alt name of any LED")
+            text(where, a, "why")
 
 
 def load(path):

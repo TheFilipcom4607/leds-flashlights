@@ -118,7 +118,25 @@
    "cri_html": "90–95+ (R9080)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>The all-round gold standard.</b> Wide range of CCTs (Convoy sells 1800K, 2700K, 3000K, 3500K, 4000K, 4500K, 5000K and 5700K), neutral to rosy tint. Floody with the dome on. Easily dedomed for more throw, a lower CCT and a rosier tint. &quot;V1&quot; is the newer, preferred revision (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://intl-outdoor.com/single-channel-led-flashlights/emisar-d4sv2.html\" target=\"_blank\" rel=\"noopener\">Emisar</a>).",
+   "notes_html": "<b>The default high-CRI pick for EDCs, headlamps and triples.</b> 90–95+ CRI (R9080) from 1800K to 5700K with a neutral-to-rosy tint, so it suits almost any taste. Floody with the dome on; dedomed it throws further and turns warmer and rosier. Choose the newer \"V1\" revision (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://intl-outdoor.com/single-channel-led-flashlights/emisar-d4sv2.html\" target=\"_blank\" rel=\"noopener\">Emisar</a>).",
+   "alternatives": [
+    {
+     "name": "NTG35",
+     "why": "Rosier tint"
+    },
+    {
+     "name": "FFL351A",
+     "why": "Dedomed-519A look, no dedoming needed"
+    },
+    {
+     "name": "MN-S3535",
+     "why": "High CRI at 6000–6500K"
+    },
+    {
+     "name": "E21A",
+     "why": "Tiny dies for micro triples"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -212,7 +230,7 @@
      "text": "More throw, lower CCT, rosier tint — the classic dedome"
     }
    ],
-   "tldr": "The all-round gold standard."
+   "tldr": "The default high-CRI pick for EDCs, headlamps and triples."
   },
   {
    "id": 1,
@@ -249,7 +267,21 @@
    "cri_html": "90+ (R9080)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Legendary rosy tint (especially the <code>sw45k</code> 4500K bin). Low output and dislikes high current; largely replaced by 519A / NTG35 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>The classic rosy high-CRI emitter, now mostly a nostalgia pick.</b> Its tint, especially the <code>sw45k</code> 4500K bin, is still the reference for \"rosy\". Output is low and it dislikes high current, so it suits low-power EDCs and triples. Largely replaced by the 519A and NTG35 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "NTG35",
+     "why": "Rosier still, much brighter"
+    },
+    {
+     "name": "519A",
+     "why": "Brighter, takes more current"
+    },
+    {
+     "name": "E21A",
+     "why": "Ultra-high CRI in tiny dies"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -298,7 +330,7 @@
      "text": "The legendary rosy bin"
     }
    ],
-   "tldr": "Legendary rosy tint (especially the sw45k 4500K bin)."
+   "tldr": "The classic rosy high-CRI emitter, now mostly a nostalgia pick."
   },
   {
    "id": 2,
@@ -339,7 +371,21 @@
    "cri_html": "90 (option)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Sold in 3000K, 3500K, 4000K, 5000K and 5700K (<a href=\"https://www.ledrise.eu/leduri-individuale/nichia-leds/nichia-x19-series-high-power-leds.html\" target=\"_blank\" rel=\"noopener\">Ledrise</a>). The brighter but less-talented successor to the 219B; itself largely superseded by the SST-20 and LH351D (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A brighter but less colour-accurate 219B successor, now outclassed.</b> Sold in 3000K, 3500K, 4000K, 5000K and 5700K (<a href=\"https://www.ledrise.eu/leduri-individuale/nichia-leds/nichia-x19-series-high-power-leds.html\" target=\"_blank\" rel=\"noopener\">Ledrise</a>). The SST-20 and LH351D largely superseded it, and the 519A has since replaced those too (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Modern replacement, same 3535 board"
+    },
+    {
+     "name": "SST-20",
+     "why": "Budget R9080 at ≤4000K"
+    },
+    {
+     "name": "219B",
+     "why": "Better colour, less output"
+    }
+   ],
    "sources": [
     {
      "label": "Ledrise",
@@ -362,7 +408,7 @@
     "note": "Superseded by the SST-20 and LH351D"
    },
    "cct_notes": [],
-   "tldr": "The brighter but less-talented successor to the 219B; itself largely superseded by the SST-20 and LH351D."
+   "tldr": "A brighter but less colour-accurate 219B successor, now outclassed."
   },
   {
    "id": 3,
@@ -399,7 +445,21 @@
    "cri_html": "70 – 90+ (R9080 bins)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Successor to the 219C; best known for an <b>1800K</b> sodium-lamp-like version. Doesn&#x27;t like being overdriven (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Pick it for a sodium-lamp-like 1800K glow.</b> The 219C's successor, best known for its 1800K version. Low output, and it doesn't like being overdriven (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Also 1800K, more output and current"
+    },
+    {
+     "name": "HL2X",
+     "why": "1800K with far more lumens"
+    },
+    {
+     "name": "FFL351A",
+     "why": "1800K, domeless"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -432,7 +492,7 @@
      "text": "Sodium-lamp-like; the reason this LED exists"
     }
    ],
-   "tldr": "Successor to the 219C; best known for an 1800K sodium-lamp-like version."
+   "tldr": "Pick it for a sodium-lamp-like 1800K glow."
   },
   {
    "id": 4,
@@ -476,7 +536,21 @@
    "cri_html": "95+ (R9080)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Four tiny dies with a natural, sunlight-like tint. R9080 bins span 2700K–6500K (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-nv4wb35amt-sm653-r9080-e900-very-high-light-quality-but-limited-performance/221112\" target=\"_blank\" rel=\"noopener\">BLF test</a>). Its odd footprint needs a dedicated MCPCB, which limits overdrive (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Top-tier colour from four tiny dies, for colour-critical work and floody EDCs.</b> Natural, sunlight-like tint, with R9080 bins from 2700K to 6500K (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-nv4wb35amt-sm653-r9080-e900-very-high-light-quality-but-limited-performance/221112\" target=\"_blank\" rel=\"noopener\">BLF test</a>). It's a 6V part with an odd footprint that needs a dedicated MCPCB, which limits overdrive (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Common 3535 board, more throw"
+    },
+    {
+     "name": "E21A",
+     "why": "Ultra-high CRI, for quads"
+    },
+    {
+     "name": "FFL5009R",
+     "why": "High-CRI quad-die, more output"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -516,7 +590,7 @@
     "note": "Needs a dedicated MCPCB, which limits overdrive"
    },
    "cct_notes": [],
-   "tldr": "Four tiny dies with a natural, sunlight-like tint."
+   "tldr": "Top-tier colour from four tiny dies, for colour-critical work and floody EDCs."
   },
   {
    "id": 5,
@@ -556,7 +630,21 @@
    "cri_html": "90+ (R9050)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Flat (domeless) emitter with two stacked dies, usually sold in 4000K or 5000K (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-nvsw719ac-sm405-t550f26-r9050-4000-k-min-90-cri-r9-50-first-led-with-stacked-dies/219346\" target=\"_blank\" rel=\"noopener\">BLF 4000K test</a>, <a href=\"https://budgetlightforum.com/t/nichia-719a-5000k-r9050-tested/218061\" target=\"_blank\" rel=\"noopener\">BLF 5000K test</a>). Colour like a dedomed 519A with more output but a <b>floodier</b> beam; generally considered underwhelming (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A flat two-die Nichia that most people find underwhelming.</b> Colour like a dedomed 519A with more output, but the beam gets floodier rather than throwier. Usually sold in 4000K or 5000K (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-nvsw719ac-sm405-t550f26-r9050-4000-k-min-90-cri-r9-50-first-led-with-stacked-dies/219346\" target=\"_blank\" rel=\"noopener\">BLF 4000K test</a>, <a href=\"https://budgetlightforum.com/t/nichia-719a-5000k-r9050-tested/218061\" target=\"_blank\" rel=\"noopener\">BLF 5000K test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Dedomed: same colour, more throw"
+    },
+    {
+     "name": "FFL351A",
+     "why": "Dedomed-519A look, 3V"
+    },
+    {
+     "name": "B35AM",
+     "why": "6V too, better colour"
+    }
+   ],
    "sources": [
     {
      "label": "BLF 4000K test",
@@ -583,7 +671,7 @@
     "note": "Generally considered underwhelming"
    },
    "cct_notes": [],
-   "tldr": "Colour like a dedomed 519A with more output but a floodier beam; generally considered underwhelming."
+   "tldr": "A flat two-die Nichia that most people find underwhelming."
   },
   {
    "id": 6,
@@ -620,7 +708,21 @@
    "cri_html": "90+",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Nichia&#x27;s answer to the XHP50 (different footprint, no thermal pad). High CRI but strong tint shift without diffusion; used in the Armytek Wizard C2 Pro Nichia, which is 4500K (<a href=\"https://www.armytek.com/flashlights/models/wizard/armytek-wizard-c2-pro-nichia\" target=\"_blank\" rel=\"noopener\">Armytek</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Nichia's high-CRI take on the XHP50, for floody 6V builds.</b> Different footprint and no thermal pad, so it needs its own board. Strong tint shift across the beam unless diffused. Used in the Armytek Wizard C2 Pro Nichia, which is 4500K (<a href=\"https://www.armytek.com/flashlights/models/wizard/armytek-wizard-c2-pro-nichia\" target=\"_blank\" rel=\"noopener\">Armytek</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "Common 5050 board, high-CRI bins"
+    },
+    {
+     "name": "NTG50",
+     "why": "Rosy high-CRI 5050"
+    },
+    {
+     "name": "FFL5009R",
+     "why": "Domeless high-CRI quad"
+    }
+   ],
    "sources": [
     {
      "label": "Armytek",
@@ -652,7 +754,7 @@
     "note": "Strong tint shift without diffusion"
    },
    "cct_notes": [],
-   "tldr": "Nichia's answer to the XHP50 (different footprint, no thermal pad)."
+   "tldr": "Nichia's high-CRI take on the XHP50, for floody 6V builds."
   },
   {
    "id": 7,
@@ -696,7 +798,21 @@
    "cri_html": "95+ (R9080)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Ultra-high CRI, usually used in quads or larger arrays. 1850K–6500K, plus specialty colours such as E17A Azure (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Ultra-high CRI in a tiny package, made for quads and larger arrays.</b> Low output per LED, so it shines when many are packed into a small head. 1850K–6500K, plus specialty colours such as E17A Azure (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "CSP2323",
+     "why": "Brighter tiny CSP, slightly worse colour"
+    },
+    {
+     "name": "519A",
+     "why": "One emitter, much brighter"
+    },
+    {
+     "name": "B35AM",
+     "why": "Four tiny dies in one package"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -748,7 +864,7 @@
     "note": "Premium high-CRI for quads and arrays"
    },
    "cct_notes": [],
-   "tldr": "Ultra-high CRI, usually used in quads or larger arrays."
+   "tldr": "Ultra-high CRI in a tiny package, made for quads and larger arrays."
   },
   {
    "id": 91,
@@ -785,7 +901,17 @@
    "cri_html": "min. 83 (R9 0)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Older Nichia x19 part (NVSW319AT) in the XP footprint, brighter than the 219 series but with low red rendering. Largely replaced by the 519A (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-nvsw319at-sm503-d400f2-r8000-cct-5000-k-typ-83-cri/50303\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>An older Nichia, only worth knowing about in legacy lights.</b> The NVSW319AT in the XP footprint: brighter than the 219 series, but with low red rendering. Largely replaced by the 519A (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-nvsw319at-sm503-d400f2-r8000-cct-5000-k-typ-83-cri/50303\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Its replacement"
+    },
+    {
+     "name": "219B",
+     "why": "Much better red rendering"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -804,7 +930,7 @@
     "note": "Largely replaced by the 519A"
    },
    "cct_notes": [],
-   "tldr": "Brighter than the 219 series but with low red rendering; largely replaced by the 519A."
+   "tldr": "An older Nichia, only worth knowing about in legacy lights."
   },
   {
    "id": 92,
@@ -842,7 +968,21 @@
    "cri_html": "~98 (full-spectrum)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Nichia&#x27;s <b>full-spectrum</b> mid-power LED (NF2W757G-F1 / NF2L757G-F1) with the closest match to sunlight / incandescent of any LED tested. Low current and 120 °C max Tj limit it to low-output, colour-critical lights (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-optisolis-3000-5000-k-ultra-high-light-quality-even-with-high-performance-in-mid-power-class/51872\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>The most sunlight-like LED tested, for low-output colour-critical lights.</b> Nichia's full-spectrum mid-power part (NF2W757G-F1 / NF2L757G-F1), the closest match to sunlight or incandescent of any LED tested. Low current and a 120 °C max Tj keep output low (<a href=\"https://budgetlightforum.com/t/led-test-review-nichia-optisolis-3000-5000-k-ultra-high-light-quality-even-with-high-performance-in-mid-power-class/51872\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "B35AM",
+     "why": "Sunlight-like tint, far brighter"
+    },
+    {
+     "name": "E21A",
+     "why": "Ultra-high CRI, made for arrays"
+    },
+    {
+     "name": "757G",
+     "why": "Standard 757 mid-power family"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -861,7 +1001,7 @@
     "note": "Low output; for colour-critical lights"
    },
    "cct_notes": [],
-   "tldr": "The closest match to sunlight / incandescent of any LED tested, but low current and a 120 °C limit keep it to low-output lights."
+   "tldr": "The most sunlight-like LED tested, for low-output colour-critical lights."
   },
   {
    "id": 8,
@@ -902,7 +1042,25 @@
    "cri_html": "70<br>90 (5700K <code>WG</code>)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "5000K, 5700K or 6500K (samples run cooler than nominal), plus a 5700K 90 CRI <code>WG</code> version (<a href=\"https://download.luminus.com/datasheets/Luminus_SFT-25R-WES-A_3535_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus datasheet</a>, <a href=\"https://budgetlightforum.com/t/led-test-short-review-luminus-sft-25r-wg-5700-k-90-cri/232004\" target=\"_blank\" rel=\"noopener\">BLF WG test</a>). Small round die (about half the SFT-40&#x27;s area) = <b>extreme throw</b>; out-throws the SFT-40 in the same host. Standard 3535 footprint fits most EDC/thrower boards (<a href=\"https://budgetlightforum.com/t/led-test-review-luminus-sft-25r-6500-k-70-cri-good-thrower-led-in-3535-standard-footprint/225143?page=2\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://convoylight.com/collections/luminus\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>Extreme throw from a standard 3535 board: the go-to EDC thrower LED.</b> Its small round die, about half the SFT-40's area, out-throws the SFT-40 in the same host and fits most EDC and thrower boards. 5000K, 5700K or 6500K (samples run cooler than nominal), plus a 5700K 90 CRI <code>WG</code> version (<a href=\"https://download.luminus.com/datasheets/Luminus_SFT-25R-WES-A_3535_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus datasheet</a>, <a href=\"https://budgetlightforum.com/t/led-test-short-review-luminus-sft-25r-wg-5700-k-90-cri/232004\" target=\"_blank\" rel=\"noopener\">BLF WG test</a>, <a href=\"https://budgetlightforum.com/t/led-test-review-luminus-sft-25r-6500-k-70-cri-good-thrower-led-in-3535-standard-footprint/225143?page=2\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://convoylight.com/collections/luminus\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "Bigger hotspot, more spill"
+    },
+    {
+     "name": "W1",
+     "why": "Even more throw, 3030 board"
+    },
+    {
+     "name": "SFT-12",
+     "why": "Tighter beam, much dimmer"
+    },
+    {
+     "name": "XP-GR",
+     "why": "Cree's round-die rivals"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus datasheet",
@@ -970,7 +1128,7 @@
      "text": "70 CRI; samples run cooler than nominal"
     }
    ],
-   "tldr": "Small round die = extreme throw; out-throws the SFT-40 in the same host while fitting standard 3535 boards."
+   "tldr": "Extreme throw from a standard 3535 board: the go-to EDC thrower LED."
   },
   {
    "id": 9,
@@ -1010,7 +1168,25 @@
    "cri_html": "70 (5000K/6500K)<br>95 (3000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domeless <b>all-round thrower king</b>: punchy hotspot with usable spill. 6500K leans green, 5000K is decent, and 3000K is the high-CRI version (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/products/luminus-sft40-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>The all-round thrower king: a punchy hotspot with usable spill.</b> Domeless, so it throws well in most reflector sizes. Tint depends on CCT: 6500K leans green, 5000K is decent, and 3000K is the high-CRI version (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/products/luminus-sft40-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-25R",
+     "why": "More throw, tighter beam, 3535"
+    },
+    {
+     "name": "SFT-42R",
+     "why": "Bigger hotspot in big reflectors"
+    },
+    {
+     "name": "W2",
+     "why": "More throw, less spill"
+    },
+    {
+     "name": "SFT-70",
+     "why": "6V, more lumens"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -1098,7 +1274,7 @@
      "text": "95 CRI, ~1,300–1,500 lm"
     }
    ],
-   "tldr": "Domeless all-round thrower king : punchy hotspot with usable spill."
+   "tldr": "The all-round thrower king: a punchy hotspot with usable spill."
   },
   {
    "id": 10,
@@ -1139,7 +1315,21 @@
    "cri_html": "70 (6500K) · 73 (5000K)<br>90 (4000K) · 95 (3000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domeless SST-70; efficient boost/buck-driven thrower. Convoy lists four bins with CRI from 70 to 95. Users rate the 3000K 95 CRI version&#x27;s tint very highly (<a href=\"https://convoylight.com/products/sft70-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A domeless SST-70 for efficient boost- and buck-driven throwers.</b> It's a 6V part, so single-cell lights need a boost driver. Convoy lists four bins with CRI from 70 to 95, and users rate the 3000K 95 CRI version's tint very highly (<a href=\"https://convoylight.com/products/sft70-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "3V, more throw per lumen"
+    },
+    {
+     "name": "SFT-60",
+     "why": "3V, more lumens"
+    },
+    {
+     "name": "XHP50.3 HI",
+     "why": "Floodier quad-die"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -1211,7 +1401,7 @@
      "text": "70 CRI"
     }
    ],
-   "tldr": "Domeless SST-70; efficient boost/buck-driven thrower."
+   "tldr": "A domeless SST-70 for efficient boost- and buck-driven throwers."
   },
   {
    "id": 11,
@@ -1250,7 +1440,21 @@
    "cri_html": "70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "5000K/5700K/6500K, 6.0 mm² die, 15 A max. <b>High Vf</b> (~3.3 V @ 10 A, ~3.5 V @ 15 A per one user), so a single-cell buck driver may not reach full current. Sits between SFT-40 and SFT-90 (<a href=\"https://convoylight.com/products/luminus-sft60-high-power-led-emitter-bin-g1-ba-vj\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A bigger 3V thrower that sits between the SFT-40 and SFT-90.</b> 6.0 mm² die rated to 15 A, in 5000K/5700K/6500K. <b>High Vf</b> (~3.3 V at 10 A, ~3.5 V at 15 A per one user) means a single-cell buck driver may not reach full current (<a href=\"https://convoylight.com/products/luminus-sft60-high-power-led-emitter-bin-g1-ba-vj\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "Easier to drive, more throw per lumen"
+    },
+    {
+     "name": "F45R",
+     "why": "Convoy's die in the same class"
+    },
+    {
+     "name": "SFT-90",
+     "why": "More lumens, 7070"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -1297,7 +1501,7 @@
     "note": "High Vf can cap single-cell buck drivers"
    },
    "cct_notes": [],
-   "tldr": "Sits between SFT-40 and SFT-90; high Vf means a single-cell buck driver may not reach full current."
+   "tldr": "A bigger 3V thrower that sits between the SFT-40 and SFT-90."
   },
   {
    "id": 12,
@@ -1336,7 +1540,21 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "5000–6500K (<a href=\"https://www.luminus.com/products/white\" target=\"_blank\" rel=\"noopener\">Luminus</a>). Round-die thrower with a bigger hotspot than SFT-40 and ~2 A more draw. Best in large reflectors (Convoy L21B); in TIR or small hosts it throws less than the SFT-40. <b>Phosphor is more brittle</b> than other SFT parts, so don&#x27;t let a TIR press on it (<a href=\"https://convoylight.com/products/luminus-sft-42r\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A round-die thrower for large reflectors.</b> It has a bigger hotspot than the SFT-40 and draws ~2 A more. It shines in big heads like the Convoy L21B; in TIRs or small hosts it throws less than the SFT-40. <b>Its phosphor is more brittle</b> than other SFT parts, so don't let a TIR press on it. 5000–6500K (<a href=\"https://www.luminus.com/products/white\" target=\"_blank\" rel=\"noopener\">Luminus</a>, <a href=\"https://convoylight.com/products/luminus-sft-42r\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "Better in small heads and TIRs"
+    },
+    {
+     "name": "SFT-25R",
+     "why": "More throw, 3535"
+    },
+    {
+     "name": "SFT-60",
+     "why": "More lumens, high Vf"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus",
@@ -1392,7 +1610,7 @@
      "text": "Phosphor is more brittle than other SFT parts — don't let a TIR press on it"
     }
    ],
-   "tldr": "Round-die thrower with a bigger hotspot than SFT-40; best in large reflectors, and its phosphor dislikes TIR presses."
+   "tldr": "A round-die thrower for large reflectors."
   },
   {
    "id": 13,
@@ -1429,7 +1647,21 @@
    "cri_html": "70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "6500K only; a pre-production sample measured green (Duv +0.007) (<a href=\"https://budgetlightforum.com/t/led-test-review-luminus-sft-90-j7-ba-kd-sample-6500-k-70-cri/227882\" target=\"_blank\" rel=\"noopener\">BLF test</a>). Much cheaper alternative to the SBT90.2 with slightly lower performance. High Vf at high current makes FET/direct-drive and 1-cell buck drivers a poor match (<a href=\"https://convoylight.com/products/luminus-sft-90\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>The budget way into big-die throw.</b> Much cheaper than the SBT90.2, with slightly lower performance. 6500K only, and a pre-production sample measured green (Duv +0.007) (<a href=\"https://budgetlightforum.com/t/led-test-review-luminus-sft-90-j7-ba-kd-sample-6500-k-70-cri/227882\" target=\"_blank\" rel=\"noopener\">BLF test</a>). High Vf at high current makes FET/direct-drive and single-cell buck drivers a poor match (<a href=\"https://convoylight.com/products/luminus-sft-90\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "A bit more performance, pricier"
+    },
+    {
+     "name": "F150R",
+     "why": "Convoy's own, no green push"
+    },
+    {
+     "name": "SFN60",
+     "why": "Hotrod lumen option"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -1472,7 +1704,7 @@
     "note": "Cheaper SBT90.2 alternative; high Vf"
    },
    "cct_notes": [],
-   "tldr": "Much cheaper alternative to the SBT90.2 with slightly lower performance; high Vf makes FET and 1-cell buck drivers a poor match."
+   "tldr": "The budget way into big-die throw."
   },
   {
    "id": 14,
@@ -1509,7 +1741,25 @@
    "cri_html": "70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>Monster throw + lumens</b> (~5700K). Expensive and power-hungry (~20 A+), greenish on low modes (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/products/sbt902-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>The reference for searchlight-class throw plus lumens.</b> ~5700K. Expensive and power-hungry (~20 A+), and greenish on low modes (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/products/sbt902-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-90",
+     "why": "Much cheaper, slightly lower"
+    },
+    {
+     "name": "F150R",
+     "why": "Similar class, tint on/below BBL"
+    },
+    {
+     "name": "FFL707MX",
+     "why": "Claimed more throw in the same light"
+    },
+    {
+     "name": "SFH-55",
+     "why": "Drop-in: brighter, less throw"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -1552,7 +1802,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Monster throw + lumens (~5700K)."
+   "tldr": "The reference for searchlight-class throw plus lumens."
   },
   {
    "id": 15,
@@ -1589,7 +1839,21 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "About half the SFT-25R&#x27;s emitting area (6500K). Tight pencil beam, but at the same current the SFT-25R is much brighter and throws further (<a href=\"https://convoylight.com/products/luminus-sft-12-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A tight pencil-beam LED that the SFT-25R mostly beats.</b> About half the SFT-25R's emitting area, 6500K. At the same current the SFT-25R is much brighter and throws further (<a href=\"https://convoylight.com/products/luminus-sft-12-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-25R",
+     "why": "Brighter and throws further"
+    },
+    {
+     "name": "W1",
+     "why": "Pencil beam, more throw"
+    },
+    {
+     "name": "XP-P",
+     "why": "Cree's 1 mm pencil-beam part"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -1617,7 +1881,7 @@
     "note": "Outclassed by the SFT-25R at the same current"
    },
    "cct_notes": [],
-   "tldr": "Tight pencil beam, but the SFT-25R is much brighter and throws further at the same current."
+   "tldr": "A tight pencil-beam LED that the SFT-25R mostly beats."
   },
   {
    "id": 16,
@@ -1658,7 +1922,21 @@
    "cri_html": "70 (5000K+)<br>95 (≤4000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Budget domed emitter. The ≤4000K high-CRI version is R9080; 5000K–6500K is bright but notoriously green on low. Also sold as <b>SST-20-DR 660 nm deep red</b> (<a href=\"https://convoylight.com/products/luminus-sst20-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A cheap, versatile domed LED, at its best in the 4000K high-CRI version.</b> The ≤4000K high-CRI bins are R9080; 5000K–6500K is bright but notoriously green on low. Also sold as <b>SST-20-DR 660 nm deep red</b> (<a href=\"https://convoylight.com/products/luminus-sst20-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Better tint, more output"
+    },
+    {
+     "name": "LH351D",
+     "why": "Floodier budget high CRI"
+    },
+    {
+     "name": "SST-20V",
+     "why": "Newer, higher lumen density"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -1723,7 +2001,7 @@
      "text": "Bright but notoriously green on low"
     }
    ],
-   "tldr": "Budget domed emitter."
+   "tldr": "A cheap, versatile domed LED, at its best in the 4000K high-CRI version."
   },
   {
    "id": 17,
@@ -1767,7 +2045,25 @@
    "cri_html": "70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "SST-40: 5000K, 5700K or 6500K. SST-70: 5700K or 6500K (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-40-WSxx_Gen2_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-40 datasheet</a>, <a href=\"https://www.luminus.com/datasheets/Luminus_2024_Specialty_Lighting_Catalog.pdf\" target=\"_blank\" rel=\"noopener\">Luminus catalog</a>). Domed, cheap, high-output flood/hybrid LEDs common in budget lights; very green at low power (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/products/luminus-sst40-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>). Bare SST-70 is sold out at Convoy (Nov 2026), but it still ships in Fenix, Convoy and Sofirn lights.",
+   "notes_html": "<b>Cheap, bright and green: the budget-light workhorses.</b> Domed flood/hybrid LEDs common in budget lights, very green at low power. SST-40 comes in 5000K, 5700K or 6500K; SST-70 in 5700K or 6500K (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-40-WSxx_Gen2_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-40 datasheet</a>, <a href=\"https://www.luminus.com/datasheets/Luminus_2024_Specialty_Lighting_Catalog.pdf\" target=\"_blank\" rel=\"noopener\">Luminus catalog</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/products/luminus-sst40-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>). Bare SST-70 is sold out at Convoy (Nov 2026), but it still ships in Fenix, Convoy and Sofirn lights.",
+   "alternatives": [
+    {
+     "name": "LML2AW",
+     "why": "SST-40 drop-in, better tint"
+    },
+    {
+     "name": "SFT-40",
+     "why": "Domeless, far more throw"
+    },
+    {
+     "name": "SFT-70",
+     "why": "Domeless SST-70"
+    },
+    {
+     "name": "LHP531",
+     "why": "Cheap 5050, clean beam"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus SST-40 datasheet",
@@ -1803,7 +2099,7 @@
      "text": "Very green at low power on all CCTs"
     }
    ],
-   "tldr": "Domed, cheap, high-output flood/hybrid LEDs; very green at low power."
+   "tldr": "Cheap, bright and green: the budget-light workhorses."
   },
   {
    "id": 81,
@@ -1839,7 +2135,8 @@
    "cri_html": "~70 (cool white)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domed cool-white flood emitter. Mostly seen in Fenix lights: four in the C7 PRO, eight in the LR35R PRO, twelve in the LR36R and two in the HM75R PRO (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-25-WES_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus datasheet</a>).",
+   "notes_html": "<b>A domed cool-white flood LED you'll mostly meet in Fenix multi-LED lights.</b> Four in the C7 PRO, eight in the LR35R PRO, twelve in the LR36R and two in the HM75R PRO (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-25-WES_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus datasheet</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Luminus datasheet",
@@ -1858,7 +2155,7 @@
     "note": "Fenix/Olight-class OEM emitter"
    },
    "cct_notes": [],
-   "tldr": "Domed cool-white flood emitter."
+   "tldr": "A domed cool-white flood LED you'll mostly meet in Fenix multi-LED lights."
   },
   {
    "id": 88,
@@ -1895,7 +2192,13 @@
    "cri_html": "~65 (≈5000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domed small round-die emitter in the XP footprint, a step down from the SST-20 with a tidier beam. Max 1.8 A rated (<a href=\"https://budgetlightforum.com/t/led-test-review-luminus-sst-12-wxs-specialty-white-5000-k-typ-65-cri/219049\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>A small round-die domed LED: a step down from the SST-20 with a tidier beam.</b> XP footprint, rated to 1.8 A max (<a href=\"https://budgetlightforum.com/t/led-test-review-luminus-sst-12-wxs-specialty-white-5000-k-typ-65-cri/219049\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "SST-20",
+     "why": "Brighter, high-CRI bins"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -1914,7 +2217,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Domed small round-die emitter in the XP footprint, a step down from the SST-20 with a tidier beam."
+   "tldr": "A small round-die domed LED: a step down from the SST-20 with a tidier beam."
   },
   {
    "id": 96,
@@ -1949,7 +2252,13 @@
    "cri_html": "70 (5700K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "One of the largest single LED chips ever: huge output but very low efficiency (about 45 lm/W at 28 A). The SBT90.2 makes 5000 lm at 19 A instead (<a href=\"https://budgetlightforum.com/t/led-test-review-luminus-cbt-140-wcs-expensive-led-with-one-of-the-biggest-led-chips-of-all-time/228242\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>A huge, inefficient projector chip, mostly a curiosity.</b> One of the largest single LED chips ever: big output, but only about 45 lm/W at 28 A. The SBT90.2 makes 5000 lm at 19 A instead (<a href=\"https://budgetlightforum.com/t/led-test-review-luminus-cbt-140-wcs-expensive-led-with-one-of-the-biggest-led-chips-of-all-time/228242\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "Far more efficient"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -1968,7 +2277,7 @@
     "note": "The SBT90.2 does more with less power"
    },
    "cct_notes": [],
-   "tldr": "One of the largest single LED chips ever: huge output but very low efficiency (about 45 lm/W at 28 A)."
+   "tldr": "A huge, inefficient projector chip, mostly a curiosity."
   },
   {
    "id": 18,
@@ -2011,7 +2320,21 @@
    "cri_html": "70 / 80 / 90 / 95 (6V)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>The go-to for high sustained output.</b> ANSI bins 3000K–7000K plus EasyWhite 2700K–4000K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XHP70.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>). Domeless <code>HI</code> (3.9 mm source) roughly doubles intensity and cleans up the beam vs domed <code>HD</code> (5.3 mm source; 4,857 / 6,405 lm) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>The go-to for high sustained output in big single-emitter lights.</b> The domeless <code>HI</code> (3.9 mm source) roughly doubles intensity and cleans up the beam vs the domed <code>HD</code> (5.3 mm source) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). ANSI bins 3000K–7000K plus EasyWhite 2700K–4000K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XHP70.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>). It's a 6V part, so single-cell lights need a boost driver.",
+   "alternatives": [
+    {
+     "name": "LHP73B",
+     "why": "3V, higher sustained output in Convoy lights"
+    },
+    {
+     "name": "XHP70.3 HD",
+     "why": "More lumens, floodier"
+    },
+    {
+     "name": "FFL707A",
+     "why": "High-CRI four-die, needs own board"
+    }
+   ],
    "sources": [
     {
      "label": "Cree datasheet",
@@ -2063,7 +2386,7 @@
      "text": "The HI's smaller source roughly doubles intensity vs the domed HD"
     }
    ],
-   "tldr": "The go-to for high sustained output."
+   "tldr": "The go-to for high sustained output in big single-emitter lights."
   },
   {
    "id": 19,
@@ -2107,7 +2430,25 @@
    "cri_html": "70 / 80 / 90 / 95 (6V)<br>&lt;70 (3V)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "ANSI bins 3000K–7000K plus EasyWhite 2700K–4000K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XHP50.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>). Compact quad-die workhorse; very efficient with decent throw, though tint can be a lottery (<a href=\"https://convoylight.com/collections/cree\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A compact quad-die workhorse: efficient and bright, with decent throw.</b> Comes in 3V, 6V and 12V on a 5050 footprint; ANSI bins 3000K–7000K plus EasyWhite 2700K–4000K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XHP50.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>). Tint can be a lottery (<a href=\"https://convoylight.com/collections/cree\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "NTG50",
+     "why": "High-CRI, guaranteed rosy"
+    },
+    {
+     "name": "FFL5009R",
+     "why": "High-CRI quad, throwy beam"
+    },
+    {
+     "name": "SFQ-55",
+     "why": "San'an 3V rival"
+    },
+    {
+     "name": "XHP50.3 HD",
+     "why": "Floodier HD sibling"
+    }
+   ],
    "sources": [
     {
      "label": "Cree datasheet",
@@ -2163,7 +2504,7 @@
      "text": "Bin lottery — 90 CRI versions exist but cost output"
     }
    ],
-   "tldr": "Compact quad-die workhorse; very efficient with decent throw, though tint is a bin lottery."
+   "tldr": "A compact quad-die workhorse: efficient and bright, with decent throw."
   },
   {
    "id": 20,
@@ -2202,7 +2543,17 @@
    "cri_html": "&lt;70 / 80",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domeless 3535 multi-die. The older 12V <b>XHP35 HI</b> (discontinued) is still sought after for its 4000K tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A domeless multi-die 3535 for compact throwy builds.</b> The older 12V <b>XHP35 HI</b> (discontinued) is still sought after for its 4000K tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XHP35",
+     "why": "Original 12V version"
+    },
+    {
+     "name": "XHP35.2 HD",
+     "why": "Domed: more lumens, less throw"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -2221,7 +2572,7 @@
     "note": "12V version sought for its 4000K tint"
    },
    "cct_notes": [],
-   "tldr": "Domeless 3535 multi-die; the older 12V XHP35 HI is still sought after for its 4000K tint."
+   "tldr": "A domeless multi-die 3535 for compact throwy builds."
   },
   {
    "id": 21,
@@ -2262,7 +2613,21 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "2700K–6500K by order code; Convoy sells 3000K, 4000K, 5000K and 6500K. Classic domeless EDC emitter; mostly superseded by 519A, SFT-40 and NTG35 (<a href=\"https://convoylight.com/products/xpl-hi-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>The classic domeless EDC emitter, now mostly superseded.</b> 2700K–6500K by order code; Convoy sells 3000K, 4000K, 5000K and 6500K. The 519A, SFT-40 and NTG35 have largely replaced it (<a href=\"https://convoylight.com/products/xpl-hi-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Better colour"
+    },
+    {
+     "name": "SFT-25R",
+     "why": "Same 3535 board, far more throw"
+    },
+    {
+     "name": "XP-L HD",
+     "why": "Domed, floodier"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -2298,7 +2663,7 @@
     "note": "Mostly superseded by the 519A, SFT-40 and NTG35"
    },
    "cct_notes": [],
-   "tldr": "2700K–6500K by order code; Convoy sells 3000K, 4000K, 5000K and 6500K."
+   "tldr": "The classic domeless EDC emitter, now mostly superseded."
   },
   {
    "id": 22,
@@ -2339,7 +2704,17 @@
    "cri_html": "70 / 80 / 90 (L2 also 95)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Both 2700K–7000K (<a href=\"https://www.tti.com/content/dam/tti-commons/supplier/cree-led/doc/cree-led-xlamp-white-leds-product-guide.pdf\" target=\"_blank\" rel=\"noopener\">Cree product guide</a>). Efficient and very common in mainstream brands (Fenix, Olight, etc.). Domed, with poor colour and noticeable tint shift; enthusiasts generally avoid them (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Efficient mainstream LEDs that enthusiasts generally avoid.</b> Very common in Fenix, Olight and similar brands. Domed, with poor colour and noticeable tint shift. Both 2700K–7000K (<a href=\"https://www.tti.com/content/dam/tti-commons/supplier/cree-led/doc/cree-led-xlamp-white-leds-product-guide.pdf\" target=\"_blank\" rel=\"noopener\">Cree product guide</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Far better colour"
+    },
+    {
+     "name": "XP-G3",
+     "why": "The part they replaced"
+    }
+   ],
    "sources": [
     {
      "label": "Cree product guide",
@@ -2362,7 +2737,7 @@
     "note": "Common in Fenix/Olight-class lights; enthusiasts avoid the tint"
    },
    "cct_notes": [],
-   "tldr": "Efficient and very common in mainstream brands; domed, with poor colour and noticeable tint shift."
+   "tldr": "Efficient mainstream LEDs that enthusiasts generally avoid."
   },
   {
    "id": 23,
@@ -2405,7 +2780,17 @@
    "cri_html": "70 / &lt;70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "5000K, 5700K or 6500K only (<a href=\"https://www.cree-led.com/news/xlamp-xplr-xpgr/\" target=\"_blank\" rel=\"noopener\">Cree</a>). <b>Cree&#x27;s newer round-die (round LES) throw parts</b>, with source sizes of 1.3–2.8 mm. Cree&#x27;s direct answer to the SFT-25R / SFT-40 class. Few enthusiast tests yet.",
+   "notes_html": "<b>Cree's round-die (round LES) throw parts, its answer to the SFT-25R / SFT-40 class.</b> Source sizes of 1.3–2.8 mm; 5000K, 5700K or 6500K only (<a href=\"https://www.cree-led.com/news/xlamp-xplr-xpgr/\" target=\"_blank\" rel=\"noopener\">Cree</a>). Few enthusiast tests yet.",
+   "alternatives": [
+    {
+     "name": "SFT-25R",
+     "why": "The 3535 throw reference"
+    },
+    {
+     "name": "SFT-40",
+     "why": "Well-tested all-round thrower"
+    }
+   ],
    "sources": [
     {
      "label": "Cree",
@@ -2441,7 +2826,7 @@
     "note": "Few enthusiast tests yet"
    },
    "cct_notes": [],
-   "tldr": "Cree's round-die throw parts — a direct answer to the SFT-25R / SFT-40 class."
+   "tldr": "Cree's round-die (round LES) throw parts, its answer to the SFT-25R / SFT-40 class."
   },
   {
    "id": 24,
@@ -2479,7 +2864,21 @@
    "cri_html": "—",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "2700K–6500K (<a href=\"https://www.cree-led.com/products/applications/broadcast/\" target=\"_blank\" rel=\"noopener\">Cree</a>). The tiny-die classic for micro quads and triples, now largely displaced by the XP-G3/G4. Smaller dome and die than the XP-L, with correspondingly less output (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>The old tiny-die classic for micro quads and triples.</b> Smaller dome and die than the XP-L, with correspondingly less output. 2700K–6500K (<a href=\"https://www.cree-led.com/products/applications/broadcast/\" target=\"_blank\" rel=\"noopener\">Cree</a>). Largely displaced by the XP-G3/G4 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "E21A",
+     "why": "High-CRI tiny dies"
+    },
+    {
+     "name": "CSP2323",
+     "why": "Tiny CSP, 90 CRI"
+    },
+    {
+     "name": "XP-G3",
+     "why": "Its successor"
+    }
+   ],
    "sources": [
     {
      "label": "Cree",
@@ -2511,7 +2910,7 @@
     "note": "Displaced by the XP-G3/G4; still loved in micro triples"
    },
    "cct_notes": [],
-   "tldr": "The tiny-die classic for micro quads and triples."
+   "tldr": "The old tiny-die classic for micro quads and triples."
   },
   {
    "id": 25,
@@ -2549,7 +2948,13 @@
    "cri_html": "70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "2700K–7000K (<a href=\"https://www.cree-led.com/products/applications/portable-lighting/page/2/\" target=\"_blank\" rel=\"noopener\">Cree</a>). The classic budget flooder, redesigned in 2021 as a flip chip (&quot;the XM-L3 that never was&quot;): much more efficient, lower Vf, and it survives ~17 A in overdrive tests. Same XM footprint, so existing boards and centering rings still fit. Luminance is only XP-L HD class and dedoming gains &lt;10%, so it&#x27;s a flood LED, not a thrower (<a href=\"https://budgetlightforum.com/t/led-test-review-new-cree-xlamp-xm-l2-u3-color-kit-51-6200-k-design-change-after-pcn-issued/71898\" target=\"_blank\" rel=\"noopener\">koef3 test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A cheap, efficient flood LED, not a thrower.</b> Redesigned in 2021 as a flip chip (\"the XM-L3 that never was\"): much more efficient, lower Vf, and it survives ~17 A in overdrive tests. Same XM footprint, so existing boards and centering rings still fit. Luminance is only XP-L HD class, and dedoming gains &lt;10% (<a href=\"https://budgetlightforum.com/t/led-test-review-new-cree-xlamp-xm-l2-u3-color-kit-51-6200-k-design-change-after-pcn-issued/71898\" target=\"_blank\" rel=\"noopener\">koef3 test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). 2700K–7000K (<a href=\"https://www.cree-led.com/products/applications/portable-lighting/page/2/\" target=\"_blank\" rel=\"noopener\">Cree</a>).",
+   "alternatives": [
+    {
+     "name": "XM-L3",
+     "why": "Higher-current successor"
+    }
+   ],
    "sources": [
     {
      "label": "Cree",
@@ -2585,7 +2990,7 @@
     "note": "2021 flip-chip redesign; same XM footprint"
    },
    "cct_notes": [],
-   "tldr": "The classic budget flooder — a flood LED, not a thrower; dedoming gains under 10%."
+   "tldr": "A cheap, efficient flood LED, not a thrower."
   },
   {
    "id": 26,
@@ -2630,7 +3035,21 @@
    "cri_html": "70–90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "ANSI bins 3000K–7000K, EasyWhite 2700K–5000K (<a href=\"https://www.mouser.co.uk/cree-xlamp-xhp70-2\" target=\"_blank\" rel=\"noopener\">Mouser</a>). Older <b>domed</b> XHP generation: very bright but floody, with visible rainbow tint shift. Still sold by Convoy (<a href=\"https://convoylight.com/collections/cree\" target=\"_blank\" rel=\"noopener\">Convoy Cree</a>). Convoy&#x27;s bare 6V XHP70.2 is sold out (Nov 2026); the XHP50.2 is still listed.",
+   "notes_html": "<b>The older domed XHP generation: very bright but floody, with visible rainbow tint shift.</b> ANSI bins 3000K–7000K, EasyWhite 2700K–5000K (<a href=\"https://www.mouser.co.uk/cree-xlamp-xhp70-2\" target=\"_blank\" rel=\"noopener\">Mouser</a>). Convoy still lists the XHP50.2, but its bare 6V XHP70.2 is sold out (Nov 2026) (<a href=\"https://convoylight.com/collections/cree\" target=\"_blank\" rel=\"noopener\">Convoy Cree</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "Newer, domeless 5050"
+    },
+    {
+     "name": "XHP70.3 HI",
+     "why": "Newer, ~2× the intensity"
+    },
+    {
+     "name": "LHP73B",
+     "why": "Cheap 3V 7070 flood"
+    }
+   ],
    "sources": [
     {
      "label": "Mouser",
@@ -2653,7 +3072,7 @@
     "note": "Superseded by the XHP50.3 / XHP70.3 HI"
    },
    "cct_notes": [],
-   "tldr": "Older domed XHP generation: very bright but floody, with visible rainbow tint shift."
+   "tldr": "The older domed XHP generation: very bright but floody, with visible rainbow tint shift."
   },
   {
    "id": 27,
@@ -2693,7 +3112,17 @@
    "cri_html": "&lt;70 – 80",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cool and neutral only: ANSI bins at 5000K, 5700K and 6500K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XFL.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>). Ultra-high-lumen domed multi-die parts for mega-flooders; mediocre colour.",
+   "notes_html": "<b>Ultra-high-lumen domed multi-die parts for mega-flooders.</b> Mediocre colour, cool and neutral only: ANSI bins at 5000K, 5700K and 6500K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XFL.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "XFLPNA",
+     "why": "Cree's newer domeless XFL"
+    },
+    {
+     "name": "SFP-55",
+     "why": "San'an mega-flood"
+    }
+   ],
    "sources": [
     {
      "label": "Cree datasheet",
@@ -2721,7 +3150,7 @@
     "note": "Mega-flood hosts"
    },
    "cct_notes": [],
-   "tldr": "Ultra-high-lumen domed multi-die parts for mega-flooders; mediocre colour."
+   "tldr": "Ultra-high-lumen domed multi-die parts for mega-flooders."
   },
   {
    "id": 82,
@@ -2759,7 +3188,13 @@
    "cri_html": "70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "The <b>high-density</b> sibling of the XHP50.3 HI: Cree rates it for lumens rather than throw, so expect a wider, less intense hotspot. Found in the Fenix TK17 (<a href=\"https://assets.cree-led.com/a/ds/x/XLamp-XHP50.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>).",
+   "notes_html": "<b>The flood-first sibling of the XHP50.3 HI.</b> Cree rates it for lumens rather than throw, so expect a wider, less intense hotspot. Found in the Fenix TK17 (<a href=\"https://assets.cree-led.com/a/ds/x/XLamp-XHP50.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "Domeless, more throw"
+    }
+   ],
    "sources": [
     {
      "label": "Cree datasheet",
@@ -2778,7 +3213,7 @@
     "note": "Found in the Fenix TK17"
    },
    "cct_notes": [],
-   "tldr": "The high-density sibling of the XHP50.3 HI: Cree rates it for lumens rather than throw, so expect a wider, less intense hotspot."
+   "tldr": "The flood-first sibling of the XHP50.3 HI."
   },
   {
    "id": 90,
@@ -2815,7 +3250,13 @@
    "cri_html": "70 (≈5700K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Higher-current successor to the XM-L2 (rated 5 A, low Vf, lots of flux), but the big die gives a less pleasant beam in optics (<a href=\"https://budgetlightforum.com/t/led-test-review-xm-l3-u4-color-kit-e2-basically-more-powerful-1st-gen-xm-l2-low-vf-high-light-flux-but-not-so-nice-light-in-optics/219338\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>A higher-current XM-L2 successor with lots of flux but a so-so beam.</b> Rated 5 A with low Vf, but the big die gives a less pleasant beam in optics (<a href=\"https://budgetlightforum.com/t/led-test-review-xm-l3-u4-color-kit-e2-basically-more-powerful-1st-gen-xm-l2-low-vf-high-light-flux-but-not-so-nice-light-in-optics/219338\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "XM-L2",
+     "why": "Same footprint, proven"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -2834,7 +3275,7 @@
     "note": "Big die, less pleasant beam"
    },
    "cct_notes": [],
-   "tldr": "Higher-current XM-L2 successor, but the big die gives a less pleasant beam in optics."
+   "tldr": "A higher-current XM-L2 successor with lots of flux but a so-so beam."
   },
   {
    "id": 97,
@@ -2869,7 +3310,21 @@
    "cri_html": "70 · 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domed high-density XP-L: floodier and slightly brighter than the domeless XP-L HI. Older but still in budget lights (<a href=\"https://budgetlightforum.com/t/led-test-review-sc5-based-cree-leds-xp-l-hd-hi-xp-g2-e2-xm-l2-wip/51980\" target=\"_blank\" rel=\"noopener\">BLF SC5 test</a>).",
+   "notes_html": "<b>The domed XP-L: floodier and slightly brighter than the domeless HI.</b> Older, but still turns up in budget lights (<a href=\"https://budgetlightforum.com/t/led-test-review-sc5-based-cree-leds-xp-l-hd-hi-xp-g2-e2-xm-l2-wip/51980\" target=\"_blank\" rel=\"noopener\">BLF SC5 test</a>).",
+   "alternatives": [
+    {
+     "name": "XP-L HI",
+     "why": "Domeless, more throw"
+    },
+    {
+     "name": "519A",
+     "why": "Modern 3535 with far better colour"
+    },
+    {
+     "name": "P9",
+     "why": "Its budget-light rival"
+    }
+   ],
    "sources": [
     {
      "label": "BLF SC5 test",
@@ -2888,7 +3343,7 @@
     "note": "Superseded; still in budget lights"
    },
    "cct_notes": [],
-   "tldr": "Domed high-density XP-L: floodier and slightly brighter than the domeless XP-L HI."
+   "tldr": "The domed XP-L: floodier and slightly brighter than the domeless HI."
   },
   {
    "id": 28,
@@ -2932,7 +3387,25 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "1 mm² die, cool white (~6000K). <b>Unmatched pencil-beam throw</b> for its size. The same package also comes in red, green, verdure, orange and blue (see §7) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Green</b> (~520 nm green): Saturated true green; high perceived brightness, popular for hunting and signalling (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Verdure</b> (lime/mint (phosphor-converted)): Spectrum centred near the eye&#x27;s 555 nm sensitivity peak, so very high lumens per watt and a distinct &quot;money green&quot; tint (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Red</b> (620 nm red): Red-orange; protects dark adaptation far better than white. For maximum night-vision preservation, deep red (660 nm, e.g. SST-20-DR) is better (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Blue</b> (~445 nm blue): Short-wavelength blue throw emitter. Emisar/Noctigon also sell a W2 Deep Blue (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Orange</b> (amber/orange): Warm monochrome option, used for wildlife watching and to cut glare in fog and rain (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).",
+   "notes_html": "<b>Unmatched pencil-beam throw for its size: the pick for maximum reach from a small light.</b> 1 mm² die, cool white (~6000K). The same package also comes in green, verdure, red, blue and orange (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Green</b> (~520 nm): saturated true green with high perceived brightness, popular for hunting and signalling.<br><b>Verdure</b> (phosphor-converted lime/mint): centred near the eye's 555 nm sensitivity peak, so very high lumens per watt and a distinct \"money green\" tint.<br><b>Red</b> (620 nm): red-orange that protects dark adaptation far better than white; for the most night-vision preservation, 660 nm deep red (e.g. SST-20-DR) is better.<br><b>Blue</b> (~445 nm): short-wavelength blue thrower; Emisar/Noctigon also sell a W2 Deep Blue.<br><b>Orange</b> (amber): warm monochrome for wildlife watching and cutting glare in fog and rain (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).",
+   "alternatives": [
+    {
+     "name": "W2",
+     "why": "Wider hotspot, more lumens"
+    },
+    {
+     "name": "SFT-25R",
+     "why": "Standard 3535 board, more lumens"
+    },
+    {
+     "name": "XP-P",
+     "why": "Cree's 1 mm pencil-beam part"
+    },
+    {
+     "name": "LEP",
+     "why": "Far more candela, almost no spill"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -3007,7 +3480,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Unmatched pencil-beam throw for its size: 1 mm² die, cool white, plus a full set of colour bins."
+   "tldr": "Unmatched pencil-beam throw for its size: the pick for maximum reach from a small light."
   },
   {
    "id": 29,
@@ -3048,7 +3521,21 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "2 mm² die; white is 5700K only, and the same package also comes in green and deep blue (see §7). Handles more current than W1 for a wider, brighter hotspot (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).<br><br><b>Green</b> (~520 nm green): Saturated true green; high perceived brightness, popular for hunting and signalling (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Blue</b> (~445 nm blue): Short-wavelength blue throw emitter. Emisar/Noctigon also sell a W2 Deep Blue (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).",
+   "notes_html": "<b>A throw LED with a wider, brighter hotspot than the W1.</b> 2 mm² die that handles more current than the W1. White is 5700K only; the same package also comes in green and deep blue (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).<br><br><b>Green</b> (~520 nm): saturated true green with high perceived brightness, popular for hunting and signalling.<br><b>Blue</b> (~445 nm): short-wavelength blue thrower; Emisar/Noctigon also sell a W2 Deep Blue (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "Tighter beam, more throw"
+    },
+    {
+     "name": "Boost HX",
+     "why": "Same die class, runs cooler"
+    },
+    {
+     "name": "SFT-40",
+     "why": "More spill, high-CRI 3000K"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -3107,7 +3594,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Handles more current than W1 for a wider, brighter hotspot; white is 5700K only."
+   "tldr": "A throw LED with a wider, brighter hotspot than the W1."
   },
   {
    "id": 30,
@@ -3148,7 +3635,21 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cool white: the datasheet&#x27;s typical colour point (x 0.32, y 0.33) is about 6000K, and Convoy sells it as 6500K (<a href=\"https://ams-osram.com/products/leds/white-leds/osram-oslon-boost-hx-kw-culpm1-tg\" target=\"_blank\" rel=\"noopener\">ams OSRAM</a>, <a href=\"https://convoylight.com/products/convoy-s16-21700-flashlight\" target=\"_blank\" rel=\"noopener\">Convoy S16</a>). 2 mm²-class die in the bigger Oslon Boost package, which runs cooler and takes more overdrive. Common in Convoy throwers (S21B, M21-series) (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Verdure</b> (lime/mint (phosphor-converted)): Spectrum centred near the eye&#x27;s 555 nm sensitivity peak, so very high lumens per watt and a distinct &quot;money green&quot; tint (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).<br><br><b>Red</b> (620 nm red): Red-orange; protects dark adaptation far better than white. For maximum night-vision preservation, deep red (660 nm, e.g. SST-20-DR) is better (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).",
+   "notes_html": "<b>A W2-class thrower in a bigger package that runs cooler and takes more overdrive.</b> 2 mm²-class die in the Oslon Boost package, common in Convoy throwers (S21B, M21-series) (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>). Cool white: the datasheet's typical colour point (x 0.32, y 0.33) is about 6000K, and Convoy sells it as 6500K (<a href=\"https://ams-osram.com/products/leds/white-leds/osram-oslon-boost-hx-kw-culpm1-tg\" target=\"_blank\" rel=\"noopener\">ams OSRAM</a>, <a href=\"https://convoylight.com/products/convoy-s16-21700-flashlight\" target=\"_blank\" rel=\"noopener\">Convoy S16</a>).<br><br><b>Verdure</b> (phosphor-converted lime/mint): centred near the eye's 555 nm sensitivity peak, so very high lumens per watt and a distinct \"money green\" tint.<br><b>Red</b> (620 nm): red-orange that protects dark adaptation far better than white; for the most night-vision preservation, 660 nm deep red (e.g. SST-20-DR) is better (<a href=\"https://convoylight.com/collections/osram\" target=\"_blank\" rel=\"noopener\">Convoy Osram</a>).",
+   "alternatives": [
+    {
+     "name": "W2",
+     "why": "Same die class, 3030 board"
+    },
+    {
+     "name": "SFT-40",
+     "why": "More spill, high-CRI option"
+    },
+    {
+     "name": "SFT-25R",
+     "why": "3535 board, similar job"
+    }
+   ],
    "sources": [
     {
      "label": "ams OSRAM",
@@ -3200,7 +3701,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "2 mm²-class die in the bigger Oslon Boost package, which runs cooler and takes more overdrive; common in Convoy throwers."
+   "tldr": "A W2-class thrower in a bigger package that runs cooler and takes more overdrive."
   },
   {
    "id": 31,
@@ -3239,7 +3740,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Flashlight versions are 5700K or 6500K (datasheet range 2200K–6500K) (<a href=\"https://ams-osram.com/products/leds/white-leds/osram-osconiq-p-3737-3w-gw-pusta1-pm\" target=\"_blank\" rel=\"noopener\">ams OSRAM</a>). Domed, mainly cool white; competes with the XP-L HD in budget/mainstream lights. Poor colour rendering (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A domed mainstream cool-white LED with poor colour.</b> Competes with the XP-L HD in budget and mainstream lights. Flashlight versions are 5700K or 6500K (datasheet range 2200K–6500K) (<a href=\"https://ams-osram.com/products/leds/white-leds/osram-osconiq-p-3737-3w-gw-pusta1-pm\" target=\"_blank\" rel=\"noopener\">ams OSRAM</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XP-L HD",
+     "why": "Its direct rival"
+    },
+    {
+     "name": "519A",
+     "why": "Far better colour"
+    }
+   ],
    "sources": [
     {
      "label": "ams OSRAM",
@@ -3262,7 +3773,7 @@
     "note": "Budget/mainstream; poor colour rendering"
    },
    "cct_notes": [],
-   "tldr": "Domed, mainly cool white; competes with the XP-L HD in budget/mainstream lights with poor colour rendering."
+   "tldr": "A domed mainstream cool-white LED with poor colour."
   },
   {
    "id": 95,
@@ -3299,7 +3810,13 @@
    "cri_html": "~70 (cool white)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "The classic pre-W1 <b>long-range thrower</b> LED (LUW HWQP): tiny flat die with very high luminance at modest current (<a href=\"https://budgetlightforum.com/t/led-test-review-osram-oslon-black-flat-hwqp-still-highest-luminance-of-all-leds-to-date/50320\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>The classic long-range thrower LED from before the W1.</b> Tiny flat die (LUW HWQP) with very high luminance at modest current (<a href=\"https://budgetlightforum.com/t/led-test-review-osram-oslon-black-flat-hwqp-still-highest-luminance-of-all-leds-to-date/50320\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "Its modern successor"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -3318,7 +3835,7 @@
     "note": "The classic pre-W1 thrower LED"
    },
    "cct_notes": [],
-   "tldr": "The classic pre-W1 long-range thrower LED (LUW HWQP): tiny flat die with very high luminance at modest current ( BLF test )."
+   "tldr": "The classic long-range thrower LED from before the W1."
   },
   {
    "id": 32,
@@ -3358,7 +3875,21 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "10 A max. 3000K/4000K/5000K. Convoy's sphere test: 1,408 lm @ 3 A (Vf 3.01 V), 2,397 lm @ 6 A (3.24 V), 3,241 lm @ 10 A (3.48 V), 155→93 lm/W — cold pulsed bare-LED numbers, expect less out the front (and less again in warmer CCTs; CCT under test not stated). A user described it as &#x22;a cross between an SFT40 and an SFT60&#x22; (<a href=\"https://convoylight.com/products/f45r-led\" target=\"_blank\" rel=\"noopener\">Convoy test data</a>).",
+   "notes_html": "<b>Convoy's own 3V thrower die, which a user describes as \"a cross between an SFT40 and an SFT60\".</b> 10 A max, in 3000K/4000K/5000K. Convoy's sphere test: 1,408 lm at 3 A (Vf 3.01 V), 2,397 lm at 6 A (3.24 V) and 3,241 lm at 10 A (3.48 V), 155→93 lm/W. Those are cold, pulsed bare-LED numbers, so expect less out the front, and less again in warmer CCTs (the CCT tested isn't stated) (<a href=\"https://convoylight.com/products/f45r-led\" target=\"_blank\" rel=\"noopener\">Convoy test data</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "More throw per lumen, high-CRI 3000K"
+    },
+    {
+     "name": "SFT-60",
+     "why": "More lumens, high Vf"
+    },
+    {
+     "name": "F150R",
+     "why": "Convoy's bigger die"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -3402,7 +3933,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "A user described it as a cross between an SFT40 and an SFT60.",
+   "tldr": "Convoy's own 3V thrower die, which a user describes as \"a cross between an SFT40 and an SFT60\".",
    "manufactured_by": "San'an"
   },
   {
@@ -3443,7 +3974,21 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Rated to <b>30 A</b>. Convoy says it sits on or below the Planckian locus (no green push). Users report the 4000K as nicely negative-Duv but the 3000K as slightly green. Fits 21700 hosts such as the M21H. Convoy's sphere test: 2,781 lm @ 6 A (Vf 2.97 V), 4,235 lm @ 10 A (3.12 V), 5,703 lm @ 15 A (3.28 V), 6,821 lm @ 20 A (3.43 V) — cold pulsed bare-LED numbers; expect less out the front, and less again in warmer CCTs (CCT under test not stated; the chart is labelled 1011 package while the sold part is a 7070 footprint) (<a href=\"https://convoylight.com/products/f150r-led\" target=\"_blank\" rel=\"noopener\">Convoy test data</a>).",
+   "notes_html": "<b>Convoy's big-die searchlight LED, with a tint on or below the Planckian locus.</b> Rated to <b>30 A</b>; fits 21700 hosts such as the M21H. Users report the 4000K as nicely negative-Duv but the 3000K as slightly green. Convoy's sphere test: 2,781 lm at 6 A (Vf 2.97 V), 4,235 lm at 10 A (3.12 V), 5,703 lm at 15 A (3.28 V) and 6,821 lm at 20 A (3.43 V). Those are cold, pulsed bare-LED numbers; expect less out the front, and less again in warmer CCTs (the CCT tested isn't stated, and the chart is labelled 1011 package while the sold part is a 7070 footprint) (<a href=\"https://convoylight.com/products/f150r-led\" target=\"_blank\" rel=\"noopener\">Convoy test data</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "The class reference"
+    },
+    {
+     "name": "SFT-90",
+     "why": "Cheaper big die"
+    },
+    {
+     "name": "F45R",
+     "why": "Convoy's smaller die"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -3491,7 +4036,7 @@
      "text": "Slightly green"
     }
    ],
-   "tldr": "Sits on or below the Planckian locus (no green push); fits 21700 hosts.",
+   "tldr": "Convoy's big-die searchlight LED, with a tint on or below the Planckian locus.",
    "manufactured_by": "San'an"
   },
   {
@@ -3533,7 +4078,21 @@
    "cri_html": "70 or <b>R9080</b> (5000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "16 × 75 mil San&#x27;an chips; 60–80 A only with excellent cooling. Wide, clean beam; the 5000K R9080 version is praised for neutral tint. Back in stock at Convoy (Nov 2026): 6000K / 5500K R70 and 5000K / 4000K / 3000K R9080, bare or on 20 / 25 mm MCPCB (<a href=\"https://convoylight.com/products/nv1010-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A 10,000 lm flood monster for well-cooled lumen cannons.</b> 16 × 75 mil San'an chips; 60–80 A only with excellent cooling. Wide, clean beam, and the 5000K R9080 version is praised for its neutral tint. Back in stock at Convoy (Nov 2026): 6000K / 5500K R70 and 5000K / 4000K / 3000K R9080, bare or on 20 / 25 mm MCPCB (<a href=\"https://convoylight.com/products/nv1010-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFP-55",
+     "why": "Even more flood"
+    },
+    {
+     "name": "FFL909A",
+     "why": "High-CRI 36-chip flood"
+    },
+    {
+     "name": "LHP73B",
+     "why": "Cheap 7070 flood, easy to drive"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -3577,7 +4136,7 @@
      "text": "Praised for a neutral tint"
     }
    ],
-   "tldr": "Huge 10,000 lm flood with a wide, clean beam; 60–80 A only with excellent cooling.",
+   "tldr": "A 10,000 lm flood monster for well-cooled lumen cannons.",
    "manufactured_by": "San'an"
   },
   {
@@ -3617,7 +4176,21 @@
    "cri_html": "70 (5500K/6500K)<br>high-CRI (3000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Common Emisar / Noctigon hotrod emitter. Decent tint at 6500K, slightly green at 5500K. Competes with the SBT90 on lumens but throws less. Not sold bare by Convoy, but still offered in the <a href=\"https://intl-outdoor.com/product/noctigon-kr1-tail-e-switch-18650-pocket-thrower/\" target=\"_blank\" rel=\"noopener\">Noctigon KR1</a> (6500K / 5500K / 3000K) and Lumintop D3 (Nov 2026) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://intl-outdoor.com/\" target=\"_blank\" rel=\"noopener\">Emisar</a>).",
+   "notes_html": "<b>Hank's classic hotrod lumen LED.</b> Common in Emisar / Noctigon builds; competes with the SBT90 on lumens but throws less. Decent tint at 6500K, slightly green at 5500K. Not sold bare by Convoy, but still offered in the <a href=\"https://intl-outdoor.com/product/noctigon-kr1-tail-e-switch-18650-pocket-thrower/\" target=\"_blank\" rel=\"noopener\">Noctigon KR1</a> (6500K / 5500K / 3000K) and Lumintop D3 (Nov 2026) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://intl-outdoor.com/\" target=\"_blank\" rel=\"noopener\">Emisar</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "More throw"
+    },
+    {
+     "name": "XHP70.3 HI",
+     "why": "High sustained output, 6V"
+    },
+    {
+     "name": "LHP73B",
+     "why": "Cheap 3V 7070"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -3681,7 +4254,7 @@
      "text": "Slightly green"
     }
    ],
-   "tldr": "Common Emisar / Noctigon hotrod emitter."
+   "tldr": "Hank's classic hotrod lumen LED."
   },
   {
    "id": 36,
@@ -3718,7 +4291,17 @@
    "cri_html": "mostly 70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Listed at 5000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>). San&#x27;an&#x27;s 3V XHP50.3 HI competitor; high CCT with a clean cool tint. Now on its 4th generation (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>San'an's 3V answer to the XHP50.3 HI, with a clean cool tint.</b> Listed at 5000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>) and now on its 4th generation (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "The part it competes with"
+    },
+    {
+     "name": "SFQ-60",
+     "why": "Lower-Vf sibling"
+    }
+   ],
    "sources": [
     {
      "label": "BLF San'an thread",
@@ -3750,7 +4333,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "San'an's 3V XHP50.3 HI competitor; high CCT with a clean cool tint."
+   "tldr": "San'an's 3V answer to the XHP50.3 HI, with a clean cool tint."
   },
   {
    "id": 37,
@@ -3787,7 +4370,17 @@
    "cri_html": "mostly 70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Nightwatch sells its SFQ-60 lights at 5500K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>). Competes with the XHP50 at a lower Vf; very high CCT with a clean tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A lower-Vf XHP50 rival with a very high CCT and a clean tint.</b> Nightwatch sells its SFQ-60 lights at 5500K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFQ-55",
+     "why": "XHP50.3 HI rival"
+    },
+    {
+     "name": "XHP50.3 HI",
+     "why": "The usual quad-die pick"
+    }
+   ],
    "sources": [
     {
      "label": "BLF San'an thread",
@@ -3810,7 +4403,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Competes with the XHP50 at a lower Vf; very high CCT with a clean tint."
+   "tldr": "A lower-Vf XHP50 rival with a very high CCT and a clean tint."
   },
   {
    "id": 38,
@@ -3847,7 +4440,17 @@
    "cri_html": "mostly 70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Extremely bright 5050 that competes with the XHP50.2; very high CCT (≈6000K) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>An extremely bright cool 5050 that competes with the XHP50.2.</b> Very high CCT (≈6000K) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.2",
+     "why": "The part it competes with"
+    },
+    {
+     "name": "SFQ-55",
+     "why": "Cleaner-tint San'an 5050"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -3866,7 +4469,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Extremely bright 5050 that competes with the XHP50.2; very high CCT (≈6000K) ( BLF Guide )."
+   "tldr": "An extremely bright cool 5050 that competes with the XHP50.2."
   },
   {
    "id": 39,
@@ -3904,7 +4507,17 @@
    "cri_html": "70 (greenish)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Sold as cool white only; San&#x27;an parts like this usually come in 6500–7000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>). Nine-die 7070 that sits between the XHP70.2 and the SBT90.2 in size and output; large colour variation with power level and generally greenish tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A nine-die 7070 for lumens, between the XHP70.2 and the SBT90.2.</b> Large colour variation with power level, and a generally greenish tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Sold as cool white only; San'an parts like this usually come in 6500–7000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>).",
+   "alternatives": [
+    {
+     "name": "XHP70.3 HI",
+     "why": "Cleaner beam, high sustained"
+    },
+    {
+     "name": "SFN60",
+     "why": "Hank's hotrod 7070"
+    }
+   ],
    "sources": [
     {
      "label": "BLF San'an thread",
@@ -3936,7 +4549,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Nine-die 7070 that sits between the XHP70.2 and the SBT90.2; large colour variation and generally greenish."
+   "tldr": "A nine-die 7070 for lumens, between the XHP70.2 and the SBT90.2."
   },
   {
    "id": 40,
@@ -3973,7 +4586,17 @@
    "cri_html": "~70 (near-6700K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Very bright with more throw than the SFH-55; dead neutral tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A very bright San'an big die with a dead-neutral tint.</b> Throws more than the SFH-55 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFH-55",
+     "why": "Brighter, less throw"
+    },
+    {
+     "name": "SBT90.2",
+     "why": "The throw reference"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -4001,7 +4624,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Very bright with more throw than the SFH-55; dead neutral tint ( BLF Guide )."
+   "tldr": "A very bright San'an big die with a dead-neutral tint."
   },
   {
    "id": 41,
@@ -4039,7 +4662,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Nominal 6500K; one lab sample measured 7413K, Duv −0.0004 (<a href=\"https://budgetlightforum.com/t/led-test-review-changda-sfh55-6500-k-70-cri-just-pure-insanity/225575\" target=\"_blank\" rel=\"noopener\">BLF test</a>). Huge domeless 16-die LED, easily swapped with the SBT90.2; brighter but less throwy (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A huge domeless 16-die LED: a brighter, less throwy swap for the SBT90.2.</b> Easily swapped into SBT90.2 builds (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Nominal 6500K; one lab sample measured 7413K, Duv −0.0004 (<a href=\"https://budgetlightforum.com/t/led-test-review-changda-sfh55-6500-k-70-cri-just-pure-insanity/225575\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "More throw"
+    },
+    {
+     "name": "SFH-43",
+     "why": "More throw, neutral tint"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -4071,7 +4704,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Huge domeless 16-die LED, easily swapped with the SBT90.2; brighter but less throwy."
+   "tldr": "A huge domeless 16-die LED: a brighter, less throwy swap for the SBT90.2."
   },
   {
    "id": 42,
@@ -4108,7 +4741,17 @@
    "cri_html": "~70 (cool white)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "6500K (<a href=\"https://budgetlightforum.com/t/led-test-short-review-changda-sfp55-6500-k-70-cri-hardly-any-extra-power-compared-to-the-sfh55/230623\" target=\"_blank\" rel=\"noopener\">BLF test</a>). Massive 25-die surface (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A massive 25-die flood surface for lumen cannons.</b> 6500K (<a href=\"https://budgetlightforum.com/t/led-test-short-review-changda-sfp55-6500-k-70-cri-hardly-any-extra-power-compared-to-the-sfh55/230623\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFY-55",
+     "why": "Even bigger"
+    },
+    {
+     "name": "NV1010",
+     "why": "Flood with an R9080 option"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -4140,7 +4783,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Massive 25-die surface."
+   "tldr": "A massive 25-die flood surface for lumen cannons."
   },
   {
    "id": 43,
@@ -4181,7 +4824,13 @@
    "cri_html": "3000K high-CRI option",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Also 6500K 70 CRI (lab: 5954K, Ra 69, Duv +0.007) (<a href=\"https://budgetlightforum.com/t/led-test-short-review-changda-sfy55-6500-k-70-cri-just-pure-insanity-2-0/230885\" target=\"_blank\" rel=\"noopener\">BLF test</a>). 64-die monster emitter; gigantic footprint makes it very niche (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A 64-die monster: gigantic output, gigantic footprint, very niche.</b> 6500K 70 CRI (lab: 5954K, Ra 69, Duv +0.007) (<a href=\"https://budgetlightforum.com/t/led-test-short-review-changda-sfy55-6500-k-70-cri-just-pure-insanity-2-0/230885\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFP-55",
+     "why": "Smaller 25-die flood"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -4213,7 +4862,7 @@
     "note": "Gigantic footprint"
    },
    "cct_notes": [],
-   "tldr": "64-die monster emitter; gigantic footprint makes it very niche."
+   "tldr": "A 64-die monster: gigantic output, gigantic footprint, very niche."
   },
   {
    "id": 44,
@@ -4256,7 +4905,21 @@
    "cri_html": "&quot;3700K&quot; sample: 3955K, <b>Ra 96, R9 97</b>, Duv −0.0064",
    "cri_label": "Measured Colour",
    "type_html": "",
-   "notes_html": "Domeless <b>flip-chip</b>, ~2 × 2 mm chip, 4.3 mm² glowing area. Beam looks like a <b>dedomed 519A</b> with a slightly larger corona. Efficiency gains flatten above ~5 A. A newer run is reportedly <b>less rosy</b> than early batches. CCTs range from 1800K to 5000K (<a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl351a-3700-k-95-cri-the-rosy-allrounder/224065\" target=\"_blank\" rel=\"noopener\">BLF test</a>). In a 7-emitter light it beat a domed 519A by only ~3% in lumens, with negligible extra throw (<a href=\"https://1lumen.com/review/fireflylite-e07x-canon-ffl351a-hi/\" target=\"_blank\" rel=\"noopener\">1Lumen E07X</a>).",
+   "notes_html": "<b>A domeless high-CRI flip chip that looks like a dedomed 519A out of the box.</b> ~2 × 2 mm chip with a 4.3 mm² glowing area and a slightly larger corona than a dedomed 519A, from 1800K to 5000K. A newer run is reportedly <b>less rosy</b> than early batches. Efficiency gains flatten above ~5 A (<a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl351a-3700-k-95-cri-the-rosy-allrounder/224065\" target=\"_blank\" rel=\"noopener\">BLF test</a>). In a 7-emitter light it beat a domed 519A by only ~3% in lumens, with negligible extra throw (<a href=\"https://1lumen.com/review/fireflylite-e07x-canon-ffl351a-hi/\" target=\"_blank\" rel=\"noopener\">1Lumen E07X</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Domed, more CCTs and lights"
+    },
+    {
+     "name": "NTG35",
+     "why": "Rosier, floodier"
+    },
+    {
+     "name": "SL-F35R",
+     "why": "Small-LES high CRI, more throw"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -4320,7 +4983,7 @@
      "text": "Newer run reportedly less rosy than early batches"
     }
    ],
-   "tldr": "Beam looks like a dedomed 519A with a slightly larger corona."
+   "tldr": "A domeless high-CRI flip chip that looks like a dedomed 519A out of the box."
   },
   {
    "id": 45,
@@ -4361,7 +5024,21 @@
    "cri_html": "&quot;3500K&quot; sample: 3845K, <b>Ra 92, R9 75</b>, Duv <b>−0.0135</b>",
    "cri_label": "Measured Colour",
    "type_html": "",
-   "notes_html": "<b>Small round die (2.35 mm²) under glass</b>, ringed by brittle white silicone. Same chip as the LMP W5050SQ3, so it&#x27;s a <b>Lumenpioneer part</b>. Relatively high luminance for a warm high-CRI LED, but <b>very inefficient</b>: 31 lm/W at max, &quot;probably the most inefficient modern 5050&quot; the tester has measured. An SFT-40 3000K matches its throw at ~6 A. A 6500K / 97 CRI version also exists (<a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl505a-3500-k-95-cri-rosy-tint-with-high-luminance/222974\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/led-test-short-review-fireflylite-ffl505a-6500-k-97-cri-just-a-good-round-die-led-with-rosy-cool-white/225075\" target=\"_blank\" rel=\"noopener\">BLF 6500K test</a>).",
+   "notes_html": "<b>A warm high-CRI round-die thrower, at a big cost in efficiency.</b> Small round die (2.35 mm²) under glass, with relatively high luminance for a warm high-CRI LED. But it's <b>very inefficient</b>: 31 lm/W at max, \"probably the most inefficient modern 5050\" the tester has measured, and an SFT-40 3000K matches its throw at ~6 A. Same chip as the LMP W5050SQ3, so it's a Lumenpioneer part, and the white silicone ring around it is brittle. A 6500K / 97 CRI version also exists (<a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl505a-3500-k-95-cri-rosy-tint-with-high-luminance/222974\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/led-test-short-review-fireflylite-ffl505a-6500-k-97-cri-just-a-good-round-die-led-with-rosy-cool-white/225075\" target=\"_blank\" rel=\"noopener\">BLF 6500K test</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "3000K matches its throw, far more efficient"
+    },
+    {
+     "name": "W5050SQ3",
+     "why": "Same chip, low CRI, efficient"
+    },
+    {
+     "name": "YinDing 5050 Glass",
+     "why": "Cool-white high-CRI round die"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -4404,7 +5081,7 @@
     "note": "Very inefficient; tint-first throwers"
    },
    "cct_notes": [],
-   "tldr": "Very high luminance for a warm high-CRI LED, but very inefficient (~31 lm/W at max).",
+   "tldr": "A warm high-CRI round-die thrower, at a big cost in efficiency.",
    "manufactured_by": "Lumenpioneer"
   },
   {
@@ -4447,7 +5124,21 @@
    "cri_html": "&quot;4000K&quot; sample: 4277K, <b>Ra 89, R9 49</b>, Duv <b>−0.016</b> (claimed −0.001). Another sample: Ra 97–98 (Opple meter)",
    "cri_label": "Measured Colour",
    "type_html": "",
-   "notes_html": "<b>Four dies</b> in the XHP70.3 HI footprint, but <b>wired differently</b>, so it needs its own board. Less flux and luminance than XHP70.3 HI. The gaps between dies can show a &quot;donut hole&quot; in smooth reflectors. ~9 A is the sensible limit. Samples vary a lot (<a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl707a-4000-k-95-cri-extremely-rosy-but-relatively-high-performance/227594\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>A high-CRI four-die 7070 that trails the XHP70.3 HI.</b> Same footprint as the XHP70.3 HI but <b>wired differently</b>, so it needs its own board. Less flux and luminance than the XHP70.3 HI, and the gaps between dies can show a \"donut hole\" in smooth reflectors. ~9 A is the sensible limit, and samples vary a lot (<a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl707a-4000-k-95-cri-extremely-rosy-but-relatively-high-performance/227594\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "XHP70.3 HI",
+     "why": "More output, common board"
+    },
+    {
+     "name": "FFL707MD",
+     "why": "Round-die high-CRI 7070"
+    },
+    {
+     "name": "NTG50",
+     "why": "Rosy high-CRI quad, 5050"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -4486,7 +5177,7 @@
     "note": "Needs its own board"
    },
    "cct_notes": [],
-   "tldr": "XHP70.3 HI footprint, wired differently, so it needs its own board; less flux and luminance than the XHP70.3 HI."
+   "tldr": "A high-CRI four-die 7070 that trails the XHP70.3 HI."
   },
   {
    "id": 47,
@@ -4527,7 +5218,13 @@
    "cri_html": "Look-alike: 4299K, <b>Ra 90, R9 54</b>, Duv −0.0155",
    "cri_label": "Measured Colour",
    "type_html": "",
-   "notes_html": "<b>36 chips</b> (the tested part was 3S × 12P). Listing claims 100 W, with 5000K Ra70 / 4000K Ra95 / 1800K Ra90 options. Very large emitting area (~71 mm²) means <b>flood only, no throw</b>. Possibly made by <b>Hopthink</b>. The <b>FFL909MX</b> variant (T9R, E90) is reported as brighter but <b>greener</b> (<a href=\"https://budgetlightforum.com/t/led-test-review-36-chip-9090-led-very-similar-to-ffl909a-9-v-4000-k-90-cri-rosy-over-10000-lumen-with-rosy-tint/226513\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/the-400-lumens-challenge-part-4-fireflylite-t9r-ffl909mx/230529\" target=\"_blank\" rel=\"noopener\">BLF T9R</a>).",
+   "notes_html": "<b>A 36-chip high-CRI flood LED with no throw at all.</b> ~71 mm² emitting area (the tested part was 3S × 12P). The listing claims 100 W, with 5000K Ra70 / 4000K Ra95 / 1800K Ra90 options. Possibly made by Hopthink. The <b>FFL909MX</b> variant (T9R, E90) is reported as brighter but <b>greener</b> (<a href=\"https://budgetlightforum.com/t/led-test-review-36-chip-9090-led-very-similar-to-ffl909a-9-v-4000-k-90-cri-rosy-over-10000-lumen-with-rosy-tint/226513\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/the-400-lumens-challenge-part-4-fireflylite-t9r-ffl909mx/230529\" target=\"_blank\" rel=\"noopener\">BLF T9R</a>).",
+   "alternatives": [
+    {
+     "name": "NV1010",
+     "why": "More lumens, R9080 option"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -4559,7 +5256,7 @@
     "note": "Flood only, no throw"
    },
    "cct_notes": [],
-   "tldr": "Very large emitting area (~71 mm²) means flood only, no throw."
+   "tldr": "A 36-chip high-CRI flood LED with no throw at all."
   },
   {
    "id": 48,
@@ -4599,7 +5296,21 @@
    "cri_html": "Listed: 1800K <b>Ra 92</b>; 2700K / 4200K / 5000K <b>Ra 95</b>. Measured in lights: 2700K <b>Ra 97</b>, Duv −0.004; 4200K <b>Ra 98</b>, Duv −0.006 to −0.010",
    "cri_label": "Measured Colour",
    "type_html": "",
-   "notes_html": "Hank&#x27;s house high-CRI 3535, &quot;free of greenish tint&quot;. <b>Maker and construction undisclosed.</b> Users find it <b>rosier than a 219B</b> (sometimes too rosy). Floody beam (~3.8 cd/lm in a KR3 triple). Main rivals: FFL351A, 519A (<a href=\"https://tgreviews.com/2026/08/16/noctigon-kr3/\" target=\"_blank\" rel=\"noopener\">TG Reviews KR3</a>, <a href=\"https://www.stephenknightphotography.com/post/flashlight-review-noctigon-kr3-ntg35-2700k\" target=\"_blank\" rel=\"noopener\">Stephen Knight KR3</a>, <a href=\"https://www.noctigon.com/Emisar-D4V2-Ti-Quad-18650-High-Power-LED-Flashlight\" target=\"_blank\" rel=\"noopener\">Noctigon D4V2</a>).",
+   "notes_html": "<b>Hank's rosy high-CRI 3535, for people who want a warm, pink-leaning tint.</b> Sold as \"free of greenish tint\"; users find it <b>rosier than a 219B</b>, sometimes too rosy. Floody beam (~3.8 cd/lm in a KR3 triple). <b>Maker and construction are undisclosed</b> (<a href=\"https://tgreviews.com/2026/08/16/noctigon-kr3/\" target=\"_blank\" rel=\"noopener\">TG Reviews KR3</a>, <a href=\"https://www.stephenknightphotography.com/post/flashlight-review-noctigon-kr3-ntg35-2700k\" target=\"_blank\" rel=\"noopener\">Stephen Knight KR3</a>, <a href=\"https://www.noctigon.com/Emisar-D4V2-Ti-Quad-18650-High-Power-LED-Flashlight\" target=\"_blank\" rel=\"noopener\">Noctigon D4V2</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Neutral-to-rosy, more CCTs"
+    },
+    {
+     "name": "FFL351A",
+     "why": "Domeless, less rosy"
+    },
+    {
+     "name": "219B",
+     "why": "The original rosy classic"
+    }
+   ],
    "sources": [
     {
      "label": "TG Reviews KR3",
@@ -4668,7 +5379,7 @@
      "text": "Rosier than a 219B — sometimes too rosy"
     }
    ],
-   "tldr": "Hank's house high-CRI 3535, \"free of greenish tint\"."
+   "tldr": "Hank's rosy high-CRI 3535, for people who want a warm, pink-leaning tint."
   },
   {
    "id": 49,
@@ -4709,7 +5420,17 @@
    "cri_html": "1800K / 2700K / 4200K / 5000K, ~95 CRI. Hank&#x27;s charts show Duv ~−0.006 to −0.010",
    "cri_label": "Measured Colour",
    "type_html": "",
-   "notes_html": "Hank&#x27;s high-CRI XHP50.3 HI alternative: similar cd/lm, slightly fewer lumens. Hank says a neutral version isn&#x27;t planned because &quot;we need to guarantee that the tint is on the rosy side&quot;. <b>Maker undisclosed</b> (<a href=\"https://budgetlightforum.com/t/ntg50-6v-led-test-result-for-1800k-2700k-4200k-and-5000k/57210?page=369\" target=\"_blank\" rel=\"noopener\">BLF Hank thread</a>).",
+   "notes_html": "<b>Hank's high-CRI alternative to the XHP50.3 HI, guaranteed rosy.</b> Similar cd/lm with slightly fewer lumens. No neutral version is planned: Hank says \"we need to guarantee that the tint is on the rosy side\". <b>Maker undisclosed</b> (<a href=\"https://budgetlightforum.com/t/ntg50-6v-led-test-result-for-1800k-2700k-4200k-and-5000k/57210?page=369\" target=\"_blank\" rel=\"noopener\">BLF Hank thread</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "More lumens, cool bins"
+    },
+    {
+     "name": "FFL5009R",
+     "why": "3V high-CRI quad"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Hank thread",
@@ -4764,7 +5485,7 @@
     "note": "Hank's XHP50.3 HI alternative"
    },
    "cct_notes": [],
-   "tldr": "Hank's high-CRI XHP50.3 HI alternative: similar cd/lm, slightly fewer lumens."
+   "tldr": "Hank's high-CRI alternative to the XHP50.3 HI, guaranteed rosy."
   },
   {
    "id": 50,
@@ -4809,7 +5530,25 @@
    "cri_html": "95 (listing headline says Ra 98)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domeless <b>quad-die</b> &quot;HI&quot; part sold loose in 1800K / 2700K / 4000K / 5000K, plus a rosy 3500K in some lights. The listing gives Duv ±0.0005 for the original 4800–5300K bin. One reviewer reports Ra 95 / R9 97 for the 3500K L50 Sol, with no method stated. It&#x27;s probably related to the <b>Hopthink FL5009R</b> that koef3 tested (3V, 11.8 mm² glowing area, <b>3,564 lm @ 20 A</b> at 25 °C, Ra 94, R9 99, Duv −0.002, measured ~5900K). That test found a throwy all-rounder beam, but with a yellowish spot in smooth reflectors (<a href=\"https://www.firefly-outdoor.com/products/ffl5009r-cri98-5050-emitter\" target=\"_blank\" rel=\"noopener\">FireflyLite</a>, <a href=\"https://budgetlightforum.com/t/led-test-review-hopthink-fl5009r-custom-5000-k-90-cri-this-is-something-new/227625\" target=\"_blank\" rel=\"noopener\">BLF FL5009R test</a>, <a href=\"https://budgetlightforum.com/t/review-fireflies-l50-sol-right-angle-flashlight-1900lm-rosy-and-lume-x1-driver/233679\" target=\"_blank\" rel=\"noopener\">BLF L50 Sol review</a>).",
+   "notes_html": "<b>A domeless high-CRI quad-die for throwy all-rounders.</b> Sold loose in 1800K / 2700K / 4000K / 5000K, plus a rosy 3500K in some lights. The listing gives Duv ±0.0005 for the original 4800–5300K bin, and one reviewer reports Ra 95 / R9 97 for the 3500K L50 Sol (no method stated). It's probably related to the <b>Hopthink FL5009R</b> that koef3 tested: 3V, 11.8 mm² glowing area, <b>3,564 lm at 20 A</b> at 25 °C, Ra 94, R9 99, Duv −0.002, ~5900K measured. That test found a throwy all-rounder beam, but with a yellowish spot in smooth reflectors (<a href=\"https://www.firefly-outdoor.com/products/ffl5009r-cri98-5050-emitter\" target=\"_blank\" rel=\"noopener\">FireflyLite</a>, <a href=\"https://budgetlightforum.com/t/led-test-review-hopthink-fl5009r-custom-5000-k-90-cri-this-is-something-new/227625\" target=\"_blank\" rel=\"noopener\">BLF FL5009R test</a>, <a href=\"https://budgetlightforum.com/t/review-fireflies-l50-sol-right-angle-flashlight-1900lm-rosy-and-lume-x1-driver/233679\" target=\"_blank\" rel=\"noopener\">BLF L50 Sol review</a>).",
+   "alternatives": [
+    {
+     "name": "FFL5009D",
+     "why": "Domed: smoother, floodier"
+    },
+    {
+     "name": "XHP50.3 HI",
+     "why": "Cool-white quad workhorse"
+    },
+    {
+     "name": "NTG50",
+     "why": "Rosy high-CRI quad"
+    },
+    {
+     "name": "SL-F50S",
+     "why": "Skilhunt's high-CRI quad"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite",
@@ -4861,7 +5600,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Domeless quad-die \"HI\" part with Ra ~95 and tight Duv bins."
+   "tldr": "A domeless high-CRI quad-die for throwy all-rounders."
   },
   {
    "id": 51,
@@ -4898,7 +5637,13 @@
    "cri_html": "95",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>Domed</b> version of the FFL5009R, with a wider, smoother beam and less throw (170–190 m vs 175–220 m in the same light). 3000K (rosy) / 4000K / 5000K. Only sold in lights (<a href=\"https://www.firefly-outdoor.com/products/l50-sol\" target=\"_blank\" rel=\"noopener\">FireflyLite L50 Sol</a>).",
+   "notes_html": "<b>The domed FFL5009R: a wider, smoother high-CRI beam with less throw.</b> 170–190 m vs 175–220 m for the FFL5009R in the same light. 3000K (rosy) / 4000K / 5000K; only sold in lights (<a href=\"https://www.firefly-outdoor.com/products/l50-sol\" target=\"_blank\" rel=\"noopener\">FireflyLite L50 Sol</a>).",
+   "alternatives": [
+    {
+     "name": "FFL5009R",
+     "why": "Domeless, more throw"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite L50 Sol",
@@ -4926,7 +5671,7 @@
     "note": "Only sold in lights"
    },
    "cct_notes": [],
-   "tldr": "Domed version of the FFL5009R, with a wider, smoother beam and less throw (170–190 m vs 175–220 m in the same light)."
+   "tldr": "The domed FFL5009R: a wider, smoother high-CRI beam with less throw."
   },
   {
    "id": 52,
@@ -4964,7 +5709,17 @@
    "cri_html": "&gt;96 listed · lab Ra 96, R9 94",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Sold as a 3500K &quot;round die&quot;, but the test found an <b>ordinary rectangular flip chip</b> masked to look round. Measured 4024K with Duv +0.001, not the listed 3500K on-BBL tint. The tester advises staying below 5–6 A: after a few minutes at 8.2 A the part changed (flux up &gt;60%, tint much cooler) and later measured below 90 CRI. Out of stock (<a href=\"https://www.firefly-outdoor.com/products/ffl350rd-round-die-3v-10w-3500k-cri96-3535-emitter\" target=\"_blank\" rel=\"noopener\">FireflyLite</a>, <a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl350rd-3500-k-96-cri-good-beam-rectangular-classic-led-chip-but-with-round-cut-out/225095\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>Out of stock, and not what it was sold as.</b> Advertised as a 3500K \"round die\", but the test found an <b>ordinary rectangular flip chip</b> masked to look round, measuring 4024K with Duv +0.001. Stay below 5–6 A: after a few minutes at 8.2 A the part changed (flux up &gt;60%, tint much cooler) and later measured below 90 CRI (<a href=\"https://www.firefly-outdoor.com/products/ffl350rd-round-die-3v-10w-3500k-cri96-3535-emitter\" target=\"_blank\" rel=\"noopener\">FireflyLite</a>, <a href=\"https://budgetlightforum.com/t/led-test-review-fireflylite-ffl350rd-3500-k-96-cri-good-beam-rectangular-classic-led-chip-but-with-round-cut-out/225095\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "FFL350DD",
+     "why": "Its round-die replacement"
+    },
+    {
+     "name": "FFL351A",
+     "why": "Tested high-CRI 3535"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite",
@@ -4992,7 +5747,7 @@
      "text": "Measured 4024K, Duv +0.001 — not the listed 3500K; flux and tint drifted above 8 A"
     }
    ],
-   "tldr": "Advertised as a round 3500K die; the test found a masked rectangular flip chip measuring 4024K. Stay below 5–6 A."
+   "tldr": "Out of stock, and not what it was sold as."
   },
   {
    "id": 53,
@@ -5028,7 +5783,17 @@
    "cri_html": "95",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "FireflyLite calls it &quot;a big upgrade&quot; on the FFL350RD: a round die with high CRI and better throw. 5700K and 3700K (slightly rosy). Only sold in lights; no test yet (<a href=\"https://www.firefly-outdoor.com/products/fireflylite-e12r\" target=\"_blank\" rel=\"noopener\">FireflyLite E12 Eclipse Void White</a>).",
+   "notes_html": "<b>FireflyLite's round-die high-CRI 3535, billed as \"a big upgrade\" on the FFL350RD.</b> Claimed better throw; 5700K and 3700K (slightly rosy). Only sold in lights, and not tested yet (<a href=\"https://www.firefly-outdoor.com/products/fireflylite-e12r\" target=\"_blank\" rel=\"noopener\">FireflyLite E12 Eclipse Void White</a>).",
+   "alternatives": [
+    {
+     "name": "FFL351A",
+     "why": "Tested, dedomed-519A look"
+    },
+    {
+     "name": "SL-F35R",
+     "why": "Tested small-LES high CRI"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite E12 Eclipse Void White",
@@ -5047,7 +5812,7 @@
     "note": "Only sold in lights"
    },
    "cct_notes": [],
-   "tldr": "FireflyLite calls it \"a big upgrade\" on the FFL350RD: a round die with high CRI and better throw."
+   "tldr": "FireflyLite's round-die high-CRI 3535, billed as \"a big upgrade\" on the FFL350RD."
   },
   {
    "id": 54,
@@ -5083,7 +5848,17 @@
    "cri_html": "70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cool white 6000–6500K. Claimed to throw further than the quad FFL505A in the same light (650 m vs 480 m). Only sold in lights (<a href=\"https://www.firefly-outdoor.com/products/e04-surge-quad-5050\" target=\"_blank\" rel=\"noopener\">FireflyLite E04 Surge</a>).",
+   "notes_html": "<b>A cool-white FireflyLite thrower, claimed to out-throw the FFL505A.</b> 6000–6500K; FireflyLite claims 650 m vs 480 m for the FFL505A in the same light. Only sold in lights (<a href=\"https://www.firefly-outdoor.com/products/e04-surge-quad-5050\" target=\"_blank\" rel=\"noopener\">FireflyLite E04 Surge</a>).",
+   "alternatives": [
+    {
+     "name": "FFL505A",
+     "why": "Warm high-CRI round die"
+    },
+    {
+     "name": "SFT-40",
+     "why": "Widely sold all-round thrower"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite E04 Surge",
@@ -5102,7 +5877,7 @@
     "note": "Only sold in lights"
    },
    "cct_notes": [],
-   "tldr": "Claimed to throw further than the quad FFL505A in the same light (650 m vs 480 m)."
+   "tldr": "A cool-white FireflyLite thrower, claimed to out-throw the FFL505A."
   },
   {
    "id": 55,
@@ -5139,7 +5914,17 @@
    "cri_html": "&gt;95",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Round-die high-CRI 7070, 4200K with a slightly rosy tint. Claimed ~480 m in the X1S Pharos reflector version (<a href=\"https://www.firefly-outdoor.com/products/x1s-pharos-2025-reflector-version\" target=\"_blank\" rel=\"noopener\">FireflyLite X1S Pharos RE</a>).",
+   "notes_html": "<b>A round-die high-CRI 7070 for high-CRI throwers.</b> 4200K with a slightly rosy tint; claimed ~480 m in the X1S Pharos reflector version (<a href=\"https://www.firefly-outdoor.com/products/x1s-pharos-2025-reflector-version\" target=\"_blank\" rel=\"noopener\">FireflyLite X1S Pharos RE</a>).",
+   "alternatives": [
+    {
+     "name": "FFL707A",
+     "why": "Four-die high-CRI 7070"
+    },
+    {
+     "name": "SFT-70",
+     "why": "3000K 95 CRI thrower"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite X1S Pharos RE",
@@ -5167,7 +5952,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Round-die high-CRI 7070, 4200K with a slightly rosy tint."
+   "tldr": "A round-die high-CRI 7070 for high-CRI throwers."
   },
   {
    "id": 56,
@@ -5202,7 +5987,13 @@
    "cri_html": "not stated",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "5500K high-output thrower option, claimed at 1,080 m vs 915 m for the SBT90.2 option in the same light. The E90 page also introduces a 9090 round-die <b>FFL909MX</b> and a high-CRI round-die <b>FFL707RD</b> (<a href=\"https://www.firefly-outdoor.com/products/e90-blaze\" target=\"_blank\" rel=\"noopener\">FireflyLite E90 Blaze</a>).",
+   "notes_html": "<b>FireflyLite's high-output 5500K thrower option.</b> Claimed 1,080 m vs 915 m for the SBT90.2 option in the same light. The E90 page also introduces a 9090 round-die <b>FFL909MX</b> and a high-CRI round-die <b>FFL707RD</b> (<a href=\"https://www.firefly-outdoor.com/products/e90-blaze\" target=\"_blank\" rel=\"noopener\">FireflyLite E90 Blaze</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "The throw reference"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite E90 Blaze",
@@ -5230,7 +6021,7 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "5500K high-output thrower option, claimed at 1,080 m vs 915 m for the SBT90.2 option in the same light."
+   "tldr": "FireflyLite's high-output 5500K thrower option."
   },
   {
    "id": 57,
@@ -5271,7 +6062,21 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "1800K–6500K (1800K is PC-amber style). Very cheap with a clean multi-die beam and slightly rosy 3000K–5000K tint (<a href=\"https://budgetlightforum.com/t/led-test-review-lumenpioneer-lhp531-all-cct-1800-3000-4000-5000-6500-k-70-cri-very-popular-5050-led-with-good-beam-and-very-good-price/229647\" target=\"_blank\" rel=\"noopener\">BLF Test</a>, <a href=\"https://convoylight.com/products/lmp-lhp531-light-emitting-diode\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A very cheap 5050 with a clean multi-die beam: great value for trail lights.</b> Slightly rosy at 3000K–5000K; 1800K–6500K overall, where the 1800K is PC-amber style (<a href=\"https://budgetlightforum.com/t/led-test-review-lumenpioneer-lhp531-all-cct-1800-3000-4000-5000-6500-k-70-cri-very-popular-5050-led-with-good-beam-and-very-good-price/229647\" target=\"_blank\" rel=\"noopener\">BLF Test</a>, <a href=\"https://convoylight.com/products/lmp-lhp531-light-emitting-diode\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "Pricier quad-die, more throw"
+    },
+    {
+     "name": "W5050SQ5",
+     "why": "Same maker, round-die thrower"
+    },
+    {
+     "name": "LML2AW",
+     "why": "Budget 5050 with good tint"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Test",
@@ -5328,7 +6133,7 @@
      "text": "Slightly rosy"
     }
    ],
-   "tldr": "Very cheap with a clean multi-die beam and a slightly rosy 3000K–5000K tint."
+   "tldr": "A very cheap 5050 with a clean multi-die beam: great value for trail lights."
   },
   {
    "id": 58,
@@ -5369,7 +6174,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "1800K, 3000K, 4000K, 5000K or 6500K. High-power 3V flood/general-purpose competitor to XHP70.3 HI, with higher sustained output in Convoy lights (<a href=\"https://convoylight.com/products/lmp-lhp73b\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://grzybekreviews.pl/comparisons/m21e-led-en/\" target=\"_blank\" rel=\"noopener\">Grzybek</a>).",
+   "notes_html": "<b>A cheap 3V 7070 for high sustained output.</b> A flood/general-purpose competitor to the XHP70.3 HI that holds higher sustained output in Convoy lights. 1800K, 3000K, 4000K, 5000K or 6500K (<a href=\"https://convoylight.com/products/lmp-lhp73b\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://grzybekreviews.pl/comparisons/m21e-led-en/\" target=\"_blank\" rel=\"noopener\">Grzybek</a>).",
+   "alternatives": [
+    {
+     "name": "XHP70.3 HI",
+     "why": "6V, more throw"
+    },
+    {
+     "name": "LHP531",
+     "why": "Smaller 5050 sibling"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -5412,7 +6227,7 @@
     "note": "Higher sustained output than XHP70.3 HI in Convoy lights"
    },
    "cct_notes": [],
-   "tldr": "High-power 3V flood/general-purpose competitor to the XHP70.3 HI, with higher sustained output in Convoy lights."
+   "tldr": "A cheap 3V 7070 for high sustained output."
   },
   {
    "id": 59,
@@ -5451,7 +6266,21 @@
    "cri_html": "70 (lab: Ra 71, <b>R9 −20</b>)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Lumenpioneer&#x27;s own round-die 3000K thrower (2.3 mm² glowing area). Same chip as the FFL505A, but low-CRI and much more efficient. Higher luminance than the FFL505A and XP-L HI. Lab: 3208K, Duv +0.0015, turning redder as current rises. One Convoy buyer reported ~84 CRI, which the lab didn&#x27;t reproduce. BLF rates it weaker than the 3000K SFT-40 (<a href=\"https://budgetlightforum.com/t/led-test-review-lmp-w5050sq3-3000-k-70-cri-warm-white-round-die-led-with-high-luminance/223112\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://convoylight.com/products/lmp-w5050sq3-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>Lumenpioneer's efficient warm-white round-die thrower.</b> 3000K, 2.3 mm² glowing area, with higher luminance than the FFL505A and XP-L HI. Same chip as the FFL505A, but low-CRI and much more efficient. Lab: 3208K, Duv +0.0015, turning redder as current rises. One Convoy buyer reported ~84 CRI, which the lab didn't reproduce. BLF rates it weaker than the 3000K SFT-40 (<a href=\"https://budgetlightforum.com/t/led-test-review-lmp-w5050sq3-3000-k-70-cri-warm-white-round-die-led-with-high-luminance/223112\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://convoylight.com/products/lmp-w5050sq3-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "Rated better at 3000K"
+    },
+    {
+     "name": "FFL505A",
+     "why": "Same chip, high CRI, inefficient"
+    },
+    {
+     "name": "W5050SQ5",
+     "why": "Higher-current sibling"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -5488,7 +6317,7 @@
      "text": "3208K, Duv +0.0015, turning redder as current rises"
     }
    ],
-   "tldr": "Lumenpioneer's round-die 3000K thrower; higher luminance than the FFL505A and XP-L HI."
+   "tldr": "Lumenpioneer's efficient warm-white round-die thrower."
   },
   {
    "id": 60,
@@ -5528,7 +6357,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Higher-current round-die thrower (4000K/5000K); tint close to the LHP531 (<a href=\"https://convoylight.com/products/lmp-w5050sq5\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A higher-current round-die thrower from Lumenpioneer.</b> 4000K/5000K, with a tint close to the LHP531 (<a href=\"https://convoylight.com/products/lmp-w5050sq5\" target=\"_blank\" rel=\"noopener\">Convoy</a>). No independent test yet; its 3000K sibling, the W5050SQ3, has one.",
+   "alternatives": [
+    {
+     "name": "W5050SQ3",
+     "why": "Tested 3000K sibling"
+    },
+    {
+     "name": "SFT-40",
+     "why": "Well-tested all-round thrower"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -5556,7 +6395,7 @@
     "note": "Convoy's round-die thrower"
    },
    "cct_notes": [],
-   "tldr": "Higher-current round-die thrower (4000K/5000K); tint close to the LHP531 ( Convoy )."
+   "tldr": "A higher-current round-die thrower from Lumenpioneer."
   },
   {
    "id": 61,
@@ -5594,7 +6433,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Budget 3000K/4000K drop-in <b>replacement for the SST-40</b>. Users report better tint than the SST-40, though batches vary (<a href=\"https://convoylight.com/products/lmp-lml2aw-dc-3000k-4000k-used-to-replace-sst40-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A budget drop-in replacement for the SST-40, with better tint.</b> 3000K/4000K. Users report better tint than the SST-40, though batches vary (<a href=\"https://convoylight.com/products/lmp-lml2aw-dc-3000k-4000k-used-to-replace-sst40-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "SST-40",
+     "why": "The part it replaces"
+    },
+    {
+     "name": "LHP531",
+     "why": "Cheap 5050, clean beam"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -5618,7 +6467,7 @@
      "text": "Tint better than the SST-40 but varies"
     }
    ],
-   "tldr": "Budget 3000K/4000K drop-in replacement for the SST-40 ."
+   "tldr": "A budget drop-in replacement for the SST-40, with better tint."
   },
   {
    "id": 62,
@@ -5657,7 +6506,21 @@
    "cri_html": "95 (Ra 94 / R9 87, ~6700K sample)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Round die under an AR glass cap with a near-on-BBL tint and a clean beam in reflectors and TIRs — essentially no direct competitor in cold-white high-CRI. Same chip family as the W5050SQ3/FFL505A round-die parts and likely San&#x27;an-made. Batch lottery: an earlier ~5500–6000K 70-CRI glass sample measured very green with high Vf, and AliExpress supply is unreliable (<a href=\"https://budgetlightforum.com/t/led-test-review-yinding-5050-glass-6500-k-95-cri-round-die-led-with-very-good-light-quality-and-high-luminance/221269\" target=\"_blank\" rel=\"noopener\">koef3 test</a>, <a href=\"https://www.reddit.com/r/flashlight/comments/1i0s5z6/emitter_and_driver_guide_basics/\" target=\"_blank\" rel=\"noopener\">r/flashlight guide</a>).",
+   "notes_html": "<b>The only real option for cool-white high-CRI throw.</b> Round die under an AR glass cap, with a near-on-BBL tint and a clean beam in reflectors and TIRs. Same chip family as the W5050SQ3/FFL505A round-die parts, and likely San'an-made. Batch lottery: an earlier ~5500–6000K 70 CRI glass sample measured very green with high Vf, and AliExpress supply is unreliable (<a href=\"https://budgetlightforum.com/t/led-test-review-yinding-5050-glass-6500-k-95-cri-round-die-led-with-very-good-light-quality-and-high-luminance/221269\" target=\"_blank\" rel=\"noopener\">koef3 test</a>, <a href=\"https://www.reddit.com/r/flashlight/comments/1i0s5z6/emitter_and_driver_guide_basics/\" target=\"_blank\" rel=\"noopener\">r/flashlight guide</a>).",
+   "alternatives": [
+    {
+     "name": "FFL505A",
+     "why": "Warm high-CRI round die"
+    },
+    {
+     "name": "SFT-40",
+     "why": "3000K high CRI, easy to buy"
+    },
+    {
+     "name": "MN-S3535",
+     "why": "Cool-white high CRI, low output"
+    }
+   ],
    "sources": [
     {
      "label": "koef3 test",
@@ -5710,7 +6573,7 @@
      "text": "An earlier ~5500–6000K 70-CRI glass sample measured very green; supply unreliable"
     }
    ],
-   "tldr": "Round die under an AR glass cap with a near-on-BBL tint and a clean beam in reflectors and TIRs — essentially no direct competitor in cold-white high-CRI."
+   "tldr": "The only real option for cool-white high-CRI throw."
   },
   {
    "id": 63,
@@ -5750,7 +6613,17 @@
    "cri_html": "95 (R9050 max)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "16-die domeless &quot;waffle&quot; emitter (as warm as 1800K). Throws more than a domed XHP70 but has been outcompeted by XHP70.3 HI and FFL707A. Extended-CRI tops at R9050, not R9080 — a correction on the BLF guide thread itself (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/collections/getian\" target=\"_blank\" rel=\"noopener\">Convoy Getian</a>).",
+   "notes_html": "<b>A 16-die domeless \"waffle\" 7070, now outcompeted.</b> Goes as warm as 1800K and throws more than a domed XHP70, but the XHP70.3 HI and FFL707A beat it. Extended CRI tops out at R9050, not R9080, a correction on the BLF guide thread itself (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://convoylight.com/collections/getian\" target=\"_blank\" rel=\"noopener\">Convoy Getian</a>).",
+   "alternatives": [
+    {
+     "name": "XHP70.3 HI",
+     "why": "More output, cleaner beam"
+    },
+    {
+     "name": "FFL707A",
+     "why": "High-CRI four-die 7070"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -5778,7 +6651,7 @@
      "text": "Extended-CRI tops at R9050, not R9080"
     }
    ],
-   "tldr": "Throws more than a domed XHP70 but has been outcompeted by the XHP70.3 HI and FFL707A."
+   "tldr": "A 16-die domeless \"waffle\" 7070, now outcompeted."
   },
   {
    "id": 83,
@@ -5816,7 +6689,17 @@
    "cri_html": "90–95 (5000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Skilhunt&#x27;s own quad-die flip-chip LED, 5000K high CRI. Efficacy is close to the FFL5009R and XHP50.3 HI, but the larger die throws less in the same optic. No datasheet and not sold bare; only in Skilhunt lights such as the H300 and M300 V4 (<a href=\"https://budgetlightforum.com/t/led-test-review-skilhunt-sl-f50-s-6v-5000-k-95-cri-new-custom-led-from-skilhunt/230950\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/review-skilhunt-h300-v4-with-new-sl-f50s-led/230949\" target=\"_blank\" rel=\"noopener\">BLF H300 review</a>).",
+   "notes_html": "<b>Skilhunt's own high-CRI quad-die, only found in Skilhunt lights.</b> 5000K high CRI. Efficacy is close to the FFL5009R and XHP50.3 HI, but the larger die throws less in the same optic. No datasheet and not sold bare; used in lights such as the H300 and M300 V4 (<a href=\"https://budgetlightforum.com/t/led-test-review-skilhunt-sl-f50-s-6v-5000-k-95-cri-new-custom-led-from-skilhunt/230950\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/review-skilhunt-h300-v4-with-new-sl-f50s-led/230949\" target=\"_blank\" rel=\"noopener\">BLF H300 review</a>).",
+   "alternatives": [
+    {
+     "name": "FFL5009R",
+     "why": "Throws more"
+    },
+    {
+     "name": "XHP50.3 HI",
+     "why": "Same efficacy, more throw"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -5839,7 +6722,7 @@
     "note": "Only in Skilhunt lights"
    },
    "cct_notes": [],
-   "tldr": "Skilhunt's own quad-die flip-chip LED, 5000K high CRI."
+   "tldr": "Skilhunt's own high-CRI quad-die, only found in Skilhunt lights."
   },
   {
    "id": 84,
@@ -5876,7 +6759,17 @@
    "cri_html": "95 (5000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Skilhunt&#x27;s small-LES high-CRI LED: 5000K 95 CRI with high luminance, so it keeps more throw than a 519A. Offered in the M150 / M200 V4 on Skilhunt&#x27;s own store (<a href=\"https://budgetlightforum.com/t/led-test-review-skilhunt-sl-f35r-3v-5000-k-95-cri-good-high-cri-led-with-small-les-and-high-luminance/231848\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>Skilhunt's small-LES high-CRI LED, for more throw than a 519A.</b> 5000K 95 CRI with high luminance. Offered in the M150 / M200 V4 on Skilhunt's own store (<a href=\"https://budgetlightforum.com/t/led-test-review-skilhunt-sl-f35r-3v-5000-k-95-cri-good-high-cri-led-with-small-les-and-high-luminance/231848\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Floodier, sold everywhere"
+    },
+    {
+     "name": "FFL351A",
+     "why": "Domeless high-CRI 3535"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -5895,7 +6788,7 @@
     "note": "Only in Skilhunt lights"
    },
    "cct_notes": [],
-   "tldr": "Skilhunt's small-LES high-CRI LED: 5000K 95 CRI with high luminance, so it keeps more throw than a 519A."
+   "tldr": "Skilhunt's small-LES high-CRI LED, for more throw than a 519A."
   },
   {
    "id": 64,
@@ -5930,7 +6823,21 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365 nm UV",
-   "notes_html": "Convoy&#x27;s premium UV option; clean 365 nm output with minimal visible purple (<a href=\"https://convoylight.com/collections/nichia\" target=\"_blank\" rel=\"noopener\">Convoy Nichia</a>).",
+   "notes_html": "<b>Convoy's premium 365 nm UV option.</b> Clean output with minimal visible purple (<a href=\"https://convoylight.com/collections/nichia\" target=\"_blank\" rel=\"noopener\">Convoy Nichia</a>).",
+   "alternatives": [
+    {
+     "name": "SST-10-UV",
+     "why": "Budget 365 nm"
+    },
+    {
+     "name": "CUN66A1G",
+     "why": "High-power 365 nm"
+    },
+    {
+     "name": "NVSU119C",
+     "why": "Mid-power Nichia"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy Nichia",
@@ -5955,7 +6862,7 @@
    "beam": 2,
    "rep": null,
    "cct_notes": [],
-   "tldr": "Convoy's premium UV option: clean 365 nm output with minimal visible purple."
+   "tldr": "Convoy's premium 365 nm UV option."
   },
   {
    "id": 65,
@@ -5990,7 +6897,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365 nm UV",
-   "notes_html": "Budget 365 nm UV. UV LEDs run at a higher Vf (~3.8 V+), so use a UV-rated driver (<a href=\"https://convoylight.com/collections/luminus\" target=\"_blank\" rel=\"noopener\">Convoy Luminus</a>).",
+   "notes_html": "<b>The budget 365 nm UV choice.</b> UV LEDs run at a higher Vf (~3.8 V+), so use a UV-rated driver (<a href=\"https://convoylight.com/collections/luminus\" target=\"_blank\" rel=\"noopener\">Convoy Luminus</a>).",
+   "alternatives": [
+    {
+     "name": "NVSU233B",
+     "why": "Convoy's premium UV"
+    },
+    {
+     "name": "SBT-10X-UV",
+     "why": "Higher power"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy Luminus",
@@ -6015,7 +6932,7 @@
    "beam": 3,
    "rep": null,
    "cct_notes": [],
-   "tldr": "Budget 365 nm UV."
+   "tldr": "The budget 365 nm UV choice."
   },
   {
    "id": 66,
@@ -6048,7 +6965,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365 nm UVA",
-   "notes_html": "~1.3–1.4 W radiant @ 1 A (Vf ~3.8–3.9 V), pushed to ~3 A in high-power builds (<a href=\"https://convoylight.com/products/luminus-sbt-10x-uv-uva-365nm-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>A high-power UV emitter for big UV builds.</b> ~1.3–1.4 W radiant at 1 A (Vf ~3.8–3.9 V), pushed to ~3 A in high-power builds (<a href=\"https://convoylight.com/products/luminus-sbt-10x-uv-uva-365nm-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "CUN66A1G",
+     "why": "~1.8 W Seoul UV"
+    },
+    {
+     "name": "NVSU233B",
+     "why": "Clean premium 365 nm"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -6073,7 +7000,7 @@
    "beam": 2,
    "rep": null,
    "cct_notes": [],
-   "tldr": "High-power UV: ~1.3–1.4 W radiant at 1 A, pushed to ~3 A in high-power builds."
+   "tldr": "A high-power UV emitter for big UV builds."
   },
   {
    "id": 67,
@@ -6107,7 +7034,8 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "UV sterilisation / therapeutic",
-   "notes_html": "Specialised Convoy listings. <b>UVC and UVB are hazardous to eyes and skin even at low power.</b> Don&#x27;t look at the beam, and don&#x27;t treat UVC as a reliable disinfection tool without a measured dose (<a href=\"https://convoylight.com/collections/other-led\" target=\"_blank\" rel=\"noopener\">Convoy Other LED</a>).",
+   "notes_html": "<b>Specialised UVC / UVB parts: hazardous, not general-purpose UV.</b> <b>UVC and UVB harm eyes and skin even at low power.</b> Don't look at the beam, and don't treat UVC as a reliable disinfection tool without a measured dose (<a href=\"https://convoylight.com/collections/other-led\" target=\"_blank\" rel=\"noopener\">Convoy Other LED</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Convoy Other LED",
@@ -6123,7 +7051,7 @@
    "beam": 2,
    "rep": null,
    "cct_notes": [],
-   "tldr": "UVC and UVB are hazardous to eyes and skin even at low power — don't look at the beam."
+   "tldr": "Specialised UVC / UVB parts: hazardous, not general-purpose UV."
   },
   {
    "id": 68,
@@ -6158,7 +7086,8 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "850 / 940 nm IR",
-   "notes_html": "Night-vision/covert IR. 850 nm shows a faint red glow; 940 nm is effectively invisible but works less well with most cameras (<a href=\"https://convoylight.com/collections/luminus\" target=\"_blank\" rel=\"noopener\">Convoy Luminus</a>).",
+   "notes_html": "<b>Infrared for night-vision cameras and covert use.</b> 850 nm shows a faint red glow; 940 nm is effectively invisible but works less well with most cameras (<a href=\"https://convoylight.com/collections/luminus\" target=\"_blank\" rel=\"noopener\">Convoy Luminus</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Convoy Luminus",
@@ -6183,7 +7112,7 @@
    "beam": 4,
    "rep": null,
    "cct_notes": [],
-   "tldr": "Night-vision/covert IR."
+   "tldr": "Infrared for night-vision cameras and covert use."
   },
   {
    "id": 74,
@@ -6221,7 +7150,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "Red/Green/Blue",
-   "notes_html": "RGB emitter on a dedicated board for full-colour setups (<a href=\"https://convoylight.com/collections/getian\" target=\"_blank\" rel=\"noopener\">Convoy Getian</a>).",
+   "notes_html": "<b>An RGB emitter on a dedicated board for full-colour setups.</b> (<a href=\"https://convoylight.com/collections/getian\" target=\"_blank\" rel=\"noopener\">Convoy Getian</a>)",
+   "alternatives": [
+    {
+     "name": "GT colour",
+     "why": "Single colours for throwers"
+    },
+    {
+     "name": "XP-E2 (colour)",
+     "why": "Small coloured channels"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy Getian",
@@ -6246,7 +7185,7 @@
    "beam": 1,
    "rep": null,
    "cct_notes": [],
-   "tldr": "RGB emitter on a dedicated board for full-colour setups ( Convoy Getian )."
+   "tldr": "An RGB emitter on a dedicated board for full-colour setups."
   },
   {
    "id": 75,
@@ -6284,7 +7223,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "Red/Green/Blue/Amber etc.",
-   "notes_html": "Long-standing standard for coloured channels in multi-channel builds.",
+   "notes_html": "<b>The long-standing standard for coloured channels in multi-channel builds.</b>",
+   "alternatives": [
+    {
+     "name": "XQ-E",
+     "why": "Smaller, many colours"
+    },
+    {
+     "name": "GT colour",
+     "why": "Coloured throwers"
+    }
+   ],
    "sources": [],
    "candela": [],
    "best_for": [
@@ -6312,7 +7261,7 @@
    "beam": 4,
    "rep": null,
    "cct_notes": [],
-   "tldr": "Long-standing standard for coloured channels in multi-channel builds."
+   "tldr": "The long-standing standard for coloured channels in multi-channel builds."
   },
   {
    "id": 86,
@@ -6349,7 +7298,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365–367 nm UV · 1 W radiant",
-   "notes_html": "Seoul Viosys UV Z5, 365–367 nm, about 1 W radiant at up to 500 mA. The UV in the Skilhunt EC200S Mini UV; sold bare at Convoy (<a href=\"https://convoylight.com/products/cun66a1b-uva-365nm-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://uk.rs-online.com/web/p/uv-leds/2471990\" target=\"_blank\" rel=\"noopener\">RS</a>).",
+   "notes_html": "<b>A 1 W 365 nm UV emitter, the one in the Skilhunt EC200S Mini UV.</b> Seoul Viosys UV Z5, 365–367 nm, about 1 W radiant at up to 500 mA. Sold bare at Convoy (<a href=\"https://convoylight.com/products/cun66a1b-uva-365nm-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://uk.rs-online.com/web/p/uv-leds/2471990\" target=\"_blank\" rel=\"noopener\">RS</a>).",
+   "alternatives": [
+    {
+     "name": "CUN66A1G",
+     "why": "~1.8 W version"
+    },
+    {
+     "name": "NVSU233B",
+     "why": "Convoy's premium UV"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -6369,7 +7328,7 @@
    "beam": 3,
    "rep": null,
    "cct_notes": [],
-   "tldr": "Seoul Viosys UV Z5, 365–367 nm, about 1 W radiant at up to 500 mA."
+   "tldr": "A 1 W 365 nm UV emitter, the one in the Skilhunt EC200S Mini UV."
   },
   {
    "id": 87,
@@ -6406,7 +7365,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365–367 nm UV · 1.8 W radiant",
-   "notes_html": "High-power UV Z5 version: about 1.8 W radiant at 365–367 nm. Sold bare at Convoy (<a href=\"https://convoylight.com/products/cun66a1g-uva-365nm-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://uk.rs-online.com/web/p/uv-leds/2471995\" target=\"_blank\" rel=\"noopener\">RS</a>).",
+   "notes_html": "<b>The high-power UV Z5: about 1.8 W radiant at 365–367 nm.</b> Sold bare at Convoy (<a href=\"https://convoylight.com/products/cun66a1g-uva-365nm-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>, <a href=\"https://uk.rs-online.com/web/p/uv-leds/2471995\" target=\"_blank\" rel=\"noopener\">RS</a>).",
+   "alternatives": [
+    {
+     "name": "CUN66A1B",
+     "why": "~1 W version"
+    },
+    {
+     "name": "NVSU233B",
+     "why": "Convoy's premium UV"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy",
@@ -6426,7 +7395,7 @@
    "beam": 2,
    "rep": null,
    "cct_notes": [],
-   "tldr": "High-power UV Z5 version: about 1.8 W radiant at 365–367 nm."
+   "tldr": "The high-power UV Z5: about 1.8 W radiant at 365–367 nm."
   },
   {
    "id": 76,
@@ -6467,7 +7436,21 @@
    "cri_html": "90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Samsung bins run 2700K–6500K (<a href=\"https://download.led.samsung.com/led/file/resource/2022/05/Data_Sheet_LH351H-D_Rev.9.5.pdf\" target=\"_blank\" rel=\"noopener\">Samsung datasheet</a>). Cheap and floody with a big dome; available in cool-white high CRI. Tends green (nicknamed &quot;dogfarts&quot;) and bins vary. Superseded by 519A but still a decent budget pick (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A cheap, floody high-CRI LED, still a decent budget pick.</b> Big dome, and available in cool-white high CRI. Tends green (nicknamed \"dogfarts\") and bins vary. Samsung bins run 2700K–6500K (<a href=\"https://download.led.samsung.com/led/file/resource/2022/05/Data_Sheet_LH351H-D_Rev.9.5.pdf\" target=\"_blank\" rel=\"noopener\">Samsung datasheet</a>). Superseded by the 519A (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Better tint, same footprint"
+    },
+    {
+     "name": "SST-20",
+     "why": "Budget R9080, less floody"
+    },
+    {
+     "name": "TN3535",
+     "why": "Similar budget flip chip"
+    }
+   ],
    "sources": [
     {
      "label": "Samsung datasheet",
@@ -6512,7 +7495,7 @@
      "text": "Tends green (\"dogfarts\"); bins vary"
     }
    ],
-   "tldr": "Cheap and floody with a big dome; tends green (\"dogfarts\") and bins vary."
+   "tldr": "A cheap, floody high-CRI LED, still a decent budget pick."
   },
   {
    "id": 77,
@@ -6552,7 +7535,17 @@
    "cri_html": "90 (5000K) · 70 (6500K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domed single-die flip chip, similar to the LH351D. The big 8.4 mm² source makes it a flood LED, not a thrower. The 90 CRI sample measured Ra 94 / R9 71 but had a green tint (Duv +0.0055), and the 70 CRI bins have R9 below −25. Vf goes past 4 V at max current, so avoid direct drive. Found in budget Sofirn and Wurkkos lights (e.g. Sofirn SR23 / ST10, early Wurkkos TS26) (<a href=\"https://budgetlightforum.com/t/led-test-review-latticepower-tn3535-5000-k-90-cri-6500-k-70-cri-color-kit-1a-1b/222345\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>A budget floody flip chip, similar to the LH351D.</b> The big 8.4 mm² source makes it a flood LED, not a thrower. The 90 CRI sample measured Ra 94 / R9 71 but had a green tint (Duv +0.0055), and the 70 CRI bins have R9 below −25. Vf goes past 4 V at max current, so avoid direct drive. Found in budget Sofirn and Wurkkos lights (e.g. Sofirn SR23 / ST10, early Wurkkos TS26) (<a href=\"https://budgetlightforum.com/t/led-test-review-latticepower-tn3535-5000-k-90-cri-6500-k-70-cri-color-kit-1a-1b/222345\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "LH351D",
+     "why": "Similar budget domed LED"
+    },
+    {
+     "name": "519A",
+     "why": "Better tint and colour"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -6593,7 +7586,7 @@
      "text": "90 CRI sample measured green (Duv +0.0055); 70 CRI bins have R9 below −25"
     }
    ],
-   "tldr": "Domed single-die flip chip, similar to the LH351D."
+   "tldr": "A budget floody flip chip, similar to the LH351D."
   },
   {
    "id": 78,
@@ -6631,7 +7624,13 @@
    "cri_html": "90+",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "4000K or 6000K in Wurkkos lights (<a href=\"https://budgetlightforum.com/t/led-test-review-latticepower-csp2323-6000-k-90-cri-led-used-in-wurkkos-ts10-mini/222391\" target=\"_blank\" rel=\"noopener\">BLF 6000K test</a>). Tiny CSP, brighter than the E21A with slightly worse colour. Popular in small triples such as the Wurkkos TS10 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A tiny CSP for small triples, brighter than the E21A.</b> Slightly worse colour than the E21A; popular in small triples such as the Wurkkos TS10 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). 4000K or 6000K in Wurkkos lights (<a href=\"https://budgetlightforum.com/t/led-test-review-latticepower-csp2323-6000-k-90-cri-led-used-in-wurkkos-ts10-mini/222391\" target=\"_blank\" rel=\"noopener\">BLF 6000K test</a>).",
+   "alternatives": [
+    {
+     "name": "E21A",
+     "why": "Better colour, dimmer"
+    }
+   ],
    "sources": [
     {
      "label": "BLF 6000K test",
@@ -6663,7 +7662,7 @@
     "note": "The TS10 triple LED"
    },
    "cct_notes": [],
-   "tldr": "Tiny CSP, brighter than the E21A with slightly worse colour; popular in small triples."
+   "tldr": "A tiny CSP for small triples, brighter than the E21A."
   },
   {
    "id": 79,
@@ -6700,11 +7699,29 @@
    "cri_html": "70 – 90+",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domed with decent colour; notable <b>1800K 80 CRI</b> version (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A domed LED with decent colour, best known for its 1800K version.</b> The 1800K 80 CRI part is one of very few LEDs that reach around 800 lm at such a warm CCT, though it has worse thermal resistance and a lower max current than the other CCTs. Sold in 1800K–5700K at typically 80–90 CRI (<a href=\"https://budgetlightforum.com/t/led-test-review-lumileds-hl2x-1800-5700-k-typ-80-90-cri-high-power-candle-light-led/219828\" target=\"_blank\" rel=\"noopener\">BLF HL2X test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "219F",
+     "why": "Sodium-like 1800K, low output"
+    },
+    {
+     "name": "519A",
+     "why": "1800K with better colour"
+    },
+    {
+     "name": "HL4X",
+     "why": "Bigger sibling"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    },
+    {
+     "label": "BLF HL2X test",
+     "url": "https://budgetlightforum.com/t/led-test-review-lumileds-hl2x-1800-5700-k-typ-80-90-cri-high-power-candle-light-led/219828"
     }
    ],
    "candela": [],
@@ -6736,7 +7753,7 @@
     "note": "Notable 1800K 80 CRI"
    },
    "cct_notes": [],
-   "tldr": "Domed with decent colour; notable 1800K 80 CRI version ( BLF Guide )."
+   "tldr": "A domed LED with decent colour, best known for its 1800K version."
   },
   {
    "id": 80,
@@ -6774,7 +7791,13 @@
    "cri_html": "&lt;60",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cool white only: 5600–6600K measured in an EDC27 UHi, with a green (positive-Duv) tint (<a href=\"https://zeroair.org/2024/08/30/nitecore-edc27-uhi-ultra-slim-flashlight-review/\" target=\"_blank\" rel=\"noopener\">ZeroAir</a>). Nitecore&#x27;s in-house emitters (Sysmax). Very high output but very low CRI; found in many current Nitecore lights (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Nitecore's in-house high-output, low-CRI emitters.</b> Very high output but very low CRI; made by Sysmax and found in many current Nitecore lights (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Cool white only: 5600–6600K measured in an EDC27 UHi, with a green (positive-Duv) tint (<a href=\"https://zeroair.org/2024/08/30/nitecore-edc27-uhi-ultra-slim-flashlight-review/\" target=\"_blank\" rel=\"noopener\">ZeroAir</a>).",
+   "alternatives": [
+    {
+     "name": "UHi 25",
+     "why": "The thrower die in the range"
+    }
+   ],
    "sources": [
     {
      "label": "ZeroAir",
@@ -6802,7 +7825,7 @@
      "text": "Green (positive Duv) — output over colour"
     }
    ],
-   "tldr": "Nitecore's in-house emitter: very high output, very low CRI, greenish.",
+   "tldr": "Nitecore's in-house high-output, low-CRI emitters.",
    "manufactured_by": "Nitecore (Sysmax)"
   },
   {
@@ -6836,7 +7859,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "LUXEON HL4X, the bigger sibling of the HL2X. Eight of them give the Acebeam X20-R its 10,000 lm / 440 m (vs 8,000 lm / 645 m with SFT-25R). No public datasheet found (<a href=\"https://www.acebeam.com/x20-r\" target=\"_blank\" rel=\"noopener\">Acebeam X20-R</a>).",
+   "notes_html": "<b>The HL2X's bigger sibling, found in the Acebeam X20-R.</b> Eight of them give the X20-R 10,000 lm / 440 m, vs 8,000 lm / 645 m with SFT-25R. No public datasheet found (<a href=\"https://www.acebeam.com/x20-r\" target=\"_blank\" rel=\"noopener\">Acebeam X20-R</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-25R",
+     "why": "Far more throw in the same light"
+    },
+    {
+     "name": "HL2X",
+     "why": "Smaller sibling"
+    }
+   ],
    "sources": [
     {
      "label": "Acebeam X20-R",
@@ -6855,7 +7888,7 @@
     "note": "Acebeam X20-R"
    },
    "cct_notes": [],
-   "tldr": "LUXEON HL4X, the bigger sibling of the HL2X."
+   "tldr": "The HL2X's bigger sibling, found in the Acebeam X20-R."
   },
   {
    "id": 89,
@@ -6893,7 +7926,17 @@
    "cri_html": "97 typ. (R9 / R12 ≥ 90)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>Daylight high-CRI</b> part: 6000–6500K with typ. 97 CRI and R9/R12 above 90, the cool-white answer to the 519A. Rated only to 1 A, so output is modest (<a href=\"https://budgetlightforum.com/t/led-test-review-moonleds-mn-s3535-6000-k-typ-97-cri-r9-r12-min-90-real-daylight-led/222478\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>The cool-white answer to the 519A: daylight high CRI at low power.</b> 6000–6500K with typ. 97 CRI and R9/R12 above 90. Rated only to 1 A, so output is modest (<a href=\"https://budgetlightforum.com/t/led-test-review-moonleds-mn-s3535-6000-k-typ-97-cri-r9-r12-min-90-real-daylight-led/222478\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "Far brighter, warmer CCTs"
+    },
+    {
+     "name": "YinDing 5050 Glass",
+     "why": "Cool-white high CRI with throw"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -6912,7 +7955,7 @@
     "note": "Rated only to 1 A"
    },
    "cct_notes": [],
-   "tldr": "Daylight high-CRI part: 6000–6500K with typ."
+   "tldr": "The cool-white answer to the 519A: daylight high CRI at low power."
   },
   {
    "id": 93,
@@ -6947,7 +7990,13 @@
    "cri_html": "min. 90 (5700K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Rare high-CRI part that is also efficient and powerful (rated 4.8 A) thanks to very low thermal resistance; needs its own board footprint (<a href=\"https://budgetlightforum.com/t/led-test-review-lumileds-luxeon-mz-5700-k-min-90-cri-3v-finally-high-cri-high-power-beautiful-light/49328\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>A rare part that is high-CRI, efficient and powerful at once.</b> Rated 4.8 A thanks to very low thermal resistance; needs its own board footprint (<a href=\"https://budgetlightforum.com/t/led-test-review-lumileds-luxeon-mz-5700-k-min-90-cri-3v-finally-high-cri-high-power-beautiful-light/49328\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [
+    {
+     "name": "519A",
+     "why": "High CRI on a common 3535 board"
+    }
+   ],
    "sources": [
     {
      "label": "BLF test",
@@ -6966,7 +8015,7 @@
     "note": "Needs its own board footprint"
    },
    "cct_notes": [],
-   "tldr": "Rare high-CRI part that is also efficient and powerful (rated 4.8 A) thanks to very low thermal resistance; needs its own board footprint ( BLF test )."
+   "tldr": "A rare part that is high-CRI, efficient and powerful at once."
   },
   {
    "id": 94,
@@ -7001,7 +8050,8 @@
    "cri_html": "70 (4000K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "CSP emitter with high flux and a clean beam; Vf varies between samples. Needs its own board footprint (<a href=\"https://budgetlightforum.com/t/led-test-review-lumileds-luxeon-v-csp-4000-k-70-cri-high-flux-and-nice-beam-pattern-but-differences-in-vf/49731\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "notes_html": "<b>A high-flux CSP with a clean beam.</b> Vf varies between samples, and it needs its own board footprint (<a href=\"https://budgetlightforum.com/t/led-test-review-lumileds-luxeon-v-csp-4000-k-70-cri-high-flux-and-nice-beam-pattern-but-differences-in-vf/49731\" target=\"_blank\" rel=\"noopener\">BLF test</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "BLF test",
@@ -7020,7 +8070,7 @@
     "note": "Needs its own board footprint"
    },
    "cct_notes": [],
-   "tldr": "CSP emitter with high flux and a clean beam; Vf varies between samples."
+   "tldr": "A high-flux CSP with a clean beam."
   },
   {
    "id": 98,
@@ -7066,7 +8116,17 @@
    "cri_html": "70 / 80 / 90 / 95",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "2.3 mm source in the standard XP package, plus an S Line version (776 / 1,363 lm, 70 CRI only). The domed mainstream workhorse in Nitecore, Fenix and Olight lights before the XP-G4/XP-L2. White kits run 1800K–8000K. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPG3.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-G3 datasheet</a>).",
+   "notes_html": "<b>The domed mainstream workhorse of Nitecore, Fenix and Olight lights before the XP-G4/XP-L2.</b> 2.3 mm source in the standard XP package. White kits run 1800K–8000K, plus an S Line version (776 / 1,363 lm, 70 CRI only) (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPG3.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-G3 datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "XP-G4",
+     "why": "Its successor"
+    },
+    {
+     "name": "519A",
+     "why": "The enthusiast high-CRI pick"
+    }
+   ],
    "sources": [
     {
      "label": "Cree portable LEDs",
@@ -7088,7 +8148,7 @@
     "t": "oem",
     "note": "Mainstream Nitecore/Fenix/Olight workhorse"
    },
-   "tldr": "Domed mainstream 3535 that came before the XP-G4 / XP-L2.",
+   "tldr": "The domed mainstream workhorse of Nitecore, Fenix and Olight lights before the XP-G4/XP-L2.",
    "cct_notes": []
   },
   {
@@ -7133,7 +8193,8 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Small 2.0 mm source on the XP/XT footprint; Cree lists it as a lumen-optimised portable part. Efficient at low current, so it suits small-cell lights more than hot rods. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XTE.pdf\" target=\"_blank\" rel=\"noopener\">Cree XT-E datasheet</a>).",
+   "notes_html": "<b>A small, efficient lumen-optimised LED for small-cell lights.</b> 2.0 mm source on the XP/XT footprint. Efficient at low current, so it suits small-cell lights more than hot rods (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XTE.pdf\" target=\"_blank\" rel=\"noopener\">Cree XT-E datasheet</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Cree portable LEDs",
@@ -7155,7 +8216,7 @@
     "t": "niche",
     "note": "Efficient at low current"
    },
-   "tldr": "Small 2 mm source tuned for lumens per watt in small-cell lights.",
+   "tldr": "A small, efficient lumen-optimised LED for small-cell lights.",
    "cct_notes": []
   },
   {
@@ -7199,7 +8260,17 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "1.0 × 1.0 mm source, Cree's smallest beam-distance part: a W1-style pencil-beam option on the common XP footprint. 3 A max (2.5 A for the CRI-graded bins). (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPP.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-P datasheet</a>).",
+   "notes_html": "<b>A W1-style pencil beam on the common XP footprint.</b> 1.0 × 1.0 mm source, Cree's smallest beam-distance part. 3 A max (2.5 A for the CRI-graded bins) (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPP.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-P datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "The pencil-beam reference"
+    },
+    {
+     "name": "SFT-25R",
+     "why": "More lumens, same footprint class"
+    }
+   ],
    "sources": [
     {
      "label": "Cree portable LEDs",
@@ -7221,7 +8292,7 @@
     "t": "niche",
     "note": "Few lights use it yet"
    },
-   "tldr": "1 mm² source on the XP footprint: Cree's pencil-beam part.",
+   "tldr": "A W1-style pencil beam on the common XP footprint.",
    "cct_notes": []
   },
   {
@@ -7258,7 +8329,13 @@
    "cri_html": "&lt;70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domed (high-density) sibling of the XHP35.2 HI: 3.3 mm source, more lumens, less throw. ThruNite's TC15 V3 lists an XHP35.2 without saying HI or HD; its 2,400 lm / 223 m fits this HD part. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "notes_html": "<b>The domed XHP35.2: more lumens, less throw than the HI.</b> 3.3 mm source. ThruNite's TC15 V3 lists an XHP35.2 without saying HI or HD; its 2,400 lm / 223 m fits this HD part (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "alternatives": [
+    {
+     "name": "XHP35.2 HI",
+     "why": "Domeless, more throw"
+    }
+   ],
    "sources": [
     {
      "label": "Cree portable LEDs",
@@ -7276,7 +8353,7 @@
     "t": "niche",
     "note": ""
    },
-   "tldr": "Domed XHP35.2: more lumens than the HI, less throw.",
+   "tldr": "The domed XHP35.2: more lumens, less throw than the HI.",
    "cct_notes": []
   },
   {
@@ -7313,7 +8390,17 @@
    "cri_html": "70 / 80 / 90 / 95 (6V)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Domed 5.3 mm-source version of the XHP70.3: more lumens than the HI, much floodier. The usual pick for big 7070 flooders. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "notes_html": "<b>The usual pick for big 7070 flooders.</b> The domed 5.3 mm-source XHP70.3: more lumens than the HI, much floodier (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "alternatives": [
+    {
+     "name": "XHP70.3 HI",
+     "why": "More throw, cleaner beam"
+    },
+    {
+     "name": "LHP73B",
+     "why": "Cheap 3V 7070 flood"
+    }
+   ],
    "sources": [
     {
      "label": "Cree portable LEDs",
@@ -7331,7 +8418,7 @@
     "t": "niche",
     "note": "Big flooders"
    },
-   "tldr": "Domed 7070 for maximum lumens; very floody.",
+   "tldr": "The usual pick for big 7070 flooders.",
    "cct_notes": []
   },
   {
@@ -7373,7 +8460,17 @@
    "cri_html": "&lt;70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cree's newer beam-distance XFL parts: XFLPNA 2,058 lm @ 6 A from a 2.6 mm source, XFLMNB 3,154 lm @ 9 A (3.5 mm), XFLMNA 4,074 lm @ 14 A / 7 A (2.9 mm), XFLSNA 6,853 lm @ 20 A / 10 A (3.9 mm). Domeless and cool white only. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "notes_html": "<b>Cree's newer beam-distance XFL parts, domeless and cool white only.</b> XFLPNA 2,058 lm at 6 A from a 2.6 mm source, XFLMNB 3,154 lm at 9 A (3.5 mm), XFLMNA 4,074 lm at 14 A / 7 A (2.9 mm), XFLSNA 6,853 lm at 20 A / 10 A (3.9 mm) (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "alternatives": [
+    {
+     "name": "XFL series",
+     "why": "Older domed flooders"
+    },
+    {
+     "name": "SFT-40",
+     "why": "Well-tested thrower"
+    }
+   ],
    "sources": [
     {
      "label": "Cree portable LEDs",
@@ -7391,7 +8488,7 @@
     "t": "niche",
     "note": "New; few lights yet"
    },
-   "tldr": "Cree's newer domeless beam-distance XFL parts, 3535 to 7070.",
+   "tldr": "Cree's newer beam-distance XFL parts, domeless and cool white only.",
    "cct_notes": []
   },
   {
@@ -7442,7 +8539,13 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cree's smallest lighting-class LED, in high-density and high-intensity versions (1.5 A max). Also sold in royal blue, blue, cyan, green, PC lime, PC amber, red-orange and red, so it turns up as aux or colour channels in keychain and multi-channel lights. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XQE.pdf\" target=\"_blank\" rel=\"noopener\">Cree XQ-E datasheet</a>).",
+   "notes_html": "<b>Cree's smallest lighting-class LED, common for aux and colour channels.</b> High-density and high-intensity versions, 1.5 A max. Also sold in royal blue, blue, cyan, green, PC lime, PC amber, red-orange and red, so it turns up in keychain and multi-channel lights (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XQE.pdf\" target=\"_blank\" rel=\"noopener\">Cree XQ-E datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "XP-E2 (colour)",
+     "why": "Bigger coloured channels"
+    }
+   ],
    "sources": [
     {
      "label": "Cree XQ-E datasheet",
@@ -7460,7 +8563,7 @@
     "t": "niche",
     "note": "Aux and colour channels"
    },
-   "tldr": "Cree's tiny 1.6 mm LED, also in many colours.",
+   "tldr": "Cree's smallest lighting-class LED, common for aux and colour channels.",
    "cct_notes": []
   },
   {
@@ -7506,7 +8609,8 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cree's 'Extreme Density' chip-scale LED on its NX platform: 2 A max, 135° viewing angle. Listed as the white LED of the Armytek Wizard C2 WUV. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XD16.pdf\" target=\"_blank\" rel=\"noopener\">Cree XD16 datasheet</a>).",
+   "notes_html": "<b>A tiny chip-scale Cree LED with a wide 135° spread.</b> 'Extreme Density' part on Cree's NX platform, 2 A max. Listed as the white LED of the Armytek Wizard C2 WUV (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XD16.pdf\" target=\"_blank\" rel=\"noopener\">Cree XD16 datasheet</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Cree XD16 datasheet",
@@ -7524,7 +8628,7 @@
     "t": "niche",
     "note": ""
    },
-   "tldr": "Chip-scale 1.6 mm Cree LED, 2 A max.",
+   "tldr": "A tiny chip-scale Cree LED with a wide 135° spread.",
    "cct_notes": []
   },
   {
@@ -7570,7 +8674,13 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Small-die domed classic (110° white). The white version is what budget and AAA lights use (Convoy's AAA lists a Cree XPE2 at 50–60 lm); the colour versions have their own card. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPE2.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-E2 datasheet</a>, <a href=\"https://convoylight.com/products/aaa-flashlight-edc\" target=\"_blank\" rel=\"noopener\">Convoy AAA</a>).",
+   "notes_html": "<b>The small-die domed classic of budget and AAA lights.</b> 110° white version; Convoy's AAA lists a Cree XPE2 at 50–60 lm. The colour versions have their own card (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPE2.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-E2 datasheet</a>, <a href=\"https://convoylight.com/products/aaa-flashlight-edc\" target=\"_blank\" rel=\"noopener\">Convoy AAA</a>).",
+   "alternatives": [
+    {
+     "name": "XP-E2 (colour)",
+     "why": "Coloured versions"
+    }
+   ],
    "sources": [
     {
      "label": "Cree XP-E2 datasheet",
@@ -7592,7 +8702,7 @@
     "t": "legacy",
     "note": "Budget and AAA lights"
    },
-   "tldr": "Small domed classic; white version for low-power lights.",
+   "tldr": "The small-die domed classic of budget and AAA lights.",
    "cct_notes": []
   },
   {
@@ -7637,7 +8747,13 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Cree's first-generation 7 × 7 mm multi-die LED, the ancestor of the XHP70. Cree now points new designs to newer parts; it survives only in old builds. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-MKR.pdf\" target=\"_blank\" rel=\"noopener\">Cree MK-R datasheet</a>).",
+   "notes_html": "<b>Cree's first 7 × 7 mm multi-die LED, the XHP70's ancestor; old builds only.</b> Cree now points new designs to newer parts (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-MKR.pdf\" target=\"_blank\" rel=\"noopener\">Cree MK-R datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "XHP70.3 HI",
+     "why": "Modern 7070"
+    }
+   ],
    "sources": [
     {
      "label": "Cree MK-R datasheet",
@@ -7655,7 +8771,7 @@
     "t": "legacy",
     "note": "Ancestor of the XHP70"
    },
-   "tldr": "Cree's first 7070 multi-die, 12V.",
+   "tldr": "Cree's first 7 × 7 mm multi-die LED, the XHP70's ancestor; old builds only.",
    "cct_notes": []
   },
   {
@@ -7691,7 +8807,17 @@
    "cri_html": "70 – 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Original 12V-only XHP35 in HI (domeless) and HD (domed) versions, replaced by the 3V/6V XHP35.2. The HI was a 12V thrower favourite; the Nitecore HC33 still lists an XHP35 HD. (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://www.nitecore.com/product/hc33\" target=\"_blank\" rel=\"noopener\">Nitecore HC33</a>).",
+   "notes_html": "<b>The original 12V-only XHP35, replaced by the 3V/6V XHP35.2.</b> Came in HI (domeless) and HD (domed) versions; the HI was a 12V thrower favourite. The Nitecore HC33 still lists an XHP35 HD (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://www.nitecore.com/product/hc33\" target=\"_blank\" rel=\"noopener\">Nitecore HC33</a>).",
+   "alternatives": [
+    {
+     "name": "XHP35.2 HI",
+     "why": "Domeless successor"
+    },
+    {
+     "name": "XHP35.2 HD",
+     "why": "Domed successor"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -7713,7 +8839,7 @@
     "t": "legacy",
     "note": "12V only; replaced by the XHP35.2"
    },
-   "tldr": "Original 12V XHP35 in HI and HD versions.",
+   "tldr": "The original 12V-only XHP35, replaced by the 3V/6V XHP35.2.",
    "cct_notes": []
   },
   {
@@ -7752,7 +8878,17 @@
    "cri_html": "70 – 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "First-generation domed multi-die XHPs, superseded by the .2 and .3 parts. Same footprints and voltages, so later parts drop in. Floody with a visible tint ring. (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>First-generation domed XHPs, superseded by the .2 and .3 parts.</b> Same footprints and voltages, so later parts drop in. Floody, with a visible tint ring (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "Modern 5050 drop-in"
+    },
+    {
+     "name": "XHP70.3 HI",
+     "why": "Modern 7070 drop-in"
+    }
+   ],
    "sources": [
     {
      "label": "BLF Guide",
@@ -7770,7 +8906,7 @@
     "t": "legacy",
     "note": "Superseded by the .2 and .3 parts"
    },
-   "tldr": "First-generation domed XHP50 / XHP70.",
+   "tldr": "First-generation domed XHPs, superseded by the .2 and .3 parts.",
    "cct_notes": []
   },
   {
@@ -7809,7 +8945,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Monolithic 9 mm² die, 5700K or 6500K. The original big-die lumen part from the early 2010s; long replaced by SFT-90 / SBT90.2 but still in old searchlights. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-90 datasheet</a>).",
+   "notes_html": "<b>The original big-die lumen part from the early 2010s.</b> Monolithic 9 mm² die, 5700K or 6500K. Long replaced by the SFT-90 / SBT90.2, but still in old searchlights (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-90 datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-90",
+     "why": "Budget replacement"
+    },
+    {
+     "name": "SBT90.2",
+     "why": "The modern reference"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus SST-90 datasheet",
@@ -7827,7 +8973,7 @@
     "t": "legacy",
     "note": "Old big-die lumen part"
    },
-   "tldr": "9 mm² Luminus die from the early 2010s searchlights.",
+   "tldr": "The original big-die lumen part from the early 2010s.",
    "cct_notes": []
   },
   {
@@ -7866,7 +9012,13 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "First SBT-90: 9 mm² square emitter, 5700K or 6500K, also made in red (over 1,600 lm). The domeless thrower that SBT90.2 replaced. (<a href=\"https://download.luminus.com/datasheets/Luminus_SBT-90_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SBT-90 datasheet</a>).",
+   "notes_html": "<b>The first SBT-90: the domeless thrower that the SBT90.2 replaced.</b> 9 mm² square emitter, 5700K or 6500K; also made in red (over 1,600 lm) (<a href=\"https://download.luminus.com/datasheets/Luminus_SBT-90_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SBT-90 datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "Its replacement"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus SBT-90 datasheet",
@@ -7884,7 +9036,7 @@
     "t": "legacy",
     "note": "Replaced by the SBT90.2"
    },
-   "tldr": "The first big domeless Luminus thrower die.",
+   "tldr": "The first SBT-90: the domeless thrower that the SBT90.2 replaced.",
    "cct_notes": []
   },
   {
@@ -7926,7 +9078,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "9 mm² monolithic chip, 5700K / 6500K; green (over 1,800 lm) and blue versions exist. Projector-class part that turns up in a few searchlights. (<a href=\"https://download.luminus.com/datasheets/Luminus_CBT-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CBT-90 datasheet</a>).",
+   "notes_html": "<b>A projector-class 9 mm² chip that turns up in a few searchlights.</b> Monolithic, 5700K / 6500K; green (over 1,800 lm) and blue versions exist (<a href=\"https://download.luminus.com/datasheets/Luminus_CBT-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CBT-90 datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "CFT-90",
+     "why": "Second-generation successor"
+    },
+    {
+     "name": "SBT90.2",
+     "why": "The usual searchlight LED"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus CBT-90 datasheet",
@@ -7944,7 +9106,7 @@
     "t": "niche",
     "note": "Projector-class"
    },
-   "tldr": "9 mm² Luminus die, also in green and blue.",
+   "tldr": "A projector-class 9 mm² chip that turns up in a few searchlights.",
    "cct_notes": []
   },
   {
@@ -7984,7 +9146,17 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Second-generation 9 mm² windowless specialty white: more peak lumens and current than the CBT-90. 5700K, 6500K or 7800K. (<a href=\"https://download.luminus.com/datasheets/Luminus_CFT-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CFT-90 datasheet</a>).",
+   "notes_html": "<b>A second-generation 9 mm² windowless specialty white.</b> More peak lumens and current than the CBT-90; 5700K, 6500K or 7800K (<a href=\"https://download.luminus.com/datasheets/Luminus_CFT-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CFT-90 datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "CBT-90",
+     "why": "First generation"
+    },
+    {
+     "name": "SBT90.2",
+     "why": "The usual searchlight LED"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus CFT-90 datasheet",
@@ -8002,7 +9174,7 @@
     "t": "niche",
     "note": "Projector-class"
    },
-   "tldr": "Windowless 9 mm² die, over 6,500 lm at 27 A.",
+   "tldr": "A second-generation 9 mm² windowless specialty white.",
    "cct_notes": []
   },
   {
@@ -8040,7 +9212,8 @@
    "cri_html": "~70 (cool white)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "5 mm² windowless, electrically isolated cool white, designed for fibre coupling. Very high luminance for its size. (<a href=\"https://download.luminus.com/datasheets/Luminus_CFT-50X-WCS_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CFT-50X datasheet</a>).",
+   "notes_html": "<b>A 5 mm² windowless cool white with very high luminance for its size.</b> Electrically isolated and designed for fibre coupling (<a href=\"https://download.luminus.com/datasheets/Luminus_CFT-50X-WCS_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CFT-50X datasheet</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Luminus CFT-50X datasheet",
@@ -8058,7 +9231,7 @@
     "t": "niche",
     "note": "Fibre-coupling part"
    },
-   "tldr": "5 mm² windowless cool white with very high luminance.",
+   "tldr": "A 5 mm² windowless cool white with very high luminance for its size.",
    "cct_notes": []
   },
   {
@@ -8097,7 +9270,17 @@
    "cri_html": "~70 (6500K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Newer 6V/12V configurable SST-70 with up to 500 lm/mm² lumen density; 6500K only. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-70X-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-70X datasheet</a>).",
+   "notes_html": "<b>A newer 6V/12V configurable SST-70 with higher lumen density.</b> Up to 500 lm/mm²; 6500K only (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-70X-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-70X datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "SST-70",
+     "why": "The original"
+    },
+    {
+     "name": "SFT-70",
+     "why": "Domeless, high-CRI options"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus SST-70X datasheet",
@@ -8115,7 +9298,7 @@
     "t": "niche",
     "note": ""
    },
-   "tldr": "6V/12V configurable SST-70 successor, 6500K only.",
+   "tldr": "A newer 6V/12V configurable SST-70 with higher lumen density.",
    "cct_notes": []
   },
   {
@@ -8159,7 +9342,13 @@
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "F-Line flip-chip parts in a ceramic package, aimed at cost per lumen. SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20F-W-AH_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20F datasheet</a>, <a href=\"https://download.luminus.com/datasheets/Luminus_SST-36F-W-AL_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-36F datasheet</a>).",
+   "notes_html": "<b>Luminus's cost-per-lumen flip chips in a ceramic package.</b> SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20F-W-AH_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20F datasheet</a>, <a href=\"https://download.luminus.com/datasheets/Luminus_SST-36F-W-AL_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-36F datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "SST-20",
+     "why": "Original, with R9080 bins"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus SST-20F datasheet",
@@ -8181,7 +9370,7 @@
     "t": "budget",
     "note": "Cost-per-lumen flip chips"
    },
-   "tldr": "Luminus F-Line flip chips in a ceramic 3535.",
+   "tldr": "Luminus's cost-per-lumen flip chips in a ceramic package.",
    "cct_notes": []
   },
   {
@@ -8220,7 +9409,13 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "V-Line vertical-chip SST-20 with higher lumen density and a narrower emission angle than the original; high-CRI version in 5000K / 5700K. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20V-WG_CRI90_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20V datasheet</a>).",
+   "notes_html": "<b>A V-Line SST-20 with higher lumen density and a narrower emission angle.</b> Vertical chip; the high-CRI version comes in 5000K / 5700K (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20V-WG_CRI90_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20V datasheet</a>).",
+   "alternatives": [
+    {
+     "name": "SST-20",
+     "why": "Original, R9080 at ≤4000K"
+    }
+   ],
    "sources": [
     {
      "label": "Luminus SST-20V datasheet",
@@ -8238,7 +9433,7 @@
     "t": "niche",
     "note": ""
    },
-   "tldr": "Vertical-chip SST-20 with more lumen density; 90 CRI option.",
+   "tldr": "A V-Line SST-20 with higher lumen density and a narrower emission angle.",
    "cct_notes": []
   },
   {
@@ -8275,7 +9470,13 @@
    "cri_html": "70 – 95 (H6 series)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Nichia's 0.2 W mid-power 3030 family (NFSW757G / NFSW757H / NF2W757H). Not a flashlight main emitter, but common in lanterns and wide-angle work lights; the H6 series pairs Ra ≥ 95 with high efficacy. (<a href=\"https://led-ld.nichia.co.jp/en/product/lighting_757.html\" target=\"_blank\" rel=\"noopener\">Nichia 757</a>).",
+   "notes_html": "<b>Mid-power 3030s for lanterns and wide-angle work lights, not flashlight main emitters.</b> Nichia's 0.2 W family (NFSW757G / NFSW757H / NF2W757H); the H6 series pairs Ra ≥ 95 with high efficacy (<a href=\"https://led-ld.nichia.co.jp/en/product/lighting_757.html\" target=\"_blank\" rel=\"noopener\">Nichia 757</a>).",
+   "alternatives": [
+    {
+     "name": "Optisolis",
+     "why": "Full-spectrum version"
+    }
+   ],
    "sources": [
     {
      "label": "Nichia 757",
@@ -8293,7 +9494,7 @@
     "t": "niche",
     "note": "Lanterns and work lights"
    },
-   "tldr": "Nichia's 0.2 W mid-power 3030, up to Ra 95.",
+   "tldr": "Mid-power 3030s for lanterns and wide-angle work lights, not flashlight main emitters.",
    "cct_notes": []
   },
   {
@@ -8330,7 +9531,13 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365 nm UV",
-   "notes_html": "Older, lower-power Nichia 365 nm part (276A, now 276C) behind the Convoy S2+ UV. Less output than the 233B but a clean 365 nm peak with little visible purple. (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>, <a href=\"https://convoylight.com/products/convoy-s2-black-uv-365nm-18650-flashlight-with-nichia-276a\" target=\"_blank\" rel=\"noopener\">Convoy S2+ UV</a>).",
+   "notes_html": "<b>An older, lower-power Nichia 365 nm UV, the one behind the Convoy S2+ UV.</b> 276A, now 276C. Less output than the 233B, but a clean 365 nm peak with little visible purple (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>, <a href=\"https://convoylight.com/products/convoy-s2-black-uv-365nm-18650-flashlight-with-nichia-276a\" target=\"_blank\" rel=\"noopener\">Convoy S2+ UV</a>).",
+   "alternatives": [
+    {
+     "name": "NVSU233B",
+     "why": "More output, still clean"
+    }
+   ],
    "sources": [
     {
      "label": "Nichia UV-A",
@@ -8352,7 +9559,7 @@
     "t": "legacy",
     "note": "Lower-power 365 nm"
    },
-   "tldr": "Older Nichia 365 nm UV part (Convoy S2+ UV).",
+   "tldr": "An older, lower-power Nichia 365 nm UV, the one behind the Convoy S2+ UV.",
    "cct_notes": []
   },
   {
@@ -8388,7 +9595,13 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365 nm UV",
-   "notes_html": "Nichia's mid-power 365 nm UV-A emitter, a step below the 233B (1,450 mW). Listed alongside the 233B / 233C in Nichia's current UV-A range. (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>).",
+   "notes_html": "<b>Nichia's mid-power 365 nm UV-A emitter, a step below the 233B (1,450 mW).</b> Listed alongside the 233B / 233C in Nichia's current UV-A range (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>).",
+   "alternatives": [
+    {
+     "name": "NVSU233B",
+     "why": "More output"
+    }
+   ],
    "sources": [
     {
      "label": "Nichia UV-A",
@@ -8406,7 +9619,7 @@
     "t": "niche",
     "note": ""
    },
-   "tldr": "Nichia mid-power 365 nm UV-A.",
+   "tldr": "Nichia's mid-power 365 nm UV-A emitter, a step below the 233B (1,450 mW).",
    "cct_notes": []
   },
   {
@@ -8440,7 +9653,8 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Nitecore's name for the Osram emitter in the TINI2 SS keychain light (2 × P8, 500 lm, 2,000 cd). Nitecore doesn't give the Osram order code. (<a href=\"https://www.nitecore.com/product/tini2Ss\" target=\"_blank\" rel=\"noopener\">Nitecore TINI2 SS</a>).",
+   "notes_html": "<b>Nitecore's name for the Osram emitter in the TINI2 SS keychain light.</b> Two of them give 500 lm and 2,000 cd. Nitecore doesn't give the Osram order code (<a href=\"https://www.nitecore.com/product/tini2Ss\" target=\"_blank\" rel=\"noopener\">Nitecore TINI2 SS</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Nitecore TINI2 SS",
@@ -8458,7 +9672,7 @@
     "t": "oem",
     "note": "Nitecore TINI2 SS"
    },
-   "tldr": "Nitecore's name for the Osram LED in the TINI2 SS.",
+   "tldr": "Nitecore's name for the Osram emitter in the TINI2 SS keychain light.",
    "cct_notes": []
   },
   {
@@ -8492,7 +9706,13 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Nitecore's in-house thrower die: 2.26 mm² emitting surface, 4.7 SDCM colour tolerance, 6500K cool white (Nitecore EDC23 / EDC17 pages). Sits between UHi 20 and UHi 40. (<a href=\"https://www.nitecore.com/product/edc23\" target=\"_blank\" rel=\"noopener\">Nitecore EDC23</a>).",
+   "notes_html": "<b>Nitecore's in-house thrower die, between the UHi 20 and UHi 40.</b> 2.26 mm² emitting surface, 4.7 SDCM colour tolerance, 6500K cool white (Nitecore EDC23 / EDC17 pages) (<a href=\"https://www.nitecore.com/product/edc23\" target=\"_blank\" rel=\"noopener\">Nitecore EDC23</a>).",
+   "alternatives": [
+    {
+     "name": "UHi 20",
+     "why": "Flood/output siblings"
+    }
+   ],
    "sources": [
     {
      "label": "Nitecore EDC23",
@@ -8510,7 +9730,7 @@
     "t": "oem",
     "note": "Nitecore in-house"
    },
-   "tldr": "Nitecore thrower die, 2.26 mm², 6500K.",
+   "tldr": "Nitecore's in-house thrower die, between the UHi 20 and UHi 40.",
    "cct_notes": [],
    "manufactured_by": "Nitecore (Sysmax)"
   },
@@ -8543,7 +9763,8 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "NiteLab array LED in the Nitecore P17iX / P27iX and MT1A / MT1C Max. Nitecore gives no CCT or CRI. (<a href=\"https://www.nitecore.com/product/mt1c_max\" target=\"_blank\" rel=\"noopener\">Nitecore MT1C Max</a>).",
+   "notes_html": "<b>NiteLab's array LED, in the Nitecore P17iX / P27iX and MT1A / MT1C Max.</b> Nitecore gives no CCT or CRI (<a href=\"https://www.nitecore.com/product/mt1c_max\" target=\"_blank\" rel=\"noopener\">Nitecore MT1C Max</a>).",
+   "alternatives": [],
    "sources": [
     {
      "label": "Nitecore MT1C Max",
@@ -8561,7 +9782,7 @@
     "t": "oem",
     "note": "Nitecore in-house array"
    },
-   "tldr": "NiteLab array LED in Nitecore's P-iX and MT Max lights.",
+   "tldr": "NiteLab's array LED, in the Nitecore P17iX / P27iX and MT1A / MT1C Max.",
    "cct_notes": [],
    "manufactured_by": "Nitecore (Sysmax)"
   },
@@ -8600,7 +9821,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "Red / Green / Blue",
-   "notes_html": "Single-colour Getian emitters that Convoy sells in red, green and blue for its throwers (C8, L21B, M21-series, 3X21A). Buyers note a glass dome that cracks if the reflector is over-tightened; the green is a strong thrower. (<a href=\"https://convoylight.com/products/getian-gt-red-blue-green-light-led-with-20mm-mcpcb\" target=\"_blank\" rel=\"noopener\">Convoy Getian</a>).",
+   "notes_html": "<b>Single-colour Getian emitters for coloured throwers.</b> Convoy sells them in red, green and blue for its throwers (C8, L21B, M21-series, 3X21A), and the green is a strong thrower. Buyers note a glass dome that cracks if the reflector is over-tightened (<a href=\"https://convoylight.com/products/getian-gt-red-blue-green-light-led-with-20mm-mcpcb\" target=\"_blank\" rel=\"noopener\">Convoy Getian</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "Osram colour throwers"
+    },
+    {
+     "name": "KT CULPM1.13",
+     "why": "Osram true green"
+    }
+   ],
    "sources": [
     {
      "label": "Convoy Getian",
@@ -8618,7 +9849,7 @@
     "t": "budget",
     "note": "Convoy colour option"
    },
-   "tldr": "Getian single-colour throw LEDs with a fragile glass dome.",
+   "tldr": "Single-colour Getian emitters for coloured throwers.",
    "cct_notes": []
   },
   {
@@ -8653,7 +9884,17 @@
    "cri_html": "low (~60–70)",
    "cri_label": "CRI",
    "type_html": "Laser-excited phosphor",
-   "notes_html": "Not an LED: a blue laser hits a phosphor dot, giving a tiny, extremely bright source. Output is low but candela is huge (often 300,000–1,000,000+ cd), so the beam is a narrow searchlight with almost no spill. Usually cool white; some lights add green or red LEP. Treat the beam like a laser around eyes and aircraft. (<a href=\"https://www.firefly-outdoor.com/products/fireflylite-lep01-hunter-tactical-flashlight\" target=\"_blank\" rel=\"noopener\">FireflyLite LEP01</a>).",
+   "notes_html": "<b>Not an LED: a laser-lit phosphor dot for the narrowest, longest beams.</b> A blue laser hits a phosphor dot, giving a tiny, extremely bright source. Output is low but candela is huge (often 300,000–1,000,000+ cd), so the beam is a narrow searchlight with almost no spill. Usually cool white; some lights add green or red LEP. Treat the beam like a laser around eyes and aircraft (<a href=\"https://www.firefly-outdoor.com/products/fireflylite-lep01-hunter-tactical-flashlight\" target=\"_blank\" rel=\"noopener\">FireflyLite LEP01</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "Pencil beam with some spill"
+    },
+    {
+     "name": "SFT-25R",
+     "why": "Long throw, more lumens"
+    }
+   ],
    "sources": [
     {
      "label": "FireflyLite LEP01",
@@ -8671,7 +9912,7 @@
     "t": "niche",
     "note": "Searchlight beam, almost no spill"
    },
-   "tldr": "Laser-pumped phosphor: low lumens, enormous candela.",
+   "tldr": "Not an LED: a laser-lit phosphor dot for the narrowest, longest beams.",
    "cct_notes": []
   },
   {
@@ -8705,7 +9946,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "365 nm UV-A",
-   "notes_html": "For lights whose store page gives only '365 nm UV'. True 365 nm shows fluorescence with little visible purple, especially behind a ZWB2 filter; 395 nm parts are cheaper but wash scenes out in violet. Known named parts: Nichia 233B / 276A, Luminus SST-10-UV / SBT-10X-UV, Seoul CUN66A1B / CUN66A1G. Don't look into the beam. (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>, <a href=\"https://convoylight.com/collections/for-uv-led\" target=\"_blank\" rel=\"noopener\">Convoy UV</a>).",
+   "notes_html": "<b>For lights whose store page only says \"365 nm UV\".</b> True 365 nm shows fluorescence with little visible purple, especially behind a ZWB2 filter; 395 nm parts are cheaper but wash scenes out in violet. Known named parts: Nichia 233B / 276A, Luminus SST-10-UV / SBT-10X-UV, Seoul CUN66A1B / CUN66A1G. Don't look into the beam (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>, <a href=\"https://convoylight.com/collections/for-uv-led\" target=\"_blank\" rel=\"noopener\">Convoy UV</a>).",
+   "alternatives": [
+    {
+     "name": "NVSU233B",
+     "why": "Premium named 365 nm"
+    },
+    {
+     "name": "SST-10-UV",
+     "why": "Budget named 365 nm"
+    }
+   ],
    "sources": [
     {
      "label": "Nichia UV-A",
@@ -8724,7 +9975,7 @@
    "throw_hi": null,
    "beam": 2,
    "rep": null,
-   "tldr": "Placeholder for lights that only say '365 nm UV'.",
+   "tldr": "For lights whose store page only says \"365 nm UV\".",
    "cct_notes": []
   },
   {
@@ -8762,7 +10013,17 @@
    "cri_html": "",
    "cri_label": "CRI",
    "type_html": "True green (~530 nm)",
-   "notes_html": "Osram's OSTAR Projection Compact <b>true green</b>: dominant wavelength 523–535 nm (typ. 530 nm) from a 1.5 × 1.2 mm² radiating surface, rated to 5 A. The 330–484 lm datasheet bins are at 1.4 A; driven harder it does far more (<a href=\"https://look.ams-osram.com/m/2d87bae6269b007c/original/KT-CULPM1-13.pdf\" target=\"_blank\" rel=\"noopener\">datasheet</a>). Convoy sells it as the <b>KT CULPM1.13</b> / “Verdure light” green option on many lights (<a href=\"https://convoylight.com/products/convoy-s21a-green-21700-flashlight\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>Osram's true-green projection LED, sold by Convoy as its \"Verdure light\" green.</b> OSTAR Projection Compact: dominant wavelength 523–535 nm (typ. 530 nm) from a 1.5 × 1.2 mm² radiating surface, rated to 5 A. The 330–484 lm datasheet bins are at 1.4 A; driven harder it does far more (<a href=\"https://look.ams-osram.com/m/2d87bae6269b007c/original/KT-CULPM1-13.pdf\" target=\"_blank\" rel=\"noopener\">datasheet</a>, <a href=\"https://convoylight.com/products/convoy-s21a-green-21700-flashlight\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "Green and verdure versions"
+    },
+    {
+     "name": "GT colour",
+     "why": "Getian green thrower"
+    }
+   ],
    "sources": [
     {
      "label": "ams-osram datasheet",
@@ -8786,7 +10047,7 @@
    "beam": 4,
    "rep": null,
    "cct_notes": [],
-   "tldr": "True-green (530 nm) OSTAR Projection Compact: 330–484 lm @ 1.4 A per datasheet; Convoy's green thrower option."
+   "tldr": "Osram's true-green projection LED, sold by Convoy as its \"Verdure light\" green."
   }
  ]
 }

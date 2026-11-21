@@ -20,7 +20,7 @@ The site is static: two pages and two data files, no build step.
 | What | File |
 | --- | --- |
 | Lights (specs, prices, LED options, tints) | `public/flashlights/lights.clean.json` |
-| LEDs (output, CRI, candela, beam, "best for") | `public/leds/emitters.json` |
+| LEDs (output, CRI, candela, beam, "best for", alternatives) | `public/leds/emitters.json` |
 
 1. Edit the file. Keep the existing field names and shape; copy a similar entry if you're adding one.
    For house-brand LEDs (Convoy, Noctigon, NiteLab, FireflyLite, …), `maker` is the brand selling it;

@@ -505,6 +505,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 .sold a small { display: block; color: var(--muted); font-size: 11.5px; }
 .sold .t { color: var(--muted); font-size: 12px; white-space: nowrap; }
 .sold .p { font-weight: 600; white-space: nowrap; }
+.alts button { all: unset; box-sizing: border-box; width: 100%; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 4px 14px; align-items: baseline; padding: 9px 12px; font-size: 13px; cursor: pointer; }
+.alts button + button { border-top: 1px solid var(--line); }
+.alts button:hover { background: var(--sunken); }
+.alts button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.alts b { font-weight: 600; color: var(--accent); overflow-wrap: anywhere; }
+.alts span { color: var(--muted); font-size: 12.5px; }
 .soldmore { display: inline-block; margin-top: 8px; font-size: 13px; font-weight: 600; text-decoration: none; }
 .rec { border: 1px solid var(--accent-line); background: var(--accent-soft); border-radius: var(--r); padding: 13px 16px; display: grid; gap: 9px; box-shadow: var(--shadow-sm); }
 .rec[hidden] { display: none; }
@@ -1164,6 +1170,20 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       <div class="sold">${rows.slice(0, 6).map(({ l, amt, est }) => `<a href="../flashlights/?light=${slug(l.brand, l.model, l.variant)}"><span><b>${esc(l.brand)} ${esc(l.model)}</b><small>${[l.variant, l.type].filter(Boolean).map(esc).join(" · ")}</small></span><span class="t">${est ? `≈ ${fmt(est.m)} m` : ""}</span><span class="p">${amt != null ? usd(amt) : `<span class="na">n/a</span>`}</span></a>`).join("")}</div>
       ${rows.length > 6 ? `<a class="soldmore" href="../flashlights/?${[...fams].map(f => "led=" + encodeURIComponent(f)).join("&")}">See all ${rows.length} lights →</a>` : ""}</section>`;
   }
+  // Alternatives: the hand-picked ones (each with a reason) first; with fewer than two, top up from the closest numbers.
+  function altsHtml(e) {
+    const rows = [], seen = new Set([e.id]);
+    (e.alternatives || []).forEach(a => { const id = idOf(a.name); if (id != null && !seen.has(id)) { seen.add(id); rows.push({ id, nm: a.name, why: a.why }); } });
+    if (rows.length < 2 && e.kind === "White" && e.lm_hi && e.beam != null) {
+      const dist = x => Math.abs(Math.log2(x.lm_hi / e.lm_hi)) + 0.8 * Math.abs(x.beam - e.beam) + Math.abs((x.cri_max || 70) - (e.cri_max || 70)) / 10
+        + (x.cd_mid && e.cd_mid ? Math.abs(Math.log2(x.cd_mid / e.cd_mid)) : 0.5) - (famsOf[x.id] ? 0.3 : 0);
+      data.filter(x => !seen.has(x.id) && x.kind === "White" && !x.unavailable && x.lm_hi && x.beam != null)
+        .sort((a, b) => dist(a) - dist(b)).slice(0, 3 - rows.length)
+        .forEach(x => rows.push({ id: x.id, nm: x.name, why: `Similar numbers: ${BEAM_NAMES[x.beam].toLowerCase()}, ~${fmt(x.lm_hi)} lm${x.cri_max ? `, up to ${x.cri_max} CRI` : ""}` }));
+    }
+    if (!rows.length) return "";
+    return `<section class="sec"><h3>Alternatives</h3><div class="sold alts">${rows.map(r => `<button type="button" data-peer="${r.id}"><b>${esc(r.nm)}</b><span>${esc(r.why)}</span></button>`).join("")}</div></section>`;
+  }
   function openDrawer(id) {
     const e = byId.get(id); if (!e) return;
     $("#drawer").dataset.id = id;
@@ -1197,6 +1217,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         </div>
         <section class="sec"><h3>About</h3><p class="prose">${peerfy(e.notes_html)}</p></section>
         ${e.cct_notes.length ? `<section class="sec"><h3>Tint &amp; bin notes</h3><div class="ccs">${e.cct_notes.map(c => `<div class="cc"><b>${esc(c.label)}</b><span>${esc(c.text)}</span></div>`).join("")}</div></section>` : ""}
+        ${altsHtml(e)}
         ${calcHtml(e)}
         ${e.best_for.length ? `<section class="sec"><h3>Recommended for</h3><div class="picks2">${e.best_for.map(b => `<div><b>${esc(b.goal)}</b> <span class="badge ${b.tier === 1 ? "r9" : "mc"}">${b.tier === 1 ? "Top pick" : "Also good"}</span>${b.hint ? `<div class="why">${esc(b.hint)}</div>` : ""}<div class="why">${peerfy(b.why_html)}.</div><div class="why">Top picks: ${peerfy(b.pick_html)}${b.also_html ? `. Also good: ${peerfy(b.also_html)}` : ""}.</div></div>`).join("")}</div></section>` : ""}
         ${soldHtml(e)}
