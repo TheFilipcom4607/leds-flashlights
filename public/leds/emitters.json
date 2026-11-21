@@ -3337,8 +3337,8 @@
    "voltages": [
     "3V"
    ],
-   "lm_lo": 2500.0,
-   "lm_hi": 3500.0,
+   "lm_lo": 2400.0,
+   "lm_hi": 3250.0,
    "cri_min": 70,
    "cri_max": 70,
    "ccts": [
@@ -3352,13 +3352,13 @@
    "domeless": false,
    "unavailable": false,
    "colours": [],
-   "basis": "estimate",
+   "basis": "typical",
    "footprint_html": "95 mil die · 3V",
-   "lm_html": "~2,500–3,500 lm <i>(est.)</i>",
+   "lm_html": "~2,400 lm (6 A) · ~3,240 lm (10 A, bare)",
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "10 A max. 3000K/4000K/5000K. A user described it as &quot;a cross between an SFT40 and an SFT60&quot; (<a href=\"https://convoylight.com/products/f45r-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "10 A max. 3000K/4000K/5000K. Convoy's sphere test: 1,408 lm @ 3 A (Vf 3.01 V), 2,397 lm @ 6 A (3.24 V), 3,241 lm @ 10 A (3.48 V), 155→93 lm/W — cold pulsed bare-LED numbers, expect less out the front (and less again in warmer CCTs; CCT under test not stated). A user described it as &#x22;a cross between an SFT40 and an SFT60&#x22; (<a href=\"https://convoylight.com/products/f45r-led\" target=\"_blank\" rel=\"noopener\">Convoy test data</a>).",
    "sources": [
     {
      "label": "Convoy",
@@ -3422,8 +3422,8 @@
    "voltages": [
     "3V"
    ],
-   "lm_lo": 5000.0,
-   "lm_hi": 7000.0,
+   "lm_lo": 4200.0,
+   "lm_hi": 6800.0,
    "cri_min": 70,
    "cri_max": 70,
    "ccts": [
@@ -3437,13 +3437,13 @@
    "domeless": false,
    "unavailable": false,
    "colours": [],
-   "basis": "estimate",
+   "basis": "typical",
    "footprint_html": "150 mil die · 3V",
-   "lm_html": "~5,000–7,000 lm <i>(est.)</i>",
+   "lm_html": "~4,240 lm (10 A) · ~5,700 lm (15 A) · ~6,820 lm (20 A, bare)",
    "cri_html": "~70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "Rated to <b>30 A</b>. Convoy says it sits on or below the Planckian locus (no green push). Users report the 4000K as nicely negative-Duv but the 3000K as slightly green. Fits 21700 hosts such as the M21H (<a href=\"https://convoylight.com/products/f150r-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "Rated to <b>30 A</b>. Convoy says it sits on or below the Planckian locus (no green push). Users report the 4000K as nicely negative-Duv but the 3000K as slightly green. Fits 21700 hosts such as the M21H. Convoy's sphere test: 2,781 lm @ 6 A (Vf 2.97 V), 4,235 lm @ 10 A (3.12 V), 5,703 lm @ 15 A (3.28 V), 6,821 lm @ 20 A (3.43 V) — cold pulsed bare-LED numbers; expect less out the front, and less again in warmer CCTs (CCT under test not stated; the chart is labelled 1011 package while the sold part is a 7070 footprint) (<a href=\"https://convoylight.com/products/f150r-led\" target=\"_blank\" rel=\"noopener\">Convoy test data</a>).",
    "sources": [
     {
      "label": "Convoy",

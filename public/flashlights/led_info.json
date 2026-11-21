@@ -133,9 +133,9 @@
     }
    ],
    "footprint": "150 mil die · 3V",
-   "output": "~5,000–7,000 lm (est.)",
+   "output": "~4,240 lm (10 A) · ~6,820 lm (20 A, bare)",
    "colour": "~70",
-   "notes": "Rated to 30 A. Convoy says it sits on or below the Planckian locus (no green push). Users report the 4000K as nicely negative-Duv but the 3000K as slightly green. Fits 21700 hosts such as the M21H."
+   "notes": "Rated to 30 A. Convoy's sphere test: 4,235 lm @ 10 A, 5,703 lm @ 15 A, 6,821 lm @ 20 A (Vf 3.43 V) — cold pulsed bare-LED numbers; expect less out the front. Convoy says it sits on or below the Planckian locus (no green push). Users report the 4000K as nicely negative-Duv but the 3000K as slightly green. Fits 21700 hosts such as the M21H."
   },
   "SFT-70": {
    "title": "SFT-70",
@@ -462,9 +462,9 @@
    "title": "F45R (Convoy)",
    "candela": [],
    "footprint": "95 mil die · 3V",
-   "output": "~2,500–3,500 lm (est.)",
+   "output": "~2,400 lm (6 A) · ~3,240 lm (10 A, bare)",
    "colour": "~70",
-   "notes": "10 A max. 3000K/4000K/5000K. A user described it as \"a cross between an SFT40 and an SFT60\"."
+   "notes": "10 A max. 3000K/4000K/5000K. Convoy's sphere test: 2,397 lm @ 6 A, 3,241 lm @ 10 A (Vf 3.48 V) — cold pulsed bare-LED numbers; expect less out the front. A user described it as \"a cross between an SFT40 and an SFT60\"."
   },
   "SFQ-55": {
    "title": "SFQ-55",
