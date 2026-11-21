@@ -198,6 +198,7 @@ main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 
 .badge.and { color: var(--and); background: var(--and-bg); }
 .badge.sale { color: var(--accent); background: var(--accent-soft); }
 .badge.mc { color: var(--ink-2); background: var(--sunken); border: 1px solid var(--line); }
+.badge.ed { color: var(--accent-ink); background: var(--accent); }
 
 .strip { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .dots { display: flex; flex: none; }
@@ -484,7 +485,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     <div class="active" id="active"></div>
     <div class="countrow"><div class="count" id="count" aria-live="polite"></div>
       <details class="howrank" id="howrank"><summary>How “Recommended” is ranked</summary>
-        <p>Points for: LEDs the <a href="../leds/">Emitter Index</a> rates as staples or top picks (+2), a 90+ CRI option (+1), a choice of LEDs (up to +1), Anduril firmware (+1), built-in USB charging and submersible waterproofing (+0.5 each), and complete specs, meaning price, output, throw and weight all stated (up to +1). Mule (no-optic) builds, limited and special-metal editions of a model that also comes in aluminium, and colour/UV-only lights score lower, so the standard version represents the model. Each earlier light from the same brand costs 0.4 points, so no single store fills the top. Ties go to the cheaper light. Nobody pays for placement.</p></details></div>
+        <p><b>Editor's picks</b> come first and are labelled: a few lights chosen by hand for each quick-start goal (the Emisar D4KC overall). Everything else is ranked by points. Points for: LEDs the <a href="../leds/">Emitter Index</a> rates as staples or top picks (+2), a 90+ CRI option (+1), a choice of LEDs (up to +1), Anduril firmware (+1), built-in USB charging and submersible waterproofing (+0.5 each), and complete specs, meaning price, output, throw and weight all stated (up to +1). Mule (no-optic) builds, limited and special-metal editions of a model that also comes in aluminium, and colour/UV-only lights score lower, so the standard version represents the model. Each earlier light from the same brand costs 0.4 points, so no single store fills the top. Ties go to the cheaper light. Nobody pays for placement.</p></details></div>
     <div class="list" id="list">
       <div class="lh cols" role="presentation">
         <span></span>
@@ -646,13 +647,17 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   }
   function results() {
     let out = data.filter(r => pass(r));
+    edShown = new Set();
     if (!sortK) return recommended(out);
     if (sortK) out = out.slice().sort((a, b) => {
       const x = a[sortK], y = b[sortK];
       if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
       return (typeof x === "number" ? x - y : String(x).localeCompare(String(y))) * sortDir;
     });
-    return out;
+    const goal = GOALS.find(goalOn); // a quick-start goal with its own sort still shows its picks first
+    if (!goal) return out;
+    const [pinned, rest] = pinPicks(out, goal[0]);
+    return pinned.concat(rest);
   }
   const countBy = (k, vals) => { const base = data.filter(r => pass(r, k)); return Object.fromEntries(vals.map(v => [v, base.filter(r => FACETS[k](r).includes(v)).length])); };
 
@@ -775,7 +780,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const metaBits = [r.variant, r.type].filter(Boolean).map(esc).join(" · ");
     return `<div class="row cols${picked ? " picked" : ""}" data-id="${r.id}" tabindex="0" role="button" aria-label="${esc(fullName(r))}, open details">
       <div class="c-pick"><label class="pick" title="${picked ? "Remove from compare" : full ? `Compare holds ${MAXPICK}` : "Add to compare"}"><input type="checkbox" data-pick="${r.id}" ${picked ? "checked" : ""} ${!picked && full ? "disabled" : ""} aria-label="Compare ${esc(fullName(r))}"></label></div>
-      <div class="c-light"><div class="eyebrow">${esc(r.brand)}</div><div class="name">${esc(r.model)}${badges(r)}</div><div class="meta">${metaBits}</div></div>
+      <div class="c-light"><div class="eyebrow">${esc(r.brand)}</div><div class="name">${esc(r.model)}${edShown.has(r.id) ? `<span class="badge ed">Editor's pick</span>` : ""}${badges(r)}</div><div class="meta">${metaBits}</div></div>
       <div class="c-emit"><div class="strip"><span class="dots">${tintDots(r)}</span><span class="range">${esc(cctRange(r, false))}</span></div><div class="fams">${famsLine(r)}</div></div>
       <div class="c-bat"><div class="v">${r.battery.label ? esc(r.battery.label) : `<span class="na">—</span>`}</div>${r.battery.included || r.battery.built_in ? `<div class="sub2">${r.battery.built_in ? "rechargeable pack" : "cell included"}</div>` : ""}</div>
       <div class="c-lm r" data-l="Output">${r.lumens ? `<div class="v">${fmt(r.lumens)}<small> lm</small></div>${meter(r.lumens, 50, LM_MAX)}` : `<span class="na">—</span>`}</div>
@@ -871,14 +876,35 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     });
   }
   // Best score first, but each earlier pick from the same brand costs 0.4 points, so one store can't fill the top.
-  function recommended(rows) {
+  // Editor's picks: chosen by hand and shown first, labelled, in the Recommended order. Keyed by quick-start
+  // goal name ("" = no goal picked). Values are light IDs (see slug()); a pick is skipped if a filter hides it.
+  const EDITOR = {
+    "": ["emisar-d4kc-standard-aluminium"],
+    "Everyday carry": ["emisar-d4kc-standard-aluminium", "wurkkos-ts26", "convoy-s21e"],
+    "Long throw": ["noctigon-dm11-standard-aluminium", "noctigon-k1-standard-aluminium"],
+    "Headlamp": ["skilhunt-h300-h300r", "sofirn-hs21"],
+    "Keychain": ["emisar-kc1-standard-aluminium", "rovyvon-aurora-a1-g4"],
+    "High CRI": ["emisar-d4v2-standard-aluminium", "convoy-s21e"],
+    "Brightest": ["sofirn-sp36-pro"],
+    "Under $30": ["convoy-s21e", "convoy-h2"],
+    "Anduril": ["emisar-d4kc-standard-aluminium", "emisar-d3aa-standard-aluminium"],
+  };
+  const edGoals = slug => Object.entries(EDITOR).filter(([g, ids]) => g && ids.includes(slug)).map(([g]) => g);
+  let edShown = new Set(); // ids pinned in the current list, for the row label
+  function pinPicks(rows, goalName) {
+    const pinned = (EDITOR[goalName] || []).map(s => rows.find(r => r._slug === s)).filter(Boolean);
+    edShown = new Set(pinned.map(r => r.id));
+    return [pinned, rows.filter(r => !edShown.has(r.id))];
+  }
+  function recommended(all) {
+    const goal = GOALS.find(goalOn), [pinned, rows] = pinPicks(all, goal ? goal[0] : "");
     const left = rows.slice().sort((a, b) => b._score - a._score || (a.price ?? 1e9) - (b.price ?? 1e9)), seen = {}, out = [];
     while (left.length) {
       let bi = 0, bv = -Infinity;
       for (let i = 0; i < left.length; i++) { const v = left[i]._score - 0.4 * (seen[left[i].brand] || 0); if (v > bv) { bv = v; bi = i; } if (left[i]._score < bv) break; }
       const r = left.splice(bi, 1)[0]; seen[r.brand] = (seen[r.brand] || 0) + 1; out.push(r);
     }
-    return out;
+    return pinned.concat(out);
   }
   /* ---------- top pick for a light, by what the buyer cares about (same code on both pages) ---------- */
   const PREFS = [["output", "Max output", "Most lumens; CRI doesn't matter"], ["balanced", "Balanced", "The usual expert pick for this kind of light"], ["colour", "Best colour", "Highest CRI; lumens matter less"]];
@@ -988,7 +1014,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       <div class="dh">
         <div><div class="eyebrow">${esc(r.brand)}</div><h2 id="dtitle">${esc(r.model)}</h2>${r.variant ? `<div class="meta">${esc(r.variant)}</div>` : ""}</div>
         <div class="nav"><button class="iconbtn" type="button" data-act="prev" ${i <= 0 ? "disabled" : ""} aria-label="Previous light">${ICON.prev}</button><button class="iconbtn" type="button" data-act="next" ${i < 0 || i >= view.length - 1 ? "disabled" : ""} aria-label="Next light">${ICON.next}</button><button class="iconbtn" type="button" data-act="dclose" aria-label="Close">${ICON.close}</button></div>
-        <div class="badges">${badges(r)}${r.regular ? `<span class="badge sale">${Math.round(100 - 100 * r.price / r.regular)}% off</span>` : ""}${r.multi_channel ? `<span class="badge mc">Multi-channel</span>` : ""}${r.cri_max >= 90 ? `<span class="badge mc">High CRI</span>` : ""}</div>
+        <div class="badges">${edGoals(r._slug).length ? `<span class="badge ed" title="Chosen by hand">Editor's pick: ${esc(edGoals(r._slug).join(", "))}</span>` : ""}${badges(r)}${r.regular ? `<span class="badge sale">${Math.round(100 - 100 * r.price / r.regular)}% off</span>` : ""}${r.multi_channel ? `<span class="badge mc">Multi-channel</span>` : ""}${r.cri_max >= 90 ? `<span class="badge mc">High CRI</span>` : ""}</div>
       </div>
       <div class="db">
         <div class="stats">

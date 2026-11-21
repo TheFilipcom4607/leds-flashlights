@@ -143,9 +143,23 @@ def load(path):
         return None
 
 
+def check_editor_picks(rows):
+    # The hand-picked list (`const EDITOR = {...}`) in the flashlight page must name lights that exist.
+    page = (ROOT / "public/flashlights/index.html").read_text(encoding="utf-8")
+    m = re.search(r"const EDITOR = \{(.*?)\n  \};", page, re.S)
+    if not m:
+        return
+    ids = {slug(r.get("brand"), r.get("model"), r.get("variant")) for r in rows}
+    for goal, body in re.findall(r'"([^"]*)":\s*\[([^\]]*)\]', m.group(1)):
+        for pick in re.findall(r'"([^"]+)"', body):
+            if pick not in ids:
+                err(f"Editor's picks ({goal or 'overall'})", f"no light has the ID '{pick}'")
+
+
 lights, emitters = load(LIGHTS), load(EMITTERS)
 if isinstance(lights, list):
     check_lights(lights)
+    check_editor_picks(lights)
 elif lights is not None:
     err("lights.clean.json", "should be a list of lights")
 if isinstance(emitters, dict):

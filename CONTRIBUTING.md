@@ -51,5 +51,6 @@ Forum hearsay and "I think" can't be checked, so they won't be merged.
   `emitters.json` by name. If stores call an LED something else, add that name to the LED's `alts` list.
 - **LED lumens are per LED** in a good light at turbo, not a whole multi-LED light's output.
 - **Prices are in USD** from the official store (or the dealer named in the page footer).
-- **No paid placement.** The "Recommended" order is computed from the data; its rules are shown on
-  the page under the sort box.
+- **No paid placement.** Apart from the labelled Editor's picks (a short hand-picked list in
+  `public/flashlights/index.html`, `EDITOR`), the "Recommended" order is computed from the data; its
+  rules are shown on the page under the sort box.
