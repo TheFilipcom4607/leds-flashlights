@@ -1360,7 +1360,16 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     USE_HINTS = Object.fromEntries((doc.uses || []).map(u => [u.goal, u.hint]));
     const norm = s => s.replace(/\s*\(.*?\)/g, "").trim().toLowerCase();
     const idCache = new Map();
-    idOf = t => { if (!idCache.has(t)) { const n = norm(t); const e = data.find(e => norm(e.name) === n || e.alts.some(a => norm(a) === n) || norm(`${e.maker} ${e.name}`) === n); idCache.set(t, e ? e.id : null); } return idCache.get(t); };
+    idOf = t => { if (!idCache.has(t)) {
+      // Passes in priority order: exact card name, then alias, then paren-stripped fuzzy.
+      // norm() strips "(colour)" etc., so "XP-E2" and "XP-E2 (colour)" collide; a card's own
+      // name must win over another card's alias regardless of file order.
+      const n = norm(t);
+      const e = data.find(e => e.name === t)
+        || data.find(e => e.alts.includes(t))
+        || data.find(e => norm(e.name) === n || e.alts.some(a => norm(a) === n) || norm(`${e.maker} ${e.name}`) === n);
+      idCache.set(t, e ? e.id : null);
+    } return idCache.get(t); };
     Object.entries(info.leds || {}).forEach(([fam, inf]) => { const id = idOf(inf.title); if (id != null) (famsOf[id] ||= []).push(fam); });
     picks = picks.filter(id => byId.has(id));
     VALS.uses = doc.uses ? doc.uses.map(u => u.goal) : byCount(data.flatMap(e => e._uses)); VALS.makers = byCount(data.map(e => e.maker).filter(Boolean));
