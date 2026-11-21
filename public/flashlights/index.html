@@ -157,6 +157,13 @@ main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 
 
 .count { color: var(--muted); font-size: 13px; }
 .count b { color: var(--ink); font-weight: 600; }
+.countrow { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; justify-content: space-between; }
+.howrank { font-size: 12.5px; color: var(--muted); }
+.howrank summary { cursor: pointer; color: var(--accent); list-style: none; }
+.howrank summary::-webkit-details-marker { display: none; }
+.howrank[open] { flex-basis: 100%; }
+.howrank p { margin: 6px 0 0; max-width: 90ch; line-height: 1.5; }
+.howrank:not(.on) { display: none; }
 
 /* ---------- result list ---------- */
 /* The row layout follows the list's own width (not the window's), so side tabs, split screen
@@ -225,6 +232,7 @@ footer { color: var(--muted); font-size: 12px; max-width: 100ch; margin-top: 10p
 
 /* ---------- drawer & compare dialogs ---------- */
 dialog { color: var(--ink); background: var(--panel); border: 0; padding: 0; box-shadow: var(--shadow); }
+dialog:focus { outline: none; }
 dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .drawer { margin: 0 0 0 auto; height: 100vh; height: 100dvh; max-height: 100vh; max-height: 100dvh; width: min(640px, 100vw); max-width: 100vw; border-left: 1px solid var(--line); }
 .drawer[open] { display: flex; flex-direction: column; }
@@ -289,13 +297,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .beam em { font-style: normal; font-weight: 500; color: var(--ink-2); }
 .led { transition: background 0.6s; }
 .led.flash { background: var(--accent-soft); transition: none; }
-.lpicks { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 6px; margin-bottom: 12px; }
-.lpick { all: unset; cursor: pointer; display: grid; gap: 1px; padding: 8px 11px; border-radius: 9px; border: 1px solid var(--line); background: var(--sunken); min-width: 0; }
-.lpick:hover { border-color: var(--accent-line); }
-.lpick:focus-visible { outline: 2px solid var(--accent); }
-.lpick span { font: 600 10.5px/1.3 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
-.lpick b { font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.lpick small { font-size: 12px; color: var(--muted); }
+.db .tpick { margin-bottom: 12px; }
 .estnote { color: var(--faint); font-size: 11.5px; margin: 8px 0 0; }
 .goals { display: flex; flex-wrap: wrap; gap: 6px; }
 .goal { all: unset; cursor: pointer; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--panel); font-size: 13px; font-weight: 500; color: var(--ink-2); white-space: nowrap; }
@@ -403,13 +405,16 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   .led { grid-template-columns: minmax(0, 1fr) auto; }
   .led .tchips { grid-column: 1 / -1; grid-row: 2; }
   .lguide { grid-column: 1 / -1; }
-  .ltags { display: inline-flex; margin: 0 0 0 6px; vertical-align: 1px; }
   .goals { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -12px; padding: 0 12px; }
   .goal { padding: 8px 13px; }
   .tray .lbl, .tray .slot { display: none; }
   .cmpdlg { width: 100vw; max-width: 100vw; height: 100vh; height: 100dvh; max-height: 100vh; max-height: 100dvh; border-radius: 0; border: 0; }
   .cb { padding-bottom: max(12px, env(safe-area-inset-bottom)); }
-  .df { flex-wrap: wrap; } /* three buttons don't fit one row on a phone */
+  /* footer buttons on a phone: secondary pair side by side, the store link full width under them */
+  .df { display: grid; grid-template-columns: 1fr 1fr; }
+  .df .btn:first-child:nth-last-child(2) { grid-column: 1 / -1; } /* only one secondary button */
+  .df .btn { min-width: 0; padding-inline: 10px; }
+  .df .btn.primary { grid-column: 1 / -1; padding-block: 13px; }
   table.cmp { min-width: calc(100px + var(--n) * 170px); }
   table.cmp col.lab { width: 100px; }
   /* bigger tap targets */
@@ -417,6 +422,25 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   .tint { padding: 10px; }
   .sw-row { padding: 10px 0; }
 }
+/* top pick + "what matters most" selector (same on both pages) */
+.prefseg { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; padding: 3px; background: var(--sunken); border: 1px solid var(--line); border-radius: 10px; }
+.prefseg button { all: unset; cursor: pointer; text-align: center; padding: 6px 12px; border-radius: 7px; font-size: 13px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.prefseg button:hover { color: var(--ink); }
+.prefseg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: var(--shadow-sm), 0 0 0 1px var(--line-2); }
+.prefseg button:focus-visible { outline: 2px solid var(--accent); }
+.tpick { display: grid; gap: 10px; }
+.tp-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; justify-content: space-between; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+.tp-card { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 12px; align-items: baseline; padding: 11px 14px; border-radius: 10px; border: 1px solid var(--accent-line); background: var(--accent-soft); }
+.tp-card:hover { border-color: var(--accent); }
+.tp-card:focus-visible { outline: 2px solid var(--accent); }
+.tp-card .tp-n { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; min-width: 0; }
+.tp-star { font: 700 11px/1.2 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.tp-card b { font: 700 17px/1.2 var(--f-display); }
+.tp-card small { color: var(--muted); font-size: 12px; }
+.tp-card .tp-p { font-weight: 600; white-space: nowrap; }
+.tp-card .tp-why { grid-column: 1 / -1; font-size: 12.5px; color: var(--ink-2); }
+.tptag { display: inline-flex; align-items: center; font: 700 10.5px/1 var(--f-body); padding: 3px 6px; border-radius: 5px; color: var(--accent-ink); background: var(--accent); white-space: nowrap; }
+@media (max-width: 860px) { .prefseg { display: grid; width: 100%; } .prefseg button { padding: 8px 4px; } }
 </style>
 </head>
 <body>
@@ -446,7 +470,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         <input type="search" id="q" placeholder="Search model, LED, tint… e.g. D4V2, 519A 4000K, headlamp" autocomplete="off"><kbd>/</kbd></label>
       <label class="sr" for="sort">Sort</label>
       <select class="sel" id="sort">
-        <option value="">Sort: Featured</option>
+        <option value="">Sort: Recommended</option>
         <option value="price:1">Price: low to high</option>
         <option value="price:-1">Price: high to low</option>
         <option value="lumens:-1">Brightest</option>
@@ -457,7 +481,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     </div>
     <div class="goals" id="goals" role="group" aria-label="Quick start"></div>
     <div class="active" id="active"></div>
-    <div class="count" id="count" aria-live="polite"></div>
+    <div class="countrow"><div class="count" id="count" aria-live="polite"></div>
+      <details class="howrank" id="howrank"><summary>How “Recommended” is ranked</summary>
+        <p>Points for: LEDs the <a href="../leds/">Emitter Index</a> rates as staples or top picks (+2), a 90+ CRI option (+1), a choice of LEDs (up to +1), Anduril firmware (+1), built-in USB charging and submersible waterproofing (+0.5 each), and complete specs, meaning price, output, throw and weight all stated (up to +1). Mule (no-optic) builds, limited and special-metal editions of a model that also comes in aluminium, and colour/UV-only lights score lower, so the standard version represents the model. Each earlier light from the same brand costs 0.4 points, so no single store fills the top. Ties go to the cheaper light. Nobody pays for placement.</p></details></div>
     <div class="list" id="list">
       <div class="lh cols" role="presentation">
         <span></span>
@@ -482,7 +508,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   <button class="btn primary" type="button" data-act="compare" id="cmpbtn">Compare</button>
 </div>
 
-<dialog class="drawer" id="drawer" aria-labelledby="dtitle"></dialog>
+<dialog class="drawer" id="drawer" aria-labelledby="dtitle" tabindex="-1"></dialog>
 
 <dialog class="cmpdlg" id="cmpdlg" aria-labelledby="ctitle">
   <div class="ch">
@@ -565,7 +591,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     for (const [k, p] of Object.entries(URLK)) params.getAll(p).forEach(v => F[k].add(v));
     URL1.forEach(k => { if (params.has(k)) F[k] = params.get(k); });
     if (params.get("sort")) { const [k, d] = params.get("sort").split(":"); sortK = k || null; sortDir = +d || 1; }
-    openLight = +params.get("light") || null;
+    openLight = params.get("light") ? +params.get("light") : null;
   }
   F.feats = new Set([...F.feats].filter(f => FEAT[f])); // drops retired switches, e.g. the old "In stock"
   function syncUrl() {
@@ -573,7 +599,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     URL1.forEach(k => { const v = String(F[k]).trim(); if (v) p.set(k, v); });
     for (const [k, n] of Object.entries(URLK)) F[k].forEach(v => p.append(n, v));
     if (sortK) p.set("sort", `${sortK}:${sortDir}`);
-    if ($("#drawer").open && $("#drawer").dataset.id) p.set("light", $("#drawer").dataset.id);
+    if ($("#drawer").open && $("#drawer").dataset.id !== undefined) p.set("light", $("#drawer").dataset.id);
     const s = p.toString().replace(/%3A/g, ":");
     history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
   }
@@ -619,6 +645,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   }
   function results() {
     let out = data.filter(r => pass(r));
+    if (!sortK) return recommended(out);
     if (sortK) out = out.slice().sort((a, b) => {
       const x = a[sortK], y = b[sortK];
       if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
@@ -761,6 +788,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     document.querySelectorAll(".lh [data-sort]").forEach(b => b.dataset.dir = b.dataset.sort === sortK ? sortDir : "");
     const v = sortK ? `${sortK}:${sortDir}` : ""; const sel = $("#sort");
     sel.value = [...sel.options].some(o => o.value === v) ? v : "";
+    $("#howrank").classList.toggle("on", !sortK && view.length > 1);
     renderActive(); renderFacets(); renderTray(); renderGoals();
   }
   function update() { save(); render(); }
@@ -799,7 +827,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   // Tint chips get their own tag only when the LED is sold in more than one CRI grade.
   function ledCri(l) {
     const got = l.tints.map(t => t.cri).filter(v => v != null);
-    if (got.length) { const lo = Math.min(...got), hi = Math.max(...got); return { lo, hi, perChip: lo !== hi || got.length < l.tints.length, src: "the store" }; }
+    if (got.length) { const lo = Math.min(...got), hi = Math.max(...got); return { lo, hi, perChip: lo !== hi || got.length < l.tints.length, src: "the store", store: true }; }
     const e = emOf(l.family);
     return e && e.cri_max != null ? { lo: e.cri_min ?? e.cri_max, hi: e.cri_max, perChip: false, src: "the Emitter Index (datasheets and tests)" } : null;
   }
@@ -816,20 +844,70 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const refl = Math.max(10, r.size.head - 4), cd = (c.cd_lo + c.cd_hi) / 2 * (refl / 37.5) ** 2;
     return { cd, m: 2 * Math.sqrt(cd), refl };
   }
-  // "Which LED?" summary for lights sold with a choice of emitters.
-  function ledPicks(r) {
-    if (r.emitters.length !== 1) return "";
-    const seen = new Set(), opts = [];
-    r.emitters[0].tiers.forEach(t => t.leds.forEach(l => { const e = emOf(l.family); if (e && !seen.has(l.family)) { seen.add(l.family); opts.push({ l, e, c: ledCri(l), est: throwHere(e, r, l) }); } }));
-    if (opts.length < 2) return "";
-    const best = score => opts.reduce((b, o) => { const s = score(o); return s != null && (!b || s > b.s) ? { o, s } : b; }, null);
-    const ps = [
-      ["Best colour", best(o => o.c && o.c.lo >= 90 ? o.c.lo + o.c.hi / 1000 : null), o => `${criFmt(o.c.lo, o.c.hi)} CRI`],
-      ["Most throw here", best(o => o.est?.cd), o => `≈ ${fmt(o.est.m)} m`],
-      ["Widest beam", best(o => o.e.beam != null && o.e.beam <= 2 ? -o.e.beam : null), o => BEAM_NAMES[o.e.beam]],
-    ].filter(p => p[1]);
-    return ps.length ? `<div class="lpicks">${ps.map(([lab, b, txt]) => `<button type="button" class="lpick" data-ledjump="${esc(b.o.l.family)}"><span>${lab}</span><b>${esc(b.o.l.family)}</b><small>${esc(txt(b.o))}</small></button>`).join("")}</div>` : "";
+  // The "Recommended" order. Every point is explained in the "How Recommended is ranked" note under the sort box; keep the two in step.
+  function rankAll() {
+    const base = r => `${r.brand}|${r.model.split(/\s+/)[0]}`; // "E07X Cannon Ti-Cu Limited" -> "E07X"
+    const alu = new Set(data.filter(r => r.materials.includes("Aluminium")).map(base));
+    data.forEach(r => {
+      const es = r.led_families.map(emOf).filter(Boolean);
+      let s = 0;
+      if (es.some(e => e.rep?.t === "staple" || e.best_for.some(b => b.tier === 1))) s += 2;
+      if (r.cri_max >= 90) s += 1;
+      s += Math.min(r.led_families.length, 4) / 4;
+      if (r.anduril) s += 1;
+      if (r.charging?.port) s += 0.5;
+      if (r.ip?.submersible) s += 0.5;
+      s += ["price", "lumens", "throw_m", "weight_g"].filter(k => r[k] != null).length / 4;
+      if (/mule/i.test(r.variant || "")) s -= 1.5;
+      if ((!r.materials.includes("Aluminium") && alu.has(base(r))) || /\b(limited|special edition|edition)\b/i.test(`${r.model} ${r.variant || ""}`)) s -= 1;
+      if (!r.ccts.length && !r.tones_nocct.length) s -= 1;
+      r._score = s;
+    });
   }
+  // Best score first, but each earlier pick from the same brand costs 0.4 points, so one store can't fill the top.
+  function recommended(rows) {
+    const left = rows.slice().sort((a, b) => b._score - a._score || (a.price ?? 1e9) - (b.price ?? 1e9)), seen = {}, out = [];
+    while (left.length) {
+      let bi = 0, bv = -Infinity;
+      for (let i = 0; i < left.length; i++) { const v = left[i]._score - 0.4 * (seen[left[i].brand] || 0); if (v > bv) { bv = v; bi = i; } if (left[i]._score < bv) break; }
+      const r = left.splice(bi, 1)[0]; seen[r.brand] = (seen[r.brand] || 0) + 1; out.push(r);
+    }
+    return out;
+  }
+  /* ---------- top pick for a light, by what the buyer cares about (same code on both pages) ---------- */
+  const PREFS = [["output", "Max output", "Most lumens; CRI doesn't matter"], ["balanced", "Balanced", "The usual expert pick for this kind of light"], ["colour", "Best colour", "Highest CRI; lumens matter less"]];
+  let pref = "balanced";
+  try { pref = localStorage.getItem("led-pref") || "balanced"; } catch (e) {}
+  if (!PREFS.some(p => p[0] === pref)) pref = "balanced";
+  const setPref = v => { pref = v; try { localStorage.setItem("led-pref", v); } catch (e) {} };
+  // Which "best for" list in the Emitter Index fits this light.
+  function lightGoal(l) {
+    const n = l.led_count || 1, t = `${l.type || ""} ${l.model}`.toLowerCase();
+    if (l.styles.includes("Headlamp")) return "Headlamp, camping & close work";
+    if ((n >= 3 && n <= 4) || /\b(triple|quad)\b/.test(t)) return "Triples & quads";
+    if (l.styles.includes("Keychain") || ["AAA", "AA", "10180", "10280", "10300", "10440", "14500"].includes(l.battery?.key)) return "Tiny EDC";
+    if (l.styles.includes("Thrower")) return "Balanced thrower";
+    if (n > 4) return "Lumen monster";
+    return "EDC / all-rounder";
+  }
+  // opts: [{ e, cri, ... }] -> the best white option under the current preference, with the reasons.
+  // Balanced leans on the Emitter Index's expert pick for this kind of light; the other two lean on lumens or CRI.
+  function topPick(l, opts) {
+    const goal = lightGoal(l);
+    const scored = opts.filter(o => o.e && o.e.kind === "White").map(o => {
+      const tier = (o.e.best_for.find(b => b.goal === goal) || {}).tier, t = tier === 1 ? 2 : tier === 2 ? 1 : 0;
+      const eff = o.cri ? (o.cri.store ? o.cri.hi : o.cri.lo) : null, c = eff == null ? 0 : Math.min(1, Math.max(0, (eff - 70) / 25));
+      const lm = o.e.lm_hi ? (o.e.lm_lo + o.e.lm_hi) / 2 : null, m = lm ? Math.min(1, Math.max(0, Math.log(lm / 500) / Math.log(12))) : null;
+      const s = pref === "output" ? 3 * (m ?? 0.2) + 0.1 * t : pref === "colour" ? 3 * c + 0.5 * t + 0.2 * (m ?? 0.25) : 2 * t + c + 0.5 * (m ?? 0.5);
+      return { ...o, s, tier, lm };
+    }).sort((a, b) => b.s - a.s);
+    if (!scored.length) return null;
+    const p = scored[0];
+    const bits = { tier: p.tier === 1 && `Emitter Index top pick for ${goal.toLowerCase()}`, cri: p.cri && `${criFmt(p.cri.lo, p.cri.hi)} CRI`, lm: p.lm && `≈ ${fmt(p.lm)} lm per LED` };
+    const order = pref === "output" ? ["lm", "cri", "tier"] : pref === "colour" ? ["cri", "tier", "lm"] : ["tier", "cri", "lm"];
+    return { pick: p, why: order.map(k => bits[k]).filter(Boolean).join(" · "), goal };
+  }
+  const prefSeg = () => `<div class="prefseg" role="group" aria-label="What matters most">${PREFS.map(([v, l, h]) => `<button type="button" data-pref="${v}" aria-pressed="${pref === v}" title="${h}">${l}</button>`).join("")}</div>`;
   // Card built from the emitter reference doc (led_info.json, made by build_clean.py).
   function ledCard(inf) {
     const facts = [["Package", inf.footprint], ["Output", inf.output], [/\bRa \d|Duv|sample/.test(inf.colour || "") ? "Measured" : "CRI", inf.colour], ["Type", inf.kind]]
@@ -847,26 +925,35 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (!r.emitters.length) return `<p class="nolist">The store doesn't list emitter options in text.</p>`;
     const multi = r.emitters.length > 1;
     let refl = null;
+    const white = l => !l.tints.length || l.tints.some(x => !x.colour);
+    const opts = [], seen = new Set();
+    if (!multi) r.emitters[0].tiers.forEach(t => t.leds.forEach(l => { if (white(l) && !seen.has(l.family)) { seen.add(l.family); opts.push({ fam: l.family, e: emOf(l.family), cri: ledCri(l), price: t.price }); } }));
+    const tp = opts.length >= 2 ? topPick(r, opts) : null, topFam = tp?.pick.fam;
+    const isTop = l => l.family === topFam && white(l);
+    const makerOf = (l, e) => e?.maker && e.maker !== "Various" && l.maker && !l.maker.toLowerCase().startsWith(e.maker.toLowerCase()) ? e.maker : l.maker;
     const grp = (g, gi) => {
-      const rows = g.tiers.flatMap(t => t.leds.map(l => ({ ...l, price: t.price })));
+      const rows = g.tiers.flatMap(t => t.leds.map(l => ({ ...l, price: t.price }))).sort((a, b) => isTop(b) - isTop(a));
       return `<div class="grp" data-g="${gi}" ${multi && gi ? "hidden" : ""}>${g.name && !multi ? `<h4>${esc(g.name)}</h4>` : ""}<div class="leds">${rows.map(l => {
-        const c = ledCri(l), e = emOf(l.family), est = throwHere(e, r, l);
+        const c = white(l) ? ledCri(l) : null, e = emOf(l.family), est = throwHere(e, r, l); // CRI means nothing for a coloured LED
         if (est) refl = est.refl;
         const chips = mergedTints(l.tints).map(t => tintChip(t, c?.perChip)).join("");
         const inf = LED_INFO.leds?.[l.family];
         const nm = `${l.qty ? `${l.qty}× ` : ""}<span class="fn">${esc(l.family)}</span>`;
-        const mk = l.maker && l.maker !== l.family ? `<small>${esc(l.maker)}</small>` : "";
+        const mkr = makerOf(l, e), mk = mkr && mkr !== l.family ? `<small>${esc(mkr)}</small>` : "";
         const uses = e ? e.best_for.filter(b => b.tier === 1).slice(0, 2).map(b => `<span class="use">★ ${esc(b.goal)}</span>`).join("") : "";
         const guide = e && (e.beam != null || est || uses) ? `<div class="lguide">${e.beam != null ? beamPill(e) : ""}${est ? `<span class="here" title="Estimated for this light's ~${est.refl} mm reflector">≈ ${kcd(est.cd)} cd · ${fmt(est.m)} m here</span>` : ""}${uses}</div>` : "";
         return `<div class="led" data-fam="${esc(l.family)}">
-          <div class="fam">${inf ? `<button type="button" data-ledinfo aria-expanded="false" title="About this LED">${nm}<span class="i" aria-hidden="true">i</span></button>` : nm}${mk}${c ? `<span class="ltags">${criTag(c)}</span>` : ""}</div>
+          <div class="fam">${inf ? `<button type="button" data-ledinfo aria-expanded="false" title="About this LED">${nm}<span class="i" aria-hidden="true">i</span></button>` : nm}${mk}${c || isTop(l) ? `<span class="ltags">${isTop(l) ? `<span class="tptag">★ Top pick</span>` : ""}${criTag(c)}</span>` : ""}</div>
           <div class="tchips">${chips || `<span class="nolist">Tint not stated</span>`}</div>${priceTag(l.price)}${guide}${inf ? ledCard(inf) : ""}</div>`;
       }).join("")}</div></div>`;
     };
     // Multi-channel lights: one tab per channel instead of three near-identical lists.
     const tabs = multi ? `<div class="seg ctabs" role="tablist" style="grid-template-columns:repeat(${r.emitters.length},1fr)">${r.emitters.map((g, i) =>
       `<button type="button" role="tab" data-gtab="${i}" aria-pressed="${!i}">${esc((g.name || `Group ${i + 1}`).replace(/\s*\(.*\)/, ""))}</button>`).join("")}</div>` : "";
-    let h = ledPicks(r) + tabs + r.emitters.map(grp).join("");
+    const pp = tp?.pick.price, ptxt = !pp ? "" : pp.kind === "incl" ? "Included" : pp.kind === "add" ? `+${usd(pp.amount)}` : `from ${usd(pp.amount)}`;
+    const pickHtml = tp ? `<div class="tpick"><div class="tp-head"><span>What matters most to you?</span>${prefSeg()}</div>
+      <button type="button" class="tp-card" data-ledjump="${esc(topFam)}"><span class="tp-n"><span class="tp-star">★ Top pick</span><b>${esc(topFam)}</b>${tp.pick.e?.maker ? `<small>${esc(tp.pick.e.maker)}</small>` : ""}</span><span class="tp-p">${esc(ptxt)}</span><span class="tp-why">${esc(tp.why)}</span></button></div>` : "";
+    let h = pickHtml + tabs + r.emitters.map(grp).join("");
     if (r.tints_offered.length) h += `<div class="grp"><h4>Tints offered for these LEDs</h4><div class="tchips">${r.tints_offered.map(k => tintChip({ cct: k, domes: [] })).join("")}</div></div>`;
     if (refl) h += `<p class="estnote">“Here” figures scale the Emitter Index's typical 35–40 mm candela to this light's ~${refl} mm reflector (head Ø − 4 mm). A ballpark for comparing options, ±50%; the Throw figure above is the store's.</p>`;
     return h;
@@ -915,7 +1002,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         <a class="btn primary" href="${esc(r.url)}" target="_blank" rel="noopener">Open store page ${ICON.ext}</a>
       </div>`;
     $("#drawer").dataset.id = id;
-    if (!$("#drawer").open) $("#drawer").showModal();
+    if (!$("#drawer").open) { $("#drawer").showModal(); $("#drawer").focus({ preventScroll: true }); } // no focus ring on the first button
     $("#drawer .db").scrollTop = 0;
     syncUrl();
   }
@@ -988,7 +1075,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const mo = t.closest("[data-more]");
     if (mo) { const p = mo.previousElementSibling; p.classList.toggle("clamp"); mo.textContent = p.classList.contains("clamp") ? "Read more" : "Show less"; return; }
     const lj = t.closest("[data-ledjump]");
-    if (lj) { const row = [...document.querySelectorAll("#drawer .led[data-fam]")].find(x => x.dataset.fam === lj.dataset.ledjump); if (row) { row.scrollIntoView({ block: "center", behavior: "smooth" }); row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 900); } return; }
+    if (lj) { const row = [...document.querySelectorAll("#drawer .led[data-fam]")].find(x => x.dataset.fam === lj.dataset.ledjump); if (row) { const g = row.closest(".grp[hidden]"); if (g) document.querySelector(`#drawer [data-gtab="${g.dataset.g}"]`)?.click(); row.scrollIntoView({ block: "center", behavior: "smooth" }); row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 900); } return; }
+    const pf = t.closest("[data-pref]");
+    if (pf) { setPref(pf.dataset.pref); const db = $("#drawer .db"), st = db.scrollTop; openDrawer(+$("#drawer").dataset.id); $("#drawer .db").scrollTop = st; return; }
     const gl = t.closest("[data-goal]"); if (gl) { applyGoal(GOALS[+gl.dataset.goal]); return; }
     const gt = t.closest("[data-gtab]");
     if (gt) { const i = gt.dataset.gtab; document.querySelectorAll("#drawer [data-gtab]").forEach(b => b.setAttribute("aria-pressed", b === gt)); document.querySelectorAll("#drawer .grp[data-g]").forEach(g => g.hidden = g.dataset.g !== i); return; }
@@ -1042,11 +1131,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   /* ---------- load ---------- */
   const infoP = fetch("led_info.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(i => { LED_INFO = i || {}; });
   // The Emitter Index's data adds CRI, beam and "best for" to each LED option in the drawer.
-  const loadEmitters = () => infoP.then(() => fetch("../leds/emitters.json", { cache: "no-cache" })).then(r => r.json()).then(d => {
+  const emP = infoP.then(() => fetch("../leds/emitters.json", { cache: "no-cache" })).then(r => r.json()).then(d => {
     EM = d.emitters || []; emCache.clear();
     if ($("#drawer").open) { const db = $("#drawer .db"), st = db.scrollTop; openDrawer(+$("#drawer").dataset.id); $("#drawer .db").scrollTop = st; }
   }).catch(() => {});
-  fetch("lights.clean.json", { cache: "no-cache" }).then(r => r.json()).then(rows => {
+  // Wait for the LED data too (fetched in parallel) so the Recommended order is final on first paint.
+  fetch("lights.clean.json", { cache: "no-cache" }).then(r => r.json()).then(rows => emP.then(() => rows)).then(rows => {
     data = rows.map(r => {
       const tones = new Set(r.ccts.map(tone));
       r.emitters.forEach(g => g.tiers.forEach(t => t.leds.forEach(l => { if (l.maker && r.led_families.includes(l.family) && !ledMaker[l.family]) ledMaker[l.family] = l.maker; l.tints.forEach(x => x.tone && tones.add(x.tone)); })));
@@ -1064,13 +1154,13 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     });
     byId = new Map(data.map(r => [r.id, r]));
     picks = picks.filter(id => byId.has(id));
+    rankAll();
     LM_MAX = Math.max(...data.map(r => r.lumens || 0)); TH_MAX = Math.max(...data.map(r => r.throw_m || 0));
     $("#kpis").innerHTML = [[data.length, "lights"], [new Set(data.map(r => r.brand)).size, "brands"], [data.filter(r => r.anduril).length, "run Anduril"], [Object.keys(ledMaker).length, "LED types"]]
       .map(([n, l]) => `<div class="kpi"><b>${n}</b><span>${l}</span></div>`).join("");
     $("#q").value = F.q;
     render(); syncUrl();
-    if (openLight && byId.has(openLight)) openDrawer(openLight);
-    loadEmitters();
+    if (openLight != null && byId.has(openLight)) openDrawer(openLight);
   }).catch(err => {
     console.error(err);
     $("#rows").innerHTML = `<div class="empty"><b>The light list didn't load</b><span>Open this page through a local web server (run <code>python3 -m http.server</code> in this folder), then reload.</span></div>`;

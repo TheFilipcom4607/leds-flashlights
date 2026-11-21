@@ -4574,8 +4574,8 @@
    "voltages": [
     "3V"
    ],
-   "lm_lo": null,
-   "lm_hi": null,
+   "lm_lo": 725.0,
+   "lm_hi": 1050.0,
    "cri_min": 92,
    "cri_max": 98,
    "ccts": [
@@ -4591,7 +4591,7 @@
    "colours": [],
    "basis": "lab",
    "footprint_html": "<code>3535</code> · 3V (~4 A)",
-   "lm_html": "In a Noctigon D4V2 quad: ~2,900 lm OTF (4200K/5000K), 2,500 (2700K), 2,000 (1800K), Hank&#x27;s figures. Measured ~2,900 lm turbo in a KR3 triple",
+   "lm_html": "~725–1,050 lm per LED, from Hank's quad figures: a D4V2 makes ~4,200 lm OTF on its linear + FET driver (4200K/5000K; 3,600 at 2700K, 2,800 at 1800K) and ~2,900 lm on the Lume X1 boost driver. Measured ~2,900 lm turbo in a KR3 triple (~970 per LED)",
    "cri_html": "Listed: 1800K <b>Ra 92</b>; 2700K / 4200K / 5000K <b>Ra 95</b>. Measured in lights: 2700K <b>Ra 97</b>, Duv −0.004; 4200K <b>Ra 98</b>, Duv −0.006 to −0.010",
    "cri_label": "Measured Colour",
    "type_html": "",
@@ -4608,6 +4608,10 @@
     {
      "label": "Noctigon D4V2",
      "url": "https://www.noctigon.com/Emisar-D4V2-Ti-Quad-18650-High-Power-LED-Flashlight"
+    },
+    {
+     "label": "Emisar D4V2 (Hank)",
+     "url": "https://intl-outdoor.com/product/emisar-d4v2-high-power-led-flashlight/"
     }
    ],
    "candela": [],
