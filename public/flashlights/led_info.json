@@ -450,6 +450,15 @@
    "colour": "~70",
    "notes": "Cool white: the datasheet's typical colour point (x 0.32, y 0.33) is about 6000K, and Convoy sells it as 6500K. 2 mm²-class die in the bigger Oslon Boost package, which runs cooler and takes more overdrive. Common in Convoy throwers (S21B, M21-series)."
   },
+  "KT CULPM1.13": {
+   "title": "KT CULPM1.13 (true green)",
+   "candela": [],
+   "footprint": "ceramic 3 × 3 mm (OSTAR Projection Compact) · 3V",
+   "output": "330–484 lm @ 1.4 A (datasheet)",
+   "colour": null,
+   "kind": "True green (~530 nm)",
+   "notes": "Osram's OSTAR Projection Compact true-green emitter: 523–535 nm dominant wavelength from a 1.5 × 1.2 mm² radiating surface, rated to 5 A. Convoy sells it as the green 'KT CULPM1.13' option on many lights. Figures are datasheet bins at 1.4 A; no independent in-light measurements yet."
+  },
   "P9": {
    "title": "P9 (GW PUSTA1.PM)",
    "candela": [],

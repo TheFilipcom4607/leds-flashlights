@@ -8726,6 +8726,67 @@
    "rep": null,
    "tldr": "Placeholder for lights that only say '365 nm UV'.",
    "cct_notes": []
+  },
+  {
+   "id": 127,
+   "name": "KT CULPM1.13",
+   "alts": [
+    "CULPM1.13"
+   ],
+   "maker": "Osram",
+   "code": "CULPM1.13",
+   "section": "7. Specialty Emitters: UV, IR & Monochromatic",
+   "kind": "Colour",
+   "type_label": "True green (~530 nm)",
+   "footprints": [
+    "OSTAR Projection Compact"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 330.0,
+   "lm_hi": 484.0,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [
+    "Green"
+   ],
+   "basis": "datasheet",
+   "footprint_html": "ceramic 3.0 × 3.0 mm (OSTAR Projection Compact) · 3V",
+   "lm_html": "330–484 lm @ 1.4 A",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "True green (~530 nm)",
+   "notes_html": "Osram's OSTAR Projection Compact <b>true green</b>: dominant wavelength 523–535 nm (typ. 530 nm) from a 1.5 × 1.2 mm² radiating surface, rated to 5 A. The 330–484 lm datasheet bins are at 1.4 A; driven harder it does far more (<a href=\"https://look.ams-osram.com/m/2d87bae6269b007c/original/KT-CULPM1-13.pdf\" target=\"_blank\" rel=\"noopener\">datasheet</a>). Convoy sells it as the <b>KT CULPM1.13</b> / “Verdure light” green option on many lights (<a href=\"https://convoylight.com/products/convoy-s21a-green-21700-flashlight\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "sources": [
+    {
+     "label": "ams-osram datasheet",
+     "url": "https://look.ams-osram.com/m/2d87bae6269b007c/original/KT-CULPM1-13.pdf"
+    },
+    {
+     "label": "ams-osram product page",
+     "url": "https://ams-osram.com/products/leds/color-leds/osram-osram-ostar-projection-compact-kt-culpm1-13"
+    },
+    {
+     "label": "Convoy S21A listing",
+     "url": "https://convoylight.com/products/convoy-s21a-green-21700-flashlight"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 4,
+   "rep": null,
+   "cct_notes": [],
+   "tldr": "True-green (530 nm) OSTAR Projection Compact: 330–484 lm @ 1.4 A per datasheet; Convoy's green thrower option."
   }
  ]
 }
