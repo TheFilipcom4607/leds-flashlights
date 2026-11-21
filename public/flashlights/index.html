@@ -970,7 +970,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     // entries have differing physical counts (Fenix LR60R: 1× SFT-70 + 12× SST-40) or use role
     // placeholders (Flood LED, Spot LED, Side LED…). Otherwise the families are what you pick at
     // purchase (Hank/FireflyLite quads).
-    const ROLE = new Set(["Flood LED", "Spot LED", "Side LED", "Main LED", "LED (model not stated)", "COB", "LEP", "IR LED", "UV", "Wing LED", "Tunable-white LED", "RGB", "Cree", "Osram", "LED", "White LED", "UHi", "Ambient LED"]);
+    // Role names only — "LED (model not stated)" stays out: it also marks unnamed
+    // purchase options (Skilhunt M150 V4's "TN Cool White"), not just second LEDs.
+    const ROLE = new Set(["Flood LED", "Spot LED", "Side LED", "Main LED", "COB", "LEP", "IR LED", "UV", "Wing LED", "Tunable-white LED", "RGB", "Cree", "Osram", "LED", "White LED", "UHi", "Ambient LED"]);
     const fixedSet = t => t.price == null && (new Set(t.leds.filter(white).map(l => String(l.qty))).size > 1 || t.leds.filter(white).some(l => ROLE.has(l.family)));
     const tiers0 = r.emitters[0].tiers, choosable = tiers0.length > 1 || !fixedSet(tiers0[0]);
     if (!multi && choosable) tiers0.forEach(t => t.leds.forEach(l => { if (white(l) && !seen.has(l.family)) { seen.add(l.family); opts.push({ fam: l.family, e: emOf(l.family), cri: ledCri(l), price: t.price }); } }));
