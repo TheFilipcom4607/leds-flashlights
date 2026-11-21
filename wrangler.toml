@@ -1,2 +1,5 @@
 name = "leds-flashlights"
-pages_build_output_dir = "."
+compatibility_date = "2026-11-21"
+
+[assets]
+directory = "./"

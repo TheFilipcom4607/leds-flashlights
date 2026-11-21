@@ -5,11 +5,12 @@ index (`/flashlights/`) are single-page apps over JSON data files. `leds/` fetch
 `flashlights/led_info.json` for cross-referencing, so both directories must stay
 siblings at the repo root.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers, static assets)
 
-Connect the repo in the Cloudflare dashboard — no build step; `wrangler.toml` sets
-the output dir to the repo root. Or from the CLI:
+Connect the repo in the Cloudflare dashboard (Workers & Pages → Create → Workers)
+with build command `npx wrangler deploy`; `wrangler.toml` serves the repo root as
+static assets. Or from the CLI:
 
 ```
-npx wrangler pages deploy
+npx wrangler deploy
 ```
