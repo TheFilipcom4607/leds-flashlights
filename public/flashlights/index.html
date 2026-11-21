@@ -187,7 +187,7 @@ main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 
 .cols > * { min-width: 0; }
 .c-bat .v { white-space: normal; }
 
-.row { padding: 13px 16px; border-bottom: 1px solid var(--line); cursor: pointer; position: relative; }
+.row { padding: 13px 16px; border-bottom: 1px solid var(--line); cursor: pointer; position: relative; content-visibility: auto; contain-intrinsic-size: auto 90px; }
 .row:last-child { border-bottom: 0; border-radius: 0 0 var(--r) var(--r); }
 .row:hover { background: var(--sunken); }
 .row.picked { background: color-mix(in srgb, var(--accent-soft) 70%, transparent); }
@@ -374,7 +374,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 }
 @container list (max-width: 799px) {
   .lh { display: none; }
-  .row.cols { grid-template-columns: 34px repeat(3, minmax(0, 1fr)); gap: 8px 10px; padding: 14px 14px 14px 10px; align-items: start; }
+  .row.cols { grid-template-columns: 34px repeat(3, minmax(0, 1fr)); gap: 8px 10px; padding: 14px 14px 14px 10px; align-items: start; contain-intrinsic-size: auto 200px; }
   .c-pick { grid-row: 1 / span 3; }
   .c-light { grid-column: 2 / 4; grid-row: 1; }
   .c-price { grid-column: 4; grid-row: 1; }
@@ -532,7 +532,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 (() => {
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const fmt = n => Math.round(n).toLocaleString("en-US");
+  const NF = new Intl.NumberFormat("en-US"), fmt = n => NF.format(Math.round(n)); // toLocaleString builds a formatter per call: slow over 777 rows
   const usd = n => "$" + (Number.isInteger(n) ? n : n.toFixed(2));
   const MAXPICK = 4;
   const ICON = {
@@ -796,13 +796,18 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       <div class="c-price r">${priceHtml(r)}</div>
     </div>`;
   }
+  const FIRST_ROWS = 40;
+  let restTimer = 0;
   function render() {
     view = results();
     const prices = view.map(r => r.price).filter(p => p != null).sort((a, b) => a - b);
     $("#count").innerHTML = `<b>${view.length}</b> of ${data.length} lights` + (view.length ? ` · <b>${view.filter(r => r.anduril).length}</b> Anduril` + (prices.length ? ` · ${usd(prices[0])}–${usd(prices[prices.length - 1])}, median ${usd(prices[Math.floor(prices.length / 2)])}` : "") : "");
     $("#fshow").textContent = `Show ${view.length} light${view.length === 1 ? "" : "s"}`;
-    $("#rows").innerHTML = view.length ? view.map(rowHtml).join("") :
+    // Only the first screenful is built while typing; the rest follows in the next task, unless another keystroke replaces it first.
+    clearTimeout(restTimer);
+    $("#rows").innerHTML = view.length ? view.slice(0, FIRST_ROWS).map(rowHtml).join("") :
       `<div class="empty"><b>No lights match</b><span>Try removing a filter or two.</span><button class="btn" type="button" data-act="clear">Clear all filters</button></div>`;
+    if (view.length > FIRST_ROWS) restTimer = setTimeout(() => $("#rows").insertAdjacentHTML("beforeend", view.slice(FIRST_ROWS).map(rowHtml).join("")));
     document.querySelectorAll(".lh [data-sort]").forEach(b => b.dataset.dir = b.dataset.sort === sortK ? sortDir : "");
     const v = sortK ? `${sortK}:${sortDir}` : ""; const sel = $("#sort");
     sel.value = [...sel.options].some(o => o.value === v) ? v : "";
@@ -1177,6 +1182,11 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (e.target.matches?.(".row[data-id]") && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); openDrawer(+e.target.dataset.id); }
   });
 
+  // "Thor III" / "Mk IV" are also found by "thor 3" / "mk 4": the name's roman numerals add their number to the search text.
+  // Lone I, V and X are left out: "Perun X" and "Luxeon V" aren't numbers.
+  const ROMAN = { ii: 2, iii: 3, iv: 4, vi: 6, vii: 7, viii: 8, ix: 9 };
+  const romanNums = s => (s.toLowerCase().match(/\b[ivx]+\b/g) || []).map(w => ROMAN[w]).filter(Boolean).join(" ");
+
   /* ---------- load ---------- */
   const infoP = fetch("led_info.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).catch(() => ({})).then(i => { LED_INFO = i || {}; });
   // The Emitter Index's data adds CRI, beam and "best for" to each LED option in the drawer.
@@ -1199,7 +1209,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       return { ...r, _tones: [...tones], _bats: bats, _pairs: pairs, _colours: [...new Set(pairs.map(p => p.c))], _batn: CELLS.indexOf(r.battery.key) >= 0 ? CELLS.indexOf(r.battery.key) : 99,
         _name: `${r.brand} ${r.model} ${r.variant || ""}`.toLowerCase(), _slug: slug(r.brand, r.model, r.variant),
         _hay: [r.brand, r.model, r.variant, r.type, r.blurb, r.battery.label, r.firmware, r.driver, r.switch, r.charging?.label, r.aux, r.ip?.label, r.body_colours.join(" "), r.styles.join(" "), emitTxt,
-          r.options.flatMap(o => o.items.map(i => i.name)).join(" "), r.anduril ? "anduril" : ""].join(" ").toLowerCase() };
+          r.options.flatMap(o => o.items.map(i => i.name)).join(" "), r.anduril ? "anduril" : "", romanNums(`${r.model} ${r.variant || ""}`)].join(" ").toLowerCase() };
     });
     byId = new Map(data.map(r => [r.id, r]));
     picks = picks.filter(id => byId.has(id));
