@@ -482,14 +482,14 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const c = v => Math.max(0, Math.min(255, Math.round(v)));
     return `rgb(${c(r)},${c(g)},${c(b)})`;
   }
-  const COLOUR = { Red: "#e5484d", Amber: "#ffa01c", Orange: "#f76808", Yellow: "#f5d90a", Green: "#46a758", Cyan: "#05a2c2", Azure: "#0091ff", Blue: "#3e63dd", Pink: "#e93d82" };
+  const COLOUR = { Red: "#e5484d", Amber: "#ffa01c", Orange: "#f76808", Yellow: "#f5d90a", Green: "#46a758", Lime: "#99d52a", IR: "#7a2e45", Cyan: "#05a2c2", Azure: "#0091ff", Blue: "#3e63dd", Pink: "#e93d82" };
   const RGB = "conic-gradient(#e5484d, #46a758, #3e63dd, #e5484d)";
-  const swatch = t => t.cct ? cct(t.cct) : t.colour ? (t.colour.startsWith("UV") ? "#8e4ec6" : t.colour === "RGB" ? RGB : COLOUR[t.colour] || "#888")
+  const swatch = t => t.cct ? cct(t.cct) : t.colour ? (t.colour.startsWith("UV") ? "#8e4ec6" : t.colour === "RGB" ? RGB : COLOUR[colourKey(t.colour)] || "#888")
     : t.tone === "warm" ? cct(3000) : t.tone === "neutral" ? cct(4500) : t.tone === "cool" ? cct(6500) : t.tone === "white" ? cct(5600) : "transparent";
   const tone = k => k <= 3500 ? "warm" : k <= 5200 ? "neutral" : "cool";
   const TONES = [["warm", "Warm", "≤ 3500K", cct(2700)], ["neutral", "Neutral", "3700–5000K", cct(4500)], ["cool", "Cool", "≥ 5500K", cct(6500)]];
-  const COLOURS = ["Red", "Orange", "Amber", "Yellow", "Green", "Cyan", "Azure", "Blue", "Pink", "RGB", "UV"];
-  const colourKey = c => c.startsWith("UV") ? "UV" : c;
+  const COLOURS = ["Red", "Orange", "Amber", "Yellow", "Green", "Lime", "Cyan", "Azure", "Blue", "Pink", "RGB", "UV", "IR"];
+  const colourKey = c => c.startsWith("UV") ? "UV" : c.startsWith("IR") ? "IR" : c;
 
   /* ---------- filter model ---------- */
   const FEATS = [
@@ -694,7 +694,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   function mergedTints(tints) { // same CCT/CRI/colour listed domed + dedomed -> one chip
     const out = [];
     for (const t of tints) {
-      const key = [t.cct, t.cct_max, t.cri, t.colour, t.tone, t.rosy, t.hi].join("|");
+      const key = [t.cct, t.cct_max, t.cri, t.colour, t.tone, t.rosy, t.hi, t.measured].join("|");
       const o = out.find(x => x.key === key);
       if (o) { if (t.dome && !o.domes.includes(t.dome)) o.domes.push(t.dome); if (t.lm && !o.lm) o.lm = t.lm; }
       else out.push({ ...t, key, domes: t.dome ? [t.dome] : [] });
@@ -704,7 +704,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   function tintChip(t) {
     const label = t.cct ? (t.cct_max ? `${t.cct}–${t.cct_max}K` : `${t.cct}K`) : t.colour || (t.tone === "white" ? "White" : t.tone ? t.tone[0].toUpperCase() + t.tone.slice(1) + " white" : "");
     if (!label) return "";
-    const bits = [t.domes.length === 2 ? "dome / dedome" : t.domes[0], t.rosy && "rosy", t.hi && "HI", t.lm && `${fmt(t.lm)} lm`].filter(Boolean);
+    const bits = [t.domes.length === 2 ? "dome / dedome" : t.domes[0], t.rosy && "rosy", t.hi && "HI", t.lm && `${fmt(t.lm)} lm`, t.measured && "measured"].filter(Boolean);
     return `<span class="tc"><span class="dot" style="background:${swatch(t)}"></span>${esc(label)}${t.cri ? ` <span class="cri">${t.cri}${t.cri >= 90 ? "+" : ""} CRI</span>` : ""}${bits.length ? ` <small>${esc(bits.join(" · "))}</small>` : ""}</span>`;
   }
   // Card built from the emitter reference doc (led_info.json, made by build_clean.py).

@@ -389,12 +389,12 @@
    "notes": "SST-40: 5000K, 5700K or 6500K. SST-70: 5700K or 6500K. Domed, cheap, high-output flood/hybrid LEDs common in budget lights; very green at low power."
   },
   "XHP35": {
-   "title": "XHP35.2 HI",
+   "title": "XHP35 (gen 1)",
    "candela": [],
-   "footprint": "3535 · 3V / 6V / 12V",
-   "output": "1,691 lm max · 2,530 lm OD",
-   "colour": "<70 / 80",
-   "notes": "Domeless 3535 multi-die. The older 12V XHP35 HI (discontinued) is still sought after for its 4000K tint."
+   "footprint": "3535 · 12V only",
+   "output": "~1,300 lm (HI) · ~1,800 lm (HD)",
+   "colour": "70 – 90",
+   "notes": "Original 12V-only XHP35 in HI (domeless) and HD (domed) versions, replaced by the 3V/6V XHP35.2. The HI was a 12V thrower favourite; the Nitecore HC33 still lists an XHP35 HD.."
   },
   "XP-L HI": {
    "title": "XP-L HI",
@@ -405,12 +405,12 @@
    "notes": "2700K–6500K by order code; Convoy sells 3000K, 4000K, 5000K and 6500K. Classic domeless EDC emitter; mostly superseded by 519A, SFT-40 and NTG35."
   },
   "XP-G3": {
-   "title": "XP-G4 / XP-L2",
+   "title": "XP-G3",
    "candela": [],
    "footprint": "3535 · 3V",
-   "output": "G4: 1,045 / 1,488 lm · L2: 1,172 / 2,496 lm",
-   "colour": "70 / 80 / 90 (L2 also 95)",
-   "notes": "Both 2700K–7000K. Efficient and very common in mainstream brands (Fenix, Olight, etc.). Domed, with poor colour and noticeable tint shift; enthusiasts generally avoid them."
+   "output": "759 lm @ 2 A · 1,305 lm @ 5.5 A OD",
+   "colour": "70 / 80 / 90 / 95",
+   "notes": "2.3 mm source in the standard XP package, plus an S Line version (776 / 1,363 lm, 70 CRI only). The domed mainstream workhorse in Nitecore, Fenix and Olight lights before the XP-G4/XP-L2. White kits run 1800K–8000K.."
   },
   "XP-G2": {
    "title": "XP-G2",
@@ -808,11 +808,12 @@
    "notes": "Night-vision/covert IR. 850 nm shows a faint red glow; 940 nm is effectively invisible but works less well with most cameras."
   },
   "XP-E2": {
-   "title": "Cree XP-E2 (colour)",
+   "title": "XP-E2",
    "candela": [],
-   "kind": "Red/Green/Blue/Amber etc.",
-   "footprint": "3535",
-   "notes": "Long-standing standard for coloured channels in multi-channel builds."
+   "footprint": "3535 · 3V (1.5 A max)",
+   "output": null,
+   "colour": "70 / 80 / 90",
+   "notes": "Small-die domed classic (110° white). The white version is what budget and AAA lights use (Convoy's AAA lists a Cree XPE2 at 50–60 lm); the colour versions have their own card.."
   },
   "SBT-10X-UV": {
    "title": "SBT-10X-UV",
@@ -853,6 +854,234 @@
    "output": null,
    "colour": null,
    "notes": "High-power UV Z5 version: about 1.8 W radiant at 365–367 nm. Sold bare at Convoy."
+  },
+  "XHP35.2": {
+   "title": "XHP35.2 HD",
+   "candela": [],
+   "footprint": "3535 · 3V / 6V",
+   "output": "1,952 lm @ 6 A / 3 A · 3,016 lm @ 11.2 A / 5.6 A OD",
+   "colour": "<70 / 80 / 90",
+   "notes": "Domed (high-density) sibling of the XHP35.2 HI: 3.3 mm source, more lumens, less throw. ThruNite's TC15 V3 lists an XHP35.2 without saying HI or HD; its 2,400 lm / 223 m fits this HD part.."
+  },
+  "XHP70": {
+   "title": "XHP50 / XHP70 (gen 1)",
+   "candela": [],
+   "footprint": "5050 / 7070 · 6V / 12V",
+   "output": "~1,800–2,500 lm (50) · ~3,000–4,000 lm (70)",
+   "colour": "70 – 90",
+   "notes": "First-generation domed multi-die XHPs, superseded by the .2 and .3 parts. Same footprints and voltages, so later parts drop in. Floody with a visible tint ring.."
+  },
+  "XHP50": {
+   "title": "XHP50 / XHP70 (gen 1)",
+   "candela": [],
+   "footprint": "5050 / 7070 · 6V / 12V",
+   "output": "~1,800–2,500 lm (50) · ~3,000–4,000 lm (70)",
+   "colour": "70 – 90",
+   "notes": "First-generation domed multi-die XHPs, superseded by the .2 and .3 parts. Same footprints and voltages, so later parts drop in. Floody with a visible tint ring.."
+  },
+  "XD16": {
+   "title": "XD16",
+   "candela": [],
+   "footprint": "1.6 × 1.6 mm · 3V (2 A max)",
+   "output": null,
+   "colour": "70 / 80 / 90",
+   "notes": "Cree's 'Extreme Density' chip-scale LED on its NX platform: 2 A max, 135° viewing angle. Listed as the white LED of the Armytek Wizard C2 WUV.."
+  },
+  "M515S": {
+   "title": "M515S",
+   "candela": [],
+   "footprint": "not stated",
+   "output": "1,000 lm / 380 m in the MT1C Max",
+   "colour": null,
+   "notes": "NiteLab array LED in the Nitecore P17iX / P27iX and MT1A / MT1C Max. Nitecore gives no CCT or CRI.."
+  },
+  "GT LED": {
+   "title": "GT colour (red / green / blue)",
+   "candela": [],
+   "footprint": "on 20 mm MCPCB",
+   "output": null,
+   "colour": null,
+   "notes": "Single-colour Getian emitters that Convoy sells in red, green and blue for its throwers (C8, L21B, M21-series, 3X21A). Buyers note a glass dome that cracks if the reflector is over-tightened; the green is a strong thrower..",
+   "kind": "Red / Green / Blue"
+  },
+  "LEP": {
+   "title": "LEP (laser-excited phosphor)",
+   "candela": [],
+   "footprint": "laser module",
+   "output": "typically 300–1,000 lm",
+   "colour": "low (~60–70)",
+   "notes": "Not an LED: a blue laser hits a phosphor dot, giving a tiny, extremely bright source. Output is low but candela is huge (often 300,000–1,000,000+ cd), so the beam is a narrow searchlight with almost no spill. Usually cool white; some lights add green or red LEP. Treat the beam like a laser around eyes and aircraft.."
+  },
+  "UV": {
+   "title": "UV 365 nm (part not stated)",
+   "candela": [],
+   "footprint": "varies",
+   "output": null,
+   "colour": null,
+   "notes": "For lights whose store page gives only '365 nm UV'. True 365 nm shows fluorescence with little visible purple, especially behind a ZWB2 filter; 395 nm parts are cheaper but wash scenes out in violet. Known named parts: Nichia 233B / 276A, Luminus SST-10-UV / SBT-10X-UV, Seoul CUN66A1B / CUN66A1G. Don't look into the beam..",
+   "kind": "365 nm UV-A"
+  },
+  "276A UV": {
+   "title": "NCSU276A / 276C",
+   "candela": [],
+   "footprint": "3535",
+   "output": null,
+   "colour": null,
+   "notes": "Older, lower-power Nichia 365 nm part (276A, now 276C) behind the Convoy S2+ UV. Less output than the 233B but a clean 365 nm peak with little visible purple..",
+   "kind": "365 nm UV"
+  },
+  "SST-36F": {
+   "title": "SST-20F / SST-36F",
+   "candela": [],
+   "footprint": "3535 · 3V",
+   "output": "20F: 700 lm @ 1.5 A (2.5 A max) · 36F: 741 lm @ 1.5 A (3 A max)",
+   "colour": "~70",
+   "notes": "F-Line flip-chip parts in a ceramic package, aimed at cost per lumen. SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F.."
+  },
+  "UHi 25": {
+   "title": "UHi 25",
+   "candela": [],
+   "footprint": "not stated (2.26 mm² light-emitting surface)",
+   "output": null,
+   "colour": null,
+   "notes": "Nitecore's in-house thrower die: 2.26 mm² emitting surface, 4.7 SDCM colour tolerance, 6500K cool white (Nitecore EDC23 / EDC17 pages). Sits between UHi 20 and UHi 40.."
+  },
+  "P8": {
+   "title": "P8",
+   "candela": [],
+   "footprint": "not stated",
+   "output": "~250 lm each (2 × P8 = 500 lm in the TINI2 SS)",
+   "colour": null,
+   "notes": "Nitecore's name for the Osram emitter in the TINI2 SS keychain light (2 × P8, 500 lm, 2,000 cd). Nitecore doesn't give the Osram order code.."
+  },
+  "XT-E": {
+   "title": "XT-E HE",
+   "candela": [],
+   "footprint": "3535 · 3V",
+   "output": "511 lm @ 1.5 A · 804 lm @ 3.4 A OD",
+   "colour": "70 / 80 / 90",
+   "notes": "Small 2.0 mm source on the XP/XT footprint; Cree lists it as a lumen-optimised portable part. Efficient at low current, so it suits small-cell lights more than hot rods.."
+  },
+  "XP-P": {
+   "title": "XP-P",
+   "candela": [],
+   "footprint": "3535 · 3V",
+   "output": "614 lm @ 3 A",
+   "colour": "70 / 80 / 90",
+   "notes": "1.0 × 1.0 mm source, Cree's smallest beam-distance part: a W1-style pencil-beam option on the common XP footprint. 3 A max (2.5 A for the CRI-graded bins).."
+  },
+  "XHP70.3 HD": {
+   "title": "XHP70.3 HD",
+   "candela": [],
+   "footprint": "7070 · 3V / 6V (3V = <70 CRI only)",
+   "output": "4,857 lm @ 14.4 A / 7.2 A · 6,405 lm @ 20.6 A / 10.3 A OD",
+   "colour": "70 / 80 / 90 / 95 (6V)",
+   "notes": "Domed 5.3 mm-source version of the XHP70.3: more lumens than the HI, much floodier. The usual pick for big 7070 flooders.."
+  },
+  "XHP35.2 HD": {
+   "title": "XHP35.2 HD",
+   "candela": [],
+   "footprint": "3535 · 3V / 6V",
+   "output": "1,952 lm @ 6 A / 3 A · 3,016 lm @ 11.2 A / 5.6 A OD",
+   "colour": "<70 / 80 / 90",
+   "notes": "Domed (high-density) sibling of the XHP35.2 HI: 3.3 mm source, more lumens, less throw. ThruNite's TC15 V3 lists an XHP35.2 without saying HI or HD; its 2,400 lm / 223 m fits this HD part.."
+  },
+  "XQ-E": {
+   "title": "XQ-E",
+   "candela": [],
+   "footprint": "1.6 × 1.6 mm · 3V",
+   "output": null,
+   "colour": "70 / 80 / 90",
+   "notes": "Cree's smallest lighting-class LED, in high-density and high-intensity versions (1.5 A max). Also sold in royal blue, blue, cyan, green, PC lime, PC amber, red-orange and red, so it turns up as aux or colour channels in keychain and multi-channel lights.."
+  },
+  "SST-90": {
+   "title": "SST-90",
+   "candela": [],
+   "footprint": "large-die package · 3V",
+   "output": "up to 4,000 lm @ 18 A",
+   "colour": "~70",
+   "notes": "Monolithic 9 mm² die, 5700K or 6500K. The original big-die lumen part from the early 2010s; long replaced by SFT-90 / SBT90.2 but still in old searchlights.."
+  },
+  "SBT-90": {
+   "title": "SBT-90 (gen 1)",
+   "candela": [],
+   "footprint": "large-die package · 3V",
+   "output": "up to 2,300 lm @ 13.5 A",
+   "colour": "~70",
+   "notes": "First SBT-90: 9 mm² square emitter, 5700K or 6500K, also made in red (over 1,600 lm). The domeless thrower that SBT90.2 replaced.."
+  },
+  "CBT-90": {
+   "title": "CBT-90",
+   "candela": [],
+   "footprint": "large-die package · 3V",
+   "output": "over 2,250 lm",
+   "colour": "~70",
+   "notes": "9 mm² monolithic chip, 5700K / 6500K; green (over 1,800 lm) and blue versions exist. Projector-class part that turns up in a few searchlights.."
+  },
+  "CFT-90": {
+   "title": "CFT-90",
+   "candela": [],
+   "footprint": "large-die package · 3V (27 A max)",
+   "output": "over 6,500 lm @ 27 A",
+   "colour": "~70",
+   "notes": "Second-generation 9 mm² windowless specialty white: more peak lumens and current than the CBT-90. 5700K, 6500K or 7800K.."
+  },
+  "SST-70X": {
+   "title": "SST-70X",
+   "candela": [],
+   "footprint": "5050 · 6V / 12V",
+   "output": "3,300+ lm @ 5.25 A (6V)",
+   "colour": "~70 (6500K)",
+   "notes": "Newer 6V/12V configurable SST-70 with up to 500 lm/mm² lumen density; 6500K only.."
+  },
+  "SST-20F": {
+   "title": "SST-20F / SST-36F",
+   "candela": [],
+   "footprint": "3535 · 3V",
+   "output": "20F: 700 lm @ 1.5 A (2.5 A max) · 36F: 741 lm @ 1.5 A (3 A max)",
+   "colour": "~70",
+   "notes": "F-Line flip-chip parts in a ceramic package, aimed at cost per lumen. SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F.."
+  },
+  "SST-20V": {
+   "title": "SST-20V",
+   "candela": [],
+   "footprint": "3535 · 3V (2 A max)",
+   "output": null,
+   "colour": "70 / 80 / 90",
+   "notes": "V-Line vertical-chip SST-20 with higher lumen density and a narrower emission angle than the original; high-CRI version in 5000K / 5700K.."
+  },
+  "MK-R": {
+   "title": "MK-R",
+   "candela": [],
+   "footprint": "7070 · 12V",
+   "output": null,
+   "colour": "70 / 80 / 90",
+   "notes": "Cree's first-generation 7 × 7 mm multi-die LED, the ancestor of the XHP70. Cree now points new designs to newer parts; it survives only in old builds.."
+  },
+  "757G": {
+   "title": "757G / 757H",
+   "candela": [],
+   "footprint": "3030 · 3V (~0.2 W class)",
+   "output": null,
+   "colour": "70 – 95 (H6 series)",
+   "notes": "Nichia's 0.2 W mid-power 3030 family (NFSW757G / NFSW757H / NF2W757H). Not a flashlight main emitter, but common in lanterns and wide-angle work lights; the H6 series pairs Ra ≥ 95 with high efficacy.."
+  },
+  "NVSU119C": {
+   "title": "NVSU119C",
+   "candela": [],
+   "footprint": "3535",
+   "output": null,
+   "colour": null,
+   "notes": "Nichia's mid-power 365 nm UV-A emitter, a step below the 233B (1,450 mW). Listed alongside the 233B / 233C in Nichia's current UV-A range..",
+   "kind": "365 nm UV"
+  },
+  "CFT-50X": {
+   "title": "CFT-50X",
+   "candela": [],
+   "footprint": "large-die package · 10 A CW (12.5 A pulsed)",
+   "output": "over 4,800 lm",
+   "colour": "~70 (cool white)",
+   "notes": "5 mm² windowless, electrically isolated cool white, designed for fibre coupling. Very high luminance for its size.."
   }
  }
 }

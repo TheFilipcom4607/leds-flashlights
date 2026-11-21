@@ -7012,6 +7012,1709 @@
    },
    "cct_notes": [],
    "tldr": "CSP emitter with high flux and a clean beam; Vf varies between samples."
+  },
+  {
+   "id": 98,
+   "name": "XP-G3",
+   "alts": [
+    "XP-G3"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 759.0,
+   "lm_hi": 1305.0,
+   "cri_min": 70,
+   "cri_max": 95,
+   "ccts": [
+    1800,
+    2700,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5700,
+    6500,
+    7000
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "759 lm @ 2 A<br>1,305 lm @ 5.5 A OD",
+   "cri_html": "70 / 80 / 90 / 95",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "2.3 mm source in the standard XP package, plus an S Line version (776 / 1,363 lm, 70 CRI only). The domed mainstream workhorse in Nitecore, Fenix and Olight lights before the XP-G4/XP-L2. White kits run 1800K–8000K. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPG3.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-G3 datasheet</a>).",
+   "sources": [
+    {
+     "label": "Cree portable LEDs",
+     "url": "https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf"
+    },
+    {
+     "label": "Cree XP-G3 datasheet",
+     "url": "https://downloads.cree-led.com/files/ds/x/XLamp-XPG3.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "oem",
+    "note": "Mainstream Nitecore/Fenix/Olight workhorse"
+   },
+   "tldr": "Domed mainstream 3535 that came before the XP-G4 / XP-L2.",
+   "cct_notes": []
+  },
+  {
+   "id": 99,
+   "name": "XT-E HE",
+   "alts": [
+    "XT-E HE"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 511.0,
+   "lm_hi": 804.0,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    2700,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "511 lm @ 1.5 A<br>804 lm @ 3.4 A OD",
+   "cri_html": "70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Small 2.0 mm source on the XP/XT footprint; Cree lists it as a lumen-optimised portable part. Efficient at low current, so it suits small-cell lights more than hot rods. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XTE.pdf\" target=\"_blank\" rel=\"noopener\">Cree XT-E datasheet</a>).",
+   "sources": [
+    {
+     "label": "Cree portable LEDs",
+     "url": "https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf"
+    },
+    {
+     "label": "Cree XT-E datasheet",
+     "url": "https://downloads.cree-led.com/files/ds/x/XLamp-XTE.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Efficient at low current"
+   },
+   "tldr": "Small 2 mm source tuned for lumens per watt in small-cell lights.",
+   "cct_notes": []
+  },
+  {
+   "id": 100,
+   "name": "XP-P",
+   "alts": [
+    "XP-P"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 614.0,
+   "lm_hi": 614.0,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    2700,
+    3000,
+    4000,
+    5000,
+    5700,
+    6500,
+    7000
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "614 lm @ 3 A",
+   "cri_html": "70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "1.0 × 1.0 mm source, Cree's smallest beam-distance part: a W1-style pencil-beam option on the common XP footprint. 3 A max (2.5 A for the CRI-graded bins). (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>, <a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPP.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-P datasheet</a>).",
+   "sources": [
+    {
+     "label": "Cree portable LEDs",
+     "url": "https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf"
+    },
+    {
+     "label": "Cree XP-P datasheet",
+     "url": "https://downloads.cree-led.com/files/ds/x/XLamp-XPP.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 5,
+   "rep": {
+    "t": "niche",
+    "note": "Few lights use it yet"
+   },
+   "tldr": "1 mm² source on the XP footprint: Cree's pencil-beam part.",
+   "cct_notes": []
+  },
+  {
+   "id": 101,
+   "name": "XHP35.2 HD",
+   "alts": [
+    "XHP35.2 HD"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V",
+    "6V"
+   ],
+   "lm_lo": 1952.0,
+   "lm_hi": 3016.0,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> · 3V / 6V",
+   "lm_html": "1,952 lm @ 6 A / 3 A<br>3,016 lm @ 11.2 A / 5.6 A OD",
+   "cri_html": "&lt;70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Domed (high-density) sibling of the XHP35.2 HI: 3.3 mm source, more lumens, less throw. ThruNite's TC15 V3 lists an XHP35.2 without saying HI or HD; its 2,400 lm / 223 m fits this HD part. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "sources": [
+    {
+     "label": "Cree portable LEDs",
+     "url": "https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "tldr": "Domed XHP35.2: more lumens than the HI, less throw.",
+   "cct_notes": []
+  },
+  {
+   "id": 102,
+   "name": "XHP70.3 HD",
+   "alts": [
+    "XHP70.3 HD"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "7070"
+   ],
+   "voltages": [
+    "3V",
+    "6V"
+   ],
+   "lm_lo": 4857.0,
+   "lm_hi": 6405.0,
+   "cri_min": 70,
+   "cri_max": 95,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>7070</code> · 3V / 6V (3V = &lt;70 CRI only)",
+   "lm_html": "4,857 lm @ 14.4 A / 7.2 A<br>6,405 lm @ 20.6 A / 10.3 A OD",
+   "cri_html": "70 / 80 / 90 / 95 (6V)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Domed 5.3 mm-source version of the XHP70.3: more lumens than the HI, much floodier. The usual pick for big 7070 flooders. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "sources": [
+    {
+     "label": "Cree portable LEDs",
+     "url": "https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": "Big flooders"
+   },
+   "tldr": "Domed 7070 for maximum lumens; very floody.",
+   "cct_notes": []
+  },
+  {
+   "id": 103,
+   "name": "XFLPNA / XFLMNA / XFLMNB / XFLSNA",
+   "alts": [
+    "XFLPNA",
+    "XFLMNA",
+    "XFLMNB",
+    "XFLSNA"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535",
+    "5050",
+    "7070"
+   ],
+   "voltages": [
+    "3V",
+    "6V"
+   ],
+   "lm_lo": 2058.0,
+   "lm_hi": 6853.0,
+   "cri_min": 60,
+   "cri_max": 70,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> (PNA) · <code>5050</code> (MNA, MNB) · <code>7070</code> (SNA) · 3V (MNA, SNA also 6V)",
+   "lm_html": "PNA 2,058 · MNB 3,154 · MNA 4,074 · SNA 6,853 lm",
+   "cri_html": "&lt;70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Cree's newer beam-distance XFL parts: XFLPNA 2,058 lm @ 6 A from a 2.6 mm source, XFLMNB 3,154 lm @ 9 A (3.5 mm), XFLMNA 4,074 lm @ 14 A / 7 A (2.9 mm), XFLSNA 6,853 lm @ 20 A / 10 A (3.9 mm). Domeless and cool white only. (<a href=\"https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf\" target=\"_blank\" rel=\"noopener\">Cree portable LEDs</a>).",
+   "sources": [
+    {
+     "label": "Cree portable LEDs",
+     "url": "https://downloads.cree-led.com/files/fs/XLamp-Portable-LEDs-Feature-Sheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "New; few lights yet"
+   },
+   "tldr": "Cree's newer domeless beam-distance XFL parts, 3535 to 7070.",
+   "cct_notes": []
+  },
+  {
+   "id": 104,
+   "name": "XQ-E",
+   "alts": [
+    "XQ-E"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "1616"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    1800,
+    2700,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [
+    "Blue",
+    "Green",
+    "Amber",
+    "Red"
+   ],
+   "basis": "datasheet",
+   "footprint_html": "<code>1.6 × 1.6 mm</code> · 3V",
+   "lm_html": "",
+   "cri_html": "70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Cree's smallest lighting-class LED, in high-density and high-intensity versions (1.5 A max). Also sold in royal blue, blue, cyan, green, PC lime, PC amber, red-orange and red, so it turns up as aux or colour channels in keychain and multi-channel lights. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XQE.pdf\" target=\"_blank\" rel=\"noopener\">Cree XQ-E datasheet</a>).",
+   "sources": [
+    {
+     "label": "Cree XQ-E datasheet",
+     "url": "https://downloads.cree-led.com/files/ds/x/XLamp-XQE.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Aux and colour channels"
+   },
+   "tldr": "Cree's tiny 1.6 mm LED, also in many colours.",
+   "cct_notes": []
+  },
+  {
+   "id": 105,
+   "name": "XD16",
+   "alts": [
+    "XD16"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "1616"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    2700,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5700,
+    6500,
+    7000
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>1.6 × 1.6 mm</code> · 3V (2 A max)",
+   "lm_html": "",
+   "cri_html": "70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Cree's 'Extreme Density' chip-scale LED on its NX platform: 2 A max, 135° viewing angle. Listed as the white LED of the Armytek Wizard C2 WUV. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XD16.pdf\" target=\"_blank\" rel=\"noopener\">Cree XD16 datasheet</a>).",
+   "sources": [
+    {
+     "label": "Cree XD16 datasheet",
+     "url": "https://downloads.cree-led.com/files/ds/x/XLamp-XD16.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "tldr": "Chip-scale 1.6 mm Cree LED, 2 A max.",
+   "cct_notes": []
+  },
+  {
+   "id": 106,
+   "name": "XP-E2",
+   "alts": [
+    "XP-E2"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    2700,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5700,
+    6500,
+    8000
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> · 3V (1.5 A max)",
+   "lm_html": "",
+   "cri_html": "70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Small-die domed classic (110° white). The white version is what budget and AAA lights use (Convoy's AAA lists a Cree XPE2 at 50–60 lm); the colour versions have their own card. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XPE2.pdf\" target=\"_blank\" rel=\"noopener\">Cree XP-E2 datasheet</a>, <a href=\"https://convoylight.com/products/aaa-flashlight-edc\" target=\"_blank\" rel=\"noopener\">Convoy AAA</a>).",
+   "sources": [
+    {
+     "label": "Cree XP-E2 datasheet",
+     "url": "https://downloads.cree-led.com/files/ds/x/XLamp-XPE2.pdf"
+    },
+    {
+     "label": "Convoy AAA",
+     "url": "https://convoylight.com/products/aaa-flashlight-edc"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "legacy",
+    "note": "Budget and AAA lights"
+   },
+   "tldr": "Small domed classic; white version for low-power lights.",
+   "cct_notes": []
+  },
+  {
+   "id": 107,
+   "name": "MK-R",
+   "alts": [
+    "MK-R"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "7070"
+   ],
+   "voltages": [
+    "12V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    2700,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000,
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": true,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>7070</code> · 12V",
+   "lm_html": "",
+   "cri_html": "70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Cree's first-generation 7 × 7 mm multi-die LED, the ancestor of the XHP70. Cree now points new designs to newer parts; it survives only in old builds. (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-MKR.pdf\" target=\"_blank\" rel=\"noopener\">Cree MK-R datasheet</a>).",
+   "sources": [
+    {
+     "label": "Cree MK-R datasheet",
+     "url": "https://downloads.cree-led.com/files/ds/x/XLamp-MKR.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "legacy",
+    "note": "Ancestor of the XHP70"
+   },
+   "tldr": "Cree's first 7070 multi-die, 12V.",
+   "cct_notes": []
+  },
+  {
+   "id": 108,
+   "name": "XHP35 (gen 1)",
+   "alts": [
+    "XHP35"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "12V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": true,
+   "colours": [],
+   "basis": "typical",
+   "footprint_html": "<code>3535</code> · 12V only",
+   "lm_html": "~1,300 lm (HI) · ~1,800 lm (HD)",
+   "cri_html": "70 – 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Original 12V-only XHP35 in HI (domeless) and HD (domed) versions, replaced by the 3V/6V XHP35.2. The HI was a 12V thrower favourite; the Nitecore HC33 still lists an XHP35 HD. (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://www.nitecore.com/product/hc33\" target=\"_blank\" rel=\"noopener\">Nitecore HC33</a>).",
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    },
+    {
+     "label": "Nitecore HC33",
+     "url": "https://www.nitecore.com/product/hc33"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "legacy",
+    "note": "12V only; replaced by the XHP35.2"
+   },
+   "tldr": "Original 12V XHP35 in HI and HD versions.",
+   "cct_notes": []
+  },
+  {
+   "id": 109,
+   "name": "XHP50 / XHP70 (gen 1)",
+   "alts": [
+    "XHP50",
+    "XHP70"
+   ],
+   "maker": "Cree",
+   "code": "",
+   "section": "3. Cree (Efficiency & Brute-Force Output)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050",
+    "7070"
+   ],
+   "voltages": [
+    "6V",
+    "12V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": true,
+   "colours": [],
+   "basis": "typical",
+   "footprint_html": "<code>5050</code> / <code>7070</code> · 6V / 12V",
+   "lm_html": "~1,800–2,500 lm (50) · ~3,000–4,000 lm (70)",
+   "cri_html": "70 – 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "First-generation domed multi-die XHPs, superseded by the .2 and .3 parts. Same footprints and voltages, so later parts drop in. Floody with a visible tint ring. (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "legacy",
+    "note": "Superseded by the .2 and .3 parts"
+   },
+   "tldr": "First-generation domed XHP50 / XHP70.",
+   "cct_notes": []
+  },
+  {
+   "id": 110,
+   "name": "SST-90",
+   "alts": [
+    "SST-90"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "large"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 4000.0,
+   "lm_hi": 4000.0,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "large-die package · 3V",
+   "lm_html": "up to 4,000 lm @ 18 A",
+   "cri_html": "~70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Monolithic 9 mm² die, 5700K or 6500K. The original big-die lumen part from the early 2010s; long replaced by SFT-90 / SBT90.2 but still in old searchlights. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-90 datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus SST-90 datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_SST-90-W_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "legacy",
+    "note": "Old big-die lumen part"
+   },
+   "tldr": "9 mm² Luminus die from the early 2010s searchlights.",
+   "cct_notes": []
+  },
+  {
+   "id": 111,
+   "name": "SBT-90 (gen 1)",
+   "alts": [
+    "SBT-90"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "large"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 2300.0,
+   "lm_hi": 2300.0,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "large-die package · 3V",
+   "lm_html": "up to 2,300 lm @ 13.5 A",
+   "cri_html": "~70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "First SBT-90: 9 mm² square emitter, 5700K or 6500K, also made in red (over 1,600 lm). The domeless thrower that SBT90.2 replaced. (<a href=\"https://download.luminus.com/datasheets/Luminus_SBT-90_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SBT-90 datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus SBT-90 datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_SBT-90_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "legacy",
+    "note": "Replaced by the SBT90.2"
+   },
+   "tldr": "The first big domeless Luminus thrower die.",
+   "cct_notes": []
+  },
+  {
+   "id": 112,
+   "name": "CBT-90",
+   "alts": [
+    "CBT-90"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "large"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 2250.0,
+   "lm_hi": 2250.0,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [
+    "Green",
+    "Blue"
+   ],
+   "basis": "datasheet",
+   "footprint_html": "large-die package · 3V",
+   "lm_html": "over 2,250 lm",
+   "cri_html": "~70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "9 mm² monolithic chip, 5700K / 6500K; green (over 1,800 lm) and blue versions exist. Projector-class part that turns up in a few searchlights. (<a href=\"https://download.luminus.com/datasheets/Luminus_CBT-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CBT-90 datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus CBT-90 datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_CBT-90-W_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Projector-class"
+   },
+   "tldr": "9 mm² Luminus die, also in green and blue.",
+   "cct_notes": []
+  },
+  {
+   "id": 113,
+   "name": "CFT-90",
+   "alts": [
+    "CFT-90"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "large"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 6500.0,
+   "lm_hi": 6500.0,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    5700,
+    6500,
+    7800
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "large-die package · 3V (27 A max)",
+   "lm_html": "over 6,500 lm @ 27 A",
+   "cri_html": "~70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Second-generation 9 mm² windowless specialty white: more peak lumens and current than the CBT-90. 5700K, 6500K or 7800K. (<a href=\"https://download.luminus.com/datasheets/Luminus_CFT-90-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CFT-90 datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus CFT-90 datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_CFT-90-W_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": "Projector-class"
+   },
+   "tldr": "Windowless 9 mm² die, over 6,500 lm at 27 A.",
+   "cct_notes": []
+  },
+  {
+   "id": 114,
+   "name": "CFT-50X",
+   "alts": [
+    "CFT-50X"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "large"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 4800.0,
+   "lm_hi": 4800.0,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "large-die package · 10 A CW (12.5 A pulsed)",
+   "lm_html": "over 4,800 lm",
+   "cri_html": "~70 (cool white)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "5 mm² windowless, electrically isolated cool white, designed for fibre coupling. Very high luminance for its size. (<a href=\"https://download.luminus.com/datasheets/Luminus_CFT-50X-WCS_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus CFT-50X datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus CFT-50X datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_CFT-50X-WCS_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "niche",
+    "note": "Fibre-coupling part"
+   },
+   "tldr": "5 mm² windowless cool white with very high luminance.",
+   "cct_notes": []
+  },
+  {
+   "id": 115,
+   "name": "SST-70X",
+   "alts": [
+    "SST-70X"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "6V",
+    "12V"
+   ],
+   "lm_lo": 3300.0,
+   "lm_hi": 3300.0,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>5050</code> · 6V / 12V",
+   "lm_html": "3,300+ lm @ 5.25 A (6V)",
+   "cri_html": "~70 (6500K)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Newer 6V/12V configurable SST-70 with up to 500 lm/mm² lumen density; 6500K only. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-70X-W_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-70X datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus SST-70X datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_SST-70X-W_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "tldr": "6V/12V configurable SST-70 successor, 6500K only.",
+   "cct_notes": []
+  },
+  {
+   "id": 116,
+   "name": "SST-20F / SST-36F",
+   "alts": [
+    "SST-20F",
+    "SST-36F"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 700.0,
+   "lm_hi": 741.0,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    2700,
+    3000,
+    4000,
+    5000,
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "20F: 700 lm @ 1.5 A (2.5 A max)<br>36F: 741 lm @ 1.5 A (3 A max)",
+   "cri_html": "~70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "F-Line flip-chip parts in a ceramic package, aimed at cost per lumen. SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20F-W-AH_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20F datasheet</a>, <a href=\"https://download.luminus.com/datasheets/Luminus_SST-36F-W-AL_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-36F datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus SST-20F datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_SST-20F-W-AH_Datasheet.pdf"
+    },
+    {
+     "label": "Luminus SST-36F datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_SST-36F-W-AL_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 2,
+   "rep": {
+    "t": "budget",
+    "note": "Cost-per-lumen flip chips"
+   },
+   "tldr": "Luminus F-Line flip chips in a ceramic 3535.",
+   "cct_notes": []
+  },
+  {
+   "id": 117,
+   "name": "SST-20V",
+   "alts": [
+    "SST-20V"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    5000,
+    5700
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code> · 3V (2 A max)",
+   "lm_html": "",
+   "cri_html": "70 / 80 / 90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "V-Line vertical-chip SST-20 with higher lumen density and a narrower emission angle than the original; high-CRI version in 5000K / 5700K. (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20V-WG_CRI90_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20V datasheet</a>).",
+   "sources": [
+    {
+     "label": "Luminus SST-20V datasheet",
+     "url": "https://download.luminus.com/datasheets/Luminus_SST-20V-WG_CRI90_Datasheet.pdf"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 3,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "tldr": "Vertical-chip SST-20 with more lumen density; 90 CRI option.",
+   "cct_notes": []
+  },
+  {
+   "id": 118,
+   "name": "757G / 757H",
+   "alts": [
+    "757G",
+    "757H"
+   ],
+   "maker": "Nichia",
+   "code": "",
+   "section": "1. Nichia (Color Accuracy & Tint Favorites)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3030"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 95,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "<code>3030</code> · 3V (~0.2 W class)",
+   "lm_html": "",
+   "cri_html": "70 – 95 (H6 series)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Nichia's 0.2 W mid-power 3030 family (NFSW757G / NFSW757H / NF2W757H). Not a flashlight main emitter, but common in lanterns and wide-angle work lights; the H6 series pairs Ra ≥ 95 with high efficacy. (<a href=\"https://led-ld.nichia.co.jp/en/product/lighting_757.html\" target=\"_blank\" rel=\"noopener\">Nichia 757</a>).",
+   "sources": [
+    {
+     "label": "Nichia 757",
+     "url": "https://led-ld.nichia.co.jp/en/product/lighting_757.html"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 1,
+   "rep": {
+    "t": "niche",
+    "note": "Lanterns and work lights"
+   },
+   "tldr": "Nichia's 0.2 W mid-power 3030, up to Ra 95.",
+   "cct_notes": []
+  },
+  {
+   "id": 119,
+   "name": "NCSU276A / 276C",
+   "alts": [
+    "NCSU276A",
+    "276C"
+   ],
+   "maker": "Nichia",
+   "code": "",
+   "section": "7. Specialty Emitters: UV, IR & Monochromatic",
+   "kind": "UV",
+   "type_label": "365 nm UV",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [
+    "UV"
+   ],
+   "basis": "typical",
+   "footprint_html": "<code>3535</code>",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "365 nm UV",
+   "notes_html": "Older, lower-power Nichia 365 nm part (276A, now 276C) behind the Convoy S2+ UV. Less output than the 233B but a clean 365 nm peak with little visible purple. (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>, <a href=\"https://convoylight.com/products/convoy-s2-black-uv-365nm-18650-flashlight-with-nichia-276a\" target=\"_blank\" rel=\"noopener\">Convoy S2+ UV</a>).",
+   "sources": [
+    {
+     "label": "Nichia UV-A",
+     "url": "https://led-ld.nichia.co.jp/en/product/uv_uva.html"
+    },
+    {
+     "label": "Convoy S2+ UV",
+     "url": "https://convoylight.com/products/convoy-s2-black-uv-365nm-18650-flashlight-with-nichia-276a"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "legacy",
+    "note": "Lower-power 365 nm"
+   },
+   "tldr": "Older Nichia 365 nm UV part (Convoy S2+ UV).",
+   "cct_notes": []
+  },
+  {
+   "id": 120,
+   "name": "NVSU119C",
+   "alts": [
+    "NVSU119C"
+   ],
+   "maker": "Nichia",
+   "code": "",
+   "section": "7. Specialty Emitters: UV, IR & Monochromatic",
+   "kind": "UV",
+   "type_label": "365 nm UV",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [
+    "UV"
+   ],
+   "basis": "datasheet",
+   "footprint_html": "<code>3535</code>",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "365 nm UV",
+   "notes_html": "Nichia's mid-power 365 nm UV-A emitter, a step below the 233B (1,450 mW). Listed alongside the 233B / 233C in Nichia's current UV-A range. (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>).",
+   "sources": [
+    {
+     "label": "Nichia UV-A",
+     "url": "https://led-ld.nichia.co.jp/en/product/uv_uva.html"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": ""
+   },
+   "tldr": "Nichia mid-power 365 nm UV-A.",
+   "cct_notes": []
+  },
+  {
+   "id": 121,
+   "name": "P8",
+   "alts": [
+    "P8"
+   ],
+   "maker": "Osram",
+   "code": "",
+   "section": "4. Osram (Dedicated Compact Throwers)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "not stated",
+   "lm_html": "~250 lm each (2 × P8 = 500 lm in the TINI2 SS)",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Nitecore's name for the Osram emitter in the TINI2 SS keychain light (2 × P8, 500 lm, 2,000 cd). Nitecore doesn't give the Osram order code. (<a href=\"https://www.nitecore.com/product/tini2Ss\" target=\"_blank\" rel=\"noopener\">Nitecore TINI2 SS</a>).",
+   "sources": [
+    {
+     "label": "Nitecore TINI2 SS",
+     "url": "https://www.nitecore.com/product/tini2Ss"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "oem",
+    "note": "Nitecore TINI2 SS"
+   },
+   "tldr": "Nitecore's name for the Osram LED in the TINI2 SS.",
+   "cct_notes": []
+  },
+  {
+   "id": 122,
+   "name": "UHi 25",
+   "alts": [
+    "UHi 25"
+   ],
+   "maker": "NiteLab",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "datasheet",
+   "footprint_html": "not stated (2.26 mm² light-emitting surface)",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "Nitecore's in-house thrower die: 2.26 mm² emitting surface, 4.7 SDCM colour tolerance, 6500K cool white (Nitecore EDC23 / EDC17 pages). Sits between UHi 20 and UHi 40. (<a href=\"https://www.nitecore.com/product/edc23\" target=\"_blank\" rel=\"noopener\">Nitecore EDC23</a>).",
+   "sources": [
+    {
+     "label": "Nitecore EDC23",
+     "url": "https://www.nitecore.com/product/edc23"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 4,
+   "rep": {
+    "t": "oem",
+    "note": "Nitecore in-house"
+   },
+   "tldr": "Nitecore thrower die, 2.26 mm², 6500K.",
+   "cct_notes": []
+  },
+  {
+   "id": 123,
+   "name": "M515S",
+   "alts": [
+    "M515S"
+   ],
+   "maker": "NiteLab",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "not stated",
+   "lm_html": "1,000 lm / 380 m in the MT1C Max",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "NiteLab array LED in the Nitecore P17iX / P27iX and MT1A / MT1C Max. Nitecore gives no CCT or CRI. (<a href=\"https://www.nitecore.com/product/mt1c_max\" target=\"_blank\" rel=\"noopener\">Nitecore MT1C Max</a>).",
+   "sources": [
+    {
+     "label": "Nitecore MT1C Max",
+     "url": "https://www.nitecore.com/product/mt1c_max"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "oem",
+    "note": "Nitecore in-house array"
+   },
+   "tldr": "NiteLab array LED in Nitecore's P-iX and MT Max lights.",
+   "cct_notes": []
+  },
+  {
+   "id": 124,
+   "name": "GT colour (red / green / blue)",
+   "alts": [
+    "GT colour"
+   ],
+   "maker": "Getian",
+   "code": "",
+   "section": "7. Specialty Emitters: UV, IR & Monochromatic",
+   "kind": "Colour",
+   "type_label": "Red / Green / Blue",
+   "footprints": [],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [
+    "Red",
+    "Green",
+    "Blue"
+   ],
+   "basis": "estimate",
+   "footprint_html": "on 20 mm MCPCB",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "Red / Green / Blue",
+   "notes_html": "Single-colour Getian emitters that Convoy sells in red, green and blue for its throwers (C8, L21B, M21-series, 3X21A). Buyers note a glass dome that cracks if the reflector is over-tightened; the green is a strong thrower. (<a href=\"https://convoylight.com/products/getian-gt-red-blue-green-light-led-with-20mm-mcpcb\" target=\"_blank\" rel=\"noopener\">Convoy Getian</a>).",
+   "sources": [
+    {
+     "label": "Convoy Getian",
+     "url": "https://convoylight.com/products/getian-gt-red-blue-green-light-led-with-20mm-mcpcb"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "budget",
+    "note": "Convoy colour option"
+   },
+   "tldr": "Getian single-colour throw LEDs with a fragile glass dome.",
+   "cct_notes": []
+  },
+  {
+   "id": 125,
+   "name": "LEP (laser-excited phosphor)",
+   "alts": [
+    "LEP"
+   ],
+   "maker": "Various",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "Laser-excited phosphor",
+   "footprints": [],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 60,
+   "cri_max": 70,
+   "ccts": [
+    5500,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "typical",
+   "footprint_html": "laser module",
+   "lm_html": "typically 300–1,000 lm",
+   "cri_html": "low (~60–70)",
+   "cri_label": "CRI",
+   "type_html": "Laser-excited phosphor",
+   "notes_html": "Not an LED: a blue laser hits a phosphor dot, giving a tiny, extremely bright source. Output is low but candela is huge (often 300,000–1,000,000+ cd), so the beam is a narrow searchlight with almost no spill. Usually cool white; some lights add green or red LEP. Treat the beam like a laser around eyes and aircraft. (<a href=\"https://www.firefly-outdoor.com/products/fireflylite-lep01-hunter-tactical-flashlight\" target=\"_blank\" rel=\"noopener\">FireflyLite LEP01</a>).",
+   "sources": [
+    {
+     "label": "FireflyLite LEP01",
+     "url": "https://www.firefly-outdoor.com/products/fireflylite-lep01-hunter-tactical-flashlight"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": 5,
+   "rep": {
+    "t": "niche",
+    "note": "Searchlight beam, almost no spill"
+   },
+   "tldr": "Laser-pumped phosphor: low lumens, enormous candela.",
+   "cct_notes": []
+  },
+  {
+   "id": 126,
+   "name": "UV 365 nm (part not stated)",
+   "alts": [
+    "UV 365 nm"
+   ],
+   "maker": "Various",
+   "code": "",
+   "section": "7. Specialty Emitters: UV, IR & Monochromatic",
+   "kind": "UV",
+   "type_label": "365 nm UV-A",
+   "footprints": [],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [
+    "UV"
+   ],
+   "basis": "typical",
+   "footprint_html": "varies",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "365 nm UV-A",
+   "notes_html": "For lights whose store page gives only '365 nm UV'. True 365 nm shows fluorescence with little visible purple, especially behind a ZWB2 filter; 395 nm parts are cheaper but wash scenes out in violet. Known named parts: Nichia 233B / 276A, Luminus SST-10-UV / SBT-10X-UV, Seoul CUN66A1B / CUN66A1G. Don't look into the beam. (<a href=\"https://led-ld.nichia.co.jp/en/product/uv_uva.html\" target=\"_blank\" rel=\"noopener\">Nichia UV-A</a>, <a href=\"https://convoylight.com/collections/for-uv-led\" target=\"_blank\" rel=\"noopener\">Convoy UV</a>).",
+   "sources": [
+    {
+     "label": "Nichia UV-A",
+     "url": "https://led-ld.nichia.co.jp/en/product/uv_uva.html"
+    },
+    {
+     "label": "Convoy UV",
+     "url": "https://convoylight.com/collections/for-uv-led"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": null,
+   "tldr": "Placeholder for lights that only say '365 nm UV'.",
+   "cct_notes": []
   }
  ]
 }
