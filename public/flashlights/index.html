@@ -297,6 +297,13 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .led .pr { font-size: 12px; font-weight: 600; white-space: nowrap; padding: 3px 7px; border-radius: 6px; background: var(--sunken); color: var(--ink-2); }
 .led .pr.incl { background: color-mix(in srgb, var(--ok) 14%, transparent); color: var(--ok); }
 .tchips { display: flex; flex-wrap: wrap; gap: 5px; }
+.tchips.boxed { display: grid; gap: 5px; width: fit-content; max-width: 100%; } /* boxes stretch to the widest one */
+.tchips.boxed > .tgc { justify-self: start; }
+.tgc { display: flex; flex-wrap: wrap; gap: 5px; min-width: 0; }
+.tgrp { display: flex; align-items: flex-start; gap: 8px; max-width: 100%; padding: 4px 8px 4px 10px; border: 1px solid var(--line-2); border-radius: 12px; }
+.tgrp.hi { border-color: color-mix(in srgb, var(--ok) 40%, transparent); background: color-mix(in srgb, var(--ok) 6%, transparent); }
+.glab { flex: none; width: 66px; white-space: nowrap; height: 25px; display: flex; align-items: center; font: 600 11px/1 var(--f-body); color: var(--muted); }
+.tgrp.hi .glab { color: var(--ok); }
 .tc { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 4px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); font-size: 12.5px; white-space: nowrap; }
 .tc .dot { width: 14px; height: 14px; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent); }
 .tc small { color: var(--muted); font-size: 11px; }
@@ -847,6 +854,21 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     return `<span class="tc"><span class="dot" style="background:${swatch(t)}"></span>${esc(label)}${showCri && t.cri ? " " + criTag({ lo: t.cri, hi: t.cri, src: "the store" }, true) : ""}${bits.length ? ` <small>${esc(bits.join(" · "))}</small>` : ""}</span>`;
   }
 
+  // White options sit in a box per CRI level ("70 CRI | chips"), so the CRI always lives in the same place;
+  // coloured options (Lime, Red...) have no CRI and stay outside the boxes.
+  function chipRows(mt, c) {
+    const wh = mt.filter(t => !t.colour), co = mt.filter(t => t.colour);
+    const row = ts => ts.length ? `<div class="tgc">${ts.map(t => tintChip(t, false)).join("")}</div>` : "";
+    if (!c || !wh.length) return { html: row(mt), boxed: false };
+    const box = (label, hi, ts) => `<div class="tgrp${hi ? " hi" : ""}"><span class="glab">${esc(label)} CRI</span>${row(ts)}</div>`;
+    let out;
+    if (c.perChip) {
+      const lv = [...new Set(wh.map(t => t.cri).filter(Boolean))].sort((a, b) => a - b);
+      out = lv.map(k => box(k, k >= 90, wh.filter(t => t.cri === k))).join("") + row(wh.filter(t => !t.cri));
+    } else out = box(criFmt(c.lo, c.hi), c.lo >= 90, wh);
+    return { html: out + row(co), boxed: out.includes('class="tgrp') };
+  }
+
   /* ---------- emitter reference (../leds/emitters.json): CRI, beam, uses, candela ---------- */
   let EM = null;
   const emCache = new Map(), normLed = s => String(s || "").replace(/\s*\(.*?\)/g, "").trim().toLowerCase();
@@ -1024,15 +1046,16 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       return `<div class="grp" data-g="${gi}" ${multi && gi ? "hidden" : ""}>${g.name && !multi ? `<h4>${esc(g.name)}</h4>` : ""}<div class="leds">${rows.map((l, i) => {
         const c = white(l) ? ledCri(l) : null, e = emOf(l.family), est = throwHere(e, r, l); // CRI means nothing for a coloured LED
         if (est) refl = est.refl;
-        const chips = mergedTints(l.tints).map(t => tintChip(t, c?.perChip)).join("");
+        const { html: chips, boxed } = chipRows(mergedTints(l.tints), c);
         const inf = LED_INFO.leds?.[l.family];
         const nm = `${l.qty ? `${l.qty}× ` : ""}<span class="fn">${esc(l.family)}</span>`;
         const mkr = makerOf(l, e), mk = mkr && mkr !== l.family ? `<small>${esc(mkr)}</small>` : "";
         const uses = e ? e.best_for.filter(b => b.tier === 1).slice(0, 2).map(b => `<span class="use">★ ${esc(b.goal)}</span>`).join("") : "";
-        const guide = e && (e.beam != null || est || uses) ? `<div class="lguide">${e.beam != null ? beamPill(e) : ""}${est ? `<span class="here" title="Estimated for this light's ~${est.refl} mm reflector">≈ ${kcd(est.cd)} cd · ${fmt(est.m)} m here</span>` : ""}${uses}</div>` : "";
+        const lmTxt = e?.lm_hi ? `<span class="here" title="Top of the output range per LED, from the Emitter Index">up to ${fmt(e.lm_hi)} lm</span>` : "";
+        const guide = e && (e.beam != null || est || uses || lmTxt) ? `<div class="lguide">${e.beam != null ? beamPill(e) : ""}${lmTxt}${est ? `<span class="here" title="Estimated for this light's ~${est.refl} mm reflector">≈ ${kcd(est.cd)} cd · ${fmt(est.m)} m here</span>` : ""}${uses}</div>` : "";
         return `<div class="led${xtra(l, i) ? " xtra" : ""}" data-fam="${esc(l.family)}">
-          <div class="fam">${inf ? `<button type="button" data-ledinfo aria-expanded="false" title="About this LED">${nm}<span class="i" aria-hidden="true">i</span></button>` : nm}${mk}${c || isTop(l) ? `<span class="ltags">${isTop(l) ? `<span class="tptag">★ Top pick</span>` : ""}${criTag(c)}</span>` : ""}</div>
-          <div class="tchips">${chips || `<span class="nolist">Tint not stated</span>`}</div>${priceTag(l.price)}${guide}${inf ? ledCard(inf) : ""}</div>`;
+          <div class="fam">${inf ? `<button type="button" data-ledinfo aria-expanded="false" title="About this LED">${nm}<span class="i" aria-hidden="true">i</span></button>` : nm}${mk}${(c && !boxed) || isTop(l) ? `<span class="ltags">${isTop(l) ? `<span class="tptag">★ Top pick</span>` : ""}${boxed ? "" : criTag(c)}</span>` : ""}</div>
+          <div class="tchips${boxed ? " boxed" : ""}">${chips || `<span class="nolist">Tint not stated</span>`}</div>${priceTag(l.price)}${guide}${inf ? ledCard(inf) : ""}</div>`;
       }).join("")}${nx ? `<button type="button" class="ledsmore" data-ledsmore="${nx}"><span class="lm-t">Show ${nx} more emitters</span><span class="lm-n">${rows.filter(xtra).map(l => esc(l.family)).join(", ")}</span></button>` : ""}</div></div>`;
     };
     // Multi-channel lights: one tab per channel instead of three near-identical lists.
