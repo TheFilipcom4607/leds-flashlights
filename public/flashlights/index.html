@@ -279,7 +279,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .ctabs button { padding: 6px 4px; }
 .grp h4 { margin: 0 0 8px; font: 600 12.5px/1 var(--f-body); color: var(--ink-2); }
 .leds { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.led { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; gap: 12px; padding: 10px 12px; align-items: start; }
+.led { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; gap: 0 12px; padding: 10px 12px; align-items: start; }
 .led + .led { border-top: 1px solid var(--line); }
 .lsort { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 12px 0 8px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
 .lsort .sel { padding: 6px 10px; font-size: 13px; }
@@ -292,7 +292,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .ledsmore::after { content: ""; grid-column: 2; grid-row: 1 / span 2; width: 8px; height: 8px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg) translate(-2px, -2px); }
 .leds.all .ledsmore::after { transform: rotate(-135deg) translate(-2px, -2px); }
 .leds.all .ledsmore .lm-n { display: none; }
-.led .fam { font-weight: 600; font-size: 13.5px; line-height: 1.3; }
+.led .fam { grid-row: 1 / span 2; font-weight: 600; font-size: 13.5px; line-height: 1.3; }
 .led .fam small { display: block; font-weight: 400; color: var(--muted); font-size: 11.5px; }
 .led .pr { font-size: 12px; font-weight: 600; white-space: nowrap; padding: 3px 7px; border-radius: 6px; background: var(--sunken); color: var(--ink-2); }
 .led .pr.incl { background: color-mix(in srgb, var(--ok) 14%, transparent); color: var(--ok); }
@@ -305,7 +305,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .crit.hi { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); border-color: color-mix(in srgb, var(--ok) 28%, transparent); }
 .crit.sm { font-size: 10px; padding: 2px 5px; }
 .ltags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
-.lguide { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; font-size: 12px; color: var(--muted); }
+.lguide { grid-column: 2 / -1; margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; font-size: 12px; color: var(--muted); }
 .lguide .here { color: var(--ink-2); font-weight: 500; }
 .lguide .use { color: var(--ink-2); }
 .beam { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
@@ -328,7 +328,7 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .fam button:focus-visible { outline: 2px solid var(--accent); }
 .fam .i { width: 15px; height: 15px; border-radius: 50%; display: inline-grid; place-items: center; font: 600 10px/1 var(--f-body); color: var(--accent); border: 1px solid var(--accent-line); background: var(--accent-soft); }
 .led.open .fam .i { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-.linfo { grid-column: 1 / -1; display: none; background: var(--sunken); border: 1px solid var(--line); border-radius: 9px; padding: 11px 12px; font-size: 12.5px; color: var(--ink-2); }
+.linfo { grid-column: 1 / -1; margin-top: 10px; display: none; background: var(--sunken); border: 1px solid var(--line); border-radius: 9px; padding: 11px 12px; font-size: 12.5px; color: var(--ink-2); }
 .led.open .linfo { display: grid; gap: 8px; }
 .linfo .lt { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
 .linfo .lt b { font-size: 13px; color: var(--ink); }
@@ -422,7 +422,8 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   .toolbar .sel { flex: 1; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .led { grid-template-columns: minmax(0, 1fr) auto; }
-  .led .tchips { grid-column: 1 / -1; grid-row: 2; }
+  .led .fam { grid-row: auto; }
+  .led .tchips { grid-column: 1 / -1; grid-row: 2; margin-top: 8px; }
   .lguide { grid-column: 1 / -1; }
   .goals { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -12px; padding: 0 12px; }
   .goal { padding: 8px 13px; }
