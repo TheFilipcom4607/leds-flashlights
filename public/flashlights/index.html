@@ -202,7 +202,6 @@ main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 
 .meta { color: var(--muted); font-size: 12.5px; margin-top: 2px; }
 .badge { display: inline-flex; align-items: center; gap: 4px; font: 600 10.5px/1 var(--f-body); padding: 3px 6px; border-radius: 5px; white-space: nowrap; letter-spacing: 0.01em; }
 .badge.and { color: var(--and); background: var(--and-bg); }
-.badge.sale { color: var(--accent); background: var(--accent-soft); }
 .badge.mc { color: var(--ink-2); background: var(--sunken); border: 1px solid var(--line); }
 .badge.ed { color: var(--accent-ink); background: var(--accent); }
 
@@ -222,7 +221,6 @@ main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 
 .meter { width: 64px; height: 3px; border-radius: 2px; background: var(--line); margin: 6px 0 0 auto; overflow: hidden; }
 .meter i { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
 .price { font: 600 15px/1.2 var(--f-body); white-space: nowrap; }
-.was { font-size: 11.5px; color: var(--faint); text-decoration: line-through; margin-right: 4px; }
 .empty { padding: 56px 20px; text-align: center; color: var(--muted); display: grid; gap: 12px; justify-items: center; }
 .empty b { color: var(--ink); font: 700 17px/1.2 var(--f-display); }
 
@@ -524,7 +522,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </div>
       <div id="rows"><div class="empty">Loading lights…</div></div>
     </div>
-    <footer>Specs come from each maker's store page, tidied into one format; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). A "was" price is shown only when it's less than double the current price; stores sometimes inflate it. Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Olight prices are its Nov 2026 sale prices; Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Always confirm options on the store page before ordering. Missing a light or spotted a mistake? <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=add-light.yml" target="_blank" rel="noopener">Add a light</a> or <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=fix.yml" target="_blank" rel="noopener">suggest a fix</a> (GitHub account needed). See <a href="https://github.com/TheFilipcom4607/leds-flashlights/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>.</footer>
+    <footer>Specs come from each maker's store page, tidied into one format; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Always confirm options on the store page before ordering. Missing a light or spotted a mistake? <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=add-light.yml" target="_blank" rel="noopener">Add a light</a> or <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=fix.yml" target="_blank" rel="noopener">suggest a fix</a> (GitHub account needed). See <a href="https://github.com/TheFilipcom4607/leds-flashlights/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>.</footer>
   </main>
 </div>
 
@@ -580,7 +578,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 
   /* ---------- filter model ---------- */
   const FEATS = [
-    ["sale", "On sale", r => !!r.regular],
     ["cri", "High CRI (90+)", r => r.cri_max >= 90],
     ["multi", "Multi-channel / tint ramping", r => r.multi_channel],
     ["usb", "Built-in USB charging", r => !!r.charging?.port],
@@ -690,7 +687,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   /* ---------- small renderers ---------- */
   let LM_MAX = 1, TH_MAX = 1;
   const meter = (v, lo, hi) => v ? `<div class="meter"><i style="width:${Math.max(5, Math.min(100, 100 * Math.log(v / lo) / Math.log(hi / lo))).toFixed(0)}%"></i></div>` : "";
-  const priceHtml = r => r.price == null ? `<span class="na">n/a</span>` : `<div class="price">${r.regular ? `<span class="was">${usd(r.regular)}</span>` : ""}${usd(r.price)}</div>${r.price_max ? `<div class="sub2">up to ${usd(r.price_max)}</div>` : ""}`;
+  const priceHtml = r => r.price == null ? `<span class="na">n/a</span>` : `<div class="price">${usd(r.price)}</div>${r.price_max ? `<div class="sub2">up to ${usd(r.price_max)}</div>` : ""}`;
   const badges = r => r.anduril ? `<span class="badge and">${esc(r.firmware || "Anduril 2")}</span>` : "";
   function tintDots(r, max = 9) {
     const ds = r.ccts.map(k => cct(k)).concat(r.ccts.length ? [] : r.tones_nocct.map(t => swatch({ tone: t })), r.colours.map(c => swatch({ colour: c })));
@@ -1094,14 +1091,14 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       <div class="dh">
         <div><div class="eyebrow">${esc(r.brand)}</div><h2 id="dtitle">${esc(r.model)}</h2>${r.variant ? `<div class="meta">${esc(r.variant)}</div>` : ""}</div>
         <div class="nav"><button class="iconbtn" type="button" data-act="prev" ${i <= 0 ? "disabled" : ""} aria-label="Previous light">${ICON.prev}</button><button class="iconbtn" type="button" data-act="next" ${i < 0 || i >= view.length - 1 ? "disabled" : ""} aria-label="Next light">${ICON.next}</button><button class="iconbtn" type="button" data-act="dclose" aria-label="Close">${ICON.close}</button></div>
-        <div class="badges">${edGoals(r._slug).length ? `<span class="badge ed" title="Chosen by hand">Editor's pick: ${esc(edGoals(r._slug).join(", "))}</span>` : ""}${badges(r)}${r.regular ? `<span class="badge sale">${Math.round(100 - 100 * r.price / r.regular)}% off</span>` : ""}${r.multi_channel ? `<span class="badge mc">Multi-channel</span>` : ""}${r.cri_max >= 90 ? `<span class="badge mc">High CRI</span>` : ""}</div>
+        <div class="badges">${edGoals(r._slug).length ? `<span class="badge ed" title="Chosen by hand">Editor's pick: ${esc(edGoals(r._slug).join(", "))}</span>` : ""}${badges(r)}${r.multi_channel ? `<span class="badge mc">Multi-channel</span>` : ""}${r.cri_max >= 90 ? `<span class="badge mc">High CRI</span>` : ""}</div>
       </div>
       <div class="db">
         <div class="stats">
           <div class="stat"><span>Output</span><b>${r.lumens ? fmt(r.lumens) + "<small>lm</small>" : "—"}</b><em>best option</em></div>
           <div class="stat"><span>Throw</span><b>${r.throw_m ? fmt(r.throw_m) + "<small>m</small>" : "—"}</b><em>${r.throw_m ? fmt((r.throw_m / 2) ** 2) + " cd" : "not stated"}</em></div>
           <div class="stat"><span>Weight</span><b>${r.weight_g ? fmt(r.weight_g) + "<small>g</small>" : "—"}</b><em>${r.size?.l ? r.size.l + " mm long" : "&nbsp;"}</em></div>
-          <div class="stat"><span>Price</span><b>${r.price != null ? usd(r.price) : "n/a"}</b><em>${r.price_max ? "up to " + usd(r.price_max) : r.regular ? "was " + usd(r.regular) : "&nbsp;"}</em></div>
+          <div class="stat"><span>Price</span><b>${r.price != null ? usd(r.price) : "n/a"}</b><em>${r.price_max ? "up to " + usd(r.price_max) : "&nbsp;"}</em></div>
         </div>
         <section class="sec"><h3>Emitters &amp; tints <small>${esc(cctRange(r))}</small></h3>${emittersHtml(r)}</section>
         <section class="sec"><h3>Specs</h3><dl class="spec">${specs.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl></section>
@@ -1268,7 +1265,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         if (x.colour && !pairs.some(p => p.led === l.family && p.c === colourKey(x.colour))) pairs.push({ led: l.family, c: colourKey(x.colour) });
       }))));
       const emitTxt = r.emitters.flatMap(g => g.tiers.flatMap(t => t.leds.flatMap(l => [l.family, l.maker, ...l.tints.map(x => [x.cct && x.cct + "k", x.colour, x.dome, x.cri && x.cri + "cri"].join(" "))]))).join(" ");
-      return { ...r, regular: r.regular && r.price < 0.5 * r.regular ? null : r.regular, _tones: [...tones], _bats: bats, _pairs: pairs, _colours: [...new Set(pairs.map(p => p.c))], _batn: CELLS.indexOf(r.battery.key) >= 0 ? CELLS.indexOf(r.battery.key) : 99,
+      return { ...r, _tones: [...tones], _bats: bats, _pairs: pairs, _colours: [...new Set(pairs.map(p => p.c))], _batn: CELLS.indexOf(r.battery.key) >= 0 ? CELLS.indexOf(r.battery.key) : 99,
         _name: `${r.brand} ${r.model} ${r.variant || ""}`.toLowerCase(), _slug: slug(r.brand, r.model, r.variant),
         _hay: [r.brand, r.model, r.variant, r.type, r.blurb, r.battery.label, r.firmware, r.driver, r.switch, r.charging?.label, r.aux, r.ip?.label, r.body_colours.join(" "), r.styles.join(" "), emitTxt,
           r.options.flatMap(o => o.items.map(i => i.name)).join(" "), r.anduril ? "anduril" : "", romanNums(`${r.model} ${r.variant || ""}`)].join(" ").toLowerCase() };
