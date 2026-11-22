@@ -281,6 +281,15 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .leds { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .led { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; gap: 12px; padding: 10px 12px; align-items: start; }
 .led + .led { border-top: 1px solid var(--line); }
+.leds:not(.all) .xtra { display: none; }
+.ledsmore { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 12px; align-items: center; width: 100%; padding: 12px 14px; border-top: 1px solid var(--line); background: var(--sunken); }
+.ledsmore:hover { background: var(--accent-soft); }
+.ledsmore:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.ledsmore .lm-t { color: var(--accent); font: 600 13.5px/1.3 var(--f-body); }
+.ledsmore .lm-n { grid-column: 1; color: var(--muted); font: 12px/1.3 var(--f-body); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ledsmore::after { content: ""; grid-column: 2; grid-row: 1 / span 2; width: 8px; height: 8px; border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(45deg) translate(-2px, -2px); }
+.leds.all .ledsmore::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.leds.all .ledsmore .lm-n { display: none; }
 .led .fam { font-weight: 600; font-size: 13.5px; line-height: 1.3; }
 .led .fam small { display: block; font-weight: 400; color: var(--muted); font-size: 11.5px; }
 .led .pr { font-size: 12px; font-weight: 600; white-space: nowrap; padding: 3px 7px; border-radius: 6px; background: var(--sunken); color: var(--ink-2); }
@@ -568,6 +577,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     ["usb", "Built-in USB charging", r => !!r.charging?.port],
     ["bank", "Powerbank", r => !!r.charging?.powerbank],
     ["aux", "Aux LEDs", r => !!r.aux],
+    ["zoom", "Zoomable / focusable beam", r => !!r.zoomable],
     ["wp", "Submersible (IPX8 / IP68)", r => !!r.ip?.submersible],
     ["incl", "Battery included", r => r.battery.included === true || r.battery.built_in],
   ];
@@ -989,7 +999,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const makerOf = (l, e) => e?.maker && e.maker !== "Various" && l.maker && !l.maker.toLowerCase().startsWith(e.maker.toLowerCase()) ? e.maker : l.maker;
     const grp = (g, gi) => {
       const rows = g.tiers.flatMap(t => t.leds.map(l => ({ ...l, price: t.price }))).sort((a, b) => isTop(b) - isTop(a));
-      return `<div class="grp" data-g="${gi}" ${multi && gi ? "hidden" : ""}>${g.name && !multi ? `<h4>${esc(g.name)}</h4>` : ""}<div class="leds">${rows.map(l => {
+      // Long lists (Convoy lights have up to 27) fold after the first few; LEDs picked in the sidebar stay visible.
+      const fold = rows.length > 6, xtra = (l, i) => fold && i >= 4 && !F.leds.has(l.family), nx = rows.filter((l, i) => xtra(l, i)).length;
+      return `<div class="grp" data-g="${gi}" ${multi && gi ? "hidden" : ""}>${g.name && !multi ? `<h4>${esc(g.name)}</h4>` : ""}<div class="leds">${rows.map((l, i) => {
         const c = white(l) ? ledCri(l) : null, e = emOf(l.family), est = throwHere(e, r, l); // CRI means nothing for a coloured LED
         if (est) refl = est.refl;
         const chips = mergedTints(l.tints).map(t => tintChip(t, c?.perChip)).join("");
@@ -998,10 +1010,10 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         const mkr = makerOf(l, e), mk = mkr && mkr !== l.family ? `<small>${esc(mkr)}</small>` : "";
         const uses = e ? e.best_for.filter(b => b.tier === 1).slice(0, 2).map(b => `<span class="use">★ ${esc(b.goal)}</span>`).join("") : "";
         const guide = e && (e.beam != null || est || uses) ? `<div class="lguide">${e.beam != null ? beamPill(e) : ""}${est ? `<span class="here" title="Estimated for this light's ~${est.refl} mm reflector">≈ ${kcd(est.cd)} cd · ${fmt(est.m)} m here</span>` : ""}${uses}</div>` : "";
-        return `<div class="led" data-fam="${esc(l.family)}">
+        return `<div class="led${xtra(l, i) ? " xtra" : ""}" data-fam="${esc(l.family)}">
           <div class="fam">${inf ? `<button type="button" data-ledinfo aria-expanded="false" title="About this LED">${nm}<span class="i" aria-hidden="true">i</span></button>` : nm}${mk}${c || isTop(l) ? `<span class="ltags">${isTop(l) ? `<span class="tptag">★ Top pick</span>` : ""}${criTag(c)}</span>` : ""}</div>
           <div class="tchips">${chips || `<span class="nolist">Tint not stated</span>`}</div>${priceTag(l.price)}${guide}${inf ? ledCard(inf) : ""}</div>`;
-      }).join("")}</div></div>`;
+      }).join("")}${nx ? `<button type="button" class="ledsmore" data-ledsmore="${nx}"><span class="lm-t">Show ${nx} more emitters</span><span class="lm-n">${rows.filter(xtra).map(l => esc(l.family)).join(", ")}</span></button>` : ""}</div></div>`;
     };
     // Multi-channel lights: one tab per channel instead of three near-identical lists.
     const tabs = multi ? `<div class="seg ctabs" role="tablist" style="grid-template-columns:repeat(${r.emitters.length},1fr)">${r.emitters.map((g, i) =>
@@ -1131,6 +1143,8 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (li) { const row = li.closest(".led"); row.classList.toggle("open"); li.setAttribute("aria-expanded", row.classList.contains("open")); return; }
     const mo = t.closest("[data-more]");
     if (mo) { const p = mo.previousElementSibling; p.classList.toggle("clamp"); mo.textContent = p.classList.contains("clamp") ? "Read more" : "Show less"; return; }
+    const lm = t.closest("[data-ledsmore]");
+    if (lm) { const all = lm.closest(".leds").classList.toggle("all"); lm.querySelector(".lm-t").textContent = all ? "Show fewer emitters" : `Show ${lm.dataset.ledsmore} more emitters`; return; }
     const lj = t.closest("[data-ledjump]");
     if (lj) { const row = [...document.querySelectorAll("#drawer .led[data-fam]")].find(x => x.dataset.fam === lj.dataset.ledjump); if (row) { const g = row.closest(".grp[hidden]"); if (g) document.querySelector(`#drawer [data-gtab="${g.dataset.g}"]`)?.click(); row.scrollIntoView({ block: "center", behavior: "smooth" }); row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 900); } return; }
     const pf = t.closest("[data-pref]");
