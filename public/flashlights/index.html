@@ -492,7 +492,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     <div class="active" id="active"></div>
     <div class="countrow"><div class="count" id="count" aria-live="polite"></div>
       <details class="howrank" id="howrank"><summary>How “Recommended” is ranked</summary>
-        <p><b>Editor's picks</b> come first and are labelled: a few lights chosen by hand for each quick-start goal (the Emisar D4KC overall). Everything else is ranked by points. Points for: LEDs the <a href="../leds/">Emitter Index</a> rates as staples or top picks (+2), a 90+ CRI option (+1), a choice of LEDs (up to +1), Anduril firmware (+1), built-in USB charging and submersible waterproofing (+0.5 each), and complete specs, meaning price, output, throw and weight all stated (up to +1). Mule (no-optic) builds, limited and special-metal editions of a model that also comes in aluminium, and colour/UV-only lights score lower, so the standard version represents the model. Each earlier light from the same brand costs 0.4 points, so no single store fills the top. Ties go to the cheaper light. Nobody pays for placement.</p></details></div>
+        <p><b>Editor's picks</b> come first and are labelled: five all-round lights chosen by hand (Emisar D4KC and D4V2, Convoy S21E, FireflyLite X4 Stellar, Wurkkos TS26) and a few more for each quick-start goal. Everything else is ranked by points. Points for: LEDs the <a href="../leds/">Emitter Index</a> rates as staples or top picks (+2), a 90+ CRI option (+1), a choice of LEDs (up to +1), Anduril firmware (+1), built-in USB charging and submersible waterproofing (+0.5 each), and complete specs, meaning price, output, throw and weight all stated (up to +1). Lights built for one job (throwers, floods, searchlights, headlamps, dive, laser/LEP, UV and bike lights) and oversize lights (head wider than 38 mm) lose 1.5, so the general list isn't full of specialists; the quick-start buttons find them. Mule (no-optic) builds, limited and special-metal editions of a model that also comes in aluminium, and colour/UV-only lights score lower, so the standard version represents the model. Each earlier light from the same brand costs 0.4 points, so no single store fills the top. Ties go to the cheaper light. Nobody pays for placement.</p></details></div>
     <div class="list" id="list">
       <div class="lh cols" role="presentation">
         <span></span>
@@ -868,6 +868,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     return { cd, m: 2 * Math.sqrt(cd), refl };
   }
   // The "Recommended" order. Every point is explained in the "How Recommended is ranked" note under the sort box; keep the two in step.
+  const SPECIALIST = new Set(["Thrower", "Searchlight", "Flood light", "Headlamp", "Dive light", "LEP", "UV light", "Bike light"]); // built for one job, so not general picks (head wider than 38 mm also counts: too big to pocket)
   function rankAll() {
     const base = r => `${r.brand}|${r.model.split(/\s+/)[0]}`; // "E07X Cannon Ti-Cu Limited" -> "E07X"
     const alu = new Set(data.filter(r => r.materials.includes("Aluminium")).map(base));
@@ -881,6 +882,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       if (r.charging?.port) s += 0.5;
       if (r.ip?.submersible) s += 0.5;
       s += ["price", "lumens", "throw_m", "weight_g"].filter(k => r[k] != null).length / 4;
+      if (SPECIALIST.has(r.form) || r.size?.head > 38) s -= 1.5;
       if (/mule/i.test(r.variant || "")) s -= 1.5;
       if ((!r.materials.includes("Aluminium") && alu.has(base(r))) || /\b(limited|special edition|edition)\b/i.test(`${r.model} ${r.variant || ""}`)) s -= 1;
       if (!r.ccts.length && !r.tones_nocct.length) s -= 1;
@@ -891,8 +893,8 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   // Editor's picks: chosen by hand and shown first, labelled, in the Recommended order. Keyed by quick-start
   // goal name ("" = no goal picked). Values are light IDs (see slug()); a pick is skipped if a filter hides it.
   const EDITOR = {
-    "": ["emisar-d4kc-standard-aluminium"],
-    "Everyday carry": ["emisar-d4kc-standard-aluminium", "wurkkos-ts26", "convoy-s21e"],
+    "": ["emisar-d4kc-standard-aluminium", "convoy-s21e", "fireflylite-x4-stellar-2025", "emisar-d4v2-standard-aluminium", "wurkkos-ts26"],
+    "Everyday carry": ["emisar-d4kc-standard-aluminium", "fireflylite-x4-stellar-2025", "wurkkos-ts26", "convoy-s21e"],
     "Long throw": ["noctigon-dm11-standard-aluminium", "noctigon-k1-standard-aluminium"],
     "Headlamp": ["skilhunt-h300-h300r", "fireflylite-l50-sol-reflector"],
     "Keychain": ["emisar-kc1-standard-aluminium", "rovyvon-aurora-a1-g4"],
