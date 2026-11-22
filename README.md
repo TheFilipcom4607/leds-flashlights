@@ -1,10 +1,11 @@
 # LED & flashlight indexes
 
-Static, dependency-free sites: the LED emitter index (`public/leds/`) and the
-flashlight index (`public/flashlights/`) are single-page apps over JSON data
-files. `leds/` fetches `flashlights/led_info.json` for cross-referencing and
-`flashlights/lights.clean.json` (lazily) for the "choosing for a flashlight"
-picker, so both directories must stay siblings inside `public/`.
+Static, dependency-free sites: the LED emitter index (`public/leds/`), the
+flashlight index (`public/flashlights/`) and the "Help me choose" recommender
+(`public/recommend/`) are single-page apps over JSON data files. `leds/` fetches
+`flashlights/led_info.json` for cross-referencing and `flashlights/lights.clean.json`
+(lazily) for each LED's "sold in" list; `recommend/` reads both data files. All
+directories must stay siblings inside `public/`.
 
 The JSON files in `public/` are the source of truth: edit them directly, then run
 `python3 tools/validate.py` (also run by GitHub on every push and pull request).

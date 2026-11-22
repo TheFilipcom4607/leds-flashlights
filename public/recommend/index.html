@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Help Me Choose</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #f6f6f5; --panel: #ffffff; --sunken: #f1f1ef; --ink: #18181a; --ink-2: #3c3c40; --muted: #6b6b72; --faint: #9a9aa1;
+  --line: #e4e4e2; --line-2: #d4d4d1; --accent: #c2650f; --accent-ink: #ffffff; --accent-soft: #fbefe2; --accent-line: #efc79c;
+  --ok: #2f7a4a; --shadow-sm: 0 1px 2px rgba(20, 20, 24, 0.06); --r: 12px;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111112; --panel: #19191b; --sunken: #141415; --ink: #eeeeef; --ink-2: #cfcfd3; --muted: #9c9ca4; --faint: #6e6e76;
+  --line: #2a2a2d; --line-2: #37373b; --accent: #f2a654; --accent-ink: #1d1206; --accent-soft: #2f2216; --accent-line: #6b4721;
+  --ok: #7fcf9b; --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4); color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111112; --panel: #19191b; --sunken: #141415; --ink: #eeeeef; --ink-2: #cfcfd3; --muted: #9c9ca4; --faint: #6e6e76;
+  --line: #2a2a2d; --line-2: #37373b; --accent: #f2a654; --accent-ink: #1d1206; --accent-soft: #2f2216; --accent-line: #6b4721;
+  --ok: #7fcf9b; --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4); color-scheme: dark }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 var(--f-body); font-variant-numeric: tabular-nums; }
+button, input, select { font: inherit; color: inherit; }
+button, input, select, a, summary, label { touch-action: manipulation; }
+a { color: var(--accent); text-underline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.na { color: var(--faint); }
+
+/* header */
+.top { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--panel); }
+.top::before { content: ""; position: absolute; inset: -40% auto auto -10%; width: 70%; height: 220%; pointer-events: none;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%); }
+.top .in { position: relative; max-width: 1100px; margin: 0 auto; padding: 26px max(20px, env(safe-area-inset-left)) 22px; }
+h1 { font: 800 clamp(26px, 3.4vw, 36px)/1 var(--f-display); letter-spacing: -0.02em; margin: 0 0 8px; display: flex; gap: 10px; align-items: center; }
+h1 svg { width: 0.9em; height: 0.9em; color: var(--accent); flex: none; }
+.sub { margin: 0; color: var(--muted); max-width: 64ch; }
+.idxnav { display: inline-flex; gap: 3px; padding: 3px; margin-bottom: 14px; background: var(--sunken); border: 1px solid var(--line); border-radius: 10px; font-size: 13px; font-weight: 600; }
+.idxnav a { padding: 6px 14px; border-radius: 7px; color: var(--muted); text-decoration: none; }
+.idxnav a:hover { color: var(--ink); }
+.idxnav a[aria-current] { background: var(--panel); color: var(--ink); box-shadow: var(--shadow-sm), 0 0 0 1px var(--line-2); }
+
+main { max-width: 1100px; margin: 0 auto; padding: 20px max(20px, env(safe-area-inset-left)) 64px; display: grid; gap: 16px; }
+.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 3px; background: var(--sunken); border: 1px solid var(--line); border-radius: 12px; }
+.tabs button { all: unset; cursor: pointer; text-align: center; padding: 10px 8px; border-radius: 9px; font-weight: 600; color: var(--muted); }
+.tabs button small { display: block; font-weight: 400; font-size: 11.5px; color: var(--faint); }
+.tabs button[aria-selected="true"] { background: var(--panel); color: var(--ink); box-shadow: var(--shadow-sm), 0 0 0 1px var(--line-2); }
+.tabs button:focus-visible { outline: 2px solid var(--accent); }
+@media (max-width: 600px) { .tabs button small { display: none; } }
+
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow-sm); padding: 16px 18px; }
+.q { display: grid; gap: 16px; }
+.q h2 { font: 700 12px/1 var(--f-display); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 8px; }
+.q h2 small { font: 400 12px/1 var(--f-body); letter-spacing: 0; text-transform: none; color: var(--faint); margin-left: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { all: unset; cursor: pointer; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--sunken); font-size: 13.5px; font-weight: 500; color: var(--ink-2); }
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); }
+.chip:focus-visible { outline: 2px solid var(--accent); }
+.qgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px 28px; }
+.hint { font-size: 12.5px; color: var(--muted); margin: 8px 0 0; }
+select, input[type="search"], input[type="number"] { border: 1px solid var(--line-2); background: var(--sunken); border-radius: 10px; padding: 9px 12px; font-size: 16px; width: 100%; }
+select:focus, input[type="search"]:focus, input[type="number"]:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.rng { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; }
+.rng input { accent-color: var(--accent); width: 100%; }
+.rng output { font-weight: 600; min-width: 56px; text-align: right; }
+
+.rh { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; }
+.rh h2 { font: 700 18px/1.2 var(--f-display); margin: 0; }
+.rh span { color: var(--muted); font-size: 13px; }
+.results { display: grid; gap: 10px; }
+.res { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 4px 14px; align-items: start; padding: 14px 16px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); text-decoration: none; color: inherit; box-shadow: var(--shadow-sm); }
+.res:hover { border-color: var(--accent); }
+.res .no { font: 800 20px/1.2 var(--f-display); color: var(--accent); }
+.res:first-child { border-color: var(--accent-line); background: color-mix(in srgb, var(--accent-soft) 45%, var(--panel)); }
+.res b { font: 700 16px/1.25 var(--f-display); }
+.res .var { color: var(--muted); font-weight: 400; font-size: 13px; }
+.res .pr { font-weight: 700; white-space: nowrap; }
+.res .spec { grid-column: 2 / -1; color: var(--muted); font-size: 13px; }
+.more-fit { margin-top: 14px; } .more-fit > summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.res .spec b { color: var(--ink); font-weight: 600; }
+.res .why { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px; }
+.tag { display: inline-flex; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; background: var(--accent-soft); color: var(--ink); border: 1px solid var(--accent-line); }
+.tag.plain { background: var(--sunken); border-color: var(--line); font-weight: 500; color: var(--ink-2); }
+.tag.warn { background: color-mix(in srgb, #d6453d 16%, transparent); border-color: color-mix(in srgb, #d6453d 45%, transparent); }
+.tag.star { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.empty { padding: 28px; text-align: center; color: var(--muted); border: 1px dashed var(--line-2); border-radius: var(--r); }
+.more { all: unset; cursor: pointer; color: var(--accent); font-weight: 600; padding: 4px 0; }
+
+/* LED rows */
+.dots { display: inline-flex; gap: 2px; vertical-align: middle; }
+.dot { width: 11px; height: 11px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18); }
+.hgrp { margin-top: 14px; }
+.hgrp h4 { margin: 0 0 6px; font: 700 13px/1.2 var(--f-display); }
+.hgrp h4 small { font: 400 12px/1 var(--f-body); color: var(--muted); margin-left: 8px; }
+.hopt { display: grid; grid-template-columns: minmax(110px, 1.2fr) minmax(130px, 1.5fr) 84px 110px 100px 70px; gap: 4px 12px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); text-decoration: none; color: inherit; margin-bottom: 6px; }
+.hopt:hover { border-color: var(--accent); }
+.hopt.top { border-color: var(--accent-line); background: color-mix(in srgb, var(--accent-soft) 45%, var(--panel)); }
+.hopt b { display: block; font-weight: 600; }
+.hopt small { display: block; color: var(--muted); font-size: 12px; }
+.ho-t small { color: var(--faint); }
+.ho-p { text-align: right; font-weight: 600; }
+.range { font-size: 12.5px; color: var(--muted); margin-left: 6px; }
+.crit { font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+.crit.hi { color: var(--ok); }
+.beam { display: inline-flex; flex-direction: column; gap: 2px; }
+.beam i { display: inline-flex; gap: 2px; font-style: normal; }
+.beam i b { display: block; width: 8px; height: 5px; border-radius: 2px; background: var(--line-2); }
+.beam i b.on { background: var(--accent); }
+.beam em { font-style: normal; font-size: 12px; color: var(--muted); }
+@media (max-width: 760px) {
+  .hopt { grid-template-columns: minmax(0, 1fr) auto auto; }
+  .hopt .ho-tint { grid-column: 1 / -1; order: 5; } .hopt .ho-t { display: none; }
+}
+.hhead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+.hhead .hn b { font: 700 17px/1.2 var(--f-display); display: block; }
+.hhead .hn span { color: var(--muted); font-size: 13px; }
+.btn { display: inline-flex; align-items: center; padding: 7px 13px; border-radius: 9px; border: 1px solid var(--line-2); background: var(--sunken); text-decoration: none; color: var(--ink); font-weight: 500; cursor: pointer; font-size: 13.5px; }
+.btn:hover { border-color: var(--accent); }
+.prefseg { display: inline-flex; gap: 3px; padding: 3px; background: var(--sunken); border: 1px solid var(--line); border-radius: 10px; }
+.prefseg button { all: unset; cursor: pointer; padding: 6px 12px; border-radius: 7px; font-size: 13px; font-weight: 500; color: var(--muted); }
+.prefseg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: var(--shadow-sm), 0 0 0 1px var(--line-2); }
+.tpick { display: grid; gap: 8px; margin: 14px 0 4px; }
+.tp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; font-weight: 600; }
+.tp-card { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 12px 14px; border: 1px solid var(--accent-line); border-radius: 10px; background: color-mix(in srgb, var(--accent-soft) 45%, var(--panel)); text-decoration: none; color: inherit; }
+.tp-card:hover { border-color: var(--accent); }
+.tp-star { font: 700 11px/1.2 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-right: 8px; }
+.tp-card b { font: 700 17px/1.2 var(--f-display); }
+.tp-card small { color: var(--muted); margin-left: 8px; }
+.tp-why { grid-column: 1 / -1; font-size: 12.5px; color: var(--ink-2); }
+.hnote { color: var(--muted); font-size: 12.5px; margin: 10px 0 0; }
+.build .res { grid-template-columns: 30px minmax(0, 1fr); }
+.build .res .spec b { font: inherit; font-weight: 600; color: var(--ink-2); }
+.build .tl { grid-column: 2; font-size: 13px; color: var(--ink-2); }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <nav class="idxnav" aria-label="Pages"><a href="../flashlights/">Flashlights</a><a href="../leds/">LEDs</a><a href="./" aria-current="page">Help me choose</a></nav>
+  <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>Help me choose</h1>
+  <p class="sub">Don't know what light to buy? Already have one and need to pick its LED? Building your own? Answer a few questions and get a short list, with the reason for each pick.</p>
+</div></header>
+
+<main>
+  <div class="tabs" role="tablist" aria-label="What do you need?">
+    <button type="button" role="tab" data-tab="light" aria-selected="true">Find a light<small>I don't know what to buy</small></button>
+    <button type="button" role="tab" data-tab="led" aria-selected="false">LED for a light<small>I have one in mind</small></button>
+    <button type="button" role="tab" data-tab="build" aria-selected="false">Build a light<small>I need an emitter</small></button>
+  </div>
+  <section id="p-light" role="tabpanel"></section>
+  <section id="p-led" role="tabpanel" hidden></section>
+  <section id="p-build" role="tabpanel" hidden></section>
+</main>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const fmt = n => Math.round(n).toLocaleString("en-US");
+  const kcd = n => n >= 1e6 ? (n / 1e6).toFixed(1) + "M" : Math.round(n / 1000) + "k";
+  const REF_MM = 37.5;
+  const BEAM_NAMES = ["", "Flood", "Floody", "Balanced", "Throwy", "Pencil"];
+  const BEAM_DESC = ["", "wall of light, no real hotspot", "wide, even light", "hotspot with usable spill", "punchy hotspot", "razor-thin pencil beam"];
+  const slug = (...p) => p.filter(Boolean).join(" ").toLowerCase().replace(/&/g, " and ").replace(/\+/g, " plus ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const usd = n => "$" + (n % 1 ? n.toFixed(2) : n);
+  const clamp01 = v => Math.min(1, Math.max(0, v));
+  function cct(k) { // colour temperature -> sRGB (Tanner Helland approximation)
+    const t = k / 100; let r, g, b;
+    r = t <= 66 ? 255 : 329.7 * Math.pow(t - 60, -0.1332);
+    g = t <= 66 ? 99.47 * Math.log(t) - 161.1 : 288.1 * Math.pow(t - 60, -0.0755);
+    b = t >= 66 ? 255 : (t <= 19 ? 0 : 138.5 * Math.log(t - 10) - 305.0);
+    const c = v => Math.max(0, Math.min(255, Math.round(v)));
+    return `rgb(${c(r)},${c(g)},${c(b)})`;
+  }
+  const dotsOf = ks => `<span class="dots">${ks.map(k => `<span class="dot" style="background:${cct(k)}"></span>`).join("")}</span>`;
+  const cctRange = ks => !ks.length ? "" : ks.length > 1 ? `${ks[0]}–${ks[ks.length - 1]}K` : `${ks[0]}K`;
+  const strip = h => String(h || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+
+  let lights = [], E = [], byId = new Map(), idOf = () => null, uses = [];
+  const params = new URLSearchParams(location.search);
+  let pref = "balanced";
+  try { pref = localStorage.getItem("led-pref") || "balanced"; } catch (e) {}
+  const PREFS = [["output", "Max output", "Most lumens; CRI doesn't matter"], ["balanced", "Balanced", "The usual expert pick for this kind of light"], ["colour", "Best colour", "Highest CRI; lumens matter less"]];
+  if (!PREFS.some(p => p[0] === pref)) pref = "balanced";
+  const setPref = v => { pref = v; try { localStorage.setItem("led-pref", v); } catch (e) {} };
+  const prefSeg = () => `<div class="prefseg" role="group" aria-label="What matters most">${PREFS.map(([v, l, h]) => `<button type="button" data-pref="${v}" aria-pressed="${pref === v}" title="${h}">${l}</button>`).join("")}</div>`;
+  const chips = (key, opts, sel, multi) => `<div class="chips" data-q="${key}">${opts.map(([v, l]) => `<button type="button" class="chip" data-v="${esc(v)}" aria-pressed="${multi ? sel.has(v) : sel === v}">${esc(l)}</button>`).join("")}</div>`;
+
+  /* ================= 1. Find a light ================= */
+  const USE = [["", "Anything"], ["edc", "Everyday carry"], ["key", "Keychain / tiny"], ["throw", "Long throw"], ["head", "Headlamp"], ["flood", "Lots of light (flood)"]];
+  const USE_STYLES = { edc: ["EDC"], key: ["Keychain"], throw: ["Thrower"], head: ["Headlamp"], flood: ["Flood", "Big & bright"] };
+  const USE_DEFAULT = { throw: ["throw"], key: ["small", "bright"], flood: ["bright"] }; // what to lean on when no priority is ticked
+  // The hand-picked lists from EDITOR in flashlights/index.html (keep in step). A pick that fits the question gets a bonus.
+  const EDITOR = {
+    "": ["emisar-d4kc-standard-aluminium"],
+    "Everyday carry": ["emisar-d4kc-standard-aluminium", "wurkkos-ts26", "convoy-s21e"],
+    "Long throw": ["noctigon-dm11-standard-aluminium", "noctigon-k1-standard-aluminium"],
+    "Headlamp": ["skilhunt-h300-h300r", "sofirn-hs21"],
+    "Keychain": ["emisar-kc1-standard-aluminium", "rovyvon-aurora-a1-g4"],
+    "High CRI": ["emisar-d4v2-standard-aluminium", "convoy-s21e"],
+    "Brightest": ["sofirn-sp36-pro"],
+    "Under $30": ["convoy-s21e", "convoy-h2"],
+    "Anduril": ["emisar-d4kc-standard-aluminium", "emisar-d3aa-standard-aluminium"],
+  };
+  const EDITOR_USE = { edc: "Everyday carry", key: "Keychain", throw: "Long throw", head: "Headlamp", flood: "Brightest" };
+  function editorSlugs() {
+    const g = [];
+    if (EDITOR_USE[S1.use]) g.push(EDITOR_USE[S1.use]);
+    if (S1.budget && +S1.budget <= 30) g.push("Under $30");
+    if (S1.prio.has("colour")) g.push("High CRI");
+    if (S1.must.has("and")) g.push("Anduril");
+    return new Set((g.length ? g : [""]).flatMap(k => EDITOR[k] || []));
+  }
+  const BUDGET = [["", "Any"], ["30", "Under $30"], ["60", "Under $60"], ["120", "Under $120"]];
+  const PRIO = [["colour", "Colour quality"], ["bright", "Brightness"], ["throw", "Reach"], ["small", "Small & light"]];
+  const MUST = [["usb", "USB charging"], ["wp", "Submersible"], ["and", "Anduril firmware"]];
+  const MUSTF = { usb: l => !!l.charging?.port, wp: l => !!l.ip?.submersible, and: l => !!l.anduril };
+  const S1 = { use: "", budget: "", prio: new Set(), must: new Set(), oos: true };
+
+  function baseScore(l) { // how good a representative of its model this listing is, independent of what the user asked for
+    let s = 0;
+    const es = l.led_families.map(f => byId.get(idOf(f))).filter(Boolean);
+    if (es.some(e => e.rep?.t === "staple" || e.best_for.some(b => b.tier === 1))) s += 1.5;
+    s += ["price", "lumens", "throw_m", "weight_g"].filter(k => l[k] != null).length / 4;
+    s += Math.min(l.led_families.length, 4) / 8;
+    if (/mule/i.test(l.variant || "")) s -= 1.5;
+    if (/\b(limited|special edition|edition)\b/i.test(`${l.model} ${l.variant || ""}`)) s -= 1;
+    if (!l.ccts.length && !l.tones_nocct.length) s -= 1;
+    return s;
+  }
+  function findLights() {
+    const st = USE_STYLES[S1.use], budget = +S1.budget || null;
+    const pool = lights.filter(l => {
+      if (st && !(l.styles || []).some(x => st.includes(x))) return false;
+      if (budget && !(l.price != null && l.price <= budget)) return false;
+      if (S1.oos && l.stock?.status === "out") return false;
+      for (const m of S1.must) if (!MUSTF[m](l)) return false;
+      return true;
+    });
+    const prios = S1.prio.size ? [...S1.prio] : (USE_DEFAULT[S1.use] || []);
+    // Absolute scores that stop rewarding past a sensible point, so an 80,000 lm searchlight doesn't beat a 12,000 lm
+    // light just for being bigger, and an 8 g light doesn't beat a 12 g one that's ten times brighter.
+    const lg = (v, lo, hi) => clamp01(Math.log(v / lo) / Math.log(hi / lo));
+    const PS = {
+      colour: l => l.cri_max >= 90 ? 1 : l.cri_max >= 80 ? 0.5 : l.cri_max ? 0.1 : 0.2,
+      bright: l => l.lumens == null ? 0.2 : lg(l.lumens, 300, 10000),
+      throw: l => l.throw_m == null ? 0.2 : lg(l.throw_m, 50, 1000),
+      small: l => l.weight_g == null ? 0.2 : 1 - lg(l.weight_g, 10, 250),
+    };
+    const ed = editorSlugs();
+    pool.forEach(l => {
+      l._ed = ed.has(slug(l.brand, l.model, l.variant));
+      const cost = l.price == null ? 0.5 : lg(l.price, 15, 300); // cheaper wins ties, and expensive needs to earn it
+      const dim = l.lumens != null && l.lumens < 300 && S1.use !== "key"; // under 300 lm is a specialist light, not a general pick
+      l._s = baseScore(l) + prios.reduce((a, p) => a + 4 * PS[p](l), 0) - 0.6 * cost - (dim ? 1 : 0) + (l._ed ? 0.8 : 0); // a nudge between close calls, never enough to override what was asked for
+    });
+    const left = pool.slice().sort((a, b) => b._s - a._s || (a.price ?? 1e9) - (b.price ?? 1e9)), seen = {}, out = [];
+    while (left.length) { // each earlier pick from the same brand costs 0.4, so one store can't fill the list
+      let bi = 0, bv = -Infinity;
+      for (let i = 0; i < left.length; i++) { const v = left[i]._s - 0.4 * (seen[left[i].brand] || 0); if (v > bv) { bv = v; bi = i; } if (left[i]._s < bv) break; }
+      const r = left.splice(bi, 1)[0]; seen[r.brand] = (seen[r.brand] || 0) + 1; out.push(r);
+    }
+    return { out, prios, total: pool.length };
+  }
+  // The specs the user said matter are bold; CRI isn't in the spec line, so it gets a tag.
+  function specLine(l, prios) {
+    const hi = (p, s) => prios.includes(p) ? `<b>${esc(s)}</b>` : esc(s);
+    return [l.battery?.label !== "Other" && esc(l.battery?.label), l.lumens && hi("bright", `${fmt(l.lumens)} lm`), l.throw_m && hi("throw", `${fmt(l.throw_m)} m throw`),
+      l.weight_g && hi("small", `${fmt(l.weight_g)} g`), l.charging?.port && esc(l.charging.label)].filter(Boolean).join(" · ");
+  }
+  function whyTags(l, prios) {
+    const t = [];
+    if (prios.includes("colour") && l.cri_max) t.push(`${l.cri_max}${l.cri_max >= 90 ? "+" : ""} CRI`);
+    for (const m of S1.must) t.push(MUST.find(x => x[0] === m)[1]);
+    return (l._ed ? `<span class="tag star" title="Hand-picked on the Flashlight Index for this kind of question">Editor's pick</span>` : "") + t.map(x => `<span class="tag">${esc(x)}</span>`).join("");
+  }
+  let showAll1 = false;
+  function renderLight() {
+    const q = $("#p-light");
+    {
+      q.innerHTML = `<div class="card q">
+        <div><h2>What's it for?</h2>${chips("use", USE, S1.use)}</div>
+        <div class="qgrid">
+          <div><h2>Budget</h2>${chips("budget", BUDGET, S1.budget)}</div>
+          <div><h2>What matters most <small>pick up to two</small></h2>${chips("prio", PRIO, S1.prio, true)}</div>
+        </div>
+        <div><h2>Must have <small>optional</small></h2>${chips("must", MUST, S1.must, true)}<p class="hint"><label><input type="checkbox" id="oos"${S1.oos ? " checked" : ""}> Hide lights that are out of stock</label></p></div>
+      </div><div id="r1" style="margin-top:16px"></div>`;
+    }
+    const { out, prios, total } = findLights(), list = showAll1 ? out.slice(0, 30) : out.slice(0, 5);
+    const prioNote = prios.length ? `Ranked for ${prios.map(p => PRIO.find(x => x[0] === p)[1].toLowerCase()).join(" and ")}.` : "Ranked by overall quality: well-regarded LEDs, complete specs, standard versions.";
+    $("#r1").innerHTML = total ? `<div class="rh"><h2>Your short list</h2><span>${fmt(total)} light${total === 1 ? "" : "s"} match. ${prioNote}</span></div>
+      <div class="results" style="margin-top:10px">${list.map((l, i) => `<a class="res" href="../flashlights/?light=${slug(l.brand, l.model, l.variant)}">
+        <span class="no">${i + 1}</span><span><b>${esc(l.brand)} ${esc(l.model)}</b> ${l.variant ? `<span class="var">${esc(l.variant)}</span>` : ""}</span><span class="pr">${l.price != null ? esc(usd(l.price)) : `<span class="na">n/a</span>`}</span>
+        <span class="spec">${specLine(l, prios)}</span><span class="why">${whyTags(l, prios)}</span></a>`).join("")}</div>
+      ${out.length > 5 ? `<p><button type="button" class="more" data-act="more1">${showAll1 ? "Show fewer" : `Show ${Math.min(out.length, 30) - 5} more`}</button></p>` : ""}`
+      : `<div class="empty"><b>Nothing matches all of that.</b><br>Loosen the budget or drop a must-have.</div>`;
+  }
+
+  /* ================= 2. LED for a light (moved from the Emitter Index) ================= */
+  const BUCKETS = [["colour", "Best colour", "90+ CRI, natural-looking colours"], ["throw", "Throw", "tight hotspot, long reach"], ["round", "All-round", "hotspot with useful spill"], ["flood", "Output & flood", "wide beam, lots of light"]];
+  const criFmt = (lo, hi) => lo === 65 && hi === 65 ? "<70" : lo === hi ? `${lo}` : `${lo}–${hi}`;
+  const criTag = c => c ? `<span class="crit${c.lo >= 90 ? " hi" : ""}" title="CRI (Ra), from ${c.src}">${criFmt(c.lo, c.hi)} CRI</span>` : "";
+  function optCri(e, tints) { // the store's CRI when it states one, else this index's figure
+    const got = tints.map(t => t.cri).filter(v => v != null);
+    if (got.length) return { lo: Math.min(...got), hi: Math.max(...got), src: "the store", store: true };
+    return e.cri_max != null ? { lo: e.cri_min ?? e.cri_max, hi: e.cri_max, src: "this index" } : null;
+  }
+  // Rough candela in a given light: the 35–40 mm reflector figure scaled by reflector area (reflector ≈ head Ø − 4 mm).
+  function throwIn(e, l, tints = []) {
+    if (!e?.candela?.length || !l?.size?.head || (l.led_count || 1) > 1 || l.styles.includes("Headlamp")) return null;
+    const domes = tints.map(t => t.dome).filter(Boolean), dedome = domes.length && domes.every(d => d === "dedomed");
+    const c = e.candela.find(x => x.label === (dedome ? "dedomed" : "domed")) || e.candela[0];
+    const refl = Math.max(10, l.size.head - 4), cd = (c.cd_lo + c.cd_hi) / 2 * (refl / REF_MM) ** 2;
+    return { cd, m: 2 * Math.sqrt(cd), refl };
+  }
+  function hostOpts(l) { // emitter id -> { tints, price, fam } for the options this light is sold with
+    const m = new Map();
+    l.emitters.forEach(g => g.tiers.forEach(t => t.leds.forEach(x => {
+      const id = idOf(x.family); if (id == null) return;
+      const o = m.get(id) || { tints: [], price: null, fam: x.family };
+      o.tints.push(...x.tints);
+      const p = x.price || t.price;
+      if (p && (!o.price || p.kind === "incl" || (o.price.kind !== "incl" && p.amount != null && (o.price.amount == null || p.amount < o.price.amount)))) o.price = p;
+      m.set(id, o);
+    })));
+    return m;
+  }
+  const priceText = p => !p ? "" : p.kind === "incl" ? "Included" : `${p.kind === "add" ? "+" : "from "}$${p.amount % 1 ? p.amount.toFixed(2) : p.amount}`;
+  function bucketOf(e, c) {
+    if (c && (c.store ? c.hi >= 90 : c.lo >= 90)) return "colour";
+    if (e.beam != null && e.beam >= 4) return "throw";
+    if ((e.lm_hi || 0) >= 3000 || (e.beam != null && e.beam <= 2)) return "flood";
+    return "round";
+  }
+  function lightGoal(l) { // which "best for" list in the Emitter Index fits this light
+    const n = l.led_count || 1, t = `${l.type || ""} ${l.model}`.toLowerCase();
+    if (l.styles.includes("Headlamp")) return "Headlamp, camping & close work";
+    if ((n >= 3 && n <= 4) || /\b(triple|quad)\b/.test(t)) return "Triples & quads";
+    if (l.styles.includes("Keychain") || ["AAA", "AA", "10180", "10280", "10300", "10440", "14500"].includes(l.battery?.key)) return "Tiny EDC";
+    if (l.styles.includes("Thrower")) return "Balanced thrower";
+    if (n > 4) return "Lumen monster";
+    return "EDC / all-rounder";
+  }
+  const REP_SCORE = { staple: 0.4, budget: 0.2, legacy: -1.5 };
+  const REP_LABEL = { staple: "Staple", budget: "Budget pick", niche: "Niche", legacy: "Legacy", oem: "Brand OEM" };
+  const repTag = e => e.rep ? `<span class="tag${e.rep.t === "legacy" ? " warn" : " plain"}"${e.rep.note ? ` title="${esc(e.rep.note)}"` : ""}>${REP_LABEL[e.rep.t]}</span>` : "";
+  // Score an emitter under the current preference. t = expert tier points for the goal; shared by tabs 2 and 3.
+  function ledScore(e, goal, cri) {
+    const tier = (e.best_for.find(b => b.goal === goal) || {}).tier, t = tier === 1 ? 2 : tier === 2 ? 1 : 0;
+    const eff = cri ? (cri.store ? cri.hi : cri.lo) : null, c = eff == null ? 0 : clamp01((eff - 75) / 20);
+    const lm = e.lm_hi ? (e.lm_lo + e.lm_hi) / 2 : null, m = lm ? clamp01(Math.log(lm / 500) / Math.log(12)) : null;
+    // The index's reputation flag counts too: with no goal picked there are no tiers, and a "legacy" LED
+    // that others have outcompeted shouldn't win on raw CRI or lumens.
+    const r = REP_SCORE[e.rep?.t] ?? 0;
+    const s = (pref === "output" ? 3 * (m ?? 0.2) + 0.1 * t : pref === "colour" ? 5 * c + 0.3 * t + 0.2 * (m ?? 0.25) : 2 * t + c + 0.5 * (m ?? 0.5)) + r;
+    return { s, tier, lm };
+  }
+  function topPick(l, opts) {
+    const goal = lightGoal(l);
+    const scored = opts.filter(o => o.e && o.e.kind === "White").map(o => ({ ...o, ...ledScore(o.e, goal, o.cri) })).sort((a, b) => b.s - a.s);
+    if (!scored.length) return null;
+    const p = scored[0];
+    const bits = { tier: p.tier === 1 && `Emitter Index top pick for ${goal.toLowerCase()}`, cri: p.cri && `${criFmt(p.cri.lo, p.cri.hi)} CRI`, lm: p.lm && `≈ ${fmt(p.lm)} lm per LED` };
+    const order = pref === "output" ? ["lm", "cri", "tier"] : pref === "colour" ? ["cri", "tier", "lm"] : ["tier", "cri", "lm"];
+    return { pick: p, why: order.map(k => bits[k]).filter(Boolean).join(" · "), goal };
+  }
+  const ledHref = e => `../leds/?led=${encodeURIComponent(e.name)}`;
+  const beamPill = e => `<span class="beam" title="Beam: ${BEAM_NAMES[e.beam]} — ${BEAM_DESC[e.beam]}"><i>${Array.from({ length: 5 }, (_, i) => `<b${i < e.beam ? ' class="on"' : ""}></b>`).join("")}</i><em>${BEAM_NAMES[e.beam]}</em></span>`;
+  const findLight = s => {
+    const q = String(s || "").trim().toLowerCase(); if (!q) return null;
+    return lights.find(l => l._name === q) || lights.find(l => l._name.startsWith(q)) || lights.find(l => l._name.includes(q)) || null;
+  };
+  const TRY = ["emisar d4v2", "convoy s21e", "wurkkos ts21", "sofirn sp36 pro", "convoy m21b"];
+  let host = null;
+  function hostRow(e, o, top) {
+    const tints = [...new Set(o.tints.map(t => t.cct).filter(Boolean))].sort((a, b) => a - b);
+    const ks = tints.length ? tints : e.ccts;
+    return `<a class="hopt${top ? " top" : ""}" href="${ledHref(e)}">
+      <span><b>${esc(e.name)}${top ? ` <span class="tag star">★ Top pick</span>` : ""}</b><small>${esc(e.maker)} ${repTag(e)}</small></span>
+      <span class="ho-tint">${dotsOf(ks.length > 9 ? ks.filter((_, i) => i % Math.ceil(ks.length / 9) === 0) : ks)}<span class="range">${cctRange(ks)}</span></span>
+      <span>${criTag(o.cri) || `<span class="na">—</span>`}</span>
+      <span>${e.beam != null ? beamPill(e) : `<span class="na">—</span>`}</span>
+      <span class="ho-t">${o.est ? `≈ ${fmt(o.est.m)} m<small>${kcd(o.est.cd)} cd here</small>` : `<span class="na">—</span>`}</span>
+      <span class="ho-p">${esc(priceText(o.price)) || `<span class="na">—</span>`}</span></a>`;
+  }
+  function renderLed(err) {
+    const el = $("#p-led");
+    if (!host) {
+      const tries = TRY.map(findLight).filter(Boolean);
+      el.innerHTML = `<div class="card"><input type="search" id="hostq" list="hostlist" placeholder="Type a flashlight, e.g. Emisar D4K or Skilhunt H300" aria-label="Pick a flashlight" autocomplete="off"><datalist id="hostlist">${lights.map(l => `<option value="${esc(l._name)}">`).join("")}</datalist>
+        ${tries.length ? `<p class="hint">Try ${tries.map(l => `<button type="button" class="chip" data-hostpick="${esc(l._name)}">${esc(l.brand)} ${esc(l.model)}</button>`).join(" ")}</p>` : ""}
+        <p class="hnote">See only the LEDs that light is sold with: what each costs, its colour quality, its beam and roughly how far it throws in that light.${err ? ` <b>${esc(err)}</b>` : ""}</p></div>`;
+      return;
+    }
+    const l = host.l, matched = [...host.opts].filter(([id]) => byId.has(id));
+    const tp = matched.length >= 2 ? topPick(l, matched.map(([id, o]) => ({ id, e: byId.get(id), cri: o.cri, price: o.price }))) : null;
+    const pickHtml = tp ? `<div class="tpick"><div class="tp-head"><span>What matters most to you?</span>${prefSeg()}</div>
+      <a class="tp-card" href="${ledHref(tp.pick.e)}"><span><span class="tp-star">★ Top pick</span><b>${esc(tp.pick.e.name)}</b><small>${esc(tp.pick.e.maker)}</small></span><span class="pr">${esc(priceText(tp.pick.price))}</span><span class="tp-why">${esc(tp.why)}</span></a></div>` : "";
+    const groups = BUCKETS.map(([b, label, hint]) => {
+      const rows = matched.filter(([, o]) => o.bucket === b);
+      if (!rows.length) return "";
+      const key = b === "colour" ? ([, o]) => -(o.cri?.hi || 0) : b === "throw" ? ([, o]) => -(o.est?.cd || 0) : ([id]) => -(byId.get(id).lm_hi || 0);
+      rows.sort((x, y) => key(x) - key(y));
+      return `<div class="hgrp"><h4>${label}<small>${hint}</small></h4>${rows.map(([id, o]) => hostRow(byId.get(id), o, id === tp?.pick.id)).join("")}</div>`;
+    }).join("");
+    const meta = [l.variant, l.battery?.label, l.type, l.size?.head ? `Ø${l.size.head} mm head` : ""].filter(Boolean).map(esc).join(" · ");
+    const missing = l.led_families.length - new Set(matched.map(([, o]) => o.fam)).size;
+    const est = matched.find(([, o]) => o.est);
+    el.innerHTML = `<div class="card"><div class="hhead"><div class="hn"><b>${esc(l.brand)} ${esc(l.model)}</b><span>${meta}</span></div>
+        <div><a class="btn" href="../flashlights/?light=${slug(l.brand, l.model, l.variant)}">Details</a> <button class="btn" type="button" data-act="hostclear">Change light</button></div></div>
+      ${pickHtml}${groups || `<p class="hnote">None of this light's LED options are in the index yet.</p>`}
+      <p class="hnote">${matched.length} LED option${matched.length === 1 ? "" : "s"}${missing > 0 ? ` (${missing} more not in the index)` : ""}. ${est ? `Throw “here” scales the typical 35–40 mm figure to this light's ~${est[1].est.refl} mm reflector: a ballpark for comparing options (±50%).` : "No throw estimate: this light has several LEDs, a headlamp optic or no stated head size."} Click an LED for its full page.</p></div>`;
+  }
+  function setHost(label) {
+    const l = findLight(label);
+    if (!l) { host = null; renderLed(`No light matches “${label}”.`); return; }
+    const opts = hostOpts(l);
+    opts.forEach((o, id) => { const e = byId.get(id); if (!e) return; o.cri = optCri(e, o.tints); o.est = throwIn(e, l, o.tints); o.bucket = bucketOf(e, o.cri); });
+    host = { l, opts }; renderLed();
+    const p = new URLSearchParams(location.search); p.set("tab", "led"); p.set("for", l._name); history.replaceState(null, "", "?" + p);
+  }
+
+  /* ================= 3. Build a light ================= */
+  const S3 = { goal: "", fp: "", volt: "", mm: REF_MM, n: 1, amps: "" };
+  let showAll3 = false;
+  // Current each LED sees when the driver's output is shared equally (emitters wired in parallel, the usual way for 3V LEDs).
+  const perLed = () => { const a = parseFloat(S3.amps); return a > 0 ? a / S3.n : null; };
+  const fmtA = a => (Math.round(a * 10) / 10).toString();
+  function buildList() {
+    const g = S3.goal, f = e => (!S3.fp || e.footprints.includes(S3.fp)) && (!S3.volt || e.voltages.includes(S3.volt)) && !e.unavailable, a = perLed();
+    const mk = e => ({ e, over: a != null && e.max_a != null && a > e.max_a, ...ledScore(e, g, e.cri_max != null ? { lo: e.cri_min ?? e.cri_max, hi: e.cri_max } : null) });
+    const cmp = (x, y) => (x.over - y.over) || y.s - x.s; // LEDs that would be driven past their rating go last
+    const fit = E.filter(f), rated = g ? fit.filter(e => e._tier[g]) : fit.filter(e => e.kind === "White");
+    // Not tiered for this goal by the Emitter Index, but they fit the footprint and voltage: still worth seeing (e.g. a quad of 5050s).
+    // Only for white-light goals (not UV, IR or coloured ones), judged by the goal itself rather than by what survived the filters.
+    const others = g && E.some(x => x._tier[g] && x.kind === "White") ? fit.filter(e => !e._tier[g] && e.kind === "White").map(mk).sort(cmp) : [];
+    return { list: rated.map(mk).sort(cmp), others };
+  }
+  function throwAt(e) {
+    if (!e.candela?.length) return "";
+    const k = (S3.mm / REF_MM) ** 2;
+    return e.candela.slice(0, 2).map(c => { const cd = (c.cd_lo + c.cd_hi) / 2 * k; return `${c.label ? esc(c.label) + " " : ""}≈ ${fmt(2 * Math.sqrt(cd))} m`; }).join(" · ");
+  }
+  function renderBuild() {
+    const el = $("#p-build");
+    const fps = [...new Set(E.flatMap(e => e.footprints))].sort(), volts = ["3V", "6V", "9V", "12V"].filter(v => E.some(e => e.voltages.includes(v)));
+    if (!el.firstChild) {
+      el.classList.add("build");
+      el.innerHTML = `<div class="card q">
+        <div><h2>What is it for?</h2><select id="b-goal" aria-label="Goal"><option value="">Any white LED</option>${uses.map(u => `<option value="${esc(u.goal)}">${esc(u.goal)}${u.hint ? ` — ${esc(u.hint)}` : ""}</option>`).join("")}</select></div>
+        <div class="qgrid">
+          <div><h2>LED footprint <small>the board you're soldering to</small></h2><select id="b-fp" aria-label="Footprint"><option value="">Any</option>${fps.map(v => `<option>${esc(v)}</option>`).join("")}</select></div>
+          <div><h2>Voltage <small>match your driver</small></h2><select id="b-volt" aria-label="Voltage"><option value="">Any</option>${volts.map(v => `<option>${esc(v)}</option>`).join("")}</select></div>
+          <div><h2>Emitters <small>how many on the board</small></h2><select id="b-n" aria-label="Number of emitters">${[1, 2, 3, 4, 6, 9].map(v => `<option>${v}</option>`).join("")}</select></div>
+          <div><h2>Driver output <small>amps, optional</small></h2><input type="number" id="b-amps" min="0" step="0.5" inputmode="decimal" placeholder="e.g. 20.5" aria-label="Driver output current in amps"></div>
+          <div><h2>Reflector Ø <small>for the throw estimate</small></h2><div class="rng"><input type="range" id="b-mm" min="15" max="90" step="1" value="${S3.mm}" aria-label="Reflector diameter in mm"><output id="b-mmo">${S3.mm} mm</output></div></div>
+          <div><h2>What matters most?</h2><div id="b-pref">${prefSeg()}</div></div>
+        </div></div><div id="r3" style="margin-top:16px"></div>`;
+    }
+    const { list: all, others } = buildList(), list = showAll3 ? all.slice(0, 40) : all.slice(0, 6), pa = perLed(), rated = all.filter(x => x.e.max_a != null).length;
+    $("#b-pref").innerHTML = prefSeg();
+    const hint = (uses.find(u => u.goal === S3.goal) || {}).hint;
+    const goalWhy = [...new Set(E.map(e => e.best_for.find(b => b.goal === S3.goal)?.why_html).filter(Boolean).map(strip))][0]; // the Emitter Index's one-line reason for this goal
+    const row = ({ e, tier, over }, i) => {
+      const cur = pa == null ? "" : e.max_a == null ? `<span class="tag plain" title="No rated maximum on file: check the datasheet for your exact part and bin">No rating on file</span>`
+        : over ? `<span class="tag warn">Over its ${fmtA(e.max_a)} A rating</span>` : `<span class="tag plain">Within its ${fmtA(e.max_a)} A rating</span>`;
+      const why = e.tldr || "", th = throwAt(e), ks = e.ccts;
+      const lm = e.lm_hi ? (e.lm_lo === e.lm_hi ? `${fmt(e.lm_lo)} lm` : `${fmt(e.lm_lo)}–${fmt(e.lm_hi)} lm`) : "";
+      return `<a class="res" href="${ledHref(e)}"><span class="no">${i + 1}</span>
+        <span><b>${esc(e.maker && e.maker !== "Various" ? e.maker + " " : "")}${esc(e.name)}</b> ${tier === 1 ? `<span class="tag star">Top pick</span>` : tier === 2 ? `<span class="tag">Also good</span>` : ""} ${repTag(e)} ${e.r9080 ? `<span class="tag plain">R9080</span>` : ""}${e.rosy ? ` <span class="tag plain">Rosy</span>` : ""} ${cur}</span>
+        <span class="spec" style="grid-column:2">${[e.footprints.join(", "), e.voltages.join(" / "), lm, e.cri_max ? `${e.cri_min && e.cri_min !== e.cri_max ? e.cri_min + "–" : ""}${e.cri_max} CRI` : ""].filter(Boolean).map(esc).join(" · ")}${ks.length ? ` · ${dotsOf(ks.length > 9 ? ks.filter((_, j) => j % Math.ceil(ks.length / 9) === 0) : ks)} <span class="range">${cctRange(ks)}</span>` : ""}</span>
+        ${th ? `<span class="tl">Throw in a Ø${S3.mm} mm reflector: <b>${th}</b></span>` : ""}
+        ${why ? `<span class="tl" style="color:var(--muted)">${esc(why)}${why.endsWith(".") ? "" : "."}</span>` : ""}</a>`;
+    };
+    const otherHtml = others.length ? `<details class="more-fit"${all.length < 3 ? " open" : ""}><summary>${others.length} more LED${others.length === 1 ? "" : "s"} fit${others.length === 1 ? "s" : ""} but aren't rated for this goal</summary>
+      <div class="results" style="margin-top:10px">${others.slice(0, 15).map(row).join("")}</div></details>` : "";
+    $("#r3").innerHTML = all.length || others.length ? `<div class="rh"><h2>${S3.goal ? esc(S3.goal) : "Best white LEDs"}</h2><span>${all.length} rated for this${S3.fp ? ` on ${esc(S3.fp)}` : ""}${S3.volt ? ` at ${esc(S3.volt)}` : ""}.${hint ? ` Typical host: ${esc(hint)}.` : ""}</span></div>
+      ${goalWhy ? `<p class="hint">${esc(goalWhy)}${goalWhy.endsWith(".") ? "" : "."}</p>` : ""}${pa != null ? `<p class="hint"><b>${fmtA(+S3.amps)} A across ${S3.n} emitter${S3.n === 1 ? "" : "s"} = ${fmtA(pa)} A each</b>, assuming they share the driver in parallel. LEDs that would run past their rating are moved to the end. ${rated} of ${all.length} here have a rating on file.</p>` : ""}
+      ${all.length ? `<div class="results" style="margin-top:10px">${list.map(row).join("")}</div>` : `<p class="hint">Nothing is rated for this goal on that footprint and voltage.</p>`}
+      ${all.length > 6 ? `<p><button type="button" class="more" data-act="more3">${showAll3 ? "Show fewer" : `Show ${Math.min(all.length, 40) - 6} more`}</button></p>` : ""}
+      ${otherHtml}
+      <p class="hnote">Voltage has to match your build: 3V LEDs suit a single emitter or parallel wiring; 6V and 12V versions are wired in series and need a driver that can supply that. Throw is a ballpark from typical 35–40 mm figures scaled by reflector area (±50%).</p>`
+      : `<div class="empty"><b>No LED fits that combination.</b><br>Try another footprint or voltage.</div>`;
+  }
+
+  /* ================= wiring ================= */
+  function showTab(t) {
+    if (!["light", "led", "build"].includes(t)) t = "light";
+    document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === t));
+    ["light", "led", "build"].forEach(k => $("#p-" + k).hidden = k !== t);
+    if (t === "light") renderLight(); else if (t === "led") { if (!$("#p-led").firstChild || !host) renderLed(); } else renderBuild();
+    const p = new URLSearchParams(location.search); p.set("tab", t); if (t !== "led") p.delete("for");
+    else if (host) p.set("for", host.l._name);
+    history.replaceState(null, "", "?" + p);
+  }
+  document.addEventListener("click", ev => {
+    const t = ev.target;
+    const tab = t.closest("[data-tab]"); if (tab) { showTab(tab.dataset.tab); return; }
+    const pf = t.closest("[data-pref]"); if (pf) { setPref(pf.dataset.pref); if (!$("#p-led").hidden) renderLed(); if (!$("#p-build").hidden) renderBuild(); return; }
+    const hp = t.closest("[data-hostpick]"); if (hp) { setHost(hp.dataset.hostpick); return; }
+    const act = t.closest("[data-act]")?.dataset.act;
+    if (act === "hostclear") { host = null; const p = new URLSearchParams(location.search); p.delete("for"); history.replaceState(null, "", "?" + p); renderLed(); return; }
+    if (act === "more1") { showAll1 = !showAll1; renderLight(); return; }
+    if (act === "more3") { showAll3 = !showAll3; renderBuild(); return; }
+    const c = t.closest(".chip[data-v]"); if (!c) return;
+    const k = c.parentElement.dataset.q, v = c.dataset.v;
+    if (k === "use" || k === "budget") S1[k] = v;
+    else if (k === "must") S1.must.has(v) ? S1.must.delete(v) : S1.must.add(v);
+    else if (k === "prio") { if (S1.prio.has(v)) S1.prio.delete(v); else { if (S1.prio.size >= 2) S1.prio.delete([...S1.prio][0]); S1.prio.add(v); } }
+    showAll1 = false; renderLight(); // rebuilds the chips, so put focus back on the one that was pressed
+    document.querySelector(`#p-light [data-q="${k}"] [data-v="${CSS.escape(v)}"]`)?.focus();
+  });
+  document.addEventListener("input", ev => {
+    const t = ev.target;
+    if (t.id === "b-amps") { S3.amps = t.value; renderBuild(); }
+    else if (t.id === "b-mm") { S3.mm = +t.value; $("#b-mmo").textContent = `${S3.mm} mm`; renderBuild(); }
+    else if (t.id === "hostq") { const v = t.value.trim().toLowerCase(), l = lights.find(x => x._name === v); if (l) setHost(l._name); }
+  });
+  document.addEventListener("change", ev => {
+    const t = ev.target;
+    if (t.id === "oos") { S1.oos = t.checked; renderLight(); return; }
+    const m = { "b-goal": "goal", "b-fp": "fp", "b-volt": "volt", "b-n": "n" }[t.id];
+    if (m) { S3[m] = m === "n" ? +t.value : t.value; showAll3 = false; renderBuild(); }
+    else if (t.id === "hostq") setHost(t.value);
+  });
+
+  fetch("../flashlights/lights.clean.json").then(r => r.json()).then(async rows => {
+    const doc = await fetch("../leds/emitters.json").then(r => r.json());
+    lights = rows.map(r => ({ ...r, styles: r.styles || [], _name: `${r.brand} ${r.model} ${r.variant || ""}`.trim().toLowerCase() }));
+    E = doc.emitters.map(e => ({ ...e, _tier: Object.fromEntries(e.best_for.map(b => [b.goal, b.tier])) }));
+    byId = new Map(E.map(e => [e.id, e])); uses = doc.uses || [];
+    const norm = s => s.replace(/\s*\(.*?\)/g, "").trim().toLowerCase(), cache = new Map();
+    idOf = t => { if (!cache.has(t)) {
+      const n = norm(t); // exact name first, then alias, then paren-stripped fuzzy, so "XP-E2" doesn't collide with "XP-E2 (colour)"
+      const e = E.find(e => e.name === t) || E.find(e => e.alts.includes(t)) || E.find(e => norm(e.name) === n || e.alts.some(a => norm(a) === n) || norm(`${e.maker} ${e.name}`) === n);
+      cache.set(t, e ? e.id : null);
+    } return cache.get(t); };
+    const wantFor = params.get("for");
+    showTab(wantFor ? "led" : params.get("tab"));
+    if (wantFor) setHost(wantFor);
+  }).catch(err => {
+    console.error(err);
+    $("#p-light").innerHTML = `<div class="empty"><b>The data didn't load</b><br>Open this page through a local web server (run <code>python3 -m http.server</code> in the public folder), then reload.</div>`;
+  });
+})();
+</script>
+</body>
+</html>

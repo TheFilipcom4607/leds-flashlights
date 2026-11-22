@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Emitter Index</title>
+<script>{ const f = new URLSearchParams(location.search).get("for"); if (f) location.replace("../recommend/?for=" + encodeURIComponent(f)); }</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -431,7 +432,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 .srcs a { font-size: 12.5px; padding: 4px 9px; border-radius: 7px; background: var(--sunken); border: 1px solid var(--line); text-decoration: none; }
 .srcs a:hover { border-color: var(--accent-line); }
 
-/* ---------- decisions: verdict, reputation, beam, tint notes, host picker ---------- */
+/* ---------- decisions: verdict, reputation, beam, tint notes ---------- */
 .tldr { color: var(--muted); font-size: 12px; line-height: 1.35; margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .badge.staple { color: var(--ok); background: color-mix(in srgb, var(--ok) 13%, transparent); }
 .badge.legacy { color: var(--warn); background: var(--warn-bg); }
@@ -449,53 +450,10 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
 .peer { all: unset; cursor: pointer; font-weight: 700; color: var(--accent); border-bottom: 1px dashed var(--accent-line); }
 .peer:hover { border-bottom-style: solid; }
 .peer:focus-visible { outline: 2px solid var(--accent); }
-/* choosing for a flashlight */
-.hostpick { position: relative; }
-.hostpick svg { position: absolute; left: 12px; top: 50%; translate: 0 -50%; width: 16px; height: 16px; color: var(--faint); pointer-events: none; }
-.hostpick input { width: 100%; border: 1px solid var(--line-2); background: var(--sunken); border-radius: 10px; padding: 10px 12px 10px 36px; font-size: 16px; }
-.hostpick input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
-.htry { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 10px; font-size: 12.5px; color: var(--muted); }
 .hchip { all: unset; cursor: pointer; display: inline-flex; gap: 7px; align-items: baseline; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--panel); font-size: 13px; font-weight: 600; color: var(--ink); }
 .hchip small { font: 500 11px/1 var(--f-body); color: var(--muted); }
 .hchip:hover { border-color: var(--accent); }
 .hchip:focus-visible { outline: 2px solid var(--accent); }
-.host { display: grid; gap: 14px; container: host / inline-size; }
-.hhead { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; padding: 12px 14px; border-radius: 10px; background: var(--sunken); border: 1px solid var(--line); }
-.hhead .hn { min-width: 0; }
-.hhead .hn b { display: block; font: 800 20px/1.15 var(--f-display); letter-spacing: -0.01em; }
-.hhead .hn span { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
-.hacts { display: flex; gap: 8px; flex-wrap: wrap; }
-.hacts .btn { padding: 8px 12px; font-size: 13px; }
-.hgrp h4 { margin: 0 0 6px; display: flex; gap: 8px; align-items: baseline; font: 700 11.5px/1.2 var(--f-display); letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-2); }
-.hgrp h4 small { font: 400 12px var(--f-body); letter-spacing: 0; text-transform: none; color: var(--muted); }
-.hopts { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.hopt { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: grid; grid-template-columns: minmax(96px, 1.1fr) minmax(130px, 1.7fr) 82px 104px 86px 84px; gap: 6px 12px; align-items: center; padding: 9px 12px; font-size: 13px; }
-.hopt + .hopt { border-top: 1px solid var(--line); }
-.hopt:hover { background: var(--sunken); }
-.hopt:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.hopt .ho-n b { display: block; font-size: 14px; }
-.hopt .ho-n small { display: block; color: var(--muted); font-size: 11.5px; }
-.hopt .strip .range { font-size: 12px; }
-.hopt .ho-t { font-weight: 500; white-space: nowrap; }
-.hopt .ho-t small { display: block; font-weight: 400; color: var(--muted); font-size: 11px; }
-.hopt .ho-p { justify-self: end; font-weight: 600; white-space: nowrap; }
-.hopt .na { font-weight: 400; }
-.hnote { margin: 0; font-size: 12px; color: var(--muted); }
-.host.noest .hopt { grid-template-columns: minmax(96px, 1.1fr) minmax(130px, 1.7fr) 82px 104px 84px; }
-.host.noest .ho-t { display: none; }
-.hopt.top { background: color-mix(in srgb, var(--accent-soft) 60%, transparent); }
-.hopt .ho-n .tptag { vertical-align: 2px; margin-left: 4px; }
-@container host (max-width: 640px) {
-  .hopt { grid-template-columns: minmax(0, 1fr) auto auto; gap: 6px 10px; }
-  .hopt .ho-n { grid-column: 1; } .hopt .ho-c { grid-column: 2; } .hopt .ho-p { grid-column: 3; }
-  .hopt .ho-tint { grid-column: 1 / -1; grid-row: 2; }
-  .hopt .ho-b { grid-column: 1; grid-row: 3; } .hopt .ho-t { grid-column: 2 / -1; grid-row: 3; justify-self: end; text-align: right; }
-  .host.noest .hopt { grid-template-columns: minmax(0, 1fr) auto auto; }
-  .hacts { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); }
-  .hacts .btn { padding: 8px 6px; }
-}
-.crit { display: inline-flex; align-items: center; font: 600 10.5px/1 var(--f-body); padding: 3px 6px; border-radius: 5px; white-space: nowrap; color: var(--ink-2); background: var(--sunken); border: 1px solid var(--line); }
-.crit.hi { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); border-color: color-mix(in srgb, var(--ok) 28%, transparent); }
 /* lights sold with this LED (drawer) */
 .sold { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .sold a { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 4px 14px; align-items: center; padding: 9px 12px; color: var(--ink); text-decoration: none; font-size: 13px; }
@@ -548,25 +506,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   .map .axis text, .map .guide text { font-size: 15px; }
   .map .pt circle.hit { r: 18px; }
 }
-/* top pick + "what matters most" selector (same on both pages) */
-.prefseg { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; padding: 3px; background: var(--sunken); border: 1px solid var(--line); border-radius: 10px; }
-.prefseg button { all: unset; cursor: pointer; text-align: center; padding: 6px 12px; border-radius: 7px; font-size: 13px; font-weight: 500; color: var(--muted); white-space: nowrap; }
-.prefseg button:hover { color: var(--ink); }
-.prefseg button[aria-pressed="true"] { background: var(--panel); color: var(--ink); box-shadow: var(--shadow-sm), 0 0 0 1px var(--line-2); }
-.prefseg button:focus-visible { outline: 2px solid var(--accent); }
-.tpick { display: grid; gap: 10px; }
-.tp-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; justify-content: space-between; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
-.tp-card { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 12px; align-items: baseline; padding: 11px 14px; border-radius: 10px; border: 1px solid var(--accent-line); background: var(--accent-soft); }
-.tp-card:hover { border-color: var(--accent); }
-.tp-card:focus-visible { outline: 2px solid var(--accent); }
-.tp-card .tp-n { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; min-width: 0; }
-.tp-star { font: 700 11px/1.2 var(--f-body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
-.tp-card b { font: 700 17px/1.2 var(--f-display); }
-.tp-card small { color: var(--muted); font-size: 12px; }
-.tp-card .tp-p { font-weight: 600; white-space: nowrap; }
-.tp-card .tp-why { grid-column: 1 / -1; font-size: 12.5px; color: var(--ink-2); }
-.tptag { display: inline-flex; align-items: center; font: 700 10.5px/1 var(--f-body); padding: 3px 6px; border-radius: 5px; color: var(--accent-ink); background: var(--accent); white-space: nowrap; }
-@media (max-width: 860px) { .prefseg { display: grid; width: 100%; } .prefseg button { padding: 8px 4px; } }
 </style>
 </head>
 <body>
@@ -574,7 +513,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   <div class="in">
     <a class="gh" href="https://github.com/TheFilipcom4607/leds-flashlights" target="_blank" rel="noopener" title="Source, data and how to contribute"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
     <div>
-      <nav class="idxnav" aria-label="Indexes"><a href="../flashlights/">Flashlights</a><a href="../leds/" aria-current="page">LEDs</a></nav>
+      <nav class="idxnav" aria-label="Indexes"><a href="../flashlights/">Flashlights</a><a href="../leds/" aria-current="page">LEDs</a><a href="../recommend/">Help me choose</a></nav>
       <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>Emitter Index</h1>
       <p class="sub" id="sub">The LEDs used in enthusiast flashlights: output, colour rendering, tint, package and typical throw, and which lights you can buy them in.</p>
     </div>
@@ -607,11 +546,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     </div>
 
     <div id="rec" class="rec" hidden></div>
-
-    <details class="panel" id="hostPanel" data-panel="host">
-      <summary>Choosing for a flashlight <small>pick a light to see only the LED options it's sold with, grouped by what they're for</small></summary>
-      <div class="pb" id="hostBody"><span class="na" style="font-size:13px">Loading the light list…</span></div>
-    </details>
 
     <details class="panel" id="mapPanel" data-panel="map" open>
       <summary>Beam map <small>Output vs. typical candela in a 35–40 mm reflector, for every LED with a candela estimate</small></summary>
@@ -716,10 +650,10 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   const LAB = { uses: "Use", lights: "Light", cris: "CRI", makers: "Maker", fps: "Footprint", volts: "Voltage", basis: "Figures" };
   const NUMS = [["lmin", "Lumens ≥"], ["lmax", "Lumens ≤"], ["cdmin", "Candela ≥"], ["crimin", "CRI ≥"]];
   const SETS = Object.keys(FACETS).concat("feats");
-  const blank = () => ({ q: "", host: null, ...Object.fromEntries(SETS.map(k => [k, new Set()])), ...Object.fromEntries(NUMS.map(([k]) => [k, ""])) });
+  const blank = () => ({ q: "", ...Object.fromEntries(SETS.map(k => [k, new Set()])), ...Object.fromEntries(NUMS.map(([k]) => [k, ""])) });
   let famsOf = {}, idOf = () => null;
   let F = blank(), sortK = null, sortDir = 1, picks = [], data = [], byId = new Map(), view = [], openSecs = null, openPanels = null, showAll = {};
-  let lightsData = null, lightById = new Map(), POP = new Map(), hostIds = new Set(), hostRank = new Map(), USE_HINTS = {}, pendingFor = null;
+  let lightsData = null, POP = new Map(), USE_HINTS = {};
   const VALS = {};
 
   try {
@@ -744,8 +678,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     URL1.forEach(k => { const v = String(F[k]).trim(); if (v) p.set(k, v); });
     for (const [k, n] of Object.entries(URLK)) F[k].forEach(v => p.append(n, v));
     if (sortK) p.set("sort", `${sortK}:${sortDir}`);
-    const host = F.host != null && lightById.get(F.host);
-    if (host) p.set("for", host._name); else if (pendingFor) p.set("for", pendingFor);
     const d = $("#drawer"); if (d.open && byId.has(+d.dataset.id)) p.set("led", byId.get(+d.dataset.id).name);
     const s = p.toString().replace(/%3A/g, ":").replace(/\+/g, "%20");
     history.replaceState(null, "", location.pathname + (s ? "?" + s : ""));
@@ -755,7 +687,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   function pass(e, skip) {
     for (const k of Object.keys(FACETS)) if (k !== skip && F[k].size && !FACETS[k](e).some(v => F[k].has(v))) return false;
     if (skip !== "feats") for (const f of F.feats) if (!FEAT[f][2](e)) return false;
-    if (F.host != null && !hostIds.has(e.id)) return false;
     const lmin = numF("lmin"), lmax = numF("lmax"), cdmin = numF("cdmin"), crimin = numF("crimin");
     if (lmin != null && !(e.lm_hi >= lmin)) return false;
     if (lmax != null && !(e.lm_lo != null && e.lm_lo <= lmax)) return false;
@@ -768,8 +699,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   function results() {
     let out = data.filter(e => pass(e));
     if (!sortK && F.uses.size) { const t = e => Math.min(...[...F.uses].map(g => e._tier[g] || 9)); out = out.slice().sort((a, b) => t(a) - t(b)); }
-    if (F.host != null) out = out.slice().sort((a, b) => ((hostIds.has(b.id) ? 0 : 1) - (hostIds.has(a.id) ? 0 : 1)) ||
-      (!sortK && F.uses.size ? (Math.min(...[...F.uses].map(g => a._tier[g] || 9), 9) - Math.min(...[...F.uses].map(g => b._tier[g] || 9), 9)) : (hostRank.get(a.id) ?? 1e9) - (hostRank.get(b.id) ?? 1e9)));
     if (sortK) out = out.slice().sort((a, b) => {
       const x = a[sortK], y = b[sortK];
       if (x == null && y == null) return 0; if (x == null) return 1; if (y == null) return -1;
@@ -800,7 +729,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   const badges = e => (e.rep ? `<span class="badge ${e.rep.t}"${e.rep.note ? ` title="${esc(e.rep.note)}"` : ""}>${REP_LABEL[e.rep.t]}</span>` : "") +
     (e.r9080 ? `<span class="badge r9">R9080</span>` : "") + (e.rosy ? `<span class="badge rosy">Rosy</span>` : "") +
     (e.unavailable ? `<span class="badge oos">Unavailable</span>` : "");
-  const hostPriceBadge = e => { const o = F.host != null && HOST_OPTS.get(e.id); return o?.price ? `<span class="badge pr" title="Price for this option on the picked light">${esc(priceText(o.price))}</span>` : ""; };
   function beamPill(e) {
     const dots = Array.from({ length: 5 }, (_, i) => `<b${i < e.beam ? ' class="on"' : ""}></b>`).join("");
     return `<span class="beam" title="Beam: ${BEAM_NAMES[e.beam]} — ${BEAM_DESC[e.beam]}"><i>${dots}</i><em>${BEAM_NAMES[e.beam]}</em></span>`;
@@ -885,7 +813,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const meta = [e.code, e.manufactured_by ? `made by ${e.manufactured_by}` : "", e.kind !== "White" ? e.type_label : "", e.domeless ? "domeless" : ""].filter(Boolean).map(esc).join(" · ");
     return `<div class="row cols${picked ? " picked" : ""}" data-id="${e.id}" tabindex="0" role="button" aria-label="${esc(name(e))}, open details">
       <div class="c-pick"><label class="pick" title="${picked ? "Remove from compare" : full ? `Compare holds ${MAXPICK}` : "Add to compare"}"><input type="checkbox" data-pick="${e.id}" ${picked ? "checked" : ""} ${!picked && full ? "disabled" : ""} aria-label="Compare ${esc(name(e))}"></label></div>
-      <div class="c-light"><div class="eyebrow">${esc(e.maker)}</div><div class="name">${esc(e.name)}${badges(e)}${hostPriceBadge(e)}</div>${meta ? `<div class="meta">${meta}</div>` : ""}${e.tldr ? `<div class="tldr">${esc(e.tldr)}</div>` : ""}</div>
+      <div class="c-light"><div class="eyebrow">${esc(e.maker)}</div><div class="name">${esc(e.name)}${badges(e)}</div>${meta ? `<div class="meta">${meta}</div>` : ""}${e.tldr ? `<div class="tldr">${esc(e.tldr)}</div>` : ""}</div>
       <div class="c-emit"><div class="strip"><span class="dots">${tintDots(e)}</span><span class="range">${esc(tintText(e))}</span></div>${e._uses.length ? `<div class="fams">${e._uses.slice(0, 2).map(g => (e._tier[g] === 1 ? "★ " : "") + esc(g)).join(" · ")}${e._uses.length > 2 ? ` <span class="more">+${e._uses.length - 2}</span>` : ""}</div>` : ""}</div>
       <div class="c-cri" data-l="CRI">${e.cri_max != null ? `<div class="cri${e.cri_min >= 90 ? " hi" : ""}" title="${e.cri_min >= 90 ? "Every option is 90+ CRI" : "CRI (Ra) range across options"}">${esc(criText(e))}</div>` : `<span class="na">—</span>`}</div>
       <div class="c-beam" data-l="Beam">${beamCell(e)}</div>
@@ -895,10 +823,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     </div>`;
   }
   function render() {
-    if (F.host != null && !lightsData) {
-      $("#rows").innerHTML = `<div class="empty"><b>Loading the light list…</b><span>Needed for the “choosing for a flashlight” filter.</span></div>`;
-      renderActive(); renderTray(); return;
-    }
     view = results();
     const hc = view.filter(e => e.cri_max >= 90).length;
     $("#count").innerHTML = `<b>${view.length}</b> of ${data.length} emitters` + (view.length ? ` · <b>${hc}</b> with a 90+ CRI option · <b>${view.filter(e => e.cd_mid).length}</b> with a candela estimate` : "");
@@ -908,54 +832,11 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     document.querySelectorAll(".lh [data-sort]").forEach(b => b.dataset.dir = b.dataset.sort === sortK ? sortDir : "");
     const v = sortK ? `${sortK}:${sortDir}` : ""; const sel = $("#sort");
     sel.value = [...sel.options].some(o => o.value === v) ? v : "";
-    renderActive(); renderFacets(); renderTray(); renderMap(); renderRec(); renderHost(); syncUrl();
+    renderActive(); renderFacets(); renderTray(); renderMap(); renderRec(); syncUrl();
   }
   function update() { save(); render(); }
 
-  /* ---------- top pick for a light, by what the buyer cares about (same code on both pages) ---------- */
-  const PREFS = [["output", "Max output", "Most lumens; CRI doesn't matter"], ["balanced", "Balanced", "The usual expert pick for this kind of light"], ["colour", "Best colour", "Highest CRI; lumens matter less"]];
-  let pref = "balanced";
-  try { pref = localStorage.getItem("led-pref") || "balanced"; } catch (e) {}
-  if (!PREFS.some(p => p[0] === pref)) pref = "balanced";
-  const setPref = v => { pref = v; try { localStorage.setItem("led-pref", v); } catch (e) {} };
-  // Which "best for" list in the Emitter Index fits this light.
-  function lightGoal(l) {
-    const n = l.led_count || 1, t = `${l.type || ""} ${l.model}`.toLowerCase();
-    if (l.styles.includes("Headlamp")) return "Headlamp, camping & close work";
-    if ((n >= 3 && n <= 4) || /\b(triple|quad)\b/.test(t)) return "Triples & quads";
-    if (l.styles.includes("Keychain") || ["AAA", "AA", "10180", "10280", "10300", "10440", "14500"].includes(l.battery?.key)) return "Tiny EDC";
-    if (l.styles.includes("Thrower")) return "Balanced thrower";
-    if (n > 4) return "Lumen monster";
-    return "EDC / all-rounder";
-  }
-  // opts: [{ e, cri, ... }] -> the best white option under the current preference, with the reasons.
-  // Balanced leans on the Emitter Index's expert pick for this kind of light; the other two lean on lumens or CRI.
-  function topPick(l, opts) {
-    const goal = lightGoal(l);
-    const scored = opts.filter(o => o.e && o.e.kind === "White").map(o => {
-      const tier = (o.e.best_for.find(b => b.goal === goal) || {}).tier, t = tier === 1 ? 2 : tier === 2 ? 1 : 0;
-      const eff = o.cri ? (o.cri.store ? o.cri.hi : o.cri.lo) : null, c = eff == null ? 0 : Math.min(1, Math.max(0, (eff - 70) / 25));
-      const lm = o.e.lm_hi ? (o.e.lm_lo + o.e.lm_hi) / 2 : null, m = lm ? Math.min(1, Math.max(0, Math.log(lm / 500) / Math.log(12))) : null;
-      const s = pref === "output" ? 3 * (m ?? 0.2) + 0.1 * t : pref === "colour" ? 3 * c + 0.5 * t + 0.2 * (m ?? 0.25) : 2 * t + c + 0.5 * (m ?? 0.5);
-      return { ...o, s, tier, lm };
-    }).sort((a, b) => b.s - a.s);
-    if (!scored.length) return null;
-    const p = scored[0];
-    const bits = { tier: p.tier === 1 && `Emitter Index top pick for ${goal.toLowerCase()}`, cri: p.cri && `${criFmt(p.cri.lo, p.cri.hi)} CRI`, lm: p.lm && `≈ ${fmt(p.lm)} lm per LED` };
-    const order = pref === "output" ? ["lm", "cri", "tier"] : pref === "colour" ? ["cri", "tier", "lm"] : ["tier", "cri", "lm"];
-    return { pick: p, why: order.map(k => bits[k]).filter(Boolean).join(" · "), goal };
-  }
-  const prefSeg = () => `<div class="prefseg" role="group" aria-label="What matters most">${PREFS.map(([v, l, h]) => `<button type="button" data-pref="${v}" aria-pressed="${pref === v}" title="${h}">${l}</button>`).join("")}</div>`;
-  /* ---------- choosing for a flashlight ---------- */
-  // What the picked light actually sells: per matched emitter, its store tints, CRI and option price.
-  const BUCKETS = [["colour", "Best colour", "90+ CRI, natural-looking colours"], ["throw", "Throw", "tight hotspot, long reach"], ["round", "All-round", "hotspot with useful spill"], ["flood", "Output & flood", "wide beam, lots of light"]];
-  const criFmt = (lo, hi) => lo === 65 && hi === 65 ? "<70" : lo === hi ? `${lo}` : `${lo}–${hi}`;
-  const criTag = c => c ? `<span class="crit${c.lo >= 90 ? " hi" : ""}" title="CRI (Ra), from ${c.src}">${criFmt(c.lo, c.hi)} CRI</span>` : "";
-  function optCri(e, tints) { // the store's CRI when it states one, else this index's figure
-    const got = tints.map(t => t.cri).filter(v => v != null);
-    if (got.length) return { lo: Math.min(...got), hi: Math.max(...got), src: "the store", store: true };
-    return e.cri_max != null ? { lo: e.cri_min ?? e.cri_max, hi: e.cri_max, src: "this index" } : null;
-  }
+  /* ---------- lights sold with an LED (drawer) ---------- */
   // Rough candela in a given light: the 35–40 mm reflector figure scaled by reflector area (reflector ≈ head Ø − 4 mm).
   // Only for single-emitter, non-headlamp lights with a stated head size.
   function throwIn(e, l, tints = []) {
@@ -977,86 +858,11 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     })));
     return m;
   }
-  const priceText = p => !p ? "" : p.kind === "incl" ? "Included" : `${p.kind === "add" ? "+" : "from "}$${p.amount % 1 ? p.amount.toFixed(2) : p.amount}`;
-  function bucketOf(e, c) {
-    if (c && (c.store ? c.hi >= 90 : c.lo >= 90)) return "colour";
-    if (e.beam != null && e.beam >= 4) return "throw";
-    if ((e.lm_hi || 0) >= 3000 || (e.beam != null && e.beam <= 2)) return "flood";
-    return "round";
-  }
-  let HOST_OPTS = new Map();
-  function refreshHost() {
-    hostIds = new Set(); hostRank = new Map(); HOST_OPTS = new Map();
-    if (F.host == null || !lightById.has(F.host)) { if (F.host != null) F.host = null; return; }
-    const l = lightById.get(F.host), order = BUCKETS.map(b => b[0]);
-    HOST_OPTS = hostOpts(l);
-    [...HOST_OPTS].forEach(([id, o], i) => {
-      const e = byId.get(id); if (!e) return;
-      o.cri = optCri(e, o.tints); o.est = throwIn(e, l, o.tints); o.bucket = bucketOf(e, o.cri);
-      hostIds.add(id); hostRank.set(id, order.indexOf(o.bucket) * 100 + i);
-    });
-  }
   // A light's permanent ID is its name: "Convoy S21E" -> convoy-s21e. Links and suggested fixes use it, so it
   // survives the list being rebuilt (the numeric id is just the row's position). tools/validate.py keeps these unique.
   const slug = (...p) => p.filter(Boolean).join(" ").toLowerCase().replace(/&/g, " and ").replace(/\+/g, " plus ").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   const REPO = "https://github.com/TheFilipcom4607/leds-flashlights";
   const fixUrl = (what, page) => `${REPO}/issues/new?template=fix.yml&title=${encodeURIComponent("[Fix] " + what)}&item=${encodeURIComponent(what)}&page=${encodeURIComponent(location.origin + location.pathname + page)}`;
-  const findLight = s => {
-    const q = String(s || "").trim().toLowerCase(); if (!q || !lightsData) return null;
-    return lightsData.find(l => l._name === q) || lightsData.find(l => l._name.startsWith(q)) || lightsData.find(l => l._name.includes(q)) || null;
-  };
-  function setHost(label) {
-    if (!lightsData) { pendingFor = label; return; }
-    const l = findLight(label);
-    if (!l) { renderHost(`No light matches “${label}”.`); return; }
-    F.host = l.id; refreshHost(); update();
-    $("#hostPanel").open = true;
-  }
-  const TRY = ["emisar d4v2", "convoy s21e", "wurkkos ts21", "sofirn sp36 pro", "convoy m21b"];
-  function hostOptRow(e, o, top) {
-    const tints = [...new Set(o.tints.map(t => t.cct).filter(Boolean))].sort((a, b) => a - b);
-    const dots = tints.map(k => `<span class="dot" style="background:${cct(k)}"></span>`).join("") || tintDots(e);
-    const range = tints.length ? (tints.length > 1 ? `${tints[0]}–${tints[tints.length - 1]}K` : `${tints[0]}K`) : tintText(e);
-    return `<button type="button" class="hopt${top ? " top" : ""}" data-hostopen="${e.id}" aria-label="${esc(name(e))}, open details">
-      <span class="ho-n"><b>${esc(e.name)}${top ? ` <span class="tptag">★ Top pick</span>` : ""}</b><small>${esc(e.maker)}</small></span>
-      <span class="ho-tint strip"><span class="dots">${dots}</span><span class="range">${esc(range)}</span></span>
-      <span class="ho-c">${criTag(o.cri) || `<span class="na">—</span>`}</span>
-      <span class="ho-b">${e.beam != null ? beamPill(e) : `<span class="na">—</span>`}</span>
-      <span class="ho-t">${o.est ? `≈ ${fmt(o.est.m)} m<small>${kcd(o.est.cd)} cd here</small>` : `<span class="na">—</span>`}</span>
-      <span class="ho-p">${esc(priceText(o.price)) || `<span class="na">—</span>`}</span></button>`;
-  }
-  function renderHost(err) {
-    const body = $("#hostBody");
-    if (!lightsData) { body.innerHTML = `<span class="na" style="font-size:13px">Loading the light list…</span>`; return; }
-    if (F.host == null) {
-      const tries = TRY.map(findLight).filter(Boolean);
-      body.innerHTML = `<div class="hostpick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="hostq" list="hostlist" placeholder="Type a flashlight, e.g. Emisar D4K or Skilhunt H300" aria-label="Pick a flashlight" autocomplete="off"><datalist id="hostlist">${lightsData.map(l => `<option value="${esc(l._name)}">`).join("")}</datalist></div>
-        ${tries.length ? `<div class="htry">Try ${tries.map(l => `<button type="button" class="hchip" data-hostpick="${esc(l._name)}">${esc(l.brand)} ${esc(l.model)}</button>`).join("")}</div>` : ""}
-        <p class="hnote" style="margin-top:10px">See only the LEDs that light is sold with: what each costs, its colour quality, its beam and roughly how far it throws in that light.${err ? ` <b>${esc(err)}</b>` : ""}</p>`;
-      return;
-    }
-    const l = lightById.get(F.host);
-    const matched = [...HOST_OPTS].filter(([id]) => byId.has(id));
-    const tp = matched.length >= 2 ? topPick(l, matched.map(([id, o]) => ({ id, e: byId.get(id), cri: o.cri, price: o.price }))) : null;
-    const pickHtml = tp ? `<div class="tpick"><div class="tp-head"><span>What matters most to you?</span>${prefSeg()}</div>
-      <button type="button" class="tp-card" data-hostopen="${tp.pick.id}"><span class="tp-n"><span class="tp-star">★ Top pick</span><b>${esc(tp.pick.e.name)}</b><small>${esc(tp.pick.e.maker)}</small></span><span class="tp-p">${esc(priceText(tp.pick.price))}</span><span class="tp-why">${esc(tp.why)}</span></button></div>` : "";
-    const groups = BUCKETS.map(([b, label, hint]) => {
-      const rows = matched.filter(([, o]) => o.bucket === b);
-      if (!rows.length) return "";
-      const key = b === "colour" ? ([, o]) => -(o.cri?.hi || 0) : b === "throw" ? ([, o]) => -(o.est?.cd || 0) : ([id]) => -(byId.get(id).lm_hi || 0);
-      rows.sort((x, y) => key(x) - key(y));
-      return `<div class="hgrp"><h4>${label}<small>${hint}</small></h4><div class="hopts">${rows.map(([id, o]) => hostOptRow(byId.get(id), o, id === tp?.pick.id)).join("")}</div></div>`;
-    }).join("");
-    const meta = [l.variant, l.battery?.label, l.type, l.size?.head ? `Ø${l.size.head} mm head` : ""].filter(Boolean).map(esc).join(" · ");
-    const missing = l.led_families.length - new Set(matched.map(([, o]) => o.fam)).size;
-    const est = matched.find(([, o]) => o.est);
-    body.innerHTML = `<div class="host${est ? "" : " noest"}">
-      <div class="hhead"><div class="hn"><b>${esc(l.brand)} ${esc(l.model)}</b><span>${meta}</span></div>
-        <div class="hacts">${matched.length >= 2 ? `<button class="btn primary" type="button" data-act="cmpall" title="${matched.length > MAXPICK ? `Compare holds ${MAXPICK}` : "Compare every option side by side"}">Compare ${Math.min(matched.length, MAXPICK)}</button>` : ""}<a class="btn" href="../flashlights/?light=${slug(l.brand, l.model, l.variant)}">Details</a><button class="btn" type="button" data-act="hostclear">Change light</button></div></div>
-      ${pickHtml}${groups || `<p class="hnote">None of this light's LED options are in the index yet.</p>`}
-      <p class="hnote">${matched.length} LED option${matched.length === 1 ? "" : "s"}${missing > 0 ? ` (${missing} more not in the index)` : ""}; the list below is filtered to them. ${est ? `Throw “here” scales the typical 35–40 mm figure to this light's ~${est[1].est.refl} mm reflector: a ballpark for comparing options (±50%).` : "No throw estimate: this light has several LEDs, a headlamp optic or no stated head size."}</p>
-    </div>`;
-  }
   /* ---------- recommendation banner ---------- */
   function renderRec() {
     const el = $("#rec");
@@ -1077,14 +883,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     lightsData.forEach(l => new Set(l.led_families).forEach(f => { const id = idOf(f); if (id != null) POP.set(id, (POP.get(id) || 0) + 1); }));
   }
   function loadLights() {
-    if (lightsData) { if (pendingFor) { const p = pendingFor; pendingFor = null; setHost(p); } return; }
+    if (lightsData) return;
     fetch("../flashlights/lights.clean.json").then(r => r.json()).then(rows => {
       lightsData = rows.map(r => ({ ...r, _name: `${r.brand} ${r.model} ${r.variant || ""}`.trim().toLowerCase() }));
-      lightById = new Map(lightsData.map(l => [l.id, l]));
-      buildPop(); refreshHost(); render();
+      buildPop(); render();
       if ($("#drawer").open) { const db = $("#drawer .db"), st = db.scrollTop; openDrawer(+$("#drawer").dataset.id); $("#drawer .db").scrollTop = st; }
-      if (pendingFor) { const p = pendingFor; pendingFor = null; setHost(p); }
-    }).catch(() => { lightsData = []; refreshHost(); render(); });
+    }).catch(() => { lightsData = []; render(); });
   }
 
   /* ---------- beam map (lumens vs candela, log-log) ---------- */
@@ -1302,9 +1106,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (t.closest(".pick")) return; // the checkbox's change event handles it
     const pe = t.closest("[data-peer]"); if (pe) { openDrawer(+pe.dataset.peer); return; }
     const ro = t.closest("[data-recopen]"); if (ro) { openDrawer(+ro.dataset.recopen); return; }
-    const ho = t.closest("[data-hostopen]"); if (ho) { openDrawer(+ho.dataset.hostopen); return; }
-    const hp = t.closest("[data-hostpick]"); if (hp) { setHost(hp.dataset.hostpick); return; }
-    const pf = t.closest("[data-pref]"); if (pf) { setPref(pf.dataset.pref); renderHost(); return; }
     const cr = t.closest("[data-crow]");
     if (cr) { const box = cr.closest("[data-calc]"); box.querySelectorAll("[data-crow]").forEach(b => b.setAttribute("aria-pressed", b === cr)); updateCalc(box); return; }
     const lt = t.closest("[data-light]"); if (lt) { const v = lt.dataset.light; F.lights.has(v) ? F.lights.delete(v) : F.lights.add(v); update(); return; }
@@ -1315,8 +1116,6 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (so) { const k = so.dataset.sort; if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = k === "_name" ? 1 : -1; } update(); return; }
     const act = t.closest("[data-act]")?.dataset.act;
     if (act === "clear") { F = blank(); $("#q").value = ""; update(); return; }
-    if (act === "hostclear") { F.host = null; refreshHost(); update(); return; }
-    if (act === "cmpall") { const ids = [...hostIds].filter(x => byId.has(x)); if (ids.length >= 2) { picks = ids.slice(0, MAXPICK); save(); render(); renderCompare(); $("#cmpdlg").showModal(); } return; }
     if (act === "fopen") { document.body.classList.add("fopen"); return; }
     if (act === "fclose") { document.body.classList.remove("fopen"); return; }
     if (act === "unpickall") { picks = []; save(); render(); return; }
@@ -1335,14 +1134,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     else if (t.matches("[data-f]")) { const s = F[t.dataset.f]; t.checked ? s.add(t.value) : s.delete(t.value); update(); }
     else if (t.matches("[data-feat]")) { t.checked ? F.feats.add(t.dataset.feat) : F.feats.delete(t.dataset.feat); update(); }
     else if (t.id === "showall") $("#cmpbody table")?.classList.toggle("all", t.checked);
-    else if (t.id === "hostq") setHost(t.value);
   });
   document.addEventListener("input", ev => {
     const t = ev.target;
     if (t.id === "q") { F.q = t.value; update(); }
     else if (t.matches("[data-num]")) { F[t.dataset.num] = t.value; update(); }
     else if (t.matches("[data-mm]")) updateCalc(t.closest("[data-calc]"));
-    else if (t.id === "hostq") { const v = t.value.trim().toLowerCase(); const l = lightsData && lightsData.find(x => x._name === v); if (l) { F.host = l.id; refreshHost(); update(); $("#hostPanel").open = true; } }
   });
   document.addEventListener("toggle", ev => {
     if (ev.target.matches?.(".fsec")) { openSecs = [...document.querySelectorAll(".fsec")].filter(d => d.open).map(d => d.dataset.sec); save(); }
@@ -1405,11 +1202,10 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     else if (innerWidth < 700) $("#mapPanel").open = false; // on a phone the list matters more than the scatter
     F.uses = new Set([...F.uses].filter(v => VALS.uses.includes(v)));
     $("#q").value = F.q;
-    const want = params.get("led"), wantFor = params.get("for");
-    if (wantFor) pendingFor = wantFor;
+    const want = params.get("led");
     render();
     if (want) { const id = idOf(want); if (id != null) openDrawer(id); }
-    if (wantFor) loadLights(); else setTimeout(loadLights, 350);
+    setTimeout(loadLights, 350);
   }).catch(err => {
     console.error(err);
     $("#rows").innerHTML = `<div class="empty"><b>The emitter list didn't load</b><span>Open this page through a local web server (run <code>python3 -m http.server</code> in this folder), then reload.</span></div>`;

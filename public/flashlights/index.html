@@ -456,7 +456,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   <div class="in">
     <a class="gh" href="https://github.com/TheFilipcom4607/leds-flashlights" target="_blank" rel="noopener" title="Source, data and how to contribute"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
     <div>
-      <nav class="idxnav" aria-label="Indexes"><a href="../flashlights/" aria-current="page">Flashlights</a><a href="../leds/">LEDs</a></nav>
+      <nav class="idxnav" aria-label="Indexes"><a href="../flashlights/" aria-current="page">Flashlights</a><a href="../leds/">LEDs</a><a href="../recommend/">Help me choose</a></nav>
       <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2h6l1 6H8z"/><path d="M8 8h8v4a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3z"/><path d="M11 15v7h2v-7"/></svg>Flashlight Index</h1>
       <p class="sub">Every light on the official Emisar, Noctigon, Convoy, FireflyLite, Wurkkos, Sofirn and Lumintop stores (snapshot 20 Nov 2026), plus the current ranges of Fenix, Nitecore, Acebeam, Olight, Armytek, Weltool, Rovyvon, ThruNite, Skilhunt, Manker, Reylight and Loop Gear, and everything on <a href="https://zakreviews.com/arbitrary-list.html" target="_blank" rel="noopener">Zak's Arbitrary List</a> (Fall 2026), checked 21 Nov 2026. Prices in USD.</p>
     </div>
@@ -1052,7 +1052,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </div>
       <div class="df">
         <button class="btn" type="button" data-pick="${r.id}" ${!picked && picks.length >= MAXPICK ? "disabled" : ""}>${picked ? "✓ In compare" : "Add to compare"}</button>
-        ${r.led_families.length ? `<a class="btn" href="../leds/?for=${encodeURIComponent([r.brand, r.model, r.variant].filter(Boolean).join(" "))}">Choose its LED →</a>` : ""}
+        ${r.led_families.length ? `<a class="btn" href="../recommend/?for=${encodeURIComponent([r.brand, r.model, r.variant].filter(Boolean).join(" "))}">Choose its LED →</a>` : ""}
         <a class="btn primary" href="${esc(r.url)}" target="_blank" rel="noopener">Open store page ${ICON.ext}</a>
       </div>`;
     $("#drawer").dataset.id = id;
