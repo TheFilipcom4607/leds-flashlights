@@ -281,6 +281,8 @@ dialog::backdrop { background: rgba(8, 8, 10, 0.45); }
 .leds { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
 .led { display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; gap: 12px; padding: 10px 12px; align-items: start; }
 .led + .led { border-top: 1px solid var(--line); }
+.lsort { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 12px 0 8px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+.lsort .sel { padding: 6px 10px; font-size: 13px; }
 .leds:not(.all) .xtra { display: none; }
 .ledsmore { all: unset; box-sizing: border-box; cursor: pointer; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 12px; align-items: center; width: 100%; padding: 12px 14px; border-top: 1px solid var(--line); background: var(--sunken); }
 .ledsmore:hover { background: var(--accent-soft); }
@@ -978,6 +980,19 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       <a class="tolink" href="../leds/?led=${encodeURIComponent(inf.title)}">Open in Emitter Index →</a></div>`;
   }
   const priceTag = p => !p ? "" : p.kind === "incl" ? `<span class="pr incl">Included</span>` : p.kind === "add" ? `<span class="pr">+${usd(p.amount)}</span>` : `<span class="pr">from ${usd(p.amount)}</span>`;
+  // Sort for the emitter cards in the detail panel. A key returns a number (smaller sorts first) or null (no data: goes last).
+  const LED_SORTS = [["", "Top pick first"], ["floody", "Beam: floodiest first"], ["throwy", "Beam: throwiest first"], ["cd", "Throw: most candela"], ["cri", "CRI: highest first"], ["lm", "Output: most lumens"], ["cct", "Colour: warm to cool"]];
+  let ledSort = "";
+  function ledSortKey(how, l, r, e, c) {
+    if (how === "cri") return c ? -(c.store ? c.hi : c.lo) : null;
+    if (how === "cct") { const k = l.tints.map(t => t.cct).filter(Boolean); return k.length ? Math.min(...k) : null; }
+    if (!e) return null;
+    if (how === "floody") return e.beam ?? null;
+    if (how === "throwy") return e.beam != null ? -e.beam : null;
+    if (how === "lm") return e.lm_hi ? -e.lm_hi : null;
+    if (how === "cd") { const t = throwHere(e, r, l), c0 = e.candela?.[0]; return t ? -t.cd : c0 ? -(c0.cd_lo + c0.cd_hi) / 2 : null; }
+    return null;
+  }
   function emittersHtml(r) {
     if (!r.emitters.length) return `<p class="nolist">The store doesn't list emitter options in text.</p>`;
     const multi = r.emitters.length > 1;
@@ -998,7 +1013,11 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const isTop = l => l.family === topFam && white(l);
     const makerOf = (l, e) => e?.maker && e.maker !== "Various" && l.maker && !l.maker.toLowerCase().startsWith(e.maker.toLowerCase()) ? e.maker : l.maker;
     const grp = (g, gi) => {
-      const rows = g.tiers.flatMap(t => t.leds.map(l => ({ ...l, price: t.price }))).sort((a, b) => isTop(b) - isTop(a));
+      let rows = g.tiers.flatMap(t => t.leds.map(l => ({ ...l, price: t.price }))).sort((a, b) => isTop(b) - isTop(a));
+      if (ledSort) {
+        const key = new Map(rows.map(l => [l, ledSortKey(ledSort, l, r, emOf(l.family), white(l) ? ledCri(l) : null)]));
+        rows = rows.sort((a, b) => (key.get(a) == null) - (key.get(b) == null) || key.get(a) - key.get(b)); // stable: ties keep top pick first
+      }
       // Long lists (Convoy lights have up to 27) fold after the first few; LEDs picked in the sidebar stay visible.
       const fold = rows.length > 6, xtra = (l, i) => fold && i >= 4 && !F.leds.has(l.family), nx = rows.filter((l, i) => xtra(l, i)).length;
       return `<div class="grp" data-g="${gi}" ${multi && gi ? "hidden" : ""}>${g.name && !multi ? `<h4>${esc(g.name)}</h4>` : ""}<div class="leds">${rows.map((l, i) => {
@@ -1021,7 +1040,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const pp = tp?.pick.price, ptxt = !pp ? "" : pp.kind === "incl" ? "Included" : pp.kind === "add" ? `+${usd(pp.amount)}` : `from ${usd(pp.amount)}`;
     const pickHtml = tp ? `<div class="tpick"><div class="tp-head"><span>What matters most to you?</span>${prefSeg()}</div>
       <button type="button" class="tp-card" data-ledjump="${esc(topFam)}"><span class="tp-n"><span class="tp-star">★ Top pick</span><b>${esc(topFam)}</b>${tp.pick.e?.maker ? `<small>${esc(tp.pick.e.maker)}</small>` : ""}</span><span class="tp-p">${esc(ptxt)}</span><span class="tp-why">${esc(tp.why)}</span></button></div>` : "";
-    let h = pickHtml + tabs + r.emitters.map(grp).join("");
+    const biggest = Math.max(...r.emitters.map(g => g.tiers.reduce((n, t) => n + t.leds.length, 0)));
+    const sortHtml = biggest > 3 ? `<div class="lsort"><label for="ledsort">Sort emitters</label><select class="sel" id="ledsort" data-ledsort>${LED_SORTS.map(([v, l]) => `<option value="${v}"${v === ledSort ? " selected" : ""}>${l}</option>`).join("")}</select></div>` : "";
+    let h = pickHtml + sortHtml + tabs + r.emitters.map(grp).join("");
     if (r.tints_offered.length) h += `<div class="grp"><h4>Tints offered for these LEDs</h4><div class="tchips">${r.tints_offered.map(k => tintChip({ cct: k, domes: [] })).join("")}</div></div>`;
     if (refl) h += `<p class="estnote">“Here” figures scale the Emitter Index's typical 35–40 mm candela to this light's ~${refl} mm reflector (head Ø − 4 mm). A ballpark for comparing options, ±50%; the Throw figure above is the store's.</p>`;
     return h;
@@ -1146,7 +1167,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const lm = t.closest("[data-ledsmore]");
     if (lm) { const all = lm.closest(".leds").classList.toggle("all"); lm.querySelector(".lm-t").textContent = all ? "Show fewer emitters" : `Show ${lm.dataset.ledsmore} more emitters`; return; }
     const lj = t.closest("[data-ledjump]");
-    if (lj) { const row = [...document.querySelectorAll("#drawer .led[data-fam]")].find(x => x.dataset.fam === lj.dataset.ledjump); if (row) { const g = row.closest(".grp[hidden]"); if (g) document.querySelector(`#drawer [data-gtab="${g.dataset.g}"]`)?.click(); row.scrollIntoView({ block: "center", behavior: "smooth" }); row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 900); } return; }
+    if (lj) { const row = [...document.querySelectorAll("#drawer .led[data-fam]")].find(x => x.dataset.fam === lj.dataset.ledjump); if (row) { if (row.classList.contains("xtra")) { const lg = row.closest(".leds"); if (!lg.classList.contains("all")) lg.querySelector(".ledsmore").click(); }const g = row.closest(".grp[hidden]"); if (g) document.querySelector(`#drawer [data-gtab="${g.dataset.g}"]`)?.click(); row.scrollIntoView({ block: "center", behavior: "smooth" }); row.classList.add("flash"); setTimeout(() => row.classList.remove("flash"), 900); } return; }
     const pf = t.closest("[data-pref]");
     if (pf) { setPref(pf.dataset.pref); const db = $("#drawer .db"), st = db.scrollTop; openDrawer(+$("#drawer").dataset.id); $("#drawer .db").scrollTop = st; return; }
     const gl = t.closest("[data-goal]"); if (gl) { applyGoal(GOALS[+gl.dataset.goal]); return; }
@@ -1177,6 +1198,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (t.matches("[data-pick]")) togglePick(+t.dataset.pick);
     else if (t.matches("[data-f]")) { const s = F[t.dataset.f]; t.checked ? s.add(t.value) : s.delete(t.value); update(); }
     else if (t.matches("[data-feat]")) { t.checked ? F.feats.add(t.dataset.feat) : F.feats.delete(t.dataset.feat); update(); }
+    else if (t.matches("[data-ledsort]")) { ledSort = t.value; const st = $("#drawer .db").scrollTop; openDrawer(+$("#drawer").dataset.id); $("#drawer .db").scrollTop = st; $("#ledsort")?.focus(); }
     else if (t.id === "showall") $("#cmpbody table")?.classList.toggle("all", t.checked);
   });
   document.addEventListener("input", e => {
