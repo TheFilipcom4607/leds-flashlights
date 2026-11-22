@@ -1501,7 +1501,8 @@
     "note": "High Vf can cap single-cell buck drivers"
    },
    "cct_notes": [],
-   "tldr": "A bigger 3V thrower that sits between the SFT-40 and SFT-90."
+   "tldr": "A bigger 3V thrower that sits between the SFT-40 and SFT-90.",
+   "max_a": 15
   },
   {
    "id": 12,
@@ -2217,7 +2218,8 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "A small round-die domed LED: a step down from the SST-20 with a tidier beam."
+   "tldr": "A small round-die domed LED: a step down from the SST-20 with a tidier beam.",
+   "max_a": 1.8
   },
   {
    "id": 96,
@@ -3275,7 +3277,8 @@
     "note": "Big die, less pleasant beam"
    },
    "cct_notes": [],
-   "tldr": "A higher-current XM-L2 successor with lots of flux but a so-so beam."
+   "tldr": "A higher-current XM-L2 successor with lots of flux but a so-so beam.",
+   "max_a": 5
   },
   {
    "id": 97,
@@ -3934,7 +3937,8 @@
    },
    "cct_notes": [],
    "tldr": "Convoy's own 3V thrower die, which a user describes as \"a cross between an SFT40 and an SFT60\".",
-   "manufactured_by": "San'an"
+   "manufactured_by": "San'an",
+   "max_a": 10
   },
   {
    "id": 33,
@@ -4037,7 +4041,8 @@
     }
    ],
    "tldr": "Convoy's big-die searchlight LED, with a tint on or below the Planckian locus.",
-   "manufactured_by": "San'an"
+   "manufactured_by": "San'an",
+   "max_a": 30
   },
   {
    "id": 34,
@@ -5082,7 +5087,8 @@
    },
    "cct_notes": [],
    "tldr": "A warm high-CRI round-die thrower, at a big cost in efficiency.",
-   "manufactured_by": "Lumenpioneer"
+   "manufactured_by": "Lumenpioneer",
+   "max_a": 8.8
   },
   {
    "id": 46,
@@ -5177,7 +5183,8 @@
     "note": "Needs its own board"
    },
    "cct_notes": [],
-   "tldr": "A high-CRI four-die 7070 that trails the XHP70.3 HI."
+   "tldr": "A high-CRI four-die 7070 that trails the XHP70.3 HI.",
+   "max_a": 9
   },
   {
    "id": 47,
@@ -5485,7 +5492,8 @@
     "note": "Hank's XHP50.3 HI alternative"
    },
    "cct_notes": [],
-   "tldr": "Hank's high-CRI alternative to the XHP50.3 HI, guaranteed rosy."
+   "tldr": "Hank's high-CRI alternative to the XHP50.3 HI, guaranteed rosy.",
+   "max_a": 8
   },
   {
    "id": 50,
@@ -5747,7 +5755,8 @@
      "text": "Measured 4024K, Duv +0.001 — not the listed 3500K; flux and tint drifted above 8 A"
     }
    ],
-   "tldr": "Out of stock, and not what it was sold as."
+   "tldr": "Out of stock, and not what it was sold as.",
+   "max_a": 5
   },
   {
    "id": 53,
@@ -6133,7 +6142,8 @@
      "text": "Slightly rosy"
     }
    ],
-   "tldr": "A very cheap 5050 with a clean multi-die beam: great value for trail lights."
+   "tldr": "A very cheap 5050 with a clean multi-die beam: great value for trail lights.",
+   "max_a": 9
   },
   {
    "id": 58,
@@ -7955,7 +7965,8 @@
     "note": "Rated only to 1 A"
    },
    "cct_notes": [],
-   "tldr": "The cool-white answer to the 519A: daylight high CRI at low power."
+   "tldr": "The cool-white answer to the 519A: daylight high CRI at low power.",
+   "max_a": 1
   },
   {
    "id": 93,
@@ -8015,7 +8026,8 @@
     "note": "Needs its own board footprint"
    },
    "cct_notes": [],
-   "tldr": "A rare part that is high-CRI, efficient and powerful at once."
+   "tldr": "A rare part that is high-CRI, efficient and powerful at once.",
+   "max_a": 4.8
   },
   {
    "id": 94,
@@ -8293,7 +8305,8 @@
     "note": "Few lights use it yet"
    },
    "tldr": "A W1-style pencil beam on the common XP footprint.",
-   "cct_notes": []
+   "cct_notes": [],
+   "max_a": 3
   },
   {
    "id": 101,
@@ -8564,7 +8577,8 @@
     "note": "Aux and colour channels"
    },
    "tldr": "Cree's smallest lighting-class LED, common for aux and colour channels.",
-   "cct_notes": []
+   "cct_notes": [],
+   "max_a": 1.5
   },
   {
    "id": 105,
@@ -8629,7 +8643,8 @@
     "note": ""
    },
    "tldr": "A tiny chip-scale Cree LED with a wide 135° spread.",
-   "cct_notes": []
+   "cct_notes": [],
+   "max_a": 2
   },
   {
    "id": 106,
@@ -9371,7 +9386,8 @@
     "note": "Cost-per-lumen flip chips"
    },
    "tldr": "Luminus's cost-per-lumen flip chips in a ceramic package.",
-   "cct_notes": []
+   "cct_notes": [],
+   "max_a": 2.5
   },
   {
    "id": 117,
@@ -10047,7 +10063,8 @@
    "beam": 4,
    "rep": null,
    "cct_notes": [],
-   "tldr": "Osram's true-green projection LED, sold by Convoy as its \"Verdure light\" green."
+   "tldr": "Osram's true-green projection LED, sold by Convoy as its \"Verdure light\" green.",
+   "max_a": 5
   }
  ]
 }

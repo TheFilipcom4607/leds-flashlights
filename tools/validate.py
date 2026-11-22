@@ -119,6 +119,7 @@ def check_emitters(doc):
                 err(where, f"{lo} and {hi} must both be set or both empty")
             elif e.get(lo) is not None and e[lo] > e[hi]:
                 err(where, f"{lo} {e[lo]} is above {hi} {e[hi]}")
+        num(where, e, "max_a", 0.1, 100)  # rated or practical max drive current per LED, amps
         for k in e.get("ccts") or []:
             if not isinstance(k, int) or not 1000 <= k <= 10000:
                 err(where, f"colour temperature {k!r} is outside 1000–10000 K")
