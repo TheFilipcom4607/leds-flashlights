@@ -492,7 +492,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     <div class="active" id="active"></div>
     <div class="countrow"><div class="count" id="count" aria-live="polite"></div>
       <details class="howrank" id="howrank"><summary>How “Recommended” is ranked</summary>
-        <p><b>Editor's picks</b> come first and are labelled: five all-round lights chosen by hand (Emisar D4KC and D4V2, Convoy S21E, FireflyLite X4 Stellar, Wurkkos TS26) and a few more for each quick-start goal. Everything else is ranked by points. Points for: LEDs the <a href="../leds/">Emitter Index</a> rates as staples or top picks (+2), a 90+ CRI option (+1), a choice of LEDs (up to +1), Anduril firmware (+1), built-in USB charging and submersible waterproofing (+0.5 each), and complete specs, meaning price, output, throw and weight all stated (up to +1). Lights built for one job (throwers, floods, searchlights, headlamps, dive, laser/LEP, UV and bike lights) and oversize lights (head wider than 38 mm) lose 1.5, so the general list isn't full of specialists; the quick-start buttons find them. Mule (no-optic) builds, limited and special-metal editions of a model that also comes in aluminium, and colour/UV-only lights score lower, so the standard version represents the model. Each earlier light from the same brand costs 0.4 points, so no single store fills the top. Ties go to the cheaper light. Nobody pays for placement.</p></details></div>
+        <p><b>Editor's picks</b> come first and are labelled: five all-round lights chosen by hand (Emisar D4KC and D4V2, Convoy S21E, FireflyLite X4 Stellar, Wurkkos TS26) and a few more for each quick-start goal. Everything else is ranked by points. Points for: LEDs the <a href="../leds/">Emitter Index</a> rates as staples or top picks (+2), a 90+ CRI option (+1), a choice of LEDs (up to +1), Anduril firmware (+1), built-in USB charging and submersible waterproofing (+0.5 each), and complete specs, meaning price, output, throw and weight all stated (up to +1). Lights built for one job (throwers, floods, searchlights, headlamps, dive, laser/LEP, UV and bike lights, plus any with a UV/IR/coloured LED) and oversize lights (head wider than 38 mm or over 250 g) lose 1.5, so the general list isn't full of specialists; the quick-start buttons find them. Mule (no-optic) builds, limited and special-metal editions of a model that also comes in aluminium, and colour/UV-only lights score lower, so the standard version represents the model. Out-of-stock lights lose 2 and partly-in-stock ones 0.25. Each earlier light from the same brand costs 0.4 points, and each earlier version of the same model 0.5, so no single store or model fills the top. Ties go to the cheaper light. Nobody pays for placement.</p></details></div>
     <div class="list" id="list">
       <div class="lh cols" role="presentation">
         <span></span>
@@ -506,7 +506,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       </div>
       <div id="rows"><div class="empty">Loading lights…</div></div>
     </div>
-    <footer>Specs come from each maker's store page, tidied into one format; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Olight prices are its Nov 2026 sale prices; Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Always confirm options on the store page before ordering. Missing a light or spotted a mistake? <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=add-light.yml" target="_blank" rel="noopener">Add a light</a> or <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=fix.yml" target="_blank" rel="noopener">suggest a fix</a> (GitHub account needed). See <a href="https://github.com/TheFilipcom4607/leds-flashlights/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>.</footer>
+    <footer>Specs come from each maker's store page, tidied into one format; a dash means the store didn't state it. Hank (Emisar/Noctigon) and Convoy prices exclude batteries; Wurkkos, Sofirn and Lumintop usually include one. Hank throw is computed from published candela (2 × √cd). A "was" price is shown only when it's less than double the current price; stores sometimes inflate it. Skilhunt, Acebeam, Manker, Weltool, Armytek and Reylight prices are Killzone's (US dealer); Olight prices are its Nov 2026 sale prices; Zebralight and Eagletac prices come from Zak's list; nitecore.com lists no prices, so most Nitecore lights show n/a. Always confirm options on the store page before ordering. Missing a light or spotted a mistake? <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=add-light.yml" target="_blank" rel="noopener">Add a light</a> or <a href="https://github.com/TheFilipcom4607/leds-flashlights/issues/new?template=fix.yml" target="_blank" rel="noopener">suggest a fix</a> (GitHub account needed). See <a href="https://github.com/TheFilipcom4607/leds-flashlights/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">how to contribute</a>.</footer>
   </main>
 </div>
 
@@ -868,7 +868,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     return { cd, m: 2 * Math.sqrt(cd), refl };
   }
   // The "Recommended" order. Every point is explained in the "How Recommended is ranked" note under the sort box; keep the two in step.
-  const SPECIALIST = new Set(["Thrower", "Searchlight", "Flood light", "Headlamp", "Dive light", "LEP", "UV light", "Bike light"]); // built for one job, so not general picks (head wider than 38 mm also counts: too big to pocket)
+  const SPECIALIST = new Set(["Thrower", "Searchlight", "Flood light", "Headlamp", "Dive light", "LEP", "UV light", "Bike light"]); // built for one job, so not general picks (UV/IR/colour-LED lights, a head wider than 38 mm and over 250 g also count: too specialised or too big to pocket)
   function rankAll() {
     const base = r => `${r.brand}|${r.model.split(/\s+/)[0]}`; // "E07X Cannon Ti-Cu Limited" -> "E07X"
     const alu = new Set(data.filter(r => r.materials.includes("Aluminium")).map(base));
@@ -882,7 +882,9 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       if (r.charging?.port) s += 0.5;
       if (r.ip?.submersible) s += 0.5;
       s += ["price", "lumens", "throw_m", "weight_g"].filter(k => r[k] != null).length / 4;
-      if (SPECIALIST.has(r.form) || r.size?.head > 38) s -= 1.5;
+      if (SPECIALIST.has(r.form) || r.styles.includes("UV") || /\b(UV|IR|Red|Green|Infrared)\b/i.test(`${r.model} ${r.variant || ""}`) || r.size?.head > 38 || r.weight_g > 250) s -= 1.5;
+      if (r.stock?.status === "out") s -= 2; else if (r.stock?.status === "partial") s -= 0.25;
+      r._base = base(r);
       if (/mule/i.test(r.variant || "")) s -= 1.5;
       if ((!r.materials.includes("Aluminium") && alu.has(base(r))) || /\b(limited|special edition|edition)\b/i.test(`${r.model} ${r.variant || ""}`)) s -= 1;
       if (!r.ccts.length && !r.tones_nocct.length) s -= 1;
@@ -911,11 +913,12 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
   }
   function recommended(all) {
     const goal = GOALS.find(goalOn), [pinned, rows] = pinPicks(all, goal ? goal[0] : "");
-    const left = rows.slice().sort((a, b) => b._score - a._score || (a.price ?? 1e9) - (b.price ?? 1e9)), seen = {}, out = [];
+    const left = rows.slice().sort((a, b) => b._score - a._score || (a.price ?? 1e9) - (b.price ?? 1e9)), seen = {}, seenM = {}, out = [];
+    pinned.forEach(r => { seenM[r._base] = (seenM[r._base] || 0) + 1; });
     while (left.length) {
       let bi = 0, bv = -Infinity;
-      for (let i = 0; i < left.length; i++) { const v = left[i]._score - 0.4 * (seen[left[i].brand] || 0); if (v > bv) { bv = v; bi = i; } if (left[i]._score < bv) break; }
-      const r = left.splice(bi, 1)[0]; seen[r.brand] = (seen[r.brand] || 0) + 1; out.push(r);
+      for (let i = 0; i < left.length; i++) { const v = left[i]._score - 0.4 * (seen[left[i].brand] || 0) - 0.5 * (seenM[left[i]._base] || 0); if (v > bv) { bv = v; bi = i; } if (left[i]._score < bv) break; }
+      const r = left.splice(bi, 1)[0]; seen[r.brand] = (seen[r.brand] || 0) + 1; seenM[r._base] = (seenM[r._base] || 0) + 1; out.push(r);
     }
     return pinned.concat(out);
   }
@@ -1207,7 +1210,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
         if (x.colour && !pairs.some(p => p.led === l.family && p.c === colourKey(x.colour))) pairs.push({ led: l.family, c: colourKey(x.colour) });
       }))));
       const emitTxt = r.emitters.flatMap(g => g.tiers.flatMap(t => t.leds.flatMap(l => [l.family, l.maker, ...l.tints.map(x => [x.cct && x.cct + "k", x.colour, x.dome, x.cri && x.cri + "cri"].join(" "))]))).join(" ");
-      return { ...r, _tones: [...tones], _bats: bats, _pairs: pairs, _colours: [...new Set(pairs.map(p => p.c))], _batn: CELLS.indexOf(r.battery.key) >= 0 ? CELLS.indexOf(r.battery.key) : 99,
+      return { ...r, regular: r.regular && r.price < 0.5 * r.regular ? null : r.regular, _tones: [...tones], _bats: bats, _pairs: pairs, _colours: [...new Set(pairs.map(p => p.c))], _batn: CELLS.indexOf(r.battery.key) >= 0 ? CELLS.indexOf(r.battery.key) : 99,
         _name: `${r.brand} ${r.model} ${r.variant || ""}`.toLowerCase(), _slug: slug(r.brand, r.model, r.variant),
         _hay: [r.brand, r.model, r.variant, r.type, r.blurb, r.battery.label, r.firmware, r.driver, r.switch, r.charging?.label, r.aux, r.ip?.label, r.body_colours.join(" "), r.styles.join(" "), emitTxt,
           r.options.flatMap(o => o.items.map(i => i.name)).join(" "), r.anduril ? "anduril" : "", romanNums(`${r.model} ${r.variant || ""}`)].join(" ").toLowerCase() };
