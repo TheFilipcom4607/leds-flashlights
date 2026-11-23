@@ -1,6 +1,6 @@
 {
  "source": "Flashlight Emitter Reference — Lumens, CRI, Candela & Throw.md",
- "reviewed": "20 Nov 2026",
+ "reviewed": "23 Nov 2026",
  "uses": [
   {
    "goal": "EDC / all-rounder",
@@ -432,7 +432,8 @@
    "cri_min": 70,
    "cri_max": 90,
    "ccts": [
-    1800
+    1800,
+    5700
    ],
    "r9080": true,
    "rosy": false,
@@ -445,7 +446,7 @@
    "cri_html": "70 – 90+ (R9080 bins)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>Pick it for a sodium-lamp-like 1800K glow.</b> The 219C's successor, best known for its 1800K version. Low output, and it doesn't like being overdriven (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Pick it for a sodium-lamp-like 1800K glow.</b> The 219C's successor, best known for its 1800K version. Low output, and it doesn't like being overdriven (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). A 5700K R9080 bin also exists (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/7\" target=\"_blank\" rel=\"noopener\">BLF thread #7</a>).",
    "alternatives": [
     {
      "name": "519A",
@@ -2296,6 +2297,7 @@
     "7070"
    ],
    "voltages": [
+    "3V",
     "6V"
    ],
    "lm_lo": 4523.0,
@@ -2319,10 +2321,10 @@
    "basis": "datasheet",
    "footprint_html": "<code>7070</code> · 6V (3V = &lt;70 CRI only)",
    "lm_html": "4,523 lm max<br>5,558 lm OD",
-   "cri_html": "70 / 80 / 90 / 95 (6V)",
+   "cri_html": "70 / 80 / 90 / 95 (6V) · ~70 (3V)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>The go-to for high sustained output in big single-emitter lights.</b> The domeless <code>HI</code> (3.9 mm source) roughly doubles intensity and cleans up the beam vs the domed <code>HD</code> (5.3 mm source) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). ANSI bins 3000K–7000K plus EasyWhite 2700K–4000K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XHP70.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>). It's a 6V part, so single-cell lights need a boost driver.",
+   "notes_html": "<b>The go-to for high sustained output in big single-emitter lights.</b> The domeless <code>HI</code> (3.9 mm source) roughly doubles intensity and cleans up the beam vs the domed <code>HD</code> (5.3 mm source) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). ANSI bins 3000K–7000K plus EasyWhite 2700K–4000K (<a href=\"https://downloads.cree-led.com/files/ds/x/XLamp-XHP70.3.pdf\" target=\"_blank\" rel=\"noopener\">Cree datasheet</a>). 3V versions exist but only in cool white, low-CRI bins (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/7\" target=\"_blank\" rel=\"noopener\">BLF thread #7</a>); 6V is the usual wiring, so single-cell lights need a boost driver.",
    "alternatives": [
     {
      "name": "LHP73B",
@@ -2580,7 +2582,8 @@
    "id": 21,
    "name": "XP-L HI",
    "alts": [
-    "XP-L HI"
+    "XP-L HI",
+    "XPL2 HI"
    ],
    "maker": "Cree",
    "code": "",
@@ -2615,7 +2618,7 @@
    "cri_html": "70 / 80 / 90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>The classic domeless EDC emitter, now mostly superseded.</b> 2700K–6500K by order code; Convoy sells 3000K, 4000K, 5000K and 6500K. The 519A, SFT-40 and NTG35 have largely replaced it (<a href=\"https://convoylight.com/products/xpl-hi-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>).",
+   "notes_html": "<b>The classic domeless EDC emitter, now mostly superseded.</b> 2700K–6500K by order code; Convoy sells 3000K, 4000K, 5000K and 6500K. The 519A, SFT-40 and NTG35 have largely replaced it (<a href=\"https://convoylight.com/products/xpl-hi-led\" target=\"_blank\" rel=\"noopener\">Convoy</a>). The newer flip-chip version is sold as the \"XPL2 HI\" by Convoy and FireflyLite: slightly more performance, worse tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
    "alternatives": [
     {
      "name": "519A",
@@ -2672,7 +2675,8 @@
    "name": "XP-G4 / XP-L2",
    "alts": [
     "XP-G4",
-    "XP-L2"
+    "XP-L2",
+    "XP-G4 Pro9"
    ],
    "maker": "Cree",
    "code": "",
@@ -2706,7 +2710,7 @@
    "cri_html": "70 / 80 / 90 (L2 also 95)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>Efficient mainstream LEDs that enthusiasts generally avoid.</b> Very common in Fenix, Olight and similar brands. Domed, with poor colour and noticeable tint shift. Both 2700K–7000K (<a href=\"https://www.tti.com/content/dam/tti-commons/supplier/cree-led/doc/cree-led-xlamp-white-leds-product-guide.pdf\" target=\"_blank\" rel=\"noopener\">Cree product guide</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>Efficient mainstream LEDs that enthusiasts generally avoid.</b> Very common in Fenix, Olight and similar brands. Domed, with poor colour and noticeable tint shift. Both 2700K–7000K (<a href=\"https://www.tti.com/content/dam/tti-commons/supplier/cree-led/doc/cree-led-xlamp-white-leds-product-guide.pdf\" target=\"_blank\" rel=\"noopener\">Cree product guide</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). The <b>Pro9</b> variant piles on red phosphor to flatter the CRI numbers but under-delivers against its specs; a domeless <code>HI</code> version is also available (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
    "alternatives": [
     {
      "name": "519A",
@@ -3011,6 +3015,7 @@
     "7070"
    ],
    "voltages": [
+    "3V",
     "6V"
    ],
    "lm_lo": 2500.0,
@@ -3032,12 +3037,12 @@
    "unavailable": false,
    "colours": [],
    "basis": "datasheet",
-   "footprint_html": "<code>5050</code> / <code>7070</code> · 6V",
+   "footprint_html": "<code>5050</code> / <code>7070</code> · 3V / 6V",
    "lm_html": "~2,500–5,500+ lm",
    "cri_html": "70–90",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>The older domed XHP generation: very bright but floody, with visible rainbow tint shift.</b> ANSI bins 3000K–7000K, EasyWhite 2700K–5000K (<a href=\"https://www.mouser.co.uk/cree-xlamp-xhp70-2\" target=\"_blank\" rel=\"noopener\">Mouser</a>). Convoy still lists the XHP50.2, but its bare 6V XHP70.2 is sold out (Nov 2026) (<a href=\"https://convoylight.com/collections/cree\" target=\"_blank\" rel=\"noopener\">Convoy Cree</a>).",
+   "notes_html": "<b>The older domed XHP generation: very bright but floody, with visible rainbow tint shift.</b> ANSI bins 3000K–7000K, EasyWhite 2700K–5000K (<a href=\"https://www.mouser.co.uk/cree-xlamp-xhp70-2\" target=\"_blank\" rel=\"noopener\">Mouser</a>). Convoy still lists the XHP50.2, but its bare 6V XHP70.2 is sold out (Nov 2026) (<a href=\"https://convoylight.com/collections/cree\" target=\"_blank\" rel=\"noopener\">Convoy Cree</a>). Rare 3V versions of both exist, cool white and low-CRI only (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/7\" target=\"_blank\" rel=\"noopener\">BLF thread #7</a>).",
    "alternatives": [
     {
      "name": "XHP50.3 HI",
@@ -4265,7 +4270,8 @@
    "id": 36,
    "name": "SFQ-55",
    "alts": [
-    "SFQ-55"
+    "SFQ-55",
+    "SFQ55.4"
    ],
    "maker": "San'an",
    "code": "",
@@ -4296,7 +4302,7 @@
    "cri_html": "mostly 70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>San'an's 3V answer to the XHP50.3 HI, with a clean cool tint.</b> Listed at 5000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>) and now on its 4th generation (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>San'an's 3V answer to the XHP50.3 HI, with a clean cool tint.</b> Listed at 5000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>) and now on its 4th generation (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Nightwatch's 14-emitter NS14R v2 uses SFQ55.4 dies, ~21,300 lm from the light (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/90\" target=\"_blank\" rel=\"noopener\">BLF thread #90</a>).",
    "alternatives": [
     {
      "name": "XHP50.3 HI",
@@ -4352,7 +4358,8 @@
    "kind": "White",
    "type_label": "",
    "footprints": [
-    "5050"
+    "5050",
+    "7070"
    ],
    "voltages": [
     "3V"
@@ -4370,12 +4377,12 @@
    "unavailable": false,
    "colours": [],
    "basis": "typical",
-   "footprint_html": "<code>5050</code> · 3V",
+   "footprint_html": "<code>5050</code> · 3V (also 7070)",
    "lm_html": "~3,000 lm",
    "cri_html": "mostly 70",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>A lower-Vf XHP50 rival with a very high CCT and a clean tint.</b> Nightwatch sells its SFQ-60 lights at 5500K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A lower-Vf XHP50 rival with a very high CCT and a clean tint.</b> Nightwatch sells its SFQ-60 lights at 5500K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). A 7070 variant with a bigger thermal pad exists but never caught on (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
    "alternatives": [
     {
      "name": "SFQ-55",
@@ -4480,7 +4487,8 @@
    "id": 39,
    "name": "SFN-55.2",
    "alts": [
-    "SFN-55.2"
+    "SFN-55.2",
+    "SFN-55"
    ],
    "maker": "San'an",
    "code": "",
@@ -4512,7 +4520,7 @@
    "cri_html": "70 (greenish)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>A nine-die 7070 for lumens, between the XHP70.2 and the SBT90.2.</b> Large colour variation with power level, and a generally greenish tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Sold as cool white only; San'an parts like this usually come in 6500–7000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>).",
+   "notes_html": "<b>A nine-die 7070 for lumens, between the XHP70.2 and the SBT90.2.</b> Large colour variation with power level, and a generally greenish tint (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Sold as cool white only; San'an parts like this usually come in 6500–7000K (<a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>). The first-generation SFN-55 (same 55-series dies) did 7,000+ lm in sodacan lights like the JKK-76 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
    "alternatives": [
     {
      "name": "XHP70.3 HI",
@@ -4715,7 +4723,8 @@
    "id": 42,
    "name": "SFP-55",
    "alts": [
-    "SFP-55"
+    "SFP-55",
+    "SFP55.2L"
    ],
    "maker": "San'an",
    "code": "",
@@ -4746,7 +4755,7 @@
    "cri_html": "~70 (cool white)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>A massive 25-die flood surface for lumen cannons.</b> 6500K (<a href=\"https://budgetlightforum.com/t/led-test-short-review-changda-sfp55-6500-k-70-cri-hardly-any-extra-power-compared-to-the-sfh55/230623\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A massive 25-die flood surface for lumen cannons.</b> 6500K (<a href=\"https://budgetlightforum.com/t/led-test-short-review-changda-sfp55-6500-k-70-cri-hardly-any-extra-power-compared-to-the-sfh55/230623\" target=\"_blank\" rel=\"noopener\">BLF test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Nightwatch's Super Valkyrie uses an SFP55.2L, measuring ~13,300 lm (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/90\" target=\"_blank\" rel=\"noopener\">BLF thread #90</a>).",
    "alternatives": [
     {
      "name": "SFY-55",
@@ -7678,7 +7687,8 @@
    "id": 79,
    "name": "HL2X",
    "alts": [
-    "HL2X"
+    "HL2X",
+    "L1HX"
    ],
    "maker": "Lumileds",
    "code": "",
@@ -7709,7 +7719,7 @@
    "cri_html": "70 – 90+",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>A domed LED with decent colour, best known for its 1800K version.</b> The 1800K 80 CRI part is one of very few LEDs that reach around 800 lm at such a warm CCT, though it has worse thermal resistance and a lower max current than the other CCTs. Sold in 1800K–5700K at typically 80–90 CRI (<a href=\"https://budgetlightforum.com/t/led-test-review-lumileds-hl2x-1800-5700-k-typ-80-90-cri-high-power-candle-light-led/219828\" target=\"_blank\" rel=\"noopener\">BLF HL2X test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "notes_html": "<b>A domed LED with decent colour, best known for its 1800K version.</b> The 1800K 80 CRI part is one of very few LEDs that reach around 800 lm at such a warm CCT, though it has worse thermal resistance and a lower max current than the other CCTs. Sold in 1800K–5700K at typically 80–90 CRI (<a href=\"https://budgetlightforum.com/t/led-test-review-lumileds-hl2x-1800-5700-k-typ-80-90-cri-high-power-candle-light-led/219828\" target=\"_blank\" rel=\"noopener\">BLF HL2X test</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>). Lumileds&#x27; Mouser order codes start with \"L1HX\" — that is how the 1800K 80 CRI part appears there (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/60\" target=\"_blank\" rel=\"noopener\">BLF thread #60</a>).",
    "alternatives": [
     {
      "name": "219F",
@@ -10065,6 +10075,1747 @@
    "cct_notes": [],
    "tldr": "Osram's true-green projection LED, sold by Convoy as its \"Verdure light\" green.",
    "max_a": 5
+  },
+  {
+   "id": 128,
+   "name": "SFS-80",
+   "alts": [
+    "SFS-80",
+    "P35 HI"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 1900,
+   "lm_hi": 2000,
+   "cri_min": 70,
+   "cri_max": 85,
+   "ccts": [
+    4000,
+    5000
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": true,
+   "colours": [],
+   "basis": "typical",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "~2,000 lm (claimed)",
+   "cri_html": "70–85 (bin confusion)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A big-die 3535 San'an part, marked discontinued by the maker.</b> Claimed ~2,000 lm and a '4000K 85 CRI' version, but a Kaidomain listing under the name 'P35 HI' may be a different emitter — the '4000K 80 CRI' sample there measured 5000K and under 70 CRI, quite green (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>, <a href=\"https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698\" target=\"_blank\" rel=\"noopener\">BLF San&#x27;an thread</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFQ-43",
+     "why": "Successor, reportedly brighter"
+    },
+    {
+     "name": "XP-L HI",
+     "why": "Same size class"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF San'an thread",
+     "url": "https://budgetlightforum.com/t/sfn55-2-sfq55-sfn60-sfq60-sfs80-and-sfh55-led-info/67698"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Discontinued"
+   },
+   "cct_notes": [],
+   "tldr": "A big-die 3535 San'an part, marked discontinued by the maker."
+  },
+  {
+   "id": 129,
+   "name": "SFS-75",
+   "alts": [
+    "SFS-75"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 2400,
+   "lm_hi": 2600,
+   "cri_min": 70,
+   "cri_max": 85,
+   "ccts": [
+    5000,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "~2,600 lm (claimed)",
+   "cri_html": "70–85",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A large-die 3535 (bigger than the XP-L HI) claimed at 2,600 lm.</b> Reportedly the SFS-80's replacement; no independent test yet (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "SFS-80",
+     "why": "Discontinued predecessor"
+    },
+    {
+     "name": "SFQ-43",
+     "why": "Better-documented sibling"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "No independent test"
+   },
+   "cct_notes": [],
+   "tldr": "A large-die 3535 claimed at 2,600 lm; no independent test yet."
+  },
+  {
+   "id": 130,
+   "name": "SFQ-35",
+   "alts": [
+    "SFQ-35"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>Scant information: a small San'an-named die, presumably a throwier SFQ-43.</b> It appears in San'an list posts but has no datasheet or test (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "SFQ-43",
+     "why": "The better-known sibling"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Almost undocumented"
+   },
+   "cct_notes": [],
+   "tldr": "A small San'an-named die with no datasheet or test."
+  },
+  {
+   "id": 131,
+   "name": "SFQ-43",
+   "alts": [
+    "SFQ-43"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 1800,
+   "lm_hi": 2300,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    3000,
+    5000,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "typical",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "~1,800–2,300 lm",
+   "cri_html": "70 (3000K 90 on request)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A very bright domeless 3535 San'an die, around XHP35.2 HI brightness.</b> Used in the Mateminco MT18X; like most San'an parts it can be had in 3000K 90 CRI on request (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFS-80",
+     "why": "Discontinued predecessor"
+    },
+    {
+     "name": "XHP35.2 HI",
+     "why": "Same brightness class"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "San'an-named, no datasheet"
+   },
+   "cct_notes": [],
+   "tldr": "A very bright domeless 3535 San'an die, around XHP35.2 HI brightness."
+  },
+  {
+   "id": 132,
+   "name": "SFQ-46",
+   "alts": [
+    "SFQ-46"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "6V"
+   ],
+   "lm_lo": 3000,
+   "lm_hi": 3200,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3535</code> · 6V",
+   "lm_html": "~3,000+ lm (claimed)",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>The SFQ-43 wired for 6V.</b> Claims of over 3,000 lm; the suffix doesn't indicate a different die — it's the same array at higher voltage (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/59\" target=\"_blank\" rel=\"noopener\">BLF thread #59</a>).",
+   "alternatives": [
+    {
+     "name": "SFQ-43",
+     "why": "The 3V version of the same part"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "6V wiring of SFQ-43"
+   },
+   "cct_notes": [],
+   "tldr": "The SFQ-43 wired for 6V."
+  },
+  {
+   "id": 133,
+   "name": "SFS-72",
+   "alts": [
+    "SFS-72"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5050</code> · 3V",
+   "lm_html": "",
+   "cri_html": "70–90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A San'an-named round-die 5050, very similar to the 'Yinding egg' emitter.</b> Used in the Nightwatch NS14R (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "YinDing 5050 Round",
+     "why": "Same round-die type"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Round die"
+   },
+   "cct_notes": [],
+   "tldr": "A San'an-named round-die 5050, similar to the Yinding egg."
+  },
+  {
+   "id": 134,
+   "name": "SSQ-55",
+   "alts": [
+    "SSQ-55"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 3000,
+   "lm_hi": 3000,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5050</code> · 3V",
+   "lm_html": "~3,000 lm",
+   "cri_html": "mostly 70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>The domed version of the SFQ-55.</b> Same dies as the SFQ-55; used in the Nightwatch NS14R (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "SFQ-55",
+     "why": "Domeless version"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Domed SFQ-55"
+   },
+   "cct_notes": [],
+   "tldr": "The domed version of the SFQ-55."
+  },
+  {
+   "id": 135,
+   "name": "SFQ-65",
+   "alts": [
+    "SFQ-65"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 2500,
+   "lm_hi": 3000,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5050</code> · 3V",
+   "lm_html": "~2,500–3,000 lm",
+   "cri_html": "70–90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A rarely-seen San'an-named 5050 around XHP50.3 HI brightness.</b> Available in the Pioneman K75 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "XHP50.3 HI",
+     "why": "The established rival"
+    },
+    {
+     "name": "SFQ-55",
+     "why": "Brighter sibling"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Rarely seen"
+   },
+   "cct_notes": [],
+   "tldr": "A rarely-seen San'an-named 5050 around XHP50.3 HI brightness."
+  },
+  {
+   "id": 136,
+   "name": "SFN-40",
+   "alts": [
+    "SFN-40"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 3000,
+   "lm_hi": 4000,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5050</code> · 3V",
+   "lm_html": "~3,000–4,000 lm",
+   "cri_html": "70 (cool white)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A very bright San'an-named 5050; the cool-white variant reportedly has good tint.</b> (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "SFN-43",
+     "why": "Even brighter sibling"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "No datasheet"
+   },
+   "cct_notes": [],
+   "tldr": "A very bright San'an-named 5050 with a decent cool-white tint."
+  },
+  {
+   "id": 137,
+   "name": "SFH-35",
+   "alts": [
+    "SFH-35"
+   ],
+   "maker": "San'an",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "12V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": true,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3535</code> · 12V",
+   "lm_html": "",
+   "cri_html": "mostly 70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A 12V 3535 with 16 tiny dies — it looks like a waffle.</b> Little documentation and now discontinued (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "GT-FC40",
+     "why": "A 16-die waffle that stayed available"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Discontinued"
+   },
+   "cct_notes": [],
+   "tldr": "A 12V 3535 with 16 tiny dies, discontinued."
+  },
+  {
+   "id": 138,
+   "name": "GT9090",
+   "alts": [
+    "GT9090"
+   ],
+   "maker": "",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "9090"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 4000,
+   "lm_hi": 5000,
+   "cri_min": 65,
+   "cri_max": 70,
+   "ccts": [
+    7000
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>9090</code> · 3V",
+   "lm_html": "~4,000–5,000 lm",
+   "cri_html": "~65–70 (near-7000K)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A cheap SBT90.2 clone: similar look, less performance, ~7000K, low CRI and greenish.</b> Used in the NlightD T90v2; the BLF Guide groups it with the San'an-named parts, origin unclear (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "SBT90.2",
+     "why": "The real thing: brighter and cleaner"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    },
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "budget",
+    "note": "SBT90.2 clone"
+   },
+   "cct_notes": [],
+   "tldr": "A cheap SBT90.2 clone: less performance, ~7000K, low CRI and greenish."
+  },
+  {
+   "id": 139,
+   "name": "L-90",
+   "alts": [
+    "L-90"
+   ],
+   "maker": "",
+   "code": "",
+   "section": "5. San'an Chips",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "11×10"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 3000,
+   "lm_hi": 4000,
+   "cri_min": 65,
+   "cri_max": 70,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>11 × 10 mm</code> · 3V",
+   "lm_html": "~3,000–4,000 lm",
+   "cri_html": "~65–70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A very large round-die domeless emitter sold as 'L-90' — true name unknown.</b> Similar to the old SBT-70 and the 'Yinding glass' parts, slightly less intense than an SBT-90; the glass lens can be removed to clean up the beam (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>).",
+   "alternatives": [
+    {
+     "name": "SBT-90 (gen 1)",
+     "why": "Same footprint class"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Unknown maker"
+   },
+   "cct_notes": [],
+   "tldr": "A very large round-die domeless emitter of unknown origin, sold as L-90."
+  },
+  {
+   "id": 140,
+   "name": "Boost HL",
+   "alts": [
+    "Boost HL",
+    "W2.1",
+    "CULNM1.TG",
+    "KW CULNM1.TG"
+   ],
+   "maker": "Osram",
+   "code": "",
+   "section": "4. Osram (Dedicated Compact Throwers)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "4040"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 800,
+   "lm_hi": 1000,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": true,
+   "colours": [],
+   "basis": "typical",
+   "footprint_html": "<code>4040</code> · 3V",
+   "lm_html": "~800–1,000 lm",
+   "cri_html": "~70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>The 1 mm² Oslon Boost HL, sometimes called W2.1: a W1 on a 4040 pad, slightly brighter thanks to a bigger thermal pad.</b> Marked discontinued and getting hard to find (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://davestechreviews.com/2020/12/12/osram-white-flat-leds/\" target=\"_blank\" rel=\"noopener\">Dave&#x27;s Oslon naming page</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "The 3030 original"
+    },
+    {
+     "name": "Boost HX",
+     "why": "The 2 mm² 4040 sibling"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    },
+    {
+     "label": "Oslon naming",
+     "url": "https://davestechreviews.com/2020/12/12/osram-white-flat-leds/"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Discontinued"
+   },
+   "cct_notes": [],
+   "tldr": "The 1 mm² Oslon Boost HL (W2.1): a W1 on a 4040 pad, discontinued."
+  },
+  {
+   "id": 141,
+   "name": "LUXEON V2",
+   "alts": [
+    "LUXEON V2",
+    "Luxeon V2"
+   ],
+   "maker": "Lumileds",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 1000,
+   "lm_hi": 1300,
+   "cri_min": 70,
+   "cri_max": 80,
+   "ccts": [
+    5000,
+    5700,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "~1,000–1,300 lm",
+   "cri_html": "~70–80",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>An unrelated 3535 successor to the 4040 LUXEON V — and not an upgrade in beam quality.</b> Brighter than the XP-G2/3 on paper, but tint-shiftier with lower CRI and output than a first-gen XP-L HI (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/63\" target=\"_blank\" rel=\"noopener\">BLF thread #63</a>).",
+   "alternatives": [
+    {
+     "name": "XP-L HI",
+     "why": "Better tint and output"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    },
+    {
+     "label": "BLF thread #63",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/63"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "legacy",
+    "note": "Tint-shift prone"
+   },
+   "cct_notes": [],
+   "tldr": "A 3535 Lumileds emitter that under-delivers vs the XP-L HI."
+  },
+  {
+   "id": 142,
+   "name": "LUXEON TX",
+   "alts": [
+    "LUXEON TX",
+    "Luxeon TX"
+   ],
+   "maker": "Lumileds",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3737"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 250,
+   "lm_hi": 500,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    3000,
+    4000,
+    5000,
+    5700
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3737</code> · 3V",
+   "lm_html": "~250–500 lm",
+   "cri_html": "70–90",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A small high-efficiency 3737 with a low Vf, used in many small Olights (i3E–i3T).</b> Warm-white and high-CRI variants exist; decent tint aside from a strong blue spike (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XP-G2",
+     "why": "Comparable tiny die"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Small Olights"
+   },
+   "cct_notes": [],
+   "tldr": "A small high-efficiency 3737 Lumileds emitter used in small Olights."
+  },
+  {
+   "id": 143,
+   "name": "P70",
+   "alts": [
+    "P70"
+   ],
+   "maker": "LatticePower",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "7070"
+   ],
+   "voltages": [
+    "6V"
+   ],
+   "lm_lo": 3500,
+   "lm_hi": 4000,
+   "cri_min": 70,
+   "cri_max": 70,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "typical",
+   "footprint_html": "<code>7070</code> · 6V",
+   "lm_html": "~3,500–4,000 lm",
+   "cri_html": "~70 (6500K)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>LatticePower's big flat 7070, comparable to a domeless XHP70.</b> Up to ~4,000 lm when pushed; used in the Acebeam L35 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "XHP70.3 HI",
+     "why": "The established domeless quad"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Acebeam L35"
+   },
+   "cct_notes": [],
+   "tldr": "LatticePower's big flat 7070, used in the Acebeam L35."
+  },
+  {
+   "id": 144,
+   "name": "UHe",
+   "alts": [
+    "UHe"
+   ],
+   "maker": "NiteLab",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "not stated",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>NiteLab's square-die high-output emitter, paired with UHi dies in Nitecore's 'MAX' arrays.</b> (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "UHi 20",
+     "why": "The round-die sibling"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "oem",
+    "note": "Nitecore in-house"
+   },
+   "cct_notes": [],
+   "tldr": "NiteLab's square-die high-output emitter, part of Nitecore's MAX arrays.",
+   "manufactured_by": "Nitecore (Sysmax)"
+  },
+  {
+   "id": 145,
+   "name": "UHi Max",
+   "alts": [
+    "UHi Max",
+    "UHi20 Max",
+    "UHi40 Max",
+    "MAX"
+   ],
+   "maker": "NiteLab",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [],
+   "voltages": [],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "not stated",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>Nitecore's flood-and-throw array: a central round UHi die ringed by small UHe dies.</b> The outer dies switch together (wired in parallel, not separately) as a flood ring; the hollow-ring beam is why it divides opinion as a flood solution (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>, thread discussion).",
+   "alternatives": [
+    {
+     "name": "UHi 20",
+     "why": "Single-die alternative"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "oem",
+    "note": "Nitecore in-house"
+   },
+   "cct_notes": [],
+   "tldr": "Nitecore's central-UHi-plus-UHe-ring array for flood and throw.",
+   "manufactured_by": "Nitecore (Sysmax)"
+  },
+  {
+   "id": 146,
+   "name": "Yuji 5mm",
+   "alts": [
+    "Yuji 5mm"
+   ],
+   "maker": "Yuji",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5mm"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 60,
+   "lm_hi": 110,
+   "cri_min": 90,
+   "cri_max": 95,
+   "ccts": [
+    2700,
+    4000,
+    5000,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": true,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5 mm</code> · 3V",
+   "lm_html": "~60–110 lm",
+   "cri_html": "90–95",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>The classic high-CRI 5 mm through-hole LED.</b> A wide CCT range; reportedly discontinued along with the Sophia clone that briefly replaced it in Sofirn's C01 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/62\" target=\"_blank\" rel=\"noopener\">BLF thread #62</a>).",
+   "alternatives": [
+    {
+     "name": "Sophia 5mm",
+     "why": "The Yuji-alternative clone"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    },
+    {
+     "label": "BLF thread #62",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/62"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Discontinued"
+   },
+   "cct_notes": [],
+   "tldr": "The classic high-CRI 5 mm through-hole LED."
+  },
+  {
+   "id": 147,
+   "name": "Sophia 5mm",
+   "alts": [
+    "Sophia 5mm"
+   ],
+   "maker": "Sophia",
+   "code": "",
+   "section": "8. Other Notable Emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5mm"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 60,
+   "lm_hi": 110,
+   "cri_min": 90,
+   "cri_max": 95,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": true,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5 mm</code> · 3V",
+   "lm_html": "~60–110 lm",
+   "cri_html": "90–95",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A Chinese high-CRI 5 mm LED — the brief Yuji alternative in a Sofirn C01 batch, sold by rngwn.</b> Reportedly discontinued (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/62\" target=\"_blank\" rel=\"noopener\">BLF thread #62</a>, <a href=\"https://budgetlightforum.com/t/available-again-blf-special-edition-light-new-sofirn-aaa-twisty-high-cri-5mm-led/51879\" target=\"_blank\" rel=\"noopener\">Sofirn C01 thread</a>).",
+   "alternatives": [
+    {
+     "name": "Yuji 5mm",
+     "why": "The original"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #62",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/62"
+    },
+    {
+     "label": "Sofirn C01 thread",
+     "url": "https://budgetlightforum.com/t/available-again-blf-special-edition-light-new-sofirn-aaa-twisty-high-cri-5mm-led/51879"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "legacy",
+    "note": "Discontinued"
+   },
+   "cct_notes": [],
+   "tldr": "A Chinese high-CRI 5 mm LED, briefly used in the Sofirn C01."
+  },
+  {
+   "id": 148,
+   "name": "219C-V2",
+   "alts": [
+    "219C-V2"
+   ],
+   "maker": "Nichia",
+   "code": "",
+   "section": "1. Nichia (Color Accuracy & Tint Favorites)",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 700,
+   "lm_hi": 800,
+   "cri_min": 90,
+   "cri_max": 95,
+   "ccts": [
+    5700
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "~700–800 lm",
+   "cri_html": "90–95 (R9050)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A factory-domeless 219C for high-CRI throw, in the common 3535 pad.</b> Listed at Kaidomain in 5700K R9050; enthusiasts await 4000–4500K bins (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/67\" target=\"_blank\" rel=\"noopener\">BLF thread #67</a>, <a href=\"http://kaidomain.com/219C-V2-5_58W-1800mA-800-Lumens-SMD-3535-LED\" target=\"_blank\" rel=\"noopener\">Kaidomain</a>).",
+   "alternatives": [
+    {
+     "name": "219C",
+     "why": "Domed original"
+    },
+    {
+     "name": "SST-20",
+     "why": "High-CRI thrower"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #67",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/67"
+    },
+    {
+     "label": "Kaidomain",
+     "url": "http://kaidomain.com/219C-V2-5_58W-1800mA-800-Lumens-SMD-3535-LED"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "New, cool white only"
+   },
+   "cct_notes": [],
+   "tldr": "A factory-domeless 219C for high-CRI throw, currently only 5700K."
+  },
+  {
+   "id": 149,
+   "name": "SFT-20",
+   "alts": [
+    "SFT-20"
+   ],
+   "maker": "Luminus",
+   "code": "",
+   "section": "2. Luminus (Throwers & High-Power Workhorses)",
+   "kind": "Colour",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": false,
+   "colours": [
+    "RGB"
+   ],
+   "basis": "typical",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A domeless mini-SST20 — but only as RGB.</b> It has an offset emitting area and a non-standard 3535 pad (central pad joined to one side, so no electrically neutral thermal path) (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-25R",
+     "why": "Available small thrower"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "RGB only"
+   },
+   "cct_notes": [],
+   "tldr": "A domeless mini-SST20, only made as RGB with an odd footprint."
+  },
+  {
+   "id": 150,
+   "name": "Rayten 5050 Quad",
+   "alts": [
+    "Rayten 5050 Quad"
+   ],
+   "maker": "Rayten",
+   "code": "",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": 90,
+   "cri_max": 95,
+   "ccts": [
+    4500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": true,
+   "unavailable": true,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5050</code> · 3V",
+   "lm_html": "",
+   "cri_html": "90–95 (R9070 planned)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A custom enthusiast-ordered quad round-die thrower that never materialised.</b> Planned as R9070 ~4500K 3V, pitched against the SFT-40 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "SFT-40",
+     "why": "The established 5050 thrower"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Never released"
+   },
+   "cct_notes": [],
+   "tldr": "A custom enthusiast quad round-die thrower that never materialised."
+  },
+  {
+   "id": 151,
+   "name": "YinDing 5050 Round",
+   "alts": [
+    "YinDing 5050 Round",
+    "YinDing Round LED",
+    "W5050SQ4",
+    "Getian PST30W"
+   ],
+   "maker": "",
+   "code": "",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 1100,
+   "lm_hi": 1600,
+   "cri_min": 70,
+   "cri_max": 90,
+   "ccts": [
+    3000,
+    3500,
+    6500
+   ],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5050</code> · 3V",
+   "lm_html": "~1,100–1,600 lm",
+   "cri_html": "70 (glass 3000K) / 90 (white-surround 3000K)",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>The flat round-die 'egg' LED behind the YinDing/LeiTeng/Rayten confusion.</b> The white-surround 3000K version is 90 CRI, the glass-lens 3000K version is 70 CRI with higher output; Getian lists the gold configuration as PST30W, and Convoy's egg version is the LMP-made W5050SQ4. The round die gives a clean beam, but efficiency and max current lag the XHP35 HI and XP-L HI (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/19\" target=\"_blank\" rel=\"noopener\">BLF thread #19</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50\" target=\"_blank\" rel=\"noopener\">BLF thread #50</a>, <a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
+   "alternatives": [
+    {
+     "name": "W5050SQ3",
+     "why": "LMP sibling, tested"
+    },
+    {
+     "name": "YinDing 5050 Glass (95 CRI)",
+     "why": "Glass-covered high-CRI version"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #19",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/19"
+    },
+    {
+     "label": "BLF thread #50",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/50"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Poor documentation"
+   },
+   "cct_notes": [],
+   "tldr": "The flat round-die \"egg\" LED sold under several names."
+  },
+  {
+   "id": 152,
+   "name": "LeiTeng 5050 Round",
+   "alts": [
+    "LeiTeng 5050 Round",
+    "LeiTang 5050 Round",
+    "Rayten 5050 Round"
+   ],
+   "maker": "",
+   "code": "",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "5050"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": 1100,
+   "lm_hi": 1500,
+   "cri_min": 65,
+   "cri_max": 70,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>5050</code> · 3V",
+   "lm_html": "~1,100–1,500 lm",
+   "cri_html": "~65–70",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A round-die 5050 with a silica protector over the die — greenish tint but good efficiency.</b> Used in some Olight throwers; LeiTeng and Rayten appear to be the same seller (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/7\" target=\"_blank\" rel=\"noopener\">BLF thread #7</a>).",
+   "alternatives": [
+    {
+     "name": "YinDing 5050 Round",
+     "why": "Sibling round-die part"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #7",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/7"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "Greenish tint"
+   },
+   "cct_notes": [],
+   "tldr": "A silica-protected round-die 5050, greenish but efficient."
+  },
+  {
+   "id": 153,
+   "name": "Yinding 3535 Ronda",
+   "alts": [
+    "Yinding 3535 Ronda",
+    "Ronda"
+   ],
+   "maker": "",
+   "code": "",
+   "section": "6. Boutique & House-Brand Emitters (FireflyLite FFL, Noctigon NTG, LMP, Getian, Convoy) — Other boutique / budget emitters",
+   "kind": "White",
+   "type_label": "",
+   "footprints": [
+    "3535"
+   ],
+   "voltages": [
+    "3V"
+   ],
+   "lm_lo": null,
+   "lm_hi": null,
+   "cri_min": null,
+   "cri_max": null,
+   "ccts": [],
+   "r9080": false,
+   "rosy": false,
+   "domeless": false,
+   "unavailable": false,
+   "colours": [],
+   "basis": "estimate",
+   "footprint_html": "<code>3535</code> · 3V",
+   "lm_html": "",
+   "cri_html": "",
+   "cri_label": "CRI",
+   "type_html": "",
+   "notes_html": "<b>A 3535 round-die 'Ronda' with a very small emitting area, between the CSLNM1 and CSLPM1 in size.</b> Rated 3.3 A with hopes of being overdrivable to 5 A; not used in any known light (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/7\" target=\"_blank\" rel=\"noopener\">BLF thread #7</a>).",
+   "alternatives": [
+    {
+     "name": "W1",
+     "why": "The 1 mm² benchmark"
+    }
+   ],
+   "sources": [
+    {
+     "label": "BLF thread #7",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708/7"
+    },
+    {
+     "label": "BLF Guide",
+     "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
+    }
+   ],
+   "candela": [],
+   "best_for": [],
+   "cd_lo": null,
+   "cd_hi": null,
+   "throw_lo": null,
+   "throw_hi": null,
+   "beam": null,
+   "rep": {
+    "t": "niche",
+    "note": "No known light"
+   },
+   "cct_notes": [],
+   "tldr": "A 3535 round-die \"Ronda\" with a very small emitting area."
   }
  ]
 }
