@@ -230,7 +230,8 @@
      "text": "More throw, lower CCT, rosier tint — the classic dedome"
     }
    ],
-   "tldr": "The default high-CRI pick for EDCs, headlamps and triples."
+   "tldr": "The default high-CRI pick for EDCs, headlamps and triples.",
+   "max_a": 5
   },
   {
    "id": 1,
@@ -562,7 +563,18 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Nichia B35AM",
+     "label": "",
+     "cd_lo": 18000.0,
+     "cd_hi": 28000.0,
+     "m_lo": 270.0,
+     "m_hi": 335.0,
+     "indicative": true,
+     "beam_html": "Wide, even flood with top-tier colour"
+    }
+   ],
    "best_for": [
     {
      "goal": "Colour-critical work",
@@ -581,17 +593,18 @@
      "why_html": "Wide, even beam with good colour at modest output. Domed parts behind a TIR or mule give the smoothest flood"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
-   "beam": 1,
+   "cd_lo": 18000.0,
+   "cd_hi": 28000.0,
+   "throw_lo": 270.0,
+   "throw_hi": 335.0,
+   "beam": 2,
    "rep": {
     "t": "niche",
-    "note": "Needs a dedicated MCPCB, which limits overdrive"
+    "note": "R9080-class in a 5050; pricey and availability varies"
    },
    "cct_notes": [],
-   "tldr": "Top-tier colour from four tiny dies, for colour-critical work and floody EDCs."
+   "tldr": "Top-tier colour from four tiny dies, for colour-critical work and floody EDCs.",
+   "max_a": 5
   },
   {
    "id": 5,
@@ -660,19 +673,58 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
-   "best_for": [],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "candela": [
+    {
+     "row": "Nichia 719A (domed)",
+     "label": "domed",
+     "cd_lo": 12000.0,
+     "cd_hi": 20000.0,
+     "m_lo": 220.0,
+     "m_hi": 285.0,
+     "indicative": true,
+     "beam_html": "Wide, even general-purpose flood"
+    },
+    {
+     "row": "Nichia 719A (dedomed)",
+     "label": "dedomed",
+     "cd_lo": 22000.0,
+     "cd_hi": 32000.0,
+     "m_lo": 295.0,
+     "m_hi": 360.0,
+     "indicative": true,
+     "beam_html": "Dedomed: a noticeably tighter hotspot, like a bigger 519A"
+    }
+   ],
+   "best_for": [
+    {
+     "goal": "Headlamp, camping & close work",
+     "hint": "floody, good colour",
+     "tier": 2,
+     "pick_html": "Nichia <b>519A</b> (domed), Samsung <b>LH351D</b> or Luminus <b>SST-20</b> (4000K 95 CRI)",
+     "also_html": "<b>NTG35</b>, Nichia <b>B35AM</b>, Nichia <b>E21A</b>, <b>719A</b>, Nichia <b>144A</b>, <b>FFL5009D</b>, LatticePower <b>TN3535</b> (90 CRI), Lumileds <b>HL2X</b>",
+     "why_html": "Wide, even beam with good colour at modest output. Domed parts behind a TIR or mule give the smoothest flood"
+    },
+    {
+     "goal": "Colour-critical work",
+     "hint": "photography, inspection, wiring, cooking",
+     "tier": 2,
+     "pick_html": "Nichia <b>519A</b>, <b>FFL351A</b>, Nichia <b>B35AM</b> or Nichia <b>E21A</b>",
+     "also_html": "<b>NTG35</b>, Nichia <b>219B</b>, <b>719A</b>, Luminus <b>SFT-70</b> 3000K, <b>YinDing 5050 Glass</b>, <b>NTG50</b>, <b>FFL5009R</b>",
+     "why_html": "R9080-class colour (Ra 95+, high R9) renders reds, skin and wood correctly. Check Duv too: very rosy parts tint everything pink"
+    }
+   ],
+   "cd_lo": 12000.0,
+   "cd_hi": 32000.0,
+   "throw_lo": 220.0,
+   "throw_hi": 360.0,
    "beam": 2,
    "rep": {
     "t": "niche",
     "note": "Generally considered underwhelming"
    },
    "cct_notes": [],
-   "tldr": "A flat two-die Nichia that most people find underwhelming."
+   "tldr": "A flat two-die Nichia that most people find underwhelming.",
+   "max_a": 5
   },
   {
    "id": 6,
@@ -820,7 +872,18 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Nichia E21A / E17A",
+     "label": "",
+     "cd_lo": 8000.0,
+     "cd_hi": 14000.0,
+     "m_lo": 180.0,
+     "m_hi": 235.0,
+     "indicative": true,
+     "beam_html": "Soft, even floody light with a gentle hotspot"
+    }
+   ],
    "best_for": [
     {
      "goal": "Tiny EDC",
@@ -855,17 +918,18 @@
      "why_html": "Wide, even beam with good colour at modest output. Domed parts behind a TIR or mule give the smoothest flood"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 8000.0,
+   "cd_hi": 14000.0,
+   "throw_lo": 180.0,
+   "throw_hi": 235.0,
    "beam": 3,
    "rep": {
     "t": "staple",
     "note": "Premium high-CRI for quads and arrays"
    },
    "cct_notes": [],
-   "tldr": "Ultra-high CRI in a tiny package, made for quads and larger arrays."
+   "tldr": "Ultra-high CRI in a tiny package, made for quads and larger arrays.",
+   "max_a": 2.5
   },
   {
    "id": 91,
@@ -1094,6 +1158,14 @@
    ],
    "best_for": [
     {
+     "goal": "Maximum throw from a small light",
+     "hint": "",
+     "tier": 1,
+     "pick_html": "Luminus <b>SFT-25R</b> or Osram <b>W1</b>",
+     "also_html": "Osram <b>Boost HX</b>, Luminus <b>SFT-12</b>, Osram <b>W2</b>",
+     "why_html": "Highest luminance in a standard 3535 board: maximum reach from a small light with a bit more spill than the W1"
+    },
+    {
      "goal": "Compact thrower",
      "hint": "18650 / 21700, ~30–40 mm reflector",
      "tier": 1,
@@ -1129,7 +1201,8 @@
      "text": "70 CRI; samples run cooler than nominal"
     }
    ],
-   "tldr": "Extreme throw from a standard 3535 board: the go-to EDC thrower LED."
+   "tldr": "Extreme throw from a standard 3535 board: the go-to EDC thrower LED.",
+   "max_a": 8
   },
   {
    "id": 9,
@@ -1275,7 +1348,8 @@
      "text": "95 CRI, ~1,300–1,500 lm"
     }
    ],
-   "tldr": "The all-round thrower king: a punchy hotspot with usable spill."
+   "tldr": "The all-round thrower king: a punchy hotspot with usable spill.",
+   "max_a": 10
   },
   {
    "id": 10,
@@ -1402,7 +1476,8 @@
      "text": "70 CRI"
     }
    ],
-   "tldr": "A domeless SST-70 for efficient boost- and buck-driven throwers."
+   "tldr": "A domeless SST-70 for efficient boost- and buck-driven throwers.",
+   "max_a": 10
   },
   {
    "id": 11,
@@ -1612,7 +1687,8 @@
      "text": "Phosphor is more brittle than other SFT parts — don't let a TIR press on it"
     }
    ],
-   "tldr": "A round-die thrower for large reflectors."
+   "tldr": "A round-die thrower for large reflectors.",
+   "max_a": 12
   },
   {
    "id": 13,
@@ -1706,7 +1782,8 @@
     "note": "Cheaper SBT90.2 alternative; high Vf"
    },
    "cct_notes": [],
-   "tldr": "The budget way into big-die throw."
+   "tldr": "The budget way into big-die throw.",
+   "max_a": 12
   },
   {
    "id": 14,
@@ -1804,7 +1881,8 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "The reference for searchlight-class throw plus lumens."
+   "tldr": "The reference for searchlight-class throw plus lumens.",
+   "max_a": 15
   },
   {
    "id": 15,
@@ -1862,7 +1940,18 @@
      "url": "https://convoylight.com/products/luminus-sft-12-led"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Luminus SFT-12",
+     "label": "",
+     "cd_lo": 110000.0,
+     "cd_hi": 140000.0,
+     "m_lo": 665.0,
+     "m_hi": 750.0,
+     "indicative": true,
+     "beam_html": "Very tight pencil beam; low lumens"
+    }
+   ],
    "best_for": [
     {
      "goal": "Compact thrower",
@@ -1871,19 +1960,28 @@
      "pick_html": "Luminus <b>SFT-25R</b> or Osram <b>W1</b>",
      "also_html": "Luminus <b>SFT-40</b>, Osram <b>W2</b>, Cree <b>XP-L HI</b>, Cree <b>XP-LR</b>, LMP <b>W5050SQ5</b>, <b>YinDing 5050 Glass</b>, Luminus <b>SFT-12</b>",
      "why_html": "Tiny domeless die = highest luminance of any LED = most candela per lumen. SFT-40 keeps more usable spill"
+    },
+    {
+     "goal": "Maximum throw from a small light",
+     "hint": "",
+     "tier": 2,
+     "pick_html": "Osram <b>W1</b> or <b>Boost HX</b>",
+     "also_html": "Luminus <b>SFT-25R</b>, <b>SFT-12</b>, Osram <b>W2</b>",
+     "why_html": "The tiniest dies have the highest luminance, so even a small reflector reaches far. The SFT-12 goes furthest but is very dim"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 110000.0,
+   "cd_hi": 140000.0,
+   "throw_lo": 665.0,
+   "throw_hi": 750.0,
    "beam": 5,
    "rep": {
     "t": "niche",
     "note": "Outclassed by the SFT-25R at the same current"
    },
    "cct_notes": [],
-   "tldr": "A tight pencil-beam LED that the SFT-25R mostly beats."
+   "tldr": "A tight pencil-beam LED that the SFT-25R mostly beats.",
+   "max_a": 2.5
   },
   {
    "id": 16,
@@ -1949,7 +2047,28 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Luminus SST-20 (domed)",
+     "label": "domed",
+     "cd_lo": 22000.0,
+     "cd_hi": 32000.0,
+     "m_lo": 295.0,
+     "m_hi": 360.0,
+     "indicative": false,
+     "beam_html": "Balanced hotspot with usable spill"
+    },
+    {
+     "row": "Luminus SST-20 (dedomed)",
+     "label": "dedomed",
+     "cd_lo": 38000.0,
+     "cd_hi": 48000.0,
+     "m_lo": 390.0,
+     "m_hi": 440.0,
+     "indicative": false,
+     "beam_html": "Dedomed: a tight high-CRI hotspot with a real throw gain"
+    }
+   ],
    "best_for": [
     {
      "goal": "Headlamp, camping & close work",
@@ -1984,10 +2103,10 @@
      "why_html": "Several small high-CRI dies behind a multi-TIR give a smooth, floody beam; tiny dies (E21A, CSP2323, XP-G2) suit micro triples"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 22000.0,
+   "cd_hi": 48000.0,
+   "throw_lo": 295.0,
+   "throw_hi": 440.0,
    "beam": 3,
    "rep": {
     "t": "staple",
@@ -2003,7 +2122,8 @@
      "text": "Bright but notoriously green on low"
     }
    ],
-   "tldr": "A cheap, versatile domed LED, at its best in the 4000K high-CRI version."
+   "tldr": "A cheap, versatile domed LED, at its best in the 4000K high-CRI version.",
+   "max_a": 4.5
   },
   {
    "id": 17,
@@ -2084,12 +2204,23 @@
      "url": "https://convoylight.com/products/luminus-sst40-led"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Luminus SST-40 / SST-70",
+     "label": "",
+     "cd_lo": 22000.0,
+     "cd_hi": 32000.0,
+     "m_lo": 295.0,
+     "m_hi": 360.0,
+     "indicative": true,
+     "beam_html": "Wide bright hotspot with lots of spill; the budget flood/throw hybrid"
+    }
+   ],
    "best_for": [],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 22000.0,
+   "cd_hi": 32000.0,
+   "throw_lo": 295.0,
+   "throw_hi": 360.0,
    "beam": 2,
    "rep": {
     "t": "legacy",
@@ -2101,7 +2232,8 @@
      "text": "Very green at low power on all CCTs"
     }
    ],
-   "tldr": "Cheap, bright and green: the budget-light workhorses."
+   "tldr": "Cheap, bright and green: the budget-light workhorses.",
+   "max_a": 9
   },
   {
    "id": 81,
@@ -2145,19 +2277,31 @@
      "url": "https://download.luminus.com/datasheets/Luminus_SST-25-WES_Datasheet.pdf"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Luminus SST-25",
+     "label": "",
+     "cd_lo": 10000.0,
+     "cd_hi": 16000.0,
+     "m_lo": 200.0,
+     "m_hi": 255.0,
+     "indicative": true,
+     "beam_html": "Wide, even flood; no real hotspot"
+    }
+   ],
    "best_for": [],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 10000.0,
+   "cd_hi": 16000.0,
+   "throw_lo": 200.0,
+   "throw_hi": 255.0,
    "beam": 1,
    "rep": {
     "t": "oem",
     "note": "Fenix/Olight-class OEM emitter"
    },
    "cct_notes": [],
-   "tldr": "A domed cool-white flood LED you'll mostly meet in Fenix multi-LED lights."
+   "tldr": "A domed cool-white flood LED you'll mostly meet in Fenix multi-LED lights.",
+   "max_a": 3
   },
   {
    "id": 88,
@@ -2390,7 +2534,8 @@
      "text": "The HI's smaller source roughly doubles intensity vs the domed HD"
     }
    ],
-   "tldr": "The go-to for high sustained output in big single-emitter lights."
+   "tldr": "The go-to for high sustained output in big single-emitter lights.",
+   "max_a": 8
   },
   {
    "id": 19,
@@ -2508,7 +2653,8 @@
      "text": "Bin lottery — 90 CRI versions exist but cost output"
     }
    ],
-   "tldr": "A compact quad-die workhorse: efficient and bright, with decent throw."
+   "tldr": "A compact quad-die workhorse: efficient and bright, with decent throw.",
+   "max_a": 8
   },
   {
    "id": 20,
@@ -2639,7 +2785,18 @@
      "url": "https://convoylight.com/products/xpl-hi-led"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Cree XP-L HI",
+     "label": "",
+     "cd_lo": 38000.0,
+     "cd_hi": 52000.0,
+     "m_lo": 390.0,
+     "m_hi": 455.0,
+     "indicative": false,
+     "beam_html": "Tight hotspot with less spill than the SFT-40"
+    }
+   ],
    "best_for": [
     {
      "goal": "EDC / all-rounder",
@@ -2658,17 +2815,18 @@
      "why_html": "Tiny domeless die = highest luminance of any LED = most candela per lumen. SFT-40 keeps more usable spill"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 38000.0,
+   "cd_hi": 52000.0,
+   "throw_lo": 390.0,
+   "throw_hi": 455.0,
    "beam": 4,
    "rep": {
     "t": "legacy",
-    "note": "Mostly superseded by the 519A, SFT-40 and NTG35"
+    "note": "Mostly superseded by the SFT-25R"
    },
    "cct_notes": [],
-   "tldr": "The classic domeless EDC emitter, now mostly superseded."
+   "tldr": "The classic domeless EDC emitter, now mostly superseded.",
+   "max_a": 4
   },
   {
    "id": 22,
@@ -2731,19 +2889,41 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Cree XP-G4 / XP-L2 (domed)",
+     "label": "domed",
+     "cd_lo": 18000.0,
+     "cd_hi": 28000.0,
+     "m_lo": 270.0,
+     "m_hi": 335.0,
+     "indicative": false,
+     "beam_html": "Balanced hotspot with spill; the default OEM workhorse beam"
+    },
+    {
+     "row": "Cree XP-G4 / XP-L2 (dedomed)",
+     "label": "dedomed",
+     "cd_lo": 32000.0,
+     "cd_hi": 45000.0,
+     "m_lo": 360.0,
+     "m_hi": 425.0,
+     "indicative": false,
+     "beam_html": "Dedomed: a real little thrower, the classic budget mod"
+    }
+   ],
    "best_for": [],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 18000.0,
+   "cd_hi": 45000.0,
+   "throw_lo": 270.0,
+   "throw_hi": 425.0,
    "beam": 3,
    "rep": {
     "t": "oem",
     "note": "Common in Fenix/Olight-class lights; enthusiasts avoid the tint"
    },
    "cct_notes": [],
-   "tldr": "Efficient mainstream LEDs that enthusiasts generally avoid."
+   "tldr": "Efficient mainstream LEDs that enthusiasts generally avoid.",
+   "max_a": 3
   },
   {
    "id": 23,
@@ -2803,7 +2983,18 @@
      "url": "https://www.cree-led.com/news/xlamp-xplr-xpgr/"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Cree XP-LR / XP-GR",
+     "label": "",
+     "cd_lo": 50000.0,
+     "cd_hi": 70000.0,
+     "m_lo": 445.0,
+     "m_hi": 530.0,
+     "indicative": true,
+     "beam_html": "Round-die Cree rivals to the SFT-25R; tight hotspot"
+    }
+   ],
    "best_for": [
     {
      "goal": "Compact thrower",
@@ -2822,10 +3013,10 @@
      "why_html": "A big reflector multiplies luminance, so high-luminance dies that take more current win. The SFT-42R only comes into its own in large heads"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 50000.0,
+   "cd_hi": 70000.0,
+   "throw_lo": 445.0,
+   "throw_hi": 530.0,
    "beam": 4,
    "rep": {
     "t": "niche",
@@ -2851,12 +3042,16 @@
    "voltages": [
     "3V"
    ],
-   "lm_lo": null,
-   "lm_hi": null,
-   "cri_min": null,
-   "cri_max": null,
+   "lm_lo": 250.0,
+   "lm_hi": 620.0,
+   "cri_min": 70,
+   "cri_max": 85,
    "ccts": [
     2700,
+    3000,
+    4000,
+    5000,
+    5700,
     6500
    ],
    "r9080": false,
@@ -2866,8 +3061,8 @@
    "colours": [],
    "basis": "datasheet",
    "footprint_html": "<code>3535</code> · 3V",
-   "lm_html": "—",
-   "cri_html": "—",
+   "lm_html": "~250–620 lm (R5, overdriven)",
+   "cri_html": "70<br>85 (high-CRI bins)",
    "cri_label": "CRI",
    "type_html": "",
    "notes_html": "<b>The old tiny-die classic for micro quads and triples.</b> Smaller dome and die than the XP-L, with correspondingly less output. 2700K–6500K (<a href=\"https://www.cree-led.com/products/applications/broadcast/\" target=\"_blank\" rel=\"noopener\">Cree</a>). Largely displaced by the XP-G3/G4 (<a href=\"https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708\" target=\"_blank\" rel=\"noopener\">BLF Guide</a>).",
@@ -2895,7 +3090,28 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Cree XP-G2 (domed)",
+     "label": "domed",
+     "cd_lo": 20000.0,
+     "cd_hi": 30000.0,
+     "m_lo": 285.0,
+     "m_hi": 345.0,
+     "indicative": false,
+     "beam_html": "Small-die hotspot; nicely balanced in tiny lights"
+    },
+    {
+     "row": "Cree XP-G2 (dedomed)",
+     "label": "dedomed",
+     "cd_lo": 35000.0,
+     "cd_hi": 50000.0,
+     "m_lo": 375.0,
+     "m_hi": 445.0,
+     "indicative": false,
+     "beam_html": "Dedomed: the classic budget micro-thrower"
+    }
+   ],
    "best_for": [
     {
      "goal": "Triples & quads",
@@ -2906,17 +3122,18 @@
      "why_html": "Several small high-CRI dies behind a multi-TIR give a smooth, floody beam; tiny dies (E21A, CSP2323, XP-G2) suit micro triples"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 20000.0,
+   "cd_hi": 50000.0,
+   "throw_lo": 285.0,
+   "throw_hi": 445.0,
    "beam": 4,
    "rep": {
     "t": "legacy",
     "note": "Displaced by the XP-G3/G4; still loved in micro triples"
    },
    "cct_notes": [],
-   "tldr": "The old tiny-die classic for micro quads and triples."
+   "tldr": "The old tiny-die classic for micro quads and triples.",
+   "max_a": 2
   },
   {
    "id": 25,
@@ -2975,7 +3192,18 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Cree XM-L2",
+     "label": "",
+     "cd_lo": 9000.0,
+     "cd_hi": 14000.0,
+     "m_lo": 190.0,
+     "m_hi": 235.0,
+     "indicative": false,
+     "beam_html": "Huge wide flood; barely any hotspot"
+    }
+   ],
    "best_for": [
     {
      "goal": "Trail / walking light",
@@ -2986,17 +3214,18 @@
      "why_html": "High efficiency at high drive means more lumens for the same heat. Sustained output is still set by the host&#x27;s size and cooling"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 9000.0,
+   "cd_hi": 14000.0,
+   "throw_lo": 190.0,
+   "throw_hi": 235.0,
    "beam": 1,
    "rep": {
     "t": "staple",
     "note": "2021 flip-chip redesign; same XM footprint"
    },
    "cct_notes": [],
-   "tldr": "A cheap, efficient flood LED, not a thrower."
+   "tldr": "A cheap, efficient flood LED, not a thrower.",
+   "max_a": 8
   },
   {
    "id": 26,
@@ -3067,19 +3296,31 @@
      "url": "https://convoylight.com/collections/cree"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Cree XHP50.2 / XHP70.2",
+     "label": "",
+     "cd_lo": 12000.0,
+     "cd_hi": 25000.0,
+     "m_lo": 220.0,
+     "m_hi": 315.0,
+     "indicative": true,
+     "beam_html": "Big quad-die flood; needs a large reflector to throw"
+    }
+   ],
    "best_for": [],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 12000.0,
+   "cd_hi": 25000.0,
+   "throw_lo": 220.0,
+   "throw_hi": 315.0,
    "beam": 2,
    "rep": {
     "t": "legacy",
     "note": "Superseded by the XHP50.3 / XHP70.3 HI"
    },
    "cct_notes": [],
-   "tldr": "The older domed XHP generation: very bright but floody, with visible rainbow tint shift."
+   "tldr": "The older domed XHP generation: very bright but floody, with visible rainbow tint shift.",
+   "max_a": 6
   },
   {
    "id": 27,
@@ -3339,19 +3580,31 @@
      "url": "https://budgetlightforum.com/t/led-test-review-sc5-based-cree-leds-xp-l-hd-hi-xp-g2-e2-xm-l2-wip/51980"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Cree XP-L HD",
+     "label": "",
+     "cd_lo": 12000.0,
+     "cd_hi": 18000.0,
+     "m_lo": 220.0,
+     "m_hi": 270.0,
+     "indicative": true,
+     "beam_html": "Wide, even flood; the domed XP-L"
+    }
+   ],
    "best_for": [],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 12000.0,
+   "cd_hi": 18000.0,
+   "throw_lo": 220.0,
+   "throw_hi": 270.0,
    "beam": 2,
    "rep": {
     "t": "legacy",
     "note": "Superseded; still in budget lights"
    },
    "cct_notes": [],
-   "tldr": "The domed XP-L: floodier and slightly brighter than the domeless HI."
+   "tldr": "The domed XP-L: floodier and slightly brighter than the domeless HI.",
+   "max_a": 3
   },
   {
    "id": 28,
@@ -3438,6 +3691,14 @@
    ],
    "best_for": [
     {
+     "goal": "Maximum throw from a small light",
+     "hint": "",
+     "tier": 1,
+     "pick_html": "Osram <b>W1</b>",
+     "also_html": "Osram <b>Boost HX</b>, Luminus <b>SFT-25R</b>, <b>SFT-12</b>, Osram <b>W2</b>",
+     "why_html": "The tiniest die has the highest luminance of any white LED, so even a small reflector reaches far; lumens stay low"
+    },
+    {
      "goal": "Compact thrower",
      "hint": "18650 / 21700, ~30–40 mm reflector",
      "tier": 1,
@@ -3488,7 +3749,8 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "Unmatched pencil-beam throw for its size: the pick for maximum reach from a small light."
+   "tldr": "Unmatched pencil-beam throw for its size: the pick for maximum reach from a small light.",
+   "max_a": 2.5
   },
   {
    "id": 29,
@@ -3590,6 +3852,14 @@
      "pick_html": "Luminus <b>SFT-25R</b> or Osram <b>W1</b>",
      "also_html": "Luminus <b>SFT-40</b>, Osram <b>W2</b>, Cree <b>XP-L HI</b>, Cree <b>XP-LR</b>, LMP <b>W5050SQ5</b>, <b>YinDing 5050 Glass</b>, Luminus <b>SFT-12</b>",
      "why_html": "Tiny domeless die = highest luminance of any LED = most candela per lumen. SFT-40 keeps more usable spill"
+    },
+    {
+     "goal": "Maximum throw from a small light",
+     "hint": "",
+     "tier": 2,
+     "pick_html": "Osram <b>W1</b> or <b>W2</b>",
+     "also_html": "Luminus <b>SFT-25R</b>, <b>SFT-12</b>, Osram <b>Boost HX</b>",
+     "why_html": "The W2 trades a little intensity for a wider, more usable hotspot in small heads"
     }
    ],
    "cd_lo": 75000.0,
@@ -3602,7 +3872,8 @@
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "A throw LED with a wider, brighter hotspot than the W1."
+   "tldr": "A throw LED with a wider, brighter hotspot than the W1.",
+   "max_a": 2.5
   },
   {
    "id": 30,
@@ -3672,7 +3943,18 @@
      "url": "https://convoylight.com/collections/osram"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Osram Boost HX (CULPM1.TG)",
+     "label": "",
+     "cd_lo": 95000.0,
+     "cd_hi": 115000.0,
+     "m_lo": 615.0,
+     "m_hi": 680.0,
+     "indicative": true,
+     "beam_html": "Razor-thin pencil beam on a bigger, cooler-running board"
+    }
+   ],
    "best_for": [
     {
      "goal": "Long-range thrower",
@@ -3697,19 +3979,28 @@
      "pick_html": "Osram <b>Green</b>",
      "also_html": "Osram <b>Red</b>, Osram <b>Verdure</b>, Osram <b>Blue</b>, Getian <b>GT RGB</b>, Cree <b>XP-E2</b> (colour)",
      "why_html": "Saturated green looks brightest to the eye and spooks less game; red and RGB give a choice of channels"
+    },
+    {
+     "goal": "Maximum throw from a small light",
+     "hint": "",
+     "tier": 1,
+     "pick_html": "Osram <b>W1</b> or <b>Boost HX</b>",
+     "also_html": "Luminus <b>SFT-25R</b>, <b>SFT-12</b>, Osram <b>W2</b>",
+     "why_html": "The tiniest dies have the highest luminance, so even a small reflector reaches far; the Boost HX handles the heat better"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 95000.0,
+   "cd_hi": 115000.0,
+   "throw_lo": 615.0,
+   "throw_hi": 680.0,
    "beam": 4,
    "rep": {
     "t": "staple",
     "note": ""
    },
    "cct_notes": [],
-   "tldr": "A W2-class thrower in a bigger package that runs cooler and takes more overdrive."
+   "tldr": "A W2-class thrower in a bigger package that runs cooler and takes more overdrive.",
+   "max_a": 5
   },
   {
    "id": 31,
@@ -3904,7 +4195,18 @@
      "url": "https://convoylight.com/products/f45r-led"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Convoy F45R",
+     "label": "",
+     "cd_lo": 55000.0,
+     "cd_hi": 75000.0,
+     "m_lo": 470.0,
+     "m_hi": 550.0,
+     "indicative": false,
+     "beam_html": "Punchy hotspot with usable spill from a 4545 board"
+    }
+   ],
    "best_for": [
     {
      "goal": "Long-range thrower",
@@ -3931,10 +4233,10 @@
      "why_html": "Warm CCT cuts back-scatter glare. A floodier beam held low helps more than raw throw"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 55000.0,
+   "cd_hi": 75000.0,
+   "throw_lo": 470.0,
+   "throw_hi": 550.0,
    "beam": 4,
    "rep": {
     "t": "niche",
@@ -4997,7 +5299,8 @@
      "text": "Newer run reportedly less rosy than early batches"
     }
    ],
-   "tldr": "A domeless high-CRI flip chip that looks like a dedomed 519A out of the box."
+   "tldr": "A domeless high-CRI flip chip that looks like a dedomed 519A out of the box.",
+   "max_a": 5
   },
   {
    "id": 45,
@@ -5345,7 +5648,18 @@
      "url": "https://intl-outdoor.com/product/emisar-d4v2-high-power-led-flashlight/"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Noctigon NTG35",
+     "label": "",
+     "cd_lo": 55000.0,
+     "cd_hi": 75000.0,
+     "m_lo": 470.0,
+     "m_hi": 550.0,
+     "indicative": true,
+     "beam_html": "Punchy hotspot with more spill than the SFT-25R"
+    }
+   ],
    "best_for": [
     {
      "goal": "EDC / all-rounder",
@@ -5380,10 +5694,10 @@
      "why_html": "R9080-class colour (Ra 95+, high R9) renders reds, skin and wood correctly. Check Duv too: very rosy parts tint everything pink"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 55000.0,
+   "cd_hi": 75000.0,
+   "throw_lo": 470.0,
+   "throw_hi": 550.0,
    "beam": 2,
    "rep": {
     "t": "staple",
@@ -5395,7 +5709,8 @@
      "text": "Rosier than a 219B — sometimes too rosy"
     }
    ],
-   "tldr": "Hank's rosy high-CRI 3535, for people who want a warm, pink-leaning tint."
+   "tldr": "Hank's rosy high-CRI 3535, for people who want a warm, pink-leaning tint.",
+   "max_a": 8
   },
   {
    "id": 49,
@@ -6105,7 +6420,18 @@
      "url": "https://convoylight.com/products/lmp-lhp531-light-emitting-diode"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "LMP LHP531",
+     "label": "",
+     "cd_lo": 25000.0,
+     "cd_hi": 38000.0,
+     "m_lo": 315.0,
+     "m_hi": 390.0,
+     "indicative": true,
+     "beam_html": "Balanced mid-range beam with generous spill"
+    }
+   ],
    "best_for": [
     {
      "goal": "Balanced thrower",
@@ -6132,10 +6458,10 @@
      "why_html": "High efficiency at high drive means more lumens for the same heat. Sustained output is still set by the host&#x27;s size and cooling"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 25000.0,
+   "cd_hi": 38000.0,
+   "throw_lo": 315.0,
+   "throw_hi": 390.0,
    "beam": 2,
    "rep": {
     "t": "budget",
@@ -6246,7 +6572,8 @@
     "note": "Higher sustained output than XHP70.3 HI in Convoy lights"
    },
    "cct_notes": [],
-   "tldr": "A cheap 3V 7070 for high sustained output."
+   "tldr": "A cheap 3V 7070 for high sustained output.",
+   "max_a": 8
   },
   {
    "id": 59,
@@ -6393,7 +6720,18 @@
      "url": "https://convoylight.com/products/lmp-w5050sq5"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "LMP W5050SQ5",
+     "label": "",
+     "cd_lo": 40000.0,
+     "cd_hi": 55000.0,
+     "m_lo": 400.0,
+     "m_hi": 470.0,
+     "indicative": true,
+     "beam_html": "Bright, moderately tight hotspot for a 5050"
+    }
+   ],
    "best_for": [
     {
      "goal": "Compact thrower",
@@ -6404,17 +6742,18 @@
      "why_html": "Tiny domeless die = highest luminance of any LED = most candela per lumen. SFT-40 keeps more usable spill"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 40000.0,
+   "cd_hi": 55000.0,
+   "throw_lo": 400.0,
+   "throw_hi": 470.0,
    "beam": 4,
    "rep": {
     "t": "budget",
     "note": "Convoy's round-die thrower"
    },
    "cct_notes": [],
-   "tldr": "A higher-current round-die thrower from Lumenpioneer."
+   "tldr": "A higher-current round-die thrower from Lumenpioneer.",
+   "max_a": 8
   },
   {
    "id": 61,
@@ -6469,12 +6808,23 @@
      "url": "https://convoylight.com/products/lmp-lml2aw-dc-3000k-4000k-used-to-replace-sst40-led"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "LMP LML2AW",
+     "label": "",
+     "cd_lo": 22000.0,
+     "cd_hi": 30000.0,
+     "m_lo": 295.0,
+     "m_hi": 345.0,
+     "indicative": true,
+     "beam_html": "SST-40-class hotspot with a cleaner, warmer tint"
+    }
+   ],
    "best_for": [],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 22000.0,
+   "cd_hi": 30000.0,
+   "throw_lo": 295.0,
+   "throw_hi": 345.0,
    "beam": 2,
    "rep": {
     "t": "budget",
@@ -6486,7 +6836,8 @@
      "text": "Tint better than the SST-40 but varies"
     }
    ],
-   "tldr": "A budget drop-in replacement for the SST-40, with better tint."
+   "tldr": "A budget drop-in replacement for the SST-40, with better tint.",
+   "max_a": 8
   },
   {
    "id": 62,
@@ -7480,7 +7831,18 @@
      "url": "https://budgetlightforum.com/t/quick-guide-to-popular-leds-updated-for-2024/218708"
     }
    ],
-   "candela": [],
+   "candela": [
+    {
+     "row": "Samsung LH351D",
+     "label": "",
+     "cd_lo": 7000.0,
+     "cd_hi": 12000.0,
+     "m_lo": 170.0,
+     "m_hi": 220.0,
+     "indicative": false,
+     "beam_html": "Wall of light; a wide, even flood"
+    }
+   ],
    "best_for": [
     {
      "goal": "Headlamp, camping & close work",
@@ -7499,10 +7861,10 @@
      "why_html": "High CRI, easy to drive and a great tint, with enough throw for everyday use. The alternatives trade some colour quality or tint consistency for price"
     }
    ],
-   "cd_lo": null,
-   "cd_hi": null,
-   "throw_lo": null,
-   "throw_hi": null,
+   "cd_lo": 7000.0,
+   "cd_hi": 12000.0,
+   "throw_lo": 170.0,
+   "throw_hi": 220.0,
    "beam": 2,
    "rep": {
     "t": "budget",
@@ -7514,7 +7876,8 @@
      "text": "Tends green (\"dogfarts\"); bins vary"
     }
    ],
-   "tldr": "A cheap, floody high-CRI LED, still a decent budget pick."
+   "tldr": "A cheap, floody high-CRI LED, still a decent budget pick.",
+   "max_a": 4
   },
   {
    "id": 77,
