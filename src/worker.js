@@ -306,6 +306,24 @@ export default {
       return respond({ attribution: CREDIT, error: `data unavailable: ${err.message}` }, 503);
     }
     const p = url.searchParams;
+    // /s/<query> shortcut: redirect into whichever index matches best with the
+    // search box pre-filled via ?q= (both indexes read it on load). An exact
+    // LED name/alternate or flashlight model/slug beats a word that merely
+    // appears somewhere; when both or neither match, stay on the LED index,
+    // the site's home page.
+    if (path === "/s" || path.startsWith("/s/")) {
+      let t = path === "/s" ? p.get("q") || "" : path.slice(3);
+      try { t = decodeURIComponent(t); } catch {}
+      t = t.trim();
+      if (!t) return Response.redirect(`${url.origin}/leds/`, 302);
+      const lc = t.toLowerCase(), nq = norm(t), sq = slugify(t);
+      const ledExact = db.leds.some((e) => norm(e.name) === nq || (e.alts || []).some((a) => norm(a) === nq));
+      const lightExact = db.lights.some((l) => db.slugOf.get(l) === sq || (l.model || "").toLowerCase() === lc);
+      const ledHit = db.leds.some((e) => matches(db.hayOf.get(e), lc));
+      const lightHit = db.lights.some((l) => matches(db.hayOf.get(l), lc));
+      const to = lightExact && !ledExact ? "flashlights" : ledExact ? "leds" : lightHit && !ledHit ? "flashlights" : "leds";
+      return Response.redirect(`${url.origin}/${to}/?q=${encodeURIComponent(t)}`, 302);
+    }
     if (path === "/api") return index();
     if (path === "/api/flashlights") return listLights(p);
     if (path === "/api/leds") return listLeds(p);

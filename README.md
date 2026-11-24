@@ -11,6 +11,14 @@ The JSON files in `public/` are the source of truth: edit them directly, then ru
 `python3 tools/validate.py` (also run by GitHub on every push and pull request).
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how others can report fixes or send changes.
 
+## URL shortcut
+
+`light.thefilip.com/s/<query>` opens the index that matches the query best with
+its search box pre-filled — e.g. [`/s/219B`](https://light.thefilip.com/s/219B)
+lands on the Emitter Index, `/s/convoy s21e` on the Flashlight Index. Routed
+through `src/worker.js` (`run_worker_first`); an exact LED name or flashlight
+model wins over a word that merely appears in the text.
+
 ## Deploy (Cloudflare Workers, static assets)
 
 Connect the repo in the Cloudflare dashboard (Workers & Pages → Create → Workers)
