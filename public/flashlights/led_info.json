@@ -944,8 +944,8 @@
    "candela": [],
    "footprint": "3535 · 3V",
    "output": "20F: 700 lm @ 1.5 A (2.5 A max) · 36F: 741 lm @ 1.5 A (3 A max)",
-   "colour": "~70",
-   "notes": "Luminus's cost-per-lumen flip chips in a ceramic package. SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F."
+   "colour": "20F: 65–80 · 36F: 65–90 (90 in 2700K, 5700K, 6500K)",
+   "notes": "Luminus's cost-per-lumen flip chips in a ceramic package. SST-20F 3000–6500K at 65–80 CRI; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K at 65–90 CRI, the 90 CRI bins in 2700K, 5700K and 6500K. Sometimes misspelled “SFT-36F”. The Acebeam Terminator M1 2.0 uses the SST-36F."
   },
   "UHi 25": {
    "title": "UHi 25",
@@ -1048,8 +1048,8 @@
    "candela": [],
    "footprint": "3535 · 3V",
    "output": "20F: 700 lm @ 1.5 A (2.5 A max) · 36F: 741 lm @ 1.5 A (3 A max)",
-   "colour": "~70",
-   "notes": "Luminus's cost-per-lumen flip chips in a ceramic package. SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F."
+   "colour": "20F: 65–80 · 36F: 65–90 (90 in 2700K, 5700K, 6500K)",
+   "notes": "Luminus's cost-per-lumen flip chips in a ceramic package. SST-20F 3000–6500K at 65–80 CRI; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K at 65–90 CRI, the 90 CRI bins in 2700K, 5700K and 6500K. Sometimes misspelled “SFT-36F”. The Acebeam Terminator M1 2.0 uses the SST-36F."
   },
   "SST-20V": {
    "title": "SST-20V",

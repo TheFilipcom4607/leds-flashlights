@@ -74,6 +74,8 @@ h1 svg { width: 0.9em; height: 0.9em; color: var(--accent); flex: none; }
 .gh:hover { color: var(--ink); border-color: var(--line-2); }
 .gh svg { width: 16px; height: 16px; flex: none; }
 @media (max-width: 860px) { .gh { top: 20px; } }
+/* On a phone the label would sit on top of the page tabs: icon only, tighter tabs. */
+@media (max-width: 560px) { .gh { font-size: 0; gap: 0; padding: 8px; } .idxnav a { padding: 6px 10px; } }
 .kpi b { display: block; font: 700 22px/1.1 var(--f-display); color: var(--ink); }
 .kpi span { font-size: 12px; color: var(--muted); }
 
@@ -202,8 +204,9 @@ main { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 
 .dot + .dot { margin-left: -3px; }
 .row:hover .dot { box-shadow: 0 0 0 1.5px var(--sunken), inset 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent); }
 .range { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
-.fams { font-size: 12.5px; color: var(--ink-2); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.fams .more { color: var(--faint); }
+.fams { display: flex; gap: 4px; font-size: 12.5px; color: var(--ink-2); margin-top: 3px; white-space: nowrap; }
+.fams > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.fams .more { flex: none; color: var(--faint); } /* the "+2" stays visible when the names are cut short */
 
 .v { font-size: 14px; font-weight: 500; white-space: nowrap; }
 .v small { color: var(--muted); font-weight: 400; font-size: 12px; margin-left: 1px; }
@@ -693,7 +696,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     if (cdmin != null && !(e.cd_hi >= cdmin)) return false;
     if (crimin != null && !(e.cri_max >= crimin)) return false;
     const q = F.q.trim().toLowerCase();
-    if (q && !q.split(/\s+/).every(w => e._hay.includes(w))) return false;
+    if (q && !q.split(/\s+/).every(w => e._hay.includes(w) || /\d/.test(w) && e._hayc.includes(w.replace(/[^a-z0-9]/g, "")))) return false;
     return true;
   }
   function results() {
@@ -814,7 +817,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     return `<div class="row cols${picked ? " picked" : ""}" data-id="${e.id}" tabindex="0" role="button" aria-label="${esc(name(e))}, open details">
       <div class="c-pick"><label class="pick" title="${picked ? "Remove from compare" : full ? `Compare holds ${MAXPICK}` : "Add to compare"}"><input type="checkbox" data-pick="${e.id}" ${picked ? "checked" : ""} ${!picked && full ? "disabled" : ""} aria-label="Compare ${esc(name(e))}"></label></div>
       <div class="c-light"><div class="eyebrow">${esc(e.maker)}</div><div class="name">${esc(e.name)}${badges(e)}</div>${meta ? `<div class="meta">${meta}</div>` : ""}${e.tldr ? `<div class="tldr">${esc(e.tldr)}</div>` : ""}</div>
-      <div class="c-emit"><div class="strip"><span class="dots">${tintDots(e)}</span><span class="range">${esc(tintText(e))}</span></div>${e._uses.length ? `<div class="fams">${e._uses.slice(0, 2).map(g => (e._tier[g] === 1 ? "★ " : "") + esc(g)).join(" · ")}${e._uses.length > 2 ? ` <span class="more">+${e._uses.length - 2}</span>` : ""}</div>` : ""}</div>
+      <div class="c-emit"><div class="strip"><span class="dots">${tintDots(e)}</span><span class="range">${esc(tintText(e))}</span></div>${e._uses.length ? `<div class="fams"><span>${e._uses.slice(0, 2).map(g => (e._tier[g] === 1 ? "★ " : "") + esc(g)).join(" · ")}</span>${e._uses.length > 2 ? `<span class="more">+${e._uses.length - 2}</span>` : ""}</div>` : ""}</div>
       <div class="c-cri" data-l="CRI">${e.cri_max != null ? `<div class="cri${e.cri_min >= 90 ? " hi" : ""}" title="${e.cri_min >= 90 ? "Every option is 90+ CRI" : "CRI (Ra) range across options"}">${esc(criText(e))}</div>` : `<span class="na">—</span>`}</div>
       <div class="c-beam" data-l="Beam">${beamCell(e)}</div>
       <div class="c-lm r" data-l="Output">${e.lm_hi ? `<div class="v">${fmt(e.lm_hi)}<small> lm</small></div>${e.lm_lo !== e.lm_hi ? `<div class="sub2">from ${fmt(e.lm_lo)}</div>` : meter(e.lm_hi, 150, LM_MAX)}` : `<span class="na">—</span>`}</div>
@@ -944,7 +947,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
     const rows = e.candela;
     return `<section class="sec"><h3>Throw by reflector size <small>scaled from the typical 35–40 mm estimate</small></h3><div class="calc" data-calc="${e.id}">
       ${rows.length > 1 ? `<div class="rowsel">${rows.map((c, i) => `<button type="button" data-crow="${i}" aria-pressed="${!i}">${esc(c.label || c.row)}</button>`).join("")}</div>` : ""}
-      <label><span>Reflector Ø</span><input type="range" min="15" max="90" step="1" value="${REF_MM}" data-mm aria-label="Reflector diameter in mm"><output data-mmout>${REF_MM} mm</output></label>
+      <label><span>Reflector Ø</span><input type="range" min="15" max="90" step="0.5" value="${REF_MM}" data-mm aria-label="Reflector diameter in mm"><output data-mmout>${REF_MM} mm</output></label>
       <div class="res"><div><span>Candela</span><b data-cdout></b></div><div><span>Throw (ANSI)</span><b data-mout></b></div></div>
       <p data-beam></p>
       <p>Candela scales with reflector area (diameter²), so this is a ballpark that assumes the same reflector depth, finish and driver. Real lights land within ±50%.${rows.some(c => c.indicative) ? " Big dies are a poor match for small reflectors and only peak in 60 mm+ heads." : ""}</p>
@@ -1016,7 +1019,7 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
           <div class="stat"><span>Output</span><b>${e.lm_hi ? fmt(e.lm_hi) + "<small>lm</small>" : "—"}</b><em>${e.lm_lo && e.lm_lo !== e.lm_hi ? "from " + fmt(e.lm_lo) + " lm" : e.lm_hi ? "typical max" : "not rated"}</em></div>
           <div class="stat"><span>CRI</span><b>${criText(e) || "—"}</b><em>${e.r9080 ? "R9080 available" : e.cri_max >= 90 ? "high-CRI option" : e.cri_max ? "Ra" : "n/a"}</em></div>
           <div class="stat"><span>Candela</span><b>${e.cd_mid ? kcd(e.cd_mid) + "<small>cd</small>" : "—"}</b><em>${e.cd_mid ? "35–40 mm reflector" : "no estimate"}</em></div>
-          <div class="stat"><span>Beam</span><b>${e.beam != null ? BEAM_NAMES[e.beam] : "—"}</b><em>${e.beam != null ? BEAM_DESC[e.beam] : "colour / UV / IR"}</em></div>
+          <div class="stat"><span>Beam</span><b>${e.beam != null ? BEAM_NAMES[e.beam] : "—"}</b><em>${e.beam != null ? BEAM_DESC[e.beam] : e.kind === "White" ? "not rated" : "colour / UV / IR"}</em></div>
           <div class="stat"><span>Throw</span><b>${e.cd_mid ? fmt(2 * Math.sqrt(e.cd_mid)) + "<small>m</small>" : "—"}</b><em>${e.cdlm ? e.cdlm.toFixed(e.cdlm < 10 ? 1 : 0) + " cd/lm" : "&nbsp;"}</em></div>
         </div>
         <section class="sec"><h3>About</h3><p class="prose">${peerfy(e.notes_html)}</p></section>
@@ -1171,10 +1174,13 @@ table.cmp .big small { font: 500 12px var(--f-body); color: var(--muted); margin
       return { ...e, _lights: [...lights], _uses: e.best_for.map(b => b.goal), _tier: Object.fromEntries(e.best_for.map(b => [b.goal, b.tier])), lm_mid, cd_mid, cdlm: lm_mid && cd_mid ? cd_mid / lm_mid : null,
         _cri: e.cri_max == null ? "na" : e.cri_max >= 90 ? "90" : e.cri_max >= 80 ? "80" : "70",
         _name: name(e).toLowerCase(),
-        _hay: [e.maker, e.name, e.code, e.kind, e.type_label, e.section, e.footprints.join(" "), e.voltages.join(" "), e.ccts.map(k => k + "k").join(" "), e.colours.join(" "),
+        _hay: [e.maker, e.name, e.alts.join(" "), e.code, e.kind, e.type_label, e.section, e.footprints.join(" "), e.voltages.join(" "), e.ccts.map(k => k + "k").join(" "), e.colours.join(" "),
           e.best_for.map(b => b.goal).join(" "), e.r9080 ? "r9080 high cri" : "", e.rosy ? "rosy" : "", e.domeless ? "domeless hi" : "",
           (e.notes_html + " " + e.lm_html + " " + e.cri_html).replace(/<[^>]+>/g, " ")].join(" ").toLowerCase() };
     });
+    // Part numbers are typed every which way ("SST40", "sst 40", "SFT-40"): a search word with a digit also matches
+    // the names with punctuation and spaces squeezed out.
+    data.forEach(e => e._hayc = [e.name, ...e.alts, e.code].map(s => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "")).join(" "));
     byId = new Map(data.map(e => [e.id, e]));
     USE_HINTS = Object.fromEntries((doc.uses || []).map(u => [u.goal, u.hint]));
     const norm = s => s.replace(/\s*\(.*?\)/g, "").trim().toLowerCase();

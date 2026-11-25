@@ -75,6 +75,8 @@ h1 svg { width: 0.9em; height: 0.9em; color: var(--accent); flex: none; }
 .gh:hover { color: var(--ink); border-color: var(--line-2); }
 .gh svg { width: 16px; height: 16px; flex: none; }
 @media (max-width: 860px) { .gh { top: 20px; } }
+/* On a phone the label would sit on top of the page tabs: icon only, tighter tabs. */
+@media (max-width: 560px) { .gh { font-size: 0; gap: 0; padding: 8px; } .idxnav a { padding: 6px 10px; } }
 .kpi b { display: block; font: 700 22px/1.1 var(--f-display); color: var(--ink); }
 .kpi span { font-size: 12px; color: var(--muted); }
 

@@ -22,7 +22,8 @@ function respond(data, status = 200, extra = {}) {
     headers: {
       "content-type": "application/json; charset=utf-8",
       "x-attribution": CREDIT,
-      "cache-control": "public, max-age=300",
+      // Errors aren't cached: a passing "data unavailable" mustn't stick for five minutes.
+      "cache-control": status < 400 ? "public, max-age=300" : "no-store",
       ...CORS,
       ...extra,
     },
@@ -40,8 +41,11 @@ const num = (v) => {
   return Number.isFinite(n) ? n : null;
 };
 const flat = (parts) => parts.filter(Boolean).join(" ");
-// q is an AND of words: every whitespace-separated word must appear in the haystack.
-const matches = (hay, q) => q.split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
+// q is an AND of words: every whitespace-separated word must appear in the haystack. Like the Emitter Index, a word
+// with a digit also matches an LED's names with punctuation squeezed out ("sst40" finds "SST-40").
+const squeeze = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+const matches = (hay, q, names = "") =>
+  q.split(/\s+/).filter(Boolean).every((w) => hay.includes(w) || (names && /\d/.test(w) && names.includes(squeeze(w))));
 
 // ---------- data loading ----------
 
@@ -92,7 +96,7 @@ async function buildDb(env) {
     hayOf.set(
       e,
       flat([
-        e.maker, e.name, e.code, e.kind, e.type_label, e.section,
+        e.maker, e.name, (e.alts || []).join(" "), e.code, e.kind, e.type_label, e.section,
         (e.footprints || []).join(" "), (e.voltages || []).join(" "),
         (e.ccts || []).map((k) => k + "k").join(" "), (e.colours || []).join(" "),
         (e.best_for || []).map((b) => b.goal).join(" "),
@@ -101,6 +105,8 @@ async function buildDb(env) {
       ]).toLowerCase()
     );
   }
+
+  const namesOf = new Map(leds.map((e) => [e, [e.name, ...(e.alts || []), e.code || ""].map(squeeze).join(" ")]));
 
   // LED name -> emitter (a light's option is matched by name; stores' spellings
   // live in the LED's alts list).
@@ -118,7 +124,7 @@ async function buildDb(env) {
     }
   }
 
-  return { lights, leds, slugOf, hayOf, ledIndex, uses };
+  return { lights, leds, slugOf, hayOf, namesOf, ledIndex, uses };
 }
 
 // ---------- resolvers ----------
@@ -155,8 +161,8 @@ function ledOut(e) {
 }
 
 function page(items, p) {
-  const limit = Math.min(Math.max(num(p.get("limit")) ?? 50, 0), 500);
-  const offset = Math.max(num(p.get("offset")) ?? 0, 0);
+  const limit = Math.min(Math.max(Math.floor(num(p.get("limit")) ?? 50), 0), 500);
+  const offset = Math.max(Math.floor(num(p.get("offset")) ?? 0), 0);
   return { items: items.slice(offset, offset + limit), total: items.length, limit, offset };
 }
 
@@ -242,7 +248,7 @@ function listLeds(p) {
   const minCri = num(p.get("min_cri"));
 
   let out = db.leds.filter((e) => {
-    if (q && !matches(db.hayOf.get(e), q)) return false;
+    if (q && !matches(db.hayOf.get(e), q, db.namesOf.get(e))) return false;
     if (kind && !(e.kind || "").toLowerCase().includes(kind)) return false;
     if (maker && !(e.maker || "").toLowerCase().includes(maker)) return false;
     if (footprint && !(e.footprints || []).some((f) => f.toLowerCase().includes(footprint))) return false;
@@ -280,7 +286,7 @@ function search(p) {
   const q = (p.get("q") || "").trim().toLowerCase();
   if (!q) return respond({ attribution: CREDIT, error: "missing q" }, 400);
   const fl = db.lights.filter((l) => matches(db.hayOf.get(l), q));
-  const ls = db.leds.filter((e) => matches(db.hayOf.get(e), q));
+  const ls = db.leds.filter((e) => matches(db.hayOf.get(e), q, db.namesOf.get(e)));
   const a = page(fl, p);
   const b = page(ls, p);
   return respond({
@@ -300,10 +306,11 @@ export default {
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
     if (request.method !== "GET" && request.method !== "HEAD")
       return respond({ attribution: CREDIT, error: "GET only" }, 405, { allow: "GET, HEAD, OPTIONS" });
+    let loadErr = null;
     try {
       await load(env);
     } catch (err) {
-      return respond({ attribution: CREDIT, error: `data unavailable: ${err.message}` }, 503);
+      loadErr = err;
     }
     const p = url.searchParams;
     // /s/<query> shortcut: redirect into whichever index matches best with the
@@ -316,14 +323,17 @@ export default {
       try { t = decodeURIComponent(t); } catch {}
       t = t.trim();
       if (!t) return Response.redirect(`${url.origin}/leds/`, 302);
+      // Without the data, still take the person somewhere useful: the LED index with their search.
+      if (loadErr) return Response.redirect(`${url.origin}/leds/?q=${encodeURIComponent(t)}`, 302);
       const lc = t.toLowerCase(), nq = norm(t), sq = slugify(t);
       const ledExact = db.leds.some((e) => norm(e.name) === nq || (e.alts || []).some((a) => norm(a) === nq));
       const lightExact = db.lights.some((l) => db.slugOf.get(l) === sq || (l.model || "").toLowerCase() === lc);
-      const ledHit = db.leds.some((e) => matches(db.hayOf.get(e), lc));
+      const ledHit = db.leds.some((e) => matches(db.hayOf.get(e), lc, db.namesOf.get(e)));
       const lightHit = db.lights.some((l) => matches(db.hayOf.get(l), lc));
       const to = lightExact && !ledExact ? "flashlights" : ledExact ? "leds" : lightHit && !ledHit ? "flashlights" : "leds";
       return Response.redirect(`${url.origin}/${to}/?q=${encodeURIComponent(t)}`, 302);
     }
+    if (loadErr) return respond({ attribution: CREDIT, error: `data unavailable: ${loadErr.message}` }, 503);
     if (path === "/api") return index();
     if (path === "/api/flashlights") return listLights(p);
     if (path === "/api/leds") return listLeds(p);

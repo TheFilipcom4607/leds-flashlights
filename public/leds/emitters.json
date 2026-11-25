@@ -9694,7 +9694,8 @@
    "name": "SST-20F / SST-36F",
    "alts": [
     "SST-20F",
-    "SST-36F"
+    "SST-36F",
+    "SFT-36F"
    ],
    "maker": "Luminus",
    "code": "",
@@ -9709,8 +9710,8 @@
    ],
    "lm_lo": 700.0,
    "lm_hi": 741.0,
-   "cri_min": 70,
-   "cri_max": 70,
+   "cri_min": 65,
+   "cri_max": 90,
    "ccts": [
     2700,
     3000,
@@ -9727,10 +9728,10 @@
    "basis": "datasheet",
    "footprint_html": "<code>3535</code> · 3V",
    "lm_html": "20F: 700 lm @ 1.5 A (2.5 A max)<br>36F: 741 lm @ 1.5 A (3 A max)",
-   "cri_html": "~70",
+   "cri_html": "20F: 65 / 70 / 80<br>36F: 65 / 70 / 80 / 90 (90 in 2700K, 5700K, 6500K)",
    "cri_label": "CRI",
    "type_html": "",
-   "notes_html": "<b>Luminus's cost-per-lumen flip chips in a ceramic package.</b> SST-20F 3000–6500K; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K. The Acebeam Terminator M1 2.0 uses the SST-36F (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20F-W-AH_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20F datasheet</a>, <a href=\"https://download.luminus.com/datasheets/Luminus_SST-36F-W-AL_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-36F datasheet</a>).",
+   "notes_html": "<b>Luminus's cost-per-lumen flip chips in a ceramic package.</b> SST-20F 3000–6500K at 65–80 CRI; SST-36F 2700K, 4000K, 5000K, 5700K and 6500K at 65–90 CRI, the 90 CRI bins in 2700K, 5700K and 6500K. Sometimes misspelled “SFT-36F”. The Acebeam Terminator M1 2.0 uses the SST-36F (<a href=\"https://download.luminus.com/datasheets/Luminus_SST-20F-W-AH_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-20F datasheet</a>, <a href=\"https://download.luminus.com/datasheets/Luminus_SST-36F-W-AL_Datasheet.pdf\" target=\"_blank\" rel=\"noopener\">Luminus SST-36F datasheet</a>).",
    "alternatives": [
     {
      "name": "SST-20",
@@ -10507,7 +10508,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "niche",
     "note": "Discontinued"
@@ -10578,7 +10579,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "niche",
     "note": "No independent test"
@@ -10642,7 +10643,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "Almost undocumented"
@@ -10714,7 +10715,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "San'an-named, no datasheet"
@@ -10778,7 +10779,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "6V wiring of SFQ-43"
@@ -10842,7 +10843,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "Round die"
@@ -10906,7 +10907,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": {
     "t": "niche",
     "note": "Domed SFQ-55"
@@ -10974,7 +10975,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "niche",
     "note": "Rarely seen"
@@ -11040,7 +11041,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "niche",
     "note": "No datasheet"
@@ -11104,7 +11105,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "Discontinued"
@@ -11170,7 +11171,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "budget",
     "note": "SBT90.2 clone"
@@ -11236,7 +11237,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "niche",
     "note": "Unknown maker"
@@ -11309,7 +11310,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 5,
    "rep": {
     "t": "niche",
     "note": "Discontinued"
@@ -11378,7 +11379,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "legacy",
     "note": "Tint-shift prone"
@@ -11444,7 +11445,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "niche",
     "note": "Small Olights"
@@ -11506,7 +11507,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": {
     "t": "niche",
     "note": "Acebeam L35"
@@ -11564,7 +11565,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 2,
    "rep": {
     "t": "oem",
     "note": "Nitecore in-house"
@@ -11626,7 +11627,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "oem",
     "note": "Nitecore in-house"
@@ -11696,7 +11697,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 1,
    "rep": {
     "t": "niche",
     "note": "Discontinued"
@@ -11760,7 +11761,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 1,
    "rep": {
     "t": "legacy",
     "note": "Discontinued"
@@ -11834,7 +11835,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 3,
    "rep": {
     "t": "niche",
     "note": "New, cool white only"
@@ -11962,7 +11963,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "Never released"
@@ -12041,7 +12042,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "Poor documentation"
@@ -12107,7 +12108,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 4,
    "rep": {
     "t": "niche",
     "note": "Greenish tint"
@@ -12172,7 +12173,7 @@
    "cd_hi": null,
    "throw_lo": null,
    "throw_hi": null,
-   "beam": null,
+   "beam": 5,
    "rep": {
     "t": "niche",
     "note": "No known light"

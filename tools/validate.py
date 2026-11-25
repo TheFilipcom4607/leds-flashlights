@@ -158,10 +158,16 @@ def check_editor_picks(rows):
     if not m:
         return
     ids = {slug(r.get("brand"), r.get("model"), r.get("variant")) for r in rows}
-    for goal, body in re.findall(r'"([^"]*)":\s*\[([^\]]*)\]', m.group(1)):
-        for pick in re.findall(r'"([^"]+)"', body):
+    picks = {goal: re.findall(r'"([^"]+)"', body) for goal, body in re.findall(r'"([^"]*)":\s*\[([^\]]*)\]', m.group(1))}
+    for goal, ids_ in picks.items():
+        for pick in ids_:
             if pick not in ids:
                 err(f"Editor's picks ({goal or 'overall'})", f"no light has the ID '{pick}'")
+    # "Help me choose" keeps a copy of the list; it must stay the same.
+    rec = (ROOT / "public/recommend/index.html").read_text(encoding="utf-8")
+    m2 = re.search(r"const EDITOR = \{(.*?)\n  \};", rec, re.S)
+    if m2 and {g: re.findall(r'"([^"]+)"', b) for g, b in re.findall(r'"([^"]*)":\s*\[([^\]]*)\]', m2.group(1))} != picks:
+        err("public/recommend/index.html", "EDITOR differs from the one in public/flashlights/index.html; copy it over")
 
 
 lights, emitters = load(LIGHTS), load(EMITTERS)
